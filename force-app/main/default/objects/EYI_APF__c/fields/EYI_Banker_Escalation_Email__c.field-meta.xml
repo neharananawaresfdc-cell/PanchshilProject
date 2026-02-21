@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Banker_Escalation_Email__c</fullName>
+    <description>It will update Banker Escalation Email from Bank Details.</description>
+    <externalId>false</externalId>
+    <label>Banker Escalation Email</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

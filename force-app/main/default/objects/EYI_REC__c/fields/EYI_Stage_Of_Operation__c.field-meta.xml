@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Stage_Of_Operation__c</fullName>
+    <label>Stage Of Operation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New Launch</fullName>
+                <default>false</default>
+                <label>New Launch</label>
+            </value>
+            <value>
+                <fullName>Sustenance</fullName>
+                <default>false</default>
+                <label>Sustenance</label>
+            </value>
+            <value>
+                <fullName>RTMI</fullName>
+                <default>false</default>
+                <label>RTMI</label>
+            </value>
+            <value>
+                <fullName>Resale</fullName>
+                <default>false</default>
+                <label>Resale</label>
+            </value>
+            <value>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+                <label>Leasing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

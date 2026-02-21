@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Tax_Classification_2__c</fullName>
+    <label>Tax Classification 2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TCS Applicable</fullName>
+                <default>false</default>
+                <label>TCS Applicable</label>
+            </value>
+            <value>
+                <fullName>TCS Not Applicable</fullName>
+                <default>false</default>
+                <label>TCS Not Applicable</label>
+            </value>
+            <value>
+                <fullName>TDS Applicable</fullName>
+                <default>false</default>
+                <label>TDS Applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Source__c</fullName>
+    <label>Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Direct Client</fullName>
+                <default>false</default>
+                <label>Direct Client</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>PREC</fullName>
+                <default>false</default>
+                <label>PREC</label>
+            </value>
+            <value>
+                <fullName>Web</fullName>
+                <default>false</default>
+                <label>Web</label>
+            </value>
+            <value>
+                <fullName>Existing Client</fullName>
+                <default>false</default>
+                <label>Existing Client</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>Presales</fullName>
+                <default>false</default>
+                <label>Presales</label>
+            </value>
+            <value>
+                <fullName>Privilege</fullName>
+                <default>false</default>
+                <label>Privilege</label>
+            </value>
+            <value>
+                <fullName>REC Lead</fullName>
+                <default>false</default>
+                <label>REC Lead</label>
+            </value>
+            <value>
+                <fullName>SM Self Sourcing</fullName>
+                <default>false</default>
+                <label>SM Self Sourcing</label>
+            </value>
+            <value>
+                <fullName>CTI</fullName>
+                <default>false</default>
+                <label>CTI</label>
+            </value>
+            <value>
+                <fullName>ChatBot</fullName>
+                <default>false</default>
+                <label>ChatBot</label>
+            </value>
+            <value>
+                <fullName>Mobile App</fullName>
+                <default>false</default>
+                <label>Mobile App</label>
+            </value>
+            <value>
+                <fullName>Archive Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Archive Leads</label>
+            </value>
+            <value>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Channel Partner</label>
+            </value>
+            <value>
+                <fullName>Cold Calling</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cold Calling</label>
+            </value>
+            <value>
+                <fullName>Digital Media</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital Media</label>
+            </value>
+            <value>
+                <fullName>EYI Contact Center</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EYI Contact Center</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Exhibition</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Exhibition</label>
+            </value>
+            <value>
+                <fullName>Lead Reference</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lead Reference</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>Newspaper Ad</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Newspaper Ad</label>
+            </value>
+            <value>
+                <fullName>OOH</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OOH</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Outdoor Activation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outdoor Activation</label>
+            </value>
+            <value>
+                <fullName>Phone</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Phone</label>
+            </value>
+            <value>
+                <fullName>Project Website</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Project Website</label>
+            </value>
+            <value>
+                <fullName>Property Portal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Property Portal</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMS</label>
+            </value>
+            <value>
+                <fullName>Site branding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site branding</label>
+            </value>
+            <value>
+                <fullName>Television</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Television</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

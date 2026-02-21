@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Applied_at_the_time_of_FCN__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>Applied at the time of FCN</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

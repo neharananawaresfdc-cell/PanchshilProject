@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>REC</fullName>
+    <columns>MasterLabel</columns>
+    <columns>Channel_Type__c</columns>
+    <columns>Email_Template__c</columns>
+    <columns>Notification_Trigger_Fields__c</columns>
+    <columns>Notification_Trigger_Logic__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Sobject__c</field>
+        <operation>equals</operation>
+        <value>EYI_REC__c</value>
+    </filters>
+    <label>REC</label>
+    <language>en_US</language>
+</ListView>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Lost_Reason__c</fullName>
+    <label>Lost Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Area configuration</fullName>
+                <default>false</default>
+                <label>Area Configuration</label>
+            </value>
+            <value>
+                <fullName>Auto Lost</fullName>
+                <default>false</default>
+                <label>Auto Lost</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Competition</fullName>
+                <default>false</default>
+                <label>Competition</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Expecting market correction</fullName>
+                <default>false</default>
+                <label>Expecting Market Correction</label>
+            </value>
+            <value>
+                <fullName>Finds price too high</fullName>
+                <default>false</default>
+                <label>Finds Price Too High</label>
+            </value>
+            <value>
+                <fullName>Invested Elsewhere</fullName>
+                <default>false</default>
+                <label>Invested Elsewhere</label>
+            </value>
+            <value>
+                <fullName>Job enquiry</fullName>
+                <default>false</default>
+                <label>Job Enquiry</label>
+            </value>
+            <value>
+                <fullName>Location</fullName>
+                <default>false</default>
+                <label>Location</label>
+            </value>
+            <value>
+                <fullName>Management</fullName>
+                <default>false</default>
+                <label>Management</label>
+            </value>
+            <value>
+                <fullName>Market Research</fullName>
+                <default>false</default>
+                <label>Market Research</label>
+            </value>
+            <value>
+                <fullName>No Response</fullName>
+                <default>false</default>
+                <label>No Response</label>
+            </value>
+            <value>
+                <fullName>Not Contactable</fullName>
+                <default>false</default>
+                <label>Not Contactable</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Payment schedule</fullName>
+                <default>false</default>
+                <label>Payment Schedule</label>
+            </value>
+            <value>
+                <fullName>Personal</fullName>
+                <default>false</default>
+                <label>Personal</label>
+            </value>
+            <value>
+                <fullName>Possession</fullName>
+                <default>false</default>
+                <label>Possession</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>REC</fullName>
+                <default>false</default>
+                <label>REC</label>
+            </value>
+            <value>
+                <fullName>SM</fullName>
+                <default>false</default>
+                <label>SM</label>
+            </value>
+            <value>
+                <fullName>Third Party</fullName>
+                <default>false</default>
+                <label>Third Party</label>
+            </value>
+            <value>
+                <fullName>Vendor</fullName>
+                <default>false</default>
+                <label>Vendor</label>
+            </value>
+            <value>
+                <fullName>Wrong No</fullName>
+                <default>false</default>
+                <label>Wrong No</label>
+            </value>
+            <value>
+                <fullName>Disqualified</fullName>
+                <default>false</default>
+                <label>Disqualified</label>
+            </value>
+            <value>
+                <fullName>Invalid Number</fullName>
+                <default>false</default>
+                <label>Invalid Number</label>
+            </value>
+            <value>
+                <fullName>Budget Insufficient</fullName>
+                <default>false</default>
+                <label>Budget Insufficient</label>
+            </value>
+            <value>
+                <fullName>Location Not Preferred</fullName>
+                <default>false</default>
+                <label>Location Not Preferred</label>
+            </value>
+            <value>
+                <fullName>Postponed Plan</fullName>
+                <default>false</default>
+                <label>Postponed Plan</label>
+            </value>
+            <value>
+                <fullName>Dropped Plan</fullName>
+                <default>false</default>
+                <label>Dropped Plan</label>
+            </value>
+            <value>
+                <fullName>Vaastu Concerns</fullName>
+                <default>false</default>
+                <label>Vaastu Concerns</label>
+            </value>
+            <value>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+                <label>Wrong Number</label>
+            </value>
+            <value>
+                <fullName>Configuration Not Available</fullName>
+                <default>false</default>
+                <label>Configuration Not Available</label>
+            </value>
+            <value>
+                <fullName>Personal Limitation</fullName>
+                <default>false</default>
+                <label>Personal Limitation</label>
+            </value>
+            <value>
+                <fullName>Job Seeker / Vendor Inquiry</fullName>
+                <default>false</default>
+                <label>Job Seeker / Vendor Inquiry</label>
+            </value>
+            <value>
+                <fullName>Not looking for property</fullName>
+                <default>false</default>
+                <label>Not looking for property</label>
+            </value>
+            <value>
+                <fullName>Incoming call not available</fullName>
+                <default>false</default>
+                <label>Incoming call not available</label>
+            </value>
+            <value>
+                <fullName>Test Lead</fullName>
+                <default>false</default>
+                <label>Test Lead</label>
+            </value>
+            <value>
+                <fullName>Booked with competitor</fullName>
+                <default>false</default>
+                <label>Booked with competitor</label>
+            </value>
+            <value>
+                <fullName>Language Barrier</fullName>
+                <default>false</default>
+                <label>Language Barrier</label>
+            </value>
+            <value>
+                <fullName>Number does not exist</fullName>
+                <default>false</default>
+                <label>Number does not exist</label>
+            </value>
+            <value>
+                <fullName>RTMI/Under Construction</fullName>
+                <default>false</default>
+                <label>RTMI/Under Construction</label>
+            </value>
+            <value>
+                <fullName>Duplicate Lead</fullName>
+                <default>false</default>
+                <label>Duplicate Lead</label>
+            </value>
+            <value>
+                <fullName>Repeatedly Unresponsive</fullName>
+                <default>false</default>
+                <label>Repeatedly Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

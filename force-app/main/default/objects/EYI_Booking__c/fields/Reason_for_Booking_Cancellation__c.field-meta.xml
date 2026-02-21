@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Booking_Cancellation__c</fullName>
+    <label>Reason for Booking Cancellation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Dropped the plan</fullName>
+                <default>false</default>
+                <label>Dropped the plan</label>
+            </value>
+            <value>
+                <fullName>Developer Reputation</fullName>
+                <default>false</default>
+                <label>Developer Reputation</label>
+            </value>
+            <value>
+                <fullName>No Value for money</fullName>
+                <default>false</default>
+                <label>No Value for money</label>
+            </value>
+            <value>
+                <fullName>Carpet area</fullName>
+                <default>false</default>
+                <label>Carpet area</label>
+            </value>
+            <value>
+                <fullName>Flat Layout not suitable</fullName>
+                <default>false</default>
+                <label>Flat Layout not suitable</label>
+            </value>
+            <value>
+                <fullName>Non Vaastu Compliant</fullName>
+                <default>false</default>
+                <label>Non Vaastu Compliant</label>
+            </value>
+            <value>
+                <fullName>View from apartment</fullName>
+                <default>false</default>
+                <label>View from apartment</label>
+            </value>
+            <value>
+                <fullName>Low Budget</fullName>
+                <default>false</default>
+                <label>Low Budget</label>
+            </value>
+            <value>
+                <fullName>Payment schedule</fullName>
+                <default>false</default>
+                <label>Payment schedule</label>
+            </value>
+            <value>
+                <fullName>Possession status</fullName>
+                <default>false</default>
+                <label>Possession status</label>
+            </value>
+            <value>
+                <fullName>Location not suitable</fullName>
+                <default>false</default>
+                <label>Location not suitable</label>
+            </value>
+            <value>
+                <fullName>Financial issue</fullName>
+                <default>false</default>
+                <label>Financial issue</label>
+            </value>
+            <value>
+                <fullName>Loan eligibility issue</fullName>
+                <default>false</default>
+                <label>Loan eligibility issue</label>
+            </value>
+            <value>
+                <fullName>Unable to sell existing property</fullName>
+                <default>false</default>
+                <label>Unable to sell existing property</label>
+            </value>
+            <value>
+                <fullName>Personal issue</fullName>
+                <default>false</default>
+                <label>Personal issue</label>
+            </value>
+            <value>
+                <fullName>Promised rate changed</fullName>
+                <default>false</default>
+                <label>Promised rate changed</label>
+            </value>
+            <value>
+                <fullName>Launch delayed</fullName>
+                <default>false</default>
+                <label>Launch delayed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_REC_Firm_Region__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( EYI_REC_Firm_State__c ,
+&quot;Jammu and Kashmir&quot;, &quot;01&quot;,
+&quot;Himachal Pradesh&quot;, &quot;02&quot;,
+&quot;Punjab&quot;, &quot;03&quot;,
+&quot;Chandigarh&quot;, &quot;04&quot;,
+&quot;Haryana&quot;, &quot;06&quot;,
+&quot;Delhi&quot;, &quot;07&quot;,
+&quot;Rajasthan&quot;, &quot;08&quot;,
+&quot;Uttar Pradesh&quot;, &quot;09&quot;,
+&quot;Bihar&quot;, &quot;10&quot;,
+&quot;Sikkim&quot;, &quot;11&quot;,
+&quot;Arunachal Pradesh&quot;, &quot;12&quot;,
+&quot;Nagaland&quot;, &quot;13&quot;,
+&quot;Manipur&quot;, &quot;14&quot;,
+&quot;Mizoram&quot;, &quot;15&quot;,
+&quot;Tripura&quot;, &quot;16&quot;,
+&quot;Meghalaya&quot;, &quot;17&quot;,
+&quot;Assam&quot;, &quot;18&quot;,
+&quot;West Bengal&quot;, &quot;19&quot;,
+&quot;Jharkhand&quot;, &quot;20&quot;,
+&quot;Orissa&quot;, &quot;21&quot;,
+&quot;Chhattisgarh&quot;, &quot;22&quot;,
+&quot;Madhya Pradesh&quot;, &quot;23&quot;,
+&quot;Gujarat&quot;, &quot;24&quot;,
+&quot;Maharashtra&quot;, &quot;27&quot;,
+&quot;Karnataka&quot;,&quot;29&quot;,
+&quot;Goa&quot;, &quot;30&quot;,
+&quot;Kerala&quot;, &quot;32&quot;,
+&quot;Tamil Nadu&quot;,&quot;33&quot;,
+&quot;Andhra Pradesh&quot;, &quot;37&quot;,
+&quot;Abu Dhabi&quot;,&quot;AZ&quot;,
+&quot;Alberta&quot;,&quot;AB&quot;,
+&quot;Arizona&quot;,&quot;AZ&quot;,
+&quot;Auckland&quot;,&quot;AKL&quot;,
+&quot;British Columbia&quot;,&quot;BC&quot;,
+&quot;California&quot;,&quot;CA&quot;,
+&quot;Dubai&quot;,&quot;DU&quot;,
+&quot;Hong Kong&quot;,&quot;HK&quot;,
+&quot;Illinois&quot;,&quot;IL&quot;,
+&quot;Manitoba&quot;,&quot;MB&quot;,
+&quot;Massachusetts&quot;,&quot;MA&quot;,
+&quot;Mississippi&quot;,&quot;MS&quot;,
+&quot;New Brunswick&quot;,&quot;NB&quot;,
+&quot;New York&quot;,&quot;NY&quot;,
+&quot;Northwest Territories&quot;,&quot;NT&quot;,
+&quot;Ohio&quot;, &quot;OH&quot;,
+&quot;Quebec&quot;, &quot;QC&quot;,
+&quot;Saskatchewan&quot;, &quot;SK&quot;,
+&quot;Sharjah&quot;,&quot;SH&quot;,
+&quot;Telangana&quot;, &quot;36&quot;,
+&quot;Texas&quot;, &quot;TX&quot;,
+&quot;Washington&quot;,&quot;WA&quot;,
+&quot;Wellington&quot;,&quot;WLG&quot;,
+&quot;Louisiana&quot;, &quot;LA&quot;,
+&quot;Yukon Territory&quot;, &quot;YT&quot;,
+&quot;Ontario&quot;,&quot;ON&quot;,
+&quot;Georgia&quot;, &quot;GA&quot;,
+&quot;Alabama&quot;,&quot;AL&quot;,
+&quot;New Jeresey&quot;,&quot;NJ&quot;,
+&quot;New Hampshire&quot;,&quot;NH&quot;,
+
+&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Firm Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

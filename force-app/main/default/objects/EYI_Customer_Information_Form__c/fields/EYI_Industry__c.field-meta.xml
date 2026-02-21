@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Industry__c</fullName>
+    <label>Industry</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arts And Entertainment</fullName>
+                <default>false</default>
+                <label>Arts And Entertainment</label>
+            </value>
+            <value>
+                <fullName>Automobile</fullName>
+                <default>false</default>
+                <label>Automobile</label>
+            </value>
+            <value>
+                <fullName>Banking</fullName>
+                <default>false</default>
+                <label>Banking</label>
+            </value>
+            <value>
+                <fullName>Beauty And Fitness</fullName>
+                <default>false</default>
+                <label>Beauty And Fitness</label>
+            </value>
+            <value>
+                <fullName>Books And Literature</fullName>
+                <default>false</default>
+                <label>Books And Literature</label>
+            </value>
+            <value>
+                <fullName>Computers And Electronics</fullName>
+                <default>false</default>
+                <label>Computers And Electronics</label>
+            </value>
+            <value>
+                <fullName>Construction</fullName>
+                <default>false</default>
+                <label>Construction</label>
+            </value>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>Diamonds And Jewellery</fullName>
+                <default>false</default>
+                <label>Diamonds And Jewellery</label>
+            </value>
+            <value>
+                <fullName>Fashion</fullName>
+                <default>false</default>
+                <label>Fashion</label>
+            </value>
+            <value>
+                <fullName>Finance</fullName>
+                <default>false</default>
+                <label>Finance</label>
+            </value>
+            <value>
+                <fullName>Food And Drink</fullName>
+                <default>false</default>
+                <label>Food And Drink</label>
+            </value>
+            <value>
+                <fullName>FMCG</fullName>
+                <default>false</default>
+                <label>FMCG</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Health Care</fullName>
+                <default>false</default>
+                <label>Health Care</label>
+            </value>
+            <value>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+                <label>Hospitality</label>
+            </value>
+            <value>
+                <fullName>Import And Export</fullName>
+                <default>false</default>
+                <label>Import And Export</label>
+            </value>
+            <value>
+                <fullName>Information And Technology</fullName>
+                <default>false</default>
+                <label>Information And Technology</label>
+            </value>
+            <value>
+                <fullName>Insurance</fullName>
+                <default>false</default>
+                <label>Insurance</label>
+            </value>
+            <value>
+                <fullName>Interiors</fullName>
+                <default>false</default>
+                <label>Interiors</label>
+            </value>
+            <value>
+                <fullName>Internet And Telecom</fullName>
+                <default>false</default>
+                <label>Internet And Telecom</label>
+            </value>
+            <value>
+                <fullName>Online Communities</fullName>
+                <default>false</default>
+                <label>Online Communities</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pharmaceutical</fullName>
+                <default>false</default>
+                <label>Pharmaceutical</label>
+            </value>
+            <value>
+                <fullName>Real Estate</fullName>
+                <default>false</default>
+                <label>Real Estate</label>
+            </value>
+            <value>
+                <fullName>Shipping</fullName>
+                <default>false</default>
+                <label>Shipping</label>
+            </value>
+            <value>
+                <fullName>Sports</fullName>
+                <default>false</default>
+                <label>Sports</label>
+            </value>
+            <value>
+                <fullName>Stock Market</fullName>
+                <default>false</default>
+                <label>Stock Market</label>
+            </value>
+            <value>
+                <fullName>Textile &amp; Garments</fullName>
+                <default>false</default>
+                <label>Textile &amp; Garments</label>
+            </value>
+            <value>
+                <fullName>Transport</fullName>
+                <default>false</default>
+                <label>Transport</label>
+            </value>
+            <value>
+                <fullName>Travel</fullName>
+                <default>false</default>
+                <label>Travel</label>
+            </value>
+            <value>
+                <fullName>Agriculture</fullName>
+                <default>false</default>
+                <label>Agriculture</label>
+            </value>
+            <value>
+                <fullName>Warehousing</fullName>
+                <default>false</default>
+                <label>Warehousing</label>
+            </value>
+            <value>
+                <fullName>Logistics</fullName>
+                <default>false</default>
+                <label>Logistics</label>
+            </value>
+            <value>
+                <fullName>Production</fullName>
+                <default>false</default>
+                <label>Production</label>
+            </value>
+            <value>
+                <fullName>Marketing Agency</fullName>
+                <default>false</default>
+                <label>Marketing Agency</label>
+            </value>
+            <value>
+                <fullName>Public Relation</fullName>
+                <default>false</default>
+                <label>Public Relation</label>
+            </value>
+            <value>
+                <fullName>Print And Press</fullName>
+                <default>false</default>
+                <label>Print And Press</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

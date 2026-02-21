@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Purpose_of_Purchase__c</fullName>
+    <defaultValue>&quot;End User&quot;</defaultValue>
+    <label>Purpose of Purchase</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>End Use</fullName>
+                <default>true</default>
+                <label>End Use</label>
+            </value>
+            <value>
+                <fullName>Investment</fullName>
+                <default>false</default>
+                <label>Investment</label>
+            </value>
+            <value>
+                <fullName>Second Home</fullName>
+                <default>false</default>
+                <label>Second Home</label>
+            </value>
+            <value>
+                <fullName>Capital Gain</fullName>
+                <default>false</default>
+                <label>Capital Gain</label>
+            </value>
+            <value>
+                <fullName>End User</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>End User</label>
+            </value>
+            <value>
+                <fullName>Gift</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gift</label>
+            </value>
+            <value>
+                <fullName>Investor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Investor</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,4 @@
+declare module "@salesforce/resourceUrl/SNA_LBBBw_sf_default_cdn_Site_Service_Messaging_for_Web_861214611" {
+    var SNA_LBBBw_sf_default_cdn_Site_Service_Messaging_for_Web_861214611: string;
+    export default SNA_LBBBw_sf_default_cdn_Site_Service_Messaging_for_Web_861214611;
+}

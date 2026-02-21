@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Project_Enquired__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Project Enquired</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>EYI_Project__c.EYI_Project_Property_Type__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.EYI_Segment__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>EYI_Project__c</referenceTo>
+    <relationshipLabel>Lead Enquiries</relationshipLabel>
+    <relationshipName>Lead_Entries</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sales_Organisations__c</fullName>
+    <label>Sales Organisations</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Godiva Properties Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Godiva Properties Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Intofinity Promotors Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Intofinity Promotors Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Goldway Reality</fullName>
+                <default>false</default>
+                <label>Goldway Reality</label>
+            </value>
+            <value>
+                <fullName>Rising Associates</fullName>
+                <default>false</default>
+                <label>Rising Associates</label>
+            </value>
+            <value>
+                <fullName>Realcon Landmark LLP</fullName>
+                <default>false</default>
+                <label>Realcon Landmark LLP</label>
+            </value>
+            <value>
+                <fullName>Courtyard One Ventures LLP</fullName>
+                <default>false</default>
+                <label>Courtyard One Ventures LLP</label>
+            </value>
+            <value>
+                <fullName>Yellowstone Skyscrappers LLP</fullName>
+                <default>false</default>
+                <label>Yellowstone Skyscrappers LLP</label>
+            </value>
+            <value>
+                <fullName>Rising Propcons LLP</fullName>
+                <default>false</default>
+                <label>Rising Propcons LLP</label>
+            </value>
+            <value>
+                <fullName>EYI Properties</fullName>
+                <default>false</default>
+                <label>EYI Properties</label>
+            </value>
+            <value>
+                <fullName>Moonstone Real Infra Pvt. Ltd.</fullName>
+                <default>false</default>
+                <label>Moonstone Real Infra Pvt. Ltd.</label>
+            </value>
+            <value>
+                <fullName>EYI Development Corporation</fullName>
+                <default>false</default>
+                <label>EYI Development Corporation</label>
+            </value>
+            <value>
+                <fullName>The Dwellwell Premises LLP</fullName>
+                <default>false</default>
+                <label>The Dwellwell Premises LLP</label>
+            </value>
+            <value>
+                <fullName>The Dwellwell Reality LLP</fullName>
+                <default>false</default>
+                <label>The Dwellwell Reality LLP</label>
+            </value>
+            <value>
+                <fullName>Thanish Construction LLP</fullName>
+                <default>false</default>
+                <label>Thanish Construction LLP</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Development Corporation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Development Corporation</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Properties</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Properties</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

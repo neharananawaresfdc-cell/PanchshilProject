@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IniatiateEKYC</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Initiate E-KYC</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/Applicant_EKYC_Notifications2?applicantRecordID={!EYI_Applicants__c.Id}&amp;retURL={!EYI_Applicants__c.Id}</url>
+</WebLink>

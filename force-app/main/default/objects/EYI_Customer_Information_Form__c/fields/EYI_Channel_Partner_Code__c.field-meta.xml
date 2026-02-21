@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Channel_Partner_Code__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Channel Partner Code</label>
+    <referenceTo>EYI_CP_Account__c</referenceTo>
+    <relationshipLabel>Customer Information Form (Channel Partner Code)</relationshipLabel>
+    <relationshipName>CIF_Form</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

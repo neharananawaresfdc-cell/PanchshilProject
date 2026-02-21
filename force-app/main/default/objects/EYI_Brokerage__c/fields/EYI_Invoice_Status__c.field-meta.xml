@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Invoice_Status__c</fullName>
+    <label>Invoice Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>INVOICE IN PROCESS</fullName>
+                <default>false</default>
+                <label>INVOICE IN PROCESS</label>
+            </value>
+            <value>
+                <fullName>HOLD</fullName>
+                <default>false</default>
+                <label>HOLD</label>
+            </value>
+            <value>
+                <fullName>APPROVED</fullName>
+                <default>false</default>
+                <label>APPROVED</label>
+            </value>
+            <value>
+                <fullName>REJECTED</fullName>
+                <default>false</default>
+                <label>REJECTED</label>
+            </value>
+            <value>
+                <fullName>SUBMITTED</fullName>
+                <default>false</default>
+                <label>SUBMITTED</label>
+            </value>
+            <value>
+                <fullName>PAYOUT COMPLETED</fullName>
+                <default>false</default>
+                <label>PAYOUT COMPLETED</label>
+            </value>
+            <value>
+                <fullName>PO CREATED</fullName>
+                <default>false</default>
+                <label>PO CREATED</label>
+            </value>
+            <value>
+                <fullName>PO RELEASED</fullName>
+                <default>false</default>
+                <label>PO RELEASED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

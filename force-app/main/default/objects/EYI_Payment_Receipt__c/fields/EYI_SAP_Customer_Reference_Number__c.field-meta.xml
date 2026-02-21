@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SAP_Customer_Reference_Number__c</fullName>
+    <description>Field created for payment receipt post SAP Sync API</description>
+    <displayFormat>CN-{0000}</displayFormat>
+    <externalId>false</externalId>
+    <label>SAP Customer Reference Number</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

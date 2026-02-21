@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Is_20_Booking_Received__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>When Booking (20% Received) from Opp then this checkbox will checked.</description>
+    <label>Is 20% Booking Received</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

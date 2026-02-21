@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EIY_Approval_Status_to_Inactive__c</fullName>
+    <label>Active to Inactive/Duplicate/Blacklist</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Submitted for Approval</fullName>
+                <default>false</default>
+                <label>Submitted for Approval</label>
+            </value>
+            <value>
+                <fullName>TL Approved</fullName>
+                <default>false</default>
+                <label>Approved by Sourcing TL</label>
+            </value>
+            <value>
+                <fullName>TL Rejected</fullName>
+                <default>false</default>
+                <label>Rejected by Sourcing TL</label>
+            </value>
+            <value>
+                <fullName>Head Approved</fullName>
+                <default>false</default>
+                <label>Approved By Sourcing Head</label>
+            </value>
+            <value>
+                <fullName>Head Rejected</fullName>
+                <default>false</default>
+                <label>Rejected By Sourcing Head</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Approved</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rejected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

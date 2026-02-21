@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_isResidential__c</fullName>
+    <formula>IF(TEXT(EYI_Inventory_Type__c) = &quot;Residential&quot;, true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>isResidential</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PAN_Card_Number_Validation</fullName>
+    <active>true</active>
+    <description>Check PAN card number format.</description>
+    <errorConditionFormula>AND(NOT(
+ISBLANK( EYI_PAN_No__c ) ||
+REGEX(EYI_PAN_No__c , &quot;^[A-Z]{5}[0-9]{4}[A-Z]{1}$&quot;))
+,EYI_IsAutomationBypassed__c = false
+)</errorConditionFormula>
+    <errorDisplayField>EYI_PAN_No__c</errorDisplayField>
+    <errorMessage>Invalid PAN format.</errorMessage>
+</ValidationRule>

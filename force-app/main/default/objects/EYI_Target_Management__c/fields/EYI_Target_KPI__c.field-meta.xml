@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Target_KPI__c</fullName>
+    <label>Target KPI</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Target_Module__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Follow-up by CTI</fullName>
+                <default>false</default>
+                <label>Follow-up by CTI (%)</label>
+            </value>
+            <value>
+                <fullName>Walk-in to Booking Conversion</fullName>
+                <default>false</default>
+                <label>Walk-in to Booking Conversion (%)</label>
+            </value>
+            <value>
+                <fullName>Number of EOIs</fullName>
+                <default>false</default>
+                <label>Number of EOIs</label>
+            </value>
+            <value>
+                <fullName>EOI Conversions</fullName>
+                <default>false</default>
+                <label>EOI Conversions (%)</label>
+            </value>
+            <value>
+                <fullName>Revenue Target</fullName>
+                <default>false</default>
+                <label>Revenue Target</label>
+            </value>
+            <value>
+                <fullName>Meeting Target</fullName>
+                <default>false</default>
+                <label>Meeting Target</label>
+            </value>
+            <value>
+                <fullName>New CP Empanelment</fullName>
+                <default>false</default>
+                <label>New CP Empanelment</label>
+            </value>
+            <value>
+                <fullName>Walkin Achieved</fullName>
+                <default>false</default>
+                <label>Walkin Achieved</label>
+            </value>
+            <value>
+                <fullName>VC/VP Target</fullName>
+                <default>false</default>
+                <label>VC/VP Target</label>
+            </value>
+            <value>
+                <fullName>REC Calls by SM</fullName>
+                <default>false</default>
+                <label>REC Calls by SM</label>
+            </value>
+            <value>
+                <fullName>Visit Confirmed</fullName>
+                <default>false</default>
+                <label>Visit Confirmed</label>
+            </value>
+            <value>
+                <fullName>Visit Done</fullName>
+                <default>false</default>
+                <label>Visit Done</label>
+            </value>
+            <value>
+                <fullName>Average Talk Time</fullName>
+                <default>false</default>
+                <label>Total Talk Time (In Minutes)</label>
+            </value>
+            <value>
+                <fullName>Lead to Walk-In Conversion ratio</fullName>
+                <default>false</default>
+                <label>Lead to Walk-In Conversion ratio</label>
+            </value>
+            <value>
+                <fullName>Total Outbound Calls to be Done</fullName>
+                <default>false</default>
+                <label>Total Outbound Calls to be Done</label>
+            </value>
+            <value>
+                <fullName>Total Inbound Calls Completed</fullName>
+                <default>false</default>
+                <label>Total Inbound Calls Completed</label>
+            </value>
+            <value>
+                <fullName>Re-visit (Unique revisits / Total revisits)</fullName>
+                <default>false</default>
+                <label>Re-visit (Unique revisits / Total revisits) (%)</label>
+            </value>
+            <value>
+                <fullName>Average Follow-Ups</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Average Follow-Ups (Per Day)</label>
+            </value>
+            <value>
+                <fullName>Average TAT from Walk-in to Booking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Average TAT from Walk-in to Booking</label>
+            </value>
+            <value>
+                <fullName>Booking from Cold/Lost leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Booking from Cold/Lost leads (%)</label>
+            </value>
+            <value>
+                <fullName>Cancellation Count</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancellation Count</label>
+            </value>
+            <value>
+                <fullName>Follow-ups missed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Follow-ups missed (%)</label>
+            </value>
+            <value>
+                <fullName>L1 TAT Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L1 TAT Approval  (In Minutes)</label>
+            </value>
+            <value>
+                <fullName>L2 TAT Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L2 TAT Approval (In Minutes)</label>
+            </value>
+            <value>
+                <fullName>L3 TAT Approval</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>L3 TAT Approval (In Minutes)</label>
+            </value>
+            <value>
+                <fullName>Number of Cases Where the Cooling Period is Extended</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Number of Cases Where the Cooling Period is Extended (%)</label>
+            </value>
+            <value>
+                <fullName>Number of references generated by the Sales Manager</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Number of references generated by the Sales Manager (%)</label>
+            </value>
+            <value>
+                <fullName>Revenue (Project-Wise Revenue Target in Crore)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Revenue (Project-Wise Revenue Target in Crore)</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Visit Confirmed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Visit Done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Average Talk Time</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Lead to Walk-In Conversion ratio</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Total Outbound Calls to be Done</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Total Inbound Calls Completed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Walk-in to Booking Conversion</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Number of EOIs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sales</controllingFieldValue>
+            <valueName>Re-visit (Unique revisits / Total revisits)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sourcing</controllingFieldValue>
+            <valueName>Meeting Target</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sourcing</controllingFieldValue>
+            <valueName>New CP Empanelment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sourcing</controllingFieldValue>
+            <valueName>Walkin Achieved</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sourcing</controllingFieldValue>
+            <valueName>VC/VP Target</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sourcing</controllingFieldValue>
+            <valueName>REC Calls by SM</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Revenue</controllingFieldValue>
+            <valueName>Revenue Target</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

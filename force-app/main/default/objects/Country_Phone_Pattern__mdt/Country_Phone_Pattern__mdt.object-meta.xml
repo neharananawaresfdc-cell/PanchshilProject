@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores country codes and their phone number validation patterns.</description>
+    <label>Country Phone Pattern</label>
+    <pluralLabel>Country Phone Patterns</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

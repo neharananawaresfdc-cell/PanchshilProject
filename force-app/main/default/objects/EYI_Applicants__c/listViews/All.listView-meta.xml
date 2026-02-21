@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Opportunity__c</columns>
+    <columns>EYI_Aadhar_Number__c</columns>
+    <columns>EYI_Pancard_Number__c</columns>
+    <columns>E_Sign_Done__c</columns>
+    <columns>Is_Aadhar_EKYC_Completed__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

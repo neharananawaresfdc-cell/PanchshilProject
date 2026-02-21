@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SAP_Outstanding_Report</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Customer_Name__c</columns>
+    <columns>EYI_Distribution_Channel__c</columns>
+    <columns>EYI_Outstanding_Amount__c</columns>
+    <columns>EYI_Material__c</columns>
+    <columns>EYI_Material_Number__c</columns>
+    <columns>EYI_Material_Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>EYI_SAP_Report__c.EYI_SAP_Outstanding_Report</value>
+    </filters>
+    <label>SAP Outstanding Report</label>
+</ListView>

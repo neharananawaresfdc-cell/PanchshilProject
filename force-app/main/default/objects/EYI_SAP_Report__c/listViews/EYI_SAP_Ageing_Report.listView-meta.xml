@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SAP_Ageing_Report</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_SAP_Customer_Number__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>EYI_SO_Line_Item__c</columns>
+    <columns>EYI_Billing_Document_Number__c</columns>
+    <columns>EYI_Material_Number__c</columns>
+    <columns>EYI_Sales_Order_Number__c</columns>
+    <columns>EYI_Ageing_Delay_Days__c</columns>
+    <columns>EYI_Distribution_Channel__c</columns>
+    <columns>EYI_Due_Date__c</columns>
+    <columns>EYI_Document_Type__c</columns>
+    <columns>EYI_Document_Date__c</columns>
+    <columns>EYI_Segment__c</columns>
+    <columns>EYI_Posting_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>EYI_SAP_Report__c.EYI_SAP_Ageing_Report</value>
+    </filters>
+    <label>SAP Ageing Report</label>
+</ListView>

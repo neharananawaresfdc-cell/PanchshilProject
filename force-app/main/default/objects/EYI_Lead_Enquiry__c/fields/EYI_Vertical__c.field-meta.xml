@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Vertical__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+TEXT( EYI_Lead_Source__c ),
+&quot;Archive Leads&quot;, &quot;Presales&quot;,
+&quot;Core Leads&quot;, &quot;Presales&quot;,
+&quot;Database&quot;, &quot;Presales&quot;,
+&quot;Direct Client&quot;, &quot;Presales&quot;,
+&quot;Employee Referral Scheme&quot;, &quot;Presales&quot;,
+&quot;Existing Client&quot;, &quot;Presales&quot;,
+&quot;IVR&quot;, &quot;Presales&quot;,
+&quot;Lead Reference&quot;, &quot;Presales&quot;,
+&quot;Lost Leads&quot;, &quot;Presales&quot;,
+&quot;Management&quot;, &quot;Presales&quot;,
+&quot;Marketing&quot;, &quot;Presales&quot;,
+&quot;Newspaper Ad&quot;, &quot;Presales&quot;,
+&quot;Other&quot; , &quot;Presales&quot;,
+&quot;Phone&quot; , &quot;Presales&quot;,
+&quot;Privilege&quot; , &quot;Presales&quot;,
+&quot;Presales&quot;, &quot;Presales&quot;,
+&quot;REC&quot;, &quot;REC&quot;,
+&quot;REC Lead&quot;, &quot;REC&quot;,
+&quot;SM Self Sourcing&quot;, &quot;Presales&quot;,
+&quot;Web&quot;, &quot;Presales&quot;,
+&quot;Presales&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Vertical</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

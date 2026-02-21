@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Distribution_Channel__c</fullName>
+    <label>Distribution Channel</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Common</fullName>
+                <default>false</default>
+                <label>Common</label>
+            </value>
+            <value>
+                <fullName>Residential Sales</fullName>
+                <default>false</default>
+                <label>Residential Sales</label>
+            </value>
+            <value>
+                <fullName>Commercial Sales</fullName>
+                <default>false</default>
+                <label>Commercial Sales</label>
+            </value>
+            <value>
+                <fullName>Domestic Sales</fullName>
+                <default>false</default>
+                <label>Domestic Sales</label>
+            </value>
+            <value>
+                <fullName>Export Sales</fullName>
+                <default>false</default>
+                <label>Export Sales</label>
+            </value>
+            <value>
+                <fullName>Sale of Services</fullName>
+                <default>false</default>
+                <label>Sale of Services</label>
+            </value>
+            <value>
+                <fullName>Group Company Sales</fullName>
+                <default>false</default>
+                <label>Group Company Sales</label>
+            </value>
+            <value>
+                <fullName>Stock Transfer</fullName>
+                <default>false</default>
+                <label>Stock Transfer</label>
+            </value>
+            <value>
+                <fullName>Other Sales</fullName>
+                <default>false</default>
+                <label>Other Sales</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

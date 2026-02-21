@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Visit_Greater_Today</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(EYI_Site_Visit_Date__c),
+    EYI_Site_Visit_Date__c &lt; NOW(),
+    OR(
+        ISPICKVAL( EYI_Lead_Status__c , &quot;Visit Confirmed&quot;),
+        ISPICKVAL(EYI_Lead_Status__c , &quot;Visit Proposed&quot;)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Site_Visit_Date__c</errorDisplayField>
+    <errorMessage>Proposed Date of Visit cannot be in the past.</errorMessage>
+</ValidationRule>

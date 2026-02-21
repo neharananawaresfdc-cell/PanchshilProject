@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Lead_Loss_is_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+EYI_IsAutomationBypassed__c = false
+,
+OR(TEXT( EYI_Lead_Status__c ) == &quot;Lost&quot;)
+, ISBLANK(TEXT( EYI_Lost_Reason__c )) 
+
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Lost_Reason__c</errorDisplayField>
+    <errorMessage>Please select lost reason.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Rate__c</columns>
+    <columns>EYI_GST_Percentage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Project__c</field>
+        <operation>contains</operation>
+        <value>Golden</value>
+    </filters>
+    <label>All</label>
+</ListView>

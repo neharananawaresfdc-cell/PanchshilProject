@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IFSC_Code_Rule</fullName>
+    <active>false</active>
+    <description>For India IFSC Code Should be 11 Digit code</description>
+    <errorConditionFormula>AND(
+ISPICKVAL( EYI_Bank_Country__c , &quot;India&quot;),
+NOT(
+AND(
+REGEX( EYI_IFSC_Code__c , &quot;^[A-Za-z]{4}0[A-Z0-9a-z]{6}$&quot;)
+)
+)
+)</errorConditionFormula>
+    <errorMessage>IFSC Code format is Not valid.</errorMessage>
+</ValidationRule>

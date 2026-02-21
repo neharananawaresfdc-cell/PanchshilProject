@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Remark_Mandatory_for_REC_Status</fullName>
+    <active>false</active>
+    <description>Remark is mandatory when REC Status set to Inactive, Duplicate and Blacklist</description>
+    <errorConditionFormula>AND(IF(OR( ISPICKVAL( EYI_REC_Status__c , &apos;Inactive&apos;),ISPICKVAL( EYI_REC_Status__c , &apos;Duplicate&apos;),ISPICKVAL( EYI_REC_Status__c , &apos;Frozen&apos;) ) ,  ISBLANK( EYI_Rejection_Remark__c) , null),EYI_IsAutomationBypassed__c = false)</errorConditionFormula>
+    <errorDisplayField>EYI_Rejection_Remark__c</errorDisplayField>
+    <errorMessage>Please provide remark.</errorMessage>
+</ValidationRule>

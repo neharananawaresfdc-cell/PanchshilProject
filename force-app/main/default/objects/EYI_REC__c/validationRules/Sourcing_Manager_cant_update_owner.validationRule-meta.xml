@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sourcing_Manager_cant_update_owner</fullName>
+    <active>true</active>
+    <description>Sourcing Manager is not authorized to update the owner field.</description>
+    <errorConditionFormula>AND( EYI_IsAutomationBypassed__c = false,  CONTAINS($UserRole.Name, &apos;Sourcing Manager&apos;) , ISCHANGED( OwnerId ) )</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>Sourcing Manager is not authorized to update the owner field.</errorMessage>
+</ValidationRule>

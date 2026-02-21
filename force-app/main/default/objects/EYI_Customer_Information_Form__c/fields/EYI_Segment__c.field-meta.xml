@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Segment__c</fullName>
+    <label>Segment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pune</fullName>
+                <default>true</default>
+                <label>Pune</label>
+            </value>
+            <value>
+                <fullName>Mumbai</fullName>
+                <default>false</default>
+                <label>Mumbai</label>
+            </value>
+            <value>
+                <fullName>Rest of Maharashtra</fullName>
+                <default>false</default>
+                <label>Rest of Maharashtra</label>
+            </value>
+            <value>
+                <fullName>Rest of India</fullName>
+                <default>false</default>
+                <label>Rest of India</label>
+            </value>
+            <value>
+                <fullName>NRI</fullName>
+                <default>false</default>
+                <label>NRI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

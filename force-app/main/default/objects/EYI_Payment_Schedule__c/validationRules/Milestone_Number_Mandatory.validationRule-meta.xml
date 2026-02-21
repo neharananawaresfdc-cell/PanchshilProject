@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Number_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISBLANK( EYI_Milestone_Number__c ),
+EYI_IsAutomationBypassed__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Milestone_Number__c</errorDisplayField>
+    <errorMessage>Milestone Number is required.</errorMessage>
+</ValidationRule>

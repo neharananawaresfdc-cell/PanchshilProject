@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This custom metadata is used to store the SMS and What&apos;s up message templates.</description>
+    <label>SMS Text Templates</label>
+    <pluralLabel>SMS Text Templates</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

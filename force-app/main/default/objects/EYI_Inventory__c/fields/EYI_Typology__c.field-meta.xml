@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Typology__c</fullName>
+    <label>Typology</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1BHK</fullName>
+                <default>false</default>
+                <label>1BHK</label>
+            </value>
+            <value>
+                <fullName>2BHK</fullName>
+                <default>false</default>
+                <label>2BHK</label>
+            </value>
+            <value>
+                <fullName>3BHK</fullName>
+                <default>false</default>
+                <label>3BHK</label>
+            </value>
+            <value>
+                <fullName>4BHK</fullName>
+                <default>false</default>
+                <label>4BHK</label>
+            </value>
+            <value>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+                <label>Penthouse</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+            <value>
+                <fullName>Row House</fullName>
+                <default>false</default>
+                <label>Row House</label>
+            </value>
+            <value>
+                <fullName>Office Spaces</fullName>
+                <default>false</default>
+                <label>Office Spaces</label>
+            </value>
+            <value>
+                <fullName>Shops</fullName>
+                <default>false</default>
+                <label>Shops</label>
+            </value>
+            <value>
+                <fullName>Retail Store</fullName>
+                <default>false</default>
+                <label>Retail Store</label>
+            </value>
+            <value>
+                <fullName>2.5BHK</fullName>
+                <default>false</default>
+                <label>2.5BHK</label>
+            </value>
+            <value>
+                <fullName>1.5BHK</fullName>
+                <default>false</default>
+                <label>1.5BHK</label>
+            </value>
+            <value>
+                <fullName>5BHK</fullName>
+                <default>false</default>
+                <label>5BHK</label>
+            </value>
+            <value>
+                <fullName>RETAIL UNIT</fullName>
+                <default>false</default>
+                <label>RETAIL UNIT</label>
+            </value>
+            <value>
+                <fullName>MANUFACTURING UNIT</fullName>
+                <default>false</default>
+                <label>MANUFACTURING UNIT</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Duplex</fullName>
+                <default>false</default>
+                <label>Duplex</label>
+            </value>
+            <value>
+                <fullName>Simplex</fullName>
+                <default>false</default>
+                <label>Simplex</label>
+            </value>
+            <value>
+                <fullName>TYPE A</fullName>
+                <default>false</default>
+                <label>TYPE A</label>
+            </value>
+            <value>
+                <fullName>EXISTING</fullName>
+                <default>false</default>
+                <label>EXISTING</label>
+            </value>
+            <value>
+                <fullName>FUTURE</fullName>
+                <default>false</default>
+                <label>FUTURE</label>
+            </value>
+            <value>
+                <fullName>TYPE B</fullName>
+                <default>false</default>
+                <label>TYPE B</label>
+            </value>
+            <value>
+                <fullName>3.5BHK</fullName>
+                <default>false</default>
+                <label>3.5BHK</label>
+            </value>
+            <value>
+                <fullName>4.5BHK</fullName>
+                <default>false</default>
+                <label>4.5BHK</label>
+            </value>
+            <value>
+                <fullName>Condos</fullName>
+                <default>false</default>
+                <label>Condos</label>
+            </value>
+            <value>
+                <fullName>Office</fullName>
+                <default>false</default>
+                <label>Office</label>
+            </value>
+            <value>
+                <fullName>Land</fullName>
+                <default>false</default>
+                <label>Land</label>
+            </value>
+            <value>
+                <fullName>Parking</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking</label>
+            </value>
+            <value>
+                <fullName>Parking - Covered</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking - Covered</label>
+            </value>
+            <value>
+                <fullName>Parking - Open</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking - Open</label>
+            </value>
+            <value>
+                <fullName>Parking - Semi Covered</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking - Semi Covered</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Primary_Market__c</fullName>
+    <label>Primary Market</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pune</fullName>
+                <default>false</default>
+                <label>Pune</label>
+            </value>
+            <value>
+                <fullName>Mumbai</fullName>
+                <default>false</default>
+                <label>Mumbai</label>
+            </value>
+            <value>
+                <fullName>Rest of Maharashtra</fullName>
+                <default>false</default>
+                <label>Rest of Maharashtra</label>
+            </value>
+            <value>
+                <fullName>NRI</fullName>
+                <default>false</default>
+                <label>NRI</label>
+            </value>
+            <value>
+                <fullName>Rest of India</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rest of India</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sales_Office__c</fullName>
+    <label>Sales Office</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1000</fullName>
+                <default>false</default>
+                <label>Mumbai Office</label>
+            </value>
+            <value>
+                <fullName>1001</fullName>
+                <default>false</default>
+                <label>Pune Office</label>
+            </value>
+            <value>
+                <fullName>1003</fullName>
+                <default>false</default>
+                <label>WTC Pune</label>
+            </value>
+            <value>
+                <fullName>1004</fullName>
+                <default>false</default>
+                <label>YOO Pune</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

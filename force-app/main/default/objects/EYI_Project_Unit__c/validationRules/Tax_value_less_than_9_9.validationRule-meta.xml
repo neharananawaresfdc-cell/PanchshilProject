@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax_value_less_than_9_9</fullName>
+    <active>true</active>
+    <description>Restricting the tax value if it is less than 9.9%</description>
+    <errorConditionFormula>IF( CGST__c &lt; 9.9 ||  SGST__c &lt; 9.9, true ,false)</errorConditionFormula>
+    <errorMessage>Tax percent cannot be less than 9.9%</errorMessage>
+</ValidationRule>

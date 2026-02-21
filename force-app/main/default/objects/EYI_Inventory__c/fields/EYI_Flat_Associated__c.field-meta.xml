@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Flat_Associated__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Flat Associated</label>
+    <referenceTo>EYI_Inventory__c</referenceTo>
+    <relationshipLabel>Inventories</relationshipLabel>
+    <relationshipName>Inventories</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

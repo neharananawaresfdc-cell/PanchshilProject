@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Car_Parking_Type_1__c</fullName>
+    <label>Car Parking Type 1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ground Podium</fullName>
+                <default>false</default>
+                <label>Ground Podium</label>
+            </value>
+            <value>
+                <fullName>Measurement Podium</fullName>
+                <default>false</default>
+                <label>Measurement Podium</label>
+            </value>
+            <value>
+                <fullName>Ground Stilt</fullName>
+                <default>false</default>
+                <label>Ground Stilt</label>
+            </value>
+            <value>
+                <fullName>Measurement Stilt</fullName>
+                <default>false</default>
+                <label>Measurement Stilt</label>
+            </value>
+            <value>
+                <fullName>Open Car Parking</fullName>
+                <default>false</default>
+                <label>Open Car Parking</label>
+            </value>
+            <value>
+                <fullName>Stack Car Parking</fullName>
+                <default>false</default>
+                <label>Stack Car Parking</label>
+            </value>
+            <value>
+                <fullName>Two Wheeler Parking</fullName>
+                <default>false</default>
+                <label>Two Wheeler Parking</label>
+            </value>
+            <value>
+                <fullName>VILLA V3</fullName>
+                <default>false</default>
+                <label>VILLA V3</label>
+            </value>
+            <value>
+                <fullName>VILLA V1</fullName>
+                <default>false</default>
+                <label>VILLA V1</label>
+            </value>
+            <value>
+                <fullName>VILLA V2</fullName>
+                <default>false</default>
+                <label>VILLA V2</label>
+            </value>
+            <value>
+                <fullName>Tanti Villa</fullName>
+                <default>false</default>
+                <label>Tanti Villa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

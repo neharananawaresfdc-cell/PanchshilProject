@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profile_status_mandatory</fullName>
+    <active>true</active>
+    <description>Profile status is mandatory if profile verified is true</description>
+    <errorConditionFormula>AND(
+    EYI_Profile_Verified__c = TRUE,
+    ISPICKVAL(Profile_Status__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Profile_Status__c</errorDisplayField>
+    <errorMessage>Please select Profile Status</errorMessage>
+</ValidationRule>

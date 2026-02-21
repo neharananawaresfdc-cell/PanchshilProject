@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Bank_SPOC_Name1__c</fullName>
+    <externalId>false</externalId>
+    <formula>EYI_Bank_Name1__r.EYI_Banker_Name__c</formula>
+    <label>Bank SPOC Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

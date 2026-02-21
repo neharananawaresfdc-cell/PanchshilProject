@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_View_based_on_Amenities__c</fullName>
+    <label>View based on Amenities</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amenity Facing</fullName>
+                <default>false</default>
+                <label>Amenity Facing</label>
+            </value>
+            <value>
+                <fullName>City &amp; Partial Lagoon View</fullName>
+                <default>false</default>
+                <label>City &amp; Partial Lagoon View</label>
+            </value>
+            <value>
+                <fullName>City and Landscap View</fullName>
+                <default>false</default>
+                <label>City and Landscap View</label>
+            </value>
+            <value>
+                <fullName>City View</fullName>
+                <default>false</default>
+                <label>City View</label>
+            </value>
+            <value>
+                <fullName>Classic</fullName>
+                <default>false</default>
+                <label>Classic</label>
+            </value>
+            <value>
+                <fullName>Corner Premium</fullName>
+                <default>false</default>
+                <label>Corner Premium</label>
+            </value>
+            <value>
+                <fullName>Corner Super Premium</fullName>
+                <default>false</default>
+                <label>Corner Super Premium</label>
+            </value>
+            <value>
+                <fullName>Corner Super Ultra Premium</fullName>
+                <default>false</default>
+                <label>Corner Super Ultra Premium</label>
+            </value>
+            <value>
+                <fullName>Corner Ultra Premium</fullName>
+                <default>false</default>
+                <label>Corner Ultra Premium</label>
+            </value>
+            <value>
+                <fullName>Eden-Villa</fullName>
+                <default>false</default>
+                <label>Eden-Villa</label>
+            </value>
+            <value>
+                <fullName>Garden-Villa</fullName>
+                <default>false</default>
+                <label>Garden-Villa</label>
+            </value>
+            <value>
+                <fullName>Lagoon View</fullName>
+                <default>false</default>
+                <label>Lagoon View</label>
+            </value>
+            <value>
+                <fullName>Partial Lagoon View</fullName>
+                <default>false</default>
+                <label>Partial Lagoon View</label>
+            </value>
+            <value>
+                <fullName>Partial Sea View</fullName>
+                <default>false</default>
+                <label>Partial Sea View</label>
+            </value>
+            <value>
+                <fullName>Premium</fullName>
+                <default>false</default>
+                <label>Premium</label>
+            </value>
+            <value>
+                <fullName>River &amp; Partial Lagoon View</fullName>
+                <default>false</default>
+                <label>River &amp; Partial Lagoon View</label>
+            </value>
+            <value>
+                <fullName>River View</fullName>
+                <default>false</default>
+                <label>River View</label>
+            </value>
+            <value>
+                <fullName>Road Facing</fullName>
+                <default>false</default>
+                <label>Road Facing</label>
+            </value>
+            <value>
+                <fullName>Sea Facing Premium</fullName>
+                <default>false</default>
+                <label>Sea Facing Premium</label>
+            </value>
+            <value>
+                <fullName>Sea View</fullName>
+                <default>false</default>
+                <label>Sea View</label>
+            </value>
+            <value>
+                <fullName>Sunrise-Villa</fullName>
+                <default>false</default>
+                <label>Sunrise-Villa</label>
+            </value>
+            <value>
+                <fullName>Super Premium</fullName>
+                <default>false</default>
+                <label>Super Premium</label>
+            </value>
+            <value>
+                <fullName>Ultra Premium</fullName>
+                <default>false</default>
+                <label>Ultra Premium</label>
+            </value>
+            <value>
+                <fullName>Waterfall-Villa</fullName>
+                <default>false</default>
+                <label>Waterfall-Villa</label>
+            </value>
+            <value>
+                <fullName>Water-Villa</fullName>
+                <default>false</default>
+                <label>Water-Villa</label>
+            </value>
+            <value>
+                <fullName>Sea Facing</fullName>
+                <default>false</default>
+                <label>Sea Facing</label>
+            </value>
+            <value>
+                <fullName>Partial Sea Facing</fullName>
+                <default>false</default>
+                <label>Partial Sea Facing</label>
+            </value>
+            <value>
+                <fullName>Amenities Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Amenities Facing</label>
+            </value>
+            <value>
+                <fullName>Back Side Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Back Side Facing</label>
+            </value>
+            <value>
+                <fullName>City Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>City Facing</label>
+            </value>
+            <value>
+                <fullName>Club House Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Club House Facing</label>
+            </value>
+            <value>
+                <fullName>Garden Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Garden Facing</label>
+            </value>
+            <value>
+                <fullName>Main Road Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Main Road Facing</label>
+            </value>
+            <value>
+                <fullName>Non-Amenities Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-Amenities Facing</label>
+            </value>
+            <value>
+                <fullName>Parking Facing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking Facing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

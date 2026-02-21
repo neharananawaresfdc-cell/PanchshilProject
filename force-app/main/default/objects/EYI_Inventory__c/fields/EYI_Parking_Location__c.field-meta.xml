@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Parking_Location__c</fullName>
+    <label>Parking Location</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Parking - Basement</fullName>
+                <default>false</default>
+                <label>Parking - Basement</label>
+            </value>
+            <value>
+                <fullName>Parking - Podium</fullName>
+                <default>false</default>
+                <label>Parking - Podium</label>
+            </value>
+            <value>
+                <fullName>Parking - Ground</fullName>
+                <default>false</default>
+                <label>Parking - Ground</label>
+            </value>
+            <value>
+                <fullName>Parking - Open</fullName>
+                <default>false</default>
+                <label>Parking - Open</label>
+            </value>
+            <value>
+                <fullName>Parking - Stilt</fullName>
+                <default>false</default>
+                <label>Parking - Stilt</label>
+            </value>
+            <value>
+                <fullName>MLCP – Stilt Floor</fullName>
+                <default>false</default>
+                <label>MLCP – Stilt Floor</label>
+            </value>
+            <value>
+                <fullName>MLCP - 1st Floor</fullName>
+                <default>false</default>
+                <label>MLCP - 1st Floor</label>
+            </value>
+            <value>
+                <fullName>MLCP – 2nd Floor</fullName>
+                <default>false</default>
+                <label>MLCP – 2nd Floor</label>
+            </value>
+            <value>
+                <fullName>MLCP - 3rd Floor</fullName>
+                <default>false</default>
+                <label>MLCP - 3rd Floor</label>
+            </value>
+            <value>
+                <fullName>MLCP - 1st Podium</fullName>
+                <default>false</default>
+                <label>MLCP - 1st Podium</label>
+            </value>
+            <value>
+                <fullName>MLCP - 2nd Podium</fullName>
+                <default>false</default>
+                <label>MLCP - 2nd Podium</label>
+            </value>
+            <value>
+                <fullName>MLCP 2 -Lower Ground</fullName>
+                <default>false</default>
+                <label>MLCP 2 -Lower Ground</label>
+            </value>
+            <value>
+                <fullName>MLCP 2 -Upper Ground</fullName>
+                <default>false</default>
+                <label>MLCP 2 -Upper Ground</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

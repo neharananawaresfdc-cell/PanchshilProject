@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Lead_Lost_Other_Reason__c</fullName>
+    <label>Lead Lost Reason - Other</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Lost_Reason__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Board-line Number</fullName>
+                <default>false</default>
+                <label>Board-Line Number</label>
+            </value>
+            <value>
+                <fullName>Cancelled the Plan</fullName>
+                <default>false</default>
+                <label>Cancelled The Plan</label>
+            </value>
+            <value>
+                <fullName>Casual Enquiry</fullName>
+                <default>false</default>
+                <label>Casual Enquiry</label>
+            </value>
+            <value>
+                <fullName>Client has passed away</fullName>
+                <default>false</default>
+                <label>Client Has Passed Away</label>
+            </value>
+            <value>
+                <fullName>Every time disconnects the Call on opening</fullName>
+                <default>false</default>
+                <label>Every Time Disconnects The Call On Opening</label>
+            </value>
+            <value>
+                <fullName>Irrelevent Enquiry</fullName>
+                <default>false</default>
+                <label>Irrelevent Enquiry</label>
+            </value>
+            <value>
+                <fullName>ISD Number</fullName>
+                <default>false</default>
+                <label>ISD Number</label>
+            </value>
+            <value>
+                <fullName>Language Barrier</fullName>
+                <default>false</default>
+                <label>Language Barrier</label>
+            </value>
+            <value>
+                <fullName>Lost - PT</fullName>
+                <default>false</default>
+                <label>Lost - PT</label>
+            </value>
+            <value>
+                <fullName>Never Enquired</fullName>
+                <default>false</default>
+                <label>Never Enquired</label>
+            </value>
+            <value>
+                <fullName>Shifted to Other City</fullName>
+                <default>false</default>
+                <label>Shifted To Other City</label>
+            </value>
+            <value>
+                <fullName>Spoke to Third Party</fullName>
+                <default>false</default>
+                <label>Spoke To Third Party</label>
+            </value>
+            <value>
+                <fullName>Vastu Issue</fullName>
+                <default>false</default>
+                <label>Vastu Issue</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Board-line Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Cancelled the Plan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Casual Enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Client has passed away</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Every time disconnects the Call on opening</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Irrelevent Enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>ISD Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Language Barrier</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Lost - PT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Never Enquired</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Shifted to Other City</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Spoke to Third Party</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Vastu Issue</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

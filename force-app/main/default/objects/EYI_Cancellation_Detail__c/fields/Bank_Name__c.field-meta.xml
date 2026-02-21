@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Name__c</fullName>
+    <label>Bank Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bank of Baroda</fullName>
+                <default>false</default>
+                <label>Bank of Baroda</label>
+            </value>
+            <value>
+                <fullName>Bank of India</fullName>
+                <default>false</default>
+                <label>Bank of India</label>
+            </value>
+            <value>
+                <fullName>Bank of Maharashtra</fullName>
+                <default>false</default>
+                <label>Bank of Maharashtra</label>
+            </value>
+            <value>
+                <fullName>Canara Bank</fullName>
+                <default>false</default>
+                <label>Canara Bank</label>
+            </value>
+            <value>
+                <fullName>Central Bank of India</fullName>
+                <default>false</default>
+                <label>Central Bank of India</label>
+            </value>
+            <value>
+                <fullName>Indian Bank</fullName>
+                <default>false</default>
+                <label>Indian Bank</label>
+            </value>
+            <value>
+                <fullName>Indian Overseas Bank</fullName>
+                <default>false</default>
+                <label>Indian Overseas Bank</label>
+            </value>
+            <value>
+                <fullName>Punjab and Sind Bank</fullName>
+                <default>false</default>
+                <label>Punjab and Sind Bank</label>
+            </value>
+            <value>
+                <fullName>Punjab National Bank</fullName>
+                <default>false</default>
+                <label>Punjab National Bank</label>
+            </value>
+            <value>
+                <fullName>State Bank of India</fullName>
+                <default>false</default>
+                <label>State Bank of India</label>
+            </value>
+            <value>
+                <fullName>UCO Bank</fullName>
+                <default>false</default>
+                <label>UCO Bank</label>
+            </value>
+            <value>
+                <fullName>Union Bank of India</fullName>
+                <default>false</default>
+                <label>Union Bank of India</label>
+            </value>
+            <value>
+                <fullName>Axis Bank</fullName>
+                <default>false</default>
+                <label>Axis Bank</label>
+            </value>
+            <value>
+                <fullName>Bandhan Bank</fullName>
+                <default>false</default>
+                <label>Bandhan Bank</label>
+            </value>
+            <value>
+                <fullName>CSB Bank</fullName>
+                <default>false</default>
+                <label>CSB Bank</label>
+            </value>
+            <value>
+                <fullName>City Union Bank</fullName>
+                <default>false</default>
+                <label>City Union Bank</label>
+            </value>
+            <value>
+                <fullName>DCB Bank&lt;/option</fullName>
+                <default>false</default>
+                <label>DCB Bank&lt;/option</label>
+            </value>
+            <value>
+                <fullName>Dhanlaxmi Bank</fullName>
+                <default>false</default>
+                <label>Dhanlaxmi Bank</label>
+            </value>
+            <value>
+                <fullName>Federal Bank</fullName>
+                <default>false</default>
+                <label>Federal Bank</label>
+            </value>
+            <value>
+                <fullName>HDFC Bank</fullName>
+                <default>false</default>
+                <label>HDFC Bank</label>
+            </value>
+            <value>
+                <fullName>ICICI Bank</fullName>
+                <default>false</default>
+                <label>ICICI Bank</label>
+            </value>
+            <value>
+                <fullName>IDBI Bank</fullName>
+                <default>false</default>
+                <label>IDBI Bank</label>
+            </value>
+            <value>
+                <fullName>IDFC First Bank</fullName>
+                <default>false</default>
+                <label>IDFC First Bank</label>
+            </value>
+            <value>
+                <fullName>IndusInd Bank</fullName>
+                <default>false</default>
+                <label>IndusInd Bank</label>
+            </value>
+            <value>
+                <fullName>Jammu &amp;amp; Kashmir Bank</fullName>
+                <default>false</default>
+                <label>Jammu &amp;amp; Kashmir Bank</label>
+            </value>
+            <value>
+                <fullName>Karnataka Bank</fullName>
+                <default>false</default>
+                <label>Karnataka Bank</label>
+            </value>
+            <value>
+                <fullName>Karur Vysya Bank</fullName>
+                <default>false</default>
+                <label>Karur Vysya Bank</label>
+            </value>
+            <value>
+                <fullName>Kotak Mahindra Bank</fullName>
+                <default>false</default>
+                <label>Kotak Mahindra Bank</label>
+            </value>
+            <value>
+                <fullName>Nainital Bank</fullName>
+                <default>false</default>
+                <label>Nainital Bank</label>
+            </value>
+            <value>
+                <fullName>RBL Bank</fullName>
+                <default>false</default>
+                <label>RBL Bank</label>
+            </value>
+            <value>
+                <fullName>South Indian Bank</fullName>
+                <default>false</default>
+                <label>South Indian Bank</label>
+            </value>
+            <value>
+                <fullName>Tamilnad Mercantile Bank</fullName>
+                <default>false</default>
+                <label>Tamilnad Mercantile Bank</label>
+            </value>
+            <value>
+                <fullName>Yes Bank</fullName>
+                <default>false</default>
+                <label>Yes Bank</label>
+            </value>
+            <value>
+                <fullName>Andhra Pradesh Grameena Vikas Bank</fullName>
+                <default>false</default>
+                <label>Andhra Pradesh Grameena Vikas Bank</label>
+            </value>
+            <value>
+                <fullName>Andhra Pragathi Grameena Bank</fullName>
+                <default>false</default>
+                <label>Andhra Pragathi Grameena Bank</label>
+            </value>
+            <value>
+                <fullName>Chaitanya Godavari Gramin Bank</fullName>
+                <default>false</default>
+                <label>Chaitanya Godavari Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Saptagiri Gramin Bank</fullName>
+                <default>false</default>
+                <label>Saptagiri Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Arunachal Pradesh Rural Bank</fullName>
+                <default>false</default>
+                <label>Arunachal Pradesh Rural Bank</label>
+            </value>
+            <value>
+                <fullName>Assam Gramin Vikash Bank</fullName>
+                <default>false</default>
+                <label>Assam Gramin Vikash Bank</label>
+            </value>
+            <value>
+                <fullName>Dakshin Bihar Gramin Bank</fullName>
+                <default>false</default>
+                <label>Dakshin Bihar Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Uttar Bihar Gramin Bank</fullName>
+                <default>false</default>
+                <label>Uttar Bihar Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Chhattisgarh Rajya Gramin Bank</fullName>
+                <default>false</default>
+                <label>Chhattisgarh Rajya Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Baroda Gujarat Gramin Bank</fullName>
+                <default>false</default>
+                <label>Baroda Gujarat Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Saurashtra Gramin Bank</fullName>
+                <default>false</default>
+                <label>Saurashtra Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Sarva Haryana Gramin Bank</fullName>
+                <default>false</default>
+                <label>Sarva Haryana Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Himachal Pradesh Gramin Bank</fullName>
+                <default>false</default>
+                <label>Himachal Pradesh Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Ellaquai Dehati Bank</fullName>
+                <default>false</default>
+                <label>Ellaquai Dehati Bank</label>
+            </value>
+            <value>
+                <fullName>Jammu And Kashmir Grameen Bank</fullName>
+                <default>false</default>
+                <label>Jammu And Kashmir Grameen Bank</label>
+            </value>
+            <value>
+                <fullName>Jharkhand Rajya Gramin Bank</fullName>
+                <default>false</default>
+                <label>Jharkhand Rajya Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Karnataka Gramin Bank</fullName>
+                <default>false</default>
+                <label>Karnataka Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Karnataka Vikas Grameena Bank</fullName>
+                <default>false</default>
+                <label>Karnataka Vikas Grameena Bank</label>
+            </value>
+            <value>
+                <fullName>Kerala Gramin Bank</fullName>
+                <default>false</default>
+                <label>Kerala Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Madhya Pradesh Gramin Bank</fullName>
+                <default>false</default>
+                <label>Madhya Pradesh Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Madhyanchal Gramin Bank</fullName>
+                <default>false</default>
+                <label>Madhyanchal Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Maharashtra Gramin Bank</fullName>
+                <default>false</default>
+                <label>Maharashtra Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Vidarbha Konkan Gramin Bank</fullName>
+                <default>false</default>
+                <label>Vidarbha Konkan Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Manipur Rural Bank</fullName>
+                <default>false</default>
+                <label>Manipur Rural Bank</label>
+            </value>
+            <value>
+                <fullName>Meghalaya Rural Bank</fullName>
+                <default>false</default>
+                <label>Meghalaya Rural Bank</label>
+            </value>
+            <value>
+                <fullName>Mizoram Rural Bank</fullName>
+                <default>false</default>
+                <label>Mizoram Rural Bank</label>
+            </value>
+            <value>
+                <fullName>Nagaland Rural Bank</fullName>
+                <default>false</default>
+                <label>Nagaland Rural Bank</label>
+            </value>
+            <value>
+                <fullName>Odisha Gramya Bank</fullName>
+                <default>false</default>
+                <label>Odisha Gramya Bank</label>
+            </value>
+            <value>
+                <fullName>Utkal Grameen Bank</fullName>
+                <default>false</default>
+                <label>Utkal Grameen Bank</label>
+            </value>
+            <value>
+                <fullName>Puduvai Bharathiar Grama Bank</fullName>
+                <default>false</default>
+                <label>Puduvai Bharathiar Grama Bank</label>
+            </value>
+            <value>
+                <fullName>Punjab Gramin Bank</fullName>
+                <default>false</default>
+                <label>Punjab Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Rajasthan Marudhara Gramin Bank</fullName>
+                <default>false</default>
+                <label>Rajasthan Marudhara Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Baroda Rajasthan Kshetriya Gramin Bank</fullName>
+                <default>false</default>
+                <label>Baroda Rajasthan Kshetriya Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Tamil Nadu Grama Bank</fullName>
+                <default>false</default>
+                <label>Tamil Nadu Grama Bank</label>
+            </value>
+            <value>
+                <fullName>Telangana Grameena Bank</fullName>
+                <default>false</default>
+                <label>Telangana Grameena Bank</label>
+            </value>
+            <value>
+                <fullName>Tripura Gramin Bank</fullName>
+                <default>false</default>
+                <label>Tripura Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Aryavart Bank</fullName>
+                <default>false</default>
+                <label>Aryavart Bank</label>
+            </value>
+            <value>
+                <fullName>Baroda UP Bank</fullName>
+                <default>false</default>
+                <label>Baroda UP Bank</label>
+            </value>
+            <value>
+                <fullName>Prathama UP Gramin Bank</fullName>
+                <default>false</default>
+                <label>Prathama UP Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Uttarakhand Gramin Bank</fullName>
+                <default>false</default>
+                <label>Uttarakhand Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Bangiya Gramin Vikash Bank</fullName>
+                <default>false</default>
+                <label>Bangiya Gramin Vikash Bank</label>
+            </value>
+            <value>
+                <fullName>Paschim Banga Gramin Bank</fullName>
+                <default>false</default>
+                <label>Paschim Banga Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Uttarbanga Kshetriya Gramin Bank</fullName>
+                <default>false</default>
+                <label>Uttarbanga Kshetriya Gramin Bank</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Bank_Account_Type__c</fullName>
+    <label>Bank Account Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>COLLECTION Acc</fullName>
+                <default>false</default>
+                <label>COLLECTION Acc</label>
+            </value>
+            <value>
+                <fullName>CORPUS FUND Acc</fullName>
+                <default>false</default>
+                <label>CORPUS FUND Acc</label>
+            </value>
+            <value>
+                <fullName>CURRENT Acc</fullName>
+                <default>false</default>
+                <label>CURRENT Acc</label>
+            </value>
+            <value>
+                <fullName>ESCROW Ac</fullName>
+                <default>false</default>
+                <label>ESCROW Ac</label>
+            </value>
+            <value>
+                <fullName>E TAX Acc</fullName>
+                <default>false</default>
+                <label>E TAX Acc</label>
+            </value>
+            <value>
+                <fullName>EXPENSES Acc</fullName>
+                <default>false</default>
+                <label>EXPENSES Acc</label>
+            </value>
+            <value>
+                <fullName>MAINTENANCE Acc</fullName>
+                <default>false</default>
+                <label>MAINTENANCE Acc</label>
+            </value>
+            <value>
+                <fullName>OD Acc</fullName>
+                <default>false</default>
+                <label>OD Acc</label>
+            </value>
+            <value>
+                <fullName>RERA Acc</fullName>
+                <default>false</default>
+                <label>RERA Acc</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

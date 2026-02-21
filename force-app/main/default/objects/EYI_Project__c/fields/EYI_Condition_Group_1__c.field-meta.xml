@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Condition_Group_1__c</fullName>
+    <label>Condition Group 1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>PMC</fullName>
+                <default>false</default>
+                <label>PMC</label>
+            </value>
+            <value>
+                <fullName>PCMC</fullName>
+                <default>false</default>
+                <label>PCMC</label>
+            </value>
+            <value>
+                <fullName>PMRDA</fullName>
+                <default>false</default>
+                <label>PMRDA</label>
+            </value>
+            <value>
+                <fullName>Township</fullName>
+                <default>false</default>
+                <label>Township</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

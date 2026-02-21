@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Closure_Reason_When_Loan_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  EYI_IsAutomationBypassed__c = false,
+  ISPICKVAL(EYI_Status__c, &quot;Loan Closed&quot;),
+  AND(
+    ISBLANK(TEXT(EYI_Closure_Reason__c)),
+    EYI_Active__c = true
+  )
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Closure_Reason__c</errorDisplayField>
+    <errorMessage>When Status is &apos;Loan Closed&apos;, Closure Reason is required and Active must be unchecked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SGST_Percentage_Calculations__c</fullName>
+    <externalId>false</externalId>
+    <formula>VALUE(
+    MID(
+        TEXT(EYI_GST_Percentage__c),
+        FIND(&quot;-&quot;, TEXT(EYI_GST_Percentage__c)) + 1,
+        LEN(TEXT(EYI_GST_Percentage__c))
+    )
+) / 200</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SGST Percentage Calculation</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>4</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

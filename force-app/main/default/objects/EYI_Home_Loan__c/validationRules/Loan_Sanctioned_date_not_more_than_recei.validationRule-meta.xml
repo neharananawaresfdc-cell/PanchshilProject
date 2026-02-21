@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loan_Sanctioned_date_not_more_than_recei</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(   EYI_IsAutomationBypassed__c  =false ,  ISCHANGED(EYI_Sanction_Date__c) ,NOT( ISNULL(EYI_Sanction_Date__c)), NOT(ISNULL(EYI_Sanction_Received_Date__c ))
+,EYI_Sanction_Date__c &gt; EYI_Sanction_Received_Date__c  )</errorConditionFormula>
+    <errorDisplayField>EYI_Sanction_Date__c</errorDisplayField>
+    <errorMessage>Loan sanction date cannot be after Loan sanction received date.</errorMessage>
+</ValidationRule>

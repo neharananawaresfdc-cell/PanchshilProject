@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan Process Initiated</fullName>
+                <default>true</default>
+                <label>Loan Process Initiated</label>
+            </value>
+            <value>
+                <fullName>HL documentation initiated</fullName>
+                <default>false</default>
+                <label>HL Documentation Initiated</label>
+            </value>
+            <value>
+                <fullName>Loan sanction in progress</fullName>
+                <default>false</default>
+                <label>Loan Sanction In Progress</label>
+            </value>
+            <value>
+                <fullName>Loan sanctioned</fullName>
+                <default>false</default>
+                <label>Loan Sanctioned</label>
+            </value>
+            <value>
+                <fullName>NOC generated</fullName>
+                <default>false</default>
+                <label>NOC Generated</label>
+            </value>
+            <value>
+                <fullName>First Amount Disbursed</fullName>
+                <default>false</default>
+                <label>First Amount Disbursed</label>
+            </value>
+            <value>
+                <fullName>Loan Started</fullName>
+                <default>false</default>
+                <label>Loan Started</label>
+            </value>
+            <value>
+                <fullName>Loan sanction rejected</fullName>
+                <default>false</default>
+                <label>Loan Sanction Rejected</label>
+            </value>
+            <value>
+                <fullName>Loan Closed</fullName>
+                <default>false</default>
+                <label>Loan Closed</label>
+            </value>
+            <value>
+                <fullName>First Disbursement received</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>First Disbursement Received</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

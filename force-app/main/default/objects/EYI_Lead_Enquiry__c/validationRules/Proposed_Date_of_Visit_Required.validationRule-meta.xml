@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Proposed_Date_of_Visit_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+EYI_IsAutomationBypassed__c = false
+,
+OR(TEXT(EYI_Lead_Status__c) = &quot;Visit Proposed&quot;,
+   TEXT(EYI_Lead_Status__c) = &quot;Visit Confirmed&quot;
+   ),
+ISBLANK( DATETIMEVALUE( EYI_Site_Visit_Date__c))
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Site_Visit_Date__c</errorDisplayField>
+    <errorMessage>Please enter Proposed Date and Time of Visit.</errorMessage>
+</ValidationRule>

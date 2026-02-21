@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Walk_in_Sub_source__c</fullName>
+    <label>Walk-in Sub-source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Walk_in_Source__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+                <label>Facebook</label>
+            </value>
+            <value>
+                <fullName>Hoarding</fullName>
+                <default>false</default>
+                <label>Hoarding</label>
+            </value>
+            <value>
+                <fullName>Instagram</fullName>
+                <default>false</default>
+                <label>Instagram</label>
+            </value>
+            <value>
+                <fullName>LinkedIN</fullName>
+                <default>false</default>
+                <label>LinkedIN</label>
+            </value>
+            <value>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <label>SMS</label>
+            </value>
+            <value>
+                <fullName>Taboola</fullName>
+                <default>false</default>
+                <label>Taboola</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>99Acres</fullName>
+                <default>false</default>
+                <label>99Acres</label>
+            </value>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>Bulk Whatsapp_Lost</fullName>
+                <default>false</default>
+                <label>Bulk Whatsapp_Lost</label>
+            </value>
+            <value>
+                <fullName>Centralized IVR</fullName>
+                <default>false</default>
+                <label>Centralized IVR</label>
+            </value>
+            <value>
+                <fullName>Colombia</fullName>
+                <default>false</default>
+                <label>Colombia</label>
+            </value>
+            <value>
+                <fullName>D&amp;B Database</fullName>
+                <default>false</default>
+                <label>D&amp;B Database</label>
+            </value>
+            <value>
+                <fullName>Direct Walk-in at WTC Office</fullName>
+                <default>false</default>
+                <label>Direct Walk-in at WTC Office</label>
+            </value>
+            <value>
+                <fullName>Direct Walk-in at YOO Pune Office</fullName>
+                <default>false</default>
+                <label>Direct Walk-in at YOO Pune Office</label>
+            </value>
+            <value>
+                <fullName>Direct Walk-in at site</fullName>
+                <default>false</default>
+                <label>Direct Walk-in at site</label>
+            </value>
+            <value>
+                <fullName>Emailer</fullName>
+                <default>false</default>
+                <label>Emailer</label>
+            </value>
+            <value>
+                <fullName>Events</fullName>
+                <default>false</default>
+                <label>Events</label>
+            </value>
+            <value>
+                <fullName>Google</fullName>
+                <default>false</default>
+                <label>Google</label>
+            </value>
+            <value>
+                <fullName>HR_Data</fullName>
+                <default>false</default>
+                <label>HR_Data</label>
+            </value>
+            <value>
+                <fullName>IMA_Doctor</fullName>
+                <default>false</default>
+                <label>IMA_Doctor</label>
+            </value>
+            <value>
+                <fullName>IVR</fullName>
+                <default>false</default>
+                <label>IVR</label>
+            </value>
+            <value>
+                <fullName>LOCA</fullName>
+                <default>false</default>
+                <label>LOCA</label>
+            </value>
+            <value>
+                <fullName>Mailers</fullName>
+                <default>false</default>
+                <label>Mailers</label>
+            </value>
+            <value>
+                <fullName>Moneycontrol</fullName>
+                <default>false</default>
+                <label>Moneycontrol</label>
+            </value>
+            <value>
+                <fullName>Native</fullName>
+                <default>false</default>
+                <label>Native</label>
+            </value>
+            <value>
+                <fullName>On Site</fullName>
+                <default>false</default>
+                <label>On Site</label>
+            </value>
+            <value>
+                <fullName>Organic</fullName>
+                <default>false</default>
+                <label>Organic</label>
+            </value>
+            <value>
+                <fullName>Outbrain</fullName>
+                <default>false</default>
+                <label>Outbrain</label>
+            </value>
+            <value>
+                <fullName>Outdoor</fullName>
+                <default>false</default>
+                <label>Outdoor</label>
+            </value>
+            <value>
+                <fullName>Panchshil.com</fullName>
+                <default>false</default>
+                <label>Panchshil.com</label>
+            </value>
+            <value>
+                <fullName>SAS Previous</fullName>
+                <default>false</default>
+                <label>SAS Previous</label>
+            </value>
+            <value>
+                <fullName>SM_Sourcing</fullName>
+                <default>false</default>
+                <label>SM_Sourcing</label>
+            </value>
+            <value>
+                <fullName>Sagar Sir</fullName>
+                <default>false</default>
+                <label>Sagar Sir</label>
+            </value>
+            <value>
+                <fullName>SoHo_040320_TOI</fullName>
+                <default>false</default>
+                <label>SoHo_040320_TOI</label>
+            </value>
+            <value>
+                <fullName>VDNB_New</fullName>
+                <default>false</default>
+                <label>VDNB_New</label>
+            </value>
+            <value>
+                <fullName>Verloop</fullName>
+                <default>false</default>
+                <label>Verloop</label>
+            </value>
+            <value>
+                <fullName>Zoom info</fullName>
+                <default>false</default>
+                <label>Zoom info</label>
+            </value>
+            <value>
+                <fullName>whatsapp</fullName>
+                <default>false</default>
+                <label>whatsapp</label>
+            </value>
+            <value>
+                <fullName>Atul Sir</fullName>
+                <default>false</default>
+                <label>Atul Sir</label>
+            </value>
+            <value>
+                <fullName>Mcube</fullName>
+                <default>false</default>
+                <label>Mcube</label>
+            </value>
+            <value>
+                <fullName>Booked_Cancelled</fullName>
+                <default>false</default>
+                <label>Booked_Cancelled</label>
+            </value>
+            <value>
+                <fullName>Employee</fullName>
+                <default>false</default>
+                <label>Employee</label>
+            </value>
+            <value>
+                <fullName>Existing Client</fullName>
+                <default>false</default>
+                <label>Existing Client</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>CTI</fullName>
+                <default>false</default>
+                <label>CTI</label>
+            </value>
+            <value>
+                <fullName>REC Lead</fullName>
+                <default>false</default>
+                <label>REC Lead</label>
+            </value>
+            <value>
+                <fullName>Privilege</fullName>
+                <default>false</default>
+                <label>Privilege</label>
+            </value>
+            <value>
+                <fullName>99 Acres</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>99 Acres</label>
+            </value>
+            <value>
+                <fullName>AIC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>AIC</label>
+            </value>
+            <value>
+                <fullName>Billboard</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Billboard</label>
+            </value>
+            <value>
+                <fullName>Bombay Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bombay Times</label>
+            </value>
+            <value>
+                <fullName>Bulk Whatsapp_NC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bulk Whatsapp_NC</label>
+            </value>
+            <value>
+                <fullName>Bus Shelter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bus Shelter</label>
+            </value>
+            <value>
+                <fullName>Bus Wrap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bus Wrap</label>
+            </value>
+            <value>
+                <fullName>Cable Network</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cable Network</label>
+            </value>
+            <value>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Channel Partner</label>
+            </value>
+            <value>
+                <fullName>Columbia Ads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Columbia Ads</label>
+            </value>
+            <value>
+                <fullName>Common Floor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Common Floor</label>
+            </value>
+            <value>
+                <fullName>Direct</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Direct</label>
+            </value>
+            <value>
+                <fullName>Direct Walk-in at HO</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Direct Walk-in at HO</label>
+            </value>
+            <value>
+                <fullName>Economic Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Economic Times</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Email</label>
+            </value>
+            <value>
+                <fullName>Existing CP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Existing CP</label>
+            </value>
+            <value>
+                <fullName>Facebook Lead Gen</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Facebook Lead Gen</label>
+            </value>
+            <value>
+                <fullName>GDN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GDN</label>
+            </value>
+            <value>
+                <fullName>GSN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GSN</label>
+            </value>
+            <value>
+                <fullName>Google Ads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Ads</label>
+            </value>
+            <value>
+                <fullName>Google Discovery</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Discovery</label>
+            </value>
+            <value>
+                <fullName>Google Display</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Display</label>
+            </value>
+            <value>
+                <fullName>Google Search</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Search</label>
+            </value>
+            <value>
+                <fullName>Google Video</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Google Video</label>
+            </value>
+            <value>
+                <fullName>Gujarat Samachar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gujarat Samachar</label>
+            </value>
+            <value>
+                <fullName>Hindustan Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Hindustan Times</label>
+            </value>
+            <value>
+                <fullName>Housing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Housing</label>
+            </value>
+            <value>
+                <fullName>Housing.com</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Housing.com</label>
+            </value>
+            <value>
+                <fullName>India Property</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>India Property</label>
+            </value>
+            <value>
+                <fullName>Indian Express</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Indian Express</label>
+            </value>
+            <value>
+                <fullName>Inmobi</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inmobi</label>
+            </value>
+            <value>
+                <fullName>Inshort</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Inshort</label>
+            </value>
+            <value>
+                <fullName>Lokmat</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lokmat</label>
+            </value>
+            <value>
+                <fullName>Loksatta</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loksatta</label>
+            </value>
+            <value>
+                <fullName>Lost Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Lost Leads</label>
+            </value>
+            <value>
+                <fullName>Loyalty</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Loyalty</label>
+            </value>
+            <value>
+                <fullName>MCHI</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MCHI</label>
+            </value>
+            <value>
+                <fullName>Magazine</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Magazine</label>
+            </value>
+            <value>
+                <fullName>Magic Bricks</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Magic Bricks</label>
+            </value>
+            <value>
+                <fullName>Maharashtra Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Maharashtra Times</label>
+            </value>
+            <value>
+                <fullName>Makaan</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Makaan</label>
+            </value>
+            <value>
+                <fullName>Mall Activation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mall Activation</label>
+            </value>
+            <value>
+                <fullName>Matterport</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Matterport</label>
+            </value>
+            <value>
+                <fullName>Mint</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mint</label>
+            </value>
+            <value>
+                <fullName>Mumbai Mirror</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mumbai Mirror</label>
+            </value>
+            <value>
+                <fullName>Navbharat Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Navbharat Times</label>
+            </value>
+            <value>
+                <fullName>New CP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New CP</label>
+            </value>
+            <value>
+                <fullName>OTT</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>OTT</label>
+            </value>
+            <value>
+                <fullName>Old Digital Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Old Digital Leads</label>
+            </value>
+            <value>
+                <fullName>Old Offline Leads</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Old Offline Leads</label>
+            </value>
+            <value>
+                <fullName>Old Walk ins</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Old Walk ins</label>
+            </value>
+            <value>
+                <fullName>Platform Branding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Platform Branding</label>
+            </value>
+            <value>
+                <fullName>PreSales Executive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PreSales Executive</label>
+            </value>
+            <value>
+                <fullName>Project Website</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Project Website</label>
+            </value>
+            <value>
+                <fullName>Property Plus</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Property Plus</label>
+            </value>
+            <value>
+                <fullName>Property Times</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Property Times</label>
+            </value>
+            <value>
+                <fullName>Quikr</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Quikr</label>
+            </value>
+            <value>
+                <fullName>Radio</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Radio</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Retail</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Retail</label>
+            </value>
+            <value>
+                <fullName>SIS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SIS</label>
+            </value>
+            <value>
+                <fullName>Sakal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sakal</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Site Branding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Site Branding</label>
+            </value>
+            <value>
+                <fullName>Social Media</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Social Media</label>
+            </value>
+            <value>
+                <fullName>Society Activation</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Society Activation</label>
+            </value>
+            <value>
+                <fullName>Sulekha</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Sulekha</label>
+            </value>
+            <value>
+                <fullName>Times Group</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Times Group</label>
+            </value>
+            <value>
+                <fullName>Times of India</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Times of India</label>
+            </value>
+            <value>
+                <fullName>Traditional TV</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Traditional TV</label>
+            </value>
+            <value>
+                <fullName>Train Wrap</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Train Wrap</label>
+            </value>
+            <value>
+                <fullName>Twitter</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Twitter</label>
+            </value>
+            <value>
+                <fullName>Yahoo Native</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Yahoo Native</label>
+            </value>
+            <value>
+                <fullName>YouTube</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>YouTube</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Bulk Whatsapp_Lost</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>HR_Data</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>IVR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>On Site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>SAS Previous</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>SM_Sourcing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>VDNB_New</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Presales</controllingFieldValue>
+            <valueName>Zoom info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Privilege</controllingFieldValue>
+            <valueName>Privilege</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>REC Lead</controllingFieldValue>
+            <valueName>REC Lead</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Direct Client</controllingFieldValue>
+            <valueName>Direct Walk-in at WTC Office</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Direct Client</controllingFieldValue>
+            <valueName>Direct Walk-in at YOO Pune Office</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Direct Client</controllingFieldValue>
+            <valueName>Direct Walk-in at site</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SM Self Sourcing</controllingFieldValue>
+            <valueName>Booked_Cancelled</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Facebook</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Instagram</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>LinkedIN</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Taboola</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>99Acres</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Amazon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Colombia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Google</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>LOCA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Mailers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Moneycontrol</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Native</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Organic</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Outbrain</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Panchshil.com</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Verloop</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>whatsapp</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Web</controllingFieldValue>
+            <valueName>Mcube</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Management</controllingFieldValue>
+            <valueName>Sagar Sir</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Management</controllingFieldValue>
+            <valueName>Atul Sir</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVR</controllingFieldValue>
+            <valueName>Centralized IVR</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>IVR</controllingFieldValue>
+            <valueName>Outdoor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Employee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <controllingFieldValue>Existing Client</controllingFieldValue>
+            <valueName>Existing Client</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Referral</controllingFieldValue>
+            <valueName>Corporate</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>CTI</controllingFieldValue>
+            <valueName>CTI</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Hoarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>SMS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Emailer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Marketing</controllingFieldValue>
+            <valueName>Events</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

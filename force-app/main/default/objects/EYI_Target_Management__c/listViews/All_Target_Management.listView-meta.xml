@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Target_Management</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Target_KPI__c</columns>
+    <columns>EYI_Target_Module__c</columns>
+    <columns>EYI_Target_Month_Date__c</columns>
+    <columns>EYI_Target_Number__c</columns>
+    <columns>EYI_AchivementsNumtoPer__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Target_Module__c</field>
+        <operation>equals</operation>
+        <value>Presales</value>
+    </filters>
+    <label>Presales Target Management</label>
+    <sharedTo>
+        <role>Sourcing_TL_3</role>
+        <roleAndSubordinatesInternal>Pre_Sales_Head</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

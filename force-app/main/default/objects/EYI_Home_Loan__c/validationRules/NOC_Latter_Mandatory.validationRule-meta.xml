@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NOC_Latter_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(EYI_IsAutomationBypassed__c) &amp;&amp;
+NOT(ISPICKVAL(EYI_Status__c, &apos;Loan Process Initiated&apos;) || ISPICKVAL(EYI_Status__c, &apos;HL documentation initiated&apos;) || ISPICKVAL(EYI_Status__c, &apos;Loan sanction in progress&apos;) || ISPICKVAL(EYI_Status__c, &apos;Loan sanction rejected&apos;) || ISPICKVAL(EYI_Status__c, &apos;Loan sanctioned&apos;) || ISPICKVAL(EYI_Status__c, &apos;Loan Closed&apos;)
+) &amp;&amp;
+ISBLANK(NOC_Document_Generated_Date__c)</errorConditionFormula>
+    <errorDisplayField>EYI_Status__c</errorDisplayField>
+    <errorMessage>Please provide the NOC Letter should be updated for making the status progress at this stage!</errorMessage>
+</ValidationRule>

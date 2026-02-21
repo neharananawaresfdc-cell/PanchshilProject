@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Inventory_Not_Present_on_Opp</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK(EYI_Opportunity__r.EYI_Inventory__c )</errorConditionFormula>
+    <errorMessage>No inventory mapping found. Please ensure the inventory is linked correctly before proceeding.</errorMessage>
+</ValidationRule>

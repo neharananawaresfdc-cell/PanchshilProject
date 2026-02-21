@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Tax_Code__c</fullName>
+    <label>Tax Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Output GST Taxable</fullName>
+                <default>true</default>
+                <label>Output GST Taxable</label>
+            </value>
+            <value>
+                <fullName>input TCS</fullName>
+                <default>false</default>
+                <label>input TCS</label>
+            </value>
+            <value>
+                <fullName>Output GST NIL Rate</fullName>
+                <default>false</default>
+                <label>Output GST NIL Rate</label>
+            </value>
+            <value>
+                <fullName>Output GST Reverse Charge</fullName>
+                <default>false</default>
+                <label>Output GST Reverse Charge</label>
+            </value>
+            <value>
+                <fullName>Output GST SEZ - NIL Rate</fullName>
+                <default>false</default>
+                <label>Output GST SEZ - NIL Rate</label>
+            </value>
+            <value>
+                <fullName>Output GST SEZ - Taxable</fullName>
+                <default>false</default>
+                <label>Output GST SEZ - Taxable</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt CGST/SGST - 5%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt CGST/SGST - 5%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt CGST/SGST - 12%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt CGST/SGST - 12%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt CGST/SGST - 18%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt CGST/SGST - 18%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt CGST/SGST - 28%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt CGST/SGST - 28%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt IGST - 5%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt IGST - 5%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt IGST - 12%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt IGST - 12%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt IGST - 18%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt IGST - 18%</label>
+            </value>
+            <value>
+                <fullName>Output Advance Receipt IGST - 28%</fullName>
+                <default>false</default>
+                <label>Output Advance Receipt IGST - 28%</label>
+            </value>
+            <value>
+                <fullName>Foreign Exchange</fullName>
+                <default>false</default>
+                <label>Foreign Exchange</label>
+            </value>
+            <value>
+                <fullName>Import GST</fullName>
+                <default>false</default>
+                <label>Import GST</label>
+            </value>
+            <value>
+                <fullName>RCM Input GST</fullName>
+                <default>false</default>
+                <label>RCM Input GST</label>
+            </value>
+            <value>
+                <fullName>output Interim TCS</fullName>
+                <default>false</default>
+                <label>output Interim TCS</label>
+            </value>
+            <value>
+                <fullName>output TCS Payable</fullName>
+                <default>false</default>
+                <label>output TCS Payable</label>
+            </value>
+            <value>
+                <fullName>Input GST</fullName>
+                <default>false</default>
+                <label>Input GST</label>
+            </value>
+            <value>
+                <fullName>Input GST 0%</fullName>
+                <default>false</default>
+                <label>Input GST 0%</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Quote__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <label>Quote</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.EYI_Opportunity_Name__c</field>
+            <operation>equals</operation>
+            <valueField>Quote.OpportunityId</valueField>
+        </filterItems>
+        <filterItems>
+            <field>Quote.EYI_Is_Payment_Plan_Submitted__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Quote</referenceTo>
+    <relationshipLabel>Deviation Plans</relationshipLabel>
+    <relationshipName>Deviation_Plans</relationshipName>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

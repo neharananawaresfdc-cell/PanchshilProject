@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_First_Name__c</columns>
+    <columns>EYI_Last_Name__c</columns>
+    <columns>EYI_CIF_Type__c</columns>
+    <columns>EYI_Project_Enquired__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>EYI_Region__c</columns>
+    <columns>EYI_City__c</columns>
+    <columns>EYI_Free_Text_City__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

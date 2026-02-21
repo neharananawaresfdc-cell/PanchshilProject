@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sub_Asset_Class__c</fullName>
+    <label>Sub Asset Class</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Asset_Class__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Plot</fullName>
+                <default>false</default>
+                <label>Plot</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+            <value>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+                <label>Apartment</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Retail and F&amp;B</fullName>
+                <default>false</default>
+                <label>Retail and F&amp;B</label>
+            </value>
+            <value>
+                <fullName>Office Space</fullName>
+                <default>false</default>
+                <label>Office Space</label>
+            </value>
+            <value>
+                <fullName>Business Units</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Business Units</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>Plot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>Villa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>Apartment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>Business Unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>Retail and F&amp;B</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>Office Space</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

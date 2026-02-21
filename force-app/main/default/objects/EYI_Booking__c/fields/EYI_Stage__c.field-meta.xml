@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Stage__c</fullName>
+    <label>Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pre-Boarding</fullName>
+                <default>false</default>
+                <label>Pre-Boarding</label>
+            </value>
+            <value>
+                <fullName>Pre-Registration</fullName>
+                <default>false</default>
+                <label>Pre-Registration</label>
+            </value>
+            <value>
+                <fullName>Post On Boarding</fullName>
+                <default>false</default>
+                <label>Post On Boarding</label>
+            </value>
+            <value>
+                <fullName>Post Registration Cancellation (by customer)</fullName>
+                <default>false</default>
+                <label>Post Registration Cancellation (by customer)</label>
+            </value>
+            <value>
+                <fullName>Post Registration Cancellation (by self-funded)</fullName>
+                <default>false</default>
+                <label>Post Registration Cancellation (by self-funded)</label>
+            </value>
+            <value>
+                <fullName>Post Registration Cancellation (by bank-funded)</fullName>
+                <default>false</default>
+                <label>Post Registration Cancellation (by bank-funded)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

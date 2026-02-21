@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Reason_for_Non_Collectible__c</fullName>
+    <label>Reason for Non-Collectible</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loan Eligibility Issue</fullName>
+                <default>false</default>
+                <label>Loan Eligibility Issue</label>
+            </value>
+            <value>
+                <fullName>Fund Issue</fullName>
+                <default>false</default>
+                <label>Fund Issue</label>
+            </value>
+            <value>
+                <fullName>Not Reachable/Responding</fullName>
+                <default>false</default>
+                <label>Not Reachable/Responding</label>
+            </value>
+            <value>
+                <fullName>Customer Availability Issue</fullName>
+                <default>false</default>
+                <label>Customer Availability Issue</label>
+            </value>
+            <value>
+                <fullName>Legal dispute</fullName>
+                <default>false</default>
+                <label>Legal dispute</label>
+            </value>
+            <value>
+                <fullName>Management reference customer</fullName>
+                <default>false</default>
+                <label>Management reference customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

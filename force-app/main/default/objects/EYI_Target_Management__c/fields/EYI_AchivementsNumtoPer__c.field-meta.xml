@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_AchivementsNumtoPer__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISPICKVAL(EYI_Target_KPI__c, &quot;Lead to Walk-In Conversion ratio&quot;),
+    TEXT(ROUND(EYI_Achivements__c, 2)) &amp; &quot;%&quot;,
+    TEXT(EYI_Achivements__c)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Achivements</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

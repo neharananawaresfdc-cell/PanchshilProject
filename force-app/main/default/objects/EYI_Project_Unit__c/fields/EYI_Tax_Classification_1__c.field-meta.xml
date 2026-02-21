@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Tax_Classification_1__c</fullName>
+    <label>Tax Classification 1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GST Registered</fullName>
+                <default>false</default>
+                <label>GST Registered</label>
+            </value>
+            <value>
+                <fullName>Not Registered</fullName>
+                <default>false</default>
+                <label>Not Registered</label>
+            </value>
+            <value>
+                <fullName>SEZ Developer</fullName>
+                <default>false</default>
+                <label>SEZ Developer</label>
+            </value>
+            <value>
+                <fullName>Deemed Exports</fullName>
+                <default>false</default>
+                <label>Deemed Exports</label>
+            </value>
+            <value>
+                <fullName>Exports Sales</fullName>
+                <default>false</default>
+                <label>Exports Sales</label>
+            </value>
+            <value>
+                <fullName>Taxable under SEZ</fullName>
+                <default>false</default>
+                <label>Taxable under SEZ</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

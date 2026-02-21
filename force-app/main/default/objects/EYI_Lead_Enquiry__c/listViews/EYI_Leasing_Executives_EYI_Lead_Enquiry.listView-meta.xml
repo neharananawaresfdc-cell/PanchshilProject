@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Leasing_Executives_EYI_Lead_Enquiry</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Leasing Executives</label>
+    <queue>EYI_Leasing_Executives</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

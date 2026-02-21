@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Configuration_Types__c</fullName>
+    <label>Configuration Types</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2BHK</fullName>
+                <default>false</default>
+                <label>2BHK</label>
+            </value>
+            <value>
+                <fullName>3BHK</fullName>
+                <default>false</default>
+                <label>3BHK</label>
+            </value>
+            <value>
+                <fullName>4BHK</fullName>
+                <default>false</default>
+                <label>4BHK</label>
+            </value>
+            <value>
+                <fullName>3.5BHK</fullName>
+                <default>false</default>
+                <label>3.5BHK</label>
+            </value>
+            <value>
+                <fullName>4.5BHK</fullName>
+                <default>false</default>
+                <label>4.5BHK</label>
+            </value>
+            <value>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+                <label>Penthouse</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Office Spaces</fullName>
+                <default>false</default>
+                <label>Office Spaces</label>
+            </value>
+            <value>
+                <fullName>Retail Store</fullName>
+                <default>false</default>
+                <label>Retail Store</label>
+            </value>
+            <value>
+                <fullName>Retail Unit</fullName>
+                <default>false</default>
+                <label>Retail Unit</label>
+            </value>
+            <value>
+                <fullName>Duplex</fullName>
+                <default>false</default>
+                <label>Duplex</label>
+            </value>
+            <value>
+                <fullName>Simplex</fullName>
+                <default>false</default>
+                <label>Simplex</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+            <value>
+                <fullName>Plot</fullName>
+                <default>false</default>
+                <label>Plot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_State_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( 
+    UPPER(EYI_State__c), 
+    &quot;ANDRA PRADESH&quot;, &quot;01&quot;,
+    &quot;ARUNACHAL PRADESH&quot;, &quot;02&quot;,
+    &quot;ASSAM&quot;, &quot;03&quot;,
+    &quot;BIHAR&quot;, &quot;04&quot;,
+    &quot;GOA&quot;, &quot;05&quot;,
+    &quot;GUJARAT&quot;, &quot;06&quot;,
+    &quot;HARYANA&quot;, &quot;07&quot;,
+    &quot;HIMACHAL PRADESH&quot;, &quot;08&quot;,
+    &quot;JAMMU UND KASHMIR&quot;, &quot;09&quot;,
+    &quot;KARNATAKA&quot;, &quot;10&quot;,
+    &quot;KERALA&quot;, &quot;11&quot;,
+    &quot;MADHYA PRADESH&quot;, &quot;12&quot;,
+    &quot;MAHARASHTRA&quot;, &quot;13&quot;,
+    &quot;MANIPUR&quot;, &quot;14&quot;,
+    &quot;MEGALAYA&quot;, &quot;15&quot;,
+    &quot;MIZORAM&quot;, &quot;16&quot;,
+    &quot;NAGALAND&quot;, &quot;17&quot;,
+    &quot;ORISSA&quot;, &quot;18&quot;,
+    &quot;PUNJAB&quot;, &quot;19&quot;,
+    &quot;RAJASTHAN&quot;, &quot;20&quot;,
+    &quot;SIKKIM&quot;, &quot;21&quot;,
+    &quot;TAMIL NADU&quot;, &quot;22&quot;,
+    &quot;TRIPURA&quot;, &quot;23&quot;,
+    &quot;UTTAR PRADESH&quot;, &quot;24&quot;,
+    &quot;WEST BENGAL&quot;, &quot;25&quot;,
+    &quot;ANDAMAN UND NICO.IN.&quot;, &quot;26&quot;,
+    &quot;CHANDIGARH&quot;, &quot;27&quot;,
+    &quot;DADRA UND NAGAR HAV.&quot;, &quot;28&quot;,
+    &quot;DAMAN UND DIU&quot;, &quot;29&quot;,
+    &quot;DELHI&quot;, &quot;30&quot;,
+    &quot;LAKSHADWEEP&quot;, &quot;31&quot;,
+    &quot;PONDICHERRY&quot;, &quot;32&quot;,
+    &quot;CHHAATTISGARH&quot;, &quot;33&quot;,
+    &quot;JHARKHAND&quot;, &quot;34&quot;,
+    &quot;UTTARANCHAL&quot;, &quot;35&quot;,
+    &quot;TELANGANA&quot;, &quot;36&quot;,
+    &quot;00&quot; 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>State Formula</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Booking_Classification__c</fullName>
+    <label>Booking Classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fresh Sale</fullName>
+                <default>true</default>
+                <label>Fresh Sale</label>
+            </value>
+            <value>
+                <fullName>Transfer Booking</fullName>
+                <default>false</default>
+                <label>Transfer Booking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

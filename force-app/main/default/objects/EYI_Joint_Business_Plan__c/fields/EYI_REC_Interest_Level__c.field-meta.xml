@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_REC_Interest_Level__c</fullName>
+    <label>REC Interest Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Interested to Work Immediately</fullName>
+                <default>false</default>
+                <label>Interested to Work Immediately</label>
+            </value>
+            <value>
+                <fullName>Interested to Work After CP Meet</fullName>
+                <default>false</default>
+                <label>Interested to Work After CP Meet</label>
+            </value>
+            <value>
+                <fullName>Not Interested to Work</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Interested to Work</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

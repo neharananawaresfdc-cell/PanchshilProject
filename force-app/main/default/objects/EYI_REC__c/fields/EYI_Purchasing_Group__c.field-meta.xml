@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Purchasing_Group__c</fullName>
+    <label>Purchasing Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Central Purch Org</fullName>
+                <default>false</default>
+                <label>Central Purch Org</label>
+            </value>
+            <value>
+                <fullName>Constrn. POrg, Pune</fullName>
+                <default>false</default>
+                <label>Constrn. POrg, Pune</label>
+            </value>
+            <value>
+                <fullName>FM POrg, Pune</fullName>
+                <default>false</default>
+                <label>FM POrg, Pune</label>
+            </value>
+            <value>
+                <fullName>HR/IT/AC ADMIN</fullName>
+                <default>false</default>
+                <label>HR/IT/AC ADMIN</label>
+            </value>
+            <value>
+                <fullName>Interior POrg, Pune</fullName>
+                <default>false</default>
+                <label>Interior POrg, Pune</label>
+            </value>
+            <value>
+                <fullName>Service POrg, Pune</fullName>
+                <default>false</default>
+                <label>Service POrg, Pune</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

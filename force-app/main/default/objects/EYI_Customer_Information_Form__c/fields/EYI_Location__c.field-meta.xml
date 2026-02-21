@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Location__c</fullName>
+    <label>Location</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>NA</fullName>
+                <default>false</default>
+                <label>NA</label>
+            </value>
+            <value>
+                <fullName>ABC chowk</fullName>
+                <default>false</default>
+                <label>ABC chowk</label>
+            </value>
+            <value>
+                <fullName>Ambegaon</fullName>
+                <default>false</default>
+                <label>Ambegaon</label>
+            </value>
+            <value>
+                <fullName>Aundh</fullName>
+                <default>false</default>
+                <label>Aundh</label>
+            </value>
+            <value>
+                <fullName>Balewadi</fullName>
+                <default>false</default>
+                <label>Balewadi</label>
+            </value>
+            <value>
+                <fullName>Baner</fullName>
+                <default>false</default>
+                <label>Baner</label>
+            </value>
+            <value>
+                <fullName>Bavdhan</fullName>
+                <default>false</default>
+                <label>Bavdhan</label>
+            </value>
+            <value>
+                <fullName>BT Kawade Rd</fullName>
+                <default>false</default>
+                <label>BT Kawade Rd</label>
+            </value>
+            <value>
+                <fullName>Camp</fullName>
+                <default>false</default>
+                <label>Camp</label>
+            </value>
+            <value>
+                <fullName>Dapodi</fullName>
+                <default>false</default>
+                <label>Dapodi</label>
+            </value>
+            <value>
+                <fullName>Dhanori</fullName>
+                <default>false</default>
+                <label>Dhanori</label>
+            </value>
+            <value>
+                <fullName>DP Rd</fullName>
+                <default>false</default>
+                <label>DP Rd</label>
+            </value>
+            <value>
+                <fullName>Ghorpadi</fullName>
+                <default>false</default>
+                <label>Ghorpadi</label>
+            </value>
+            <value>
+                <fullName>Gokhalenagar</fullName>
+                <default>false</default>
+                <label>Gokhalenagar</label>
+            </value>
+            <value>
+                <fullName>Hadapsar</fullName>
+                <default>false</default>
+                <label>Hadapsar</label>
+            </value>
+            <value>
+                <fullName>Hinjewadi</fullName>
+                <default>false</default>
+                <label>Hinjewadi</label>
+            </value>
+            <value>
+                <fullName>Kalas</fullName>
+                <default>false</default>
+                <label>Kalas</label>
+            </value>
+            <value>
+                <fullName>Kalyaninagar</fullName>
+                <default>false</default>
+                <label>Kalyaninagar</label>
+            </value>
+            <value>
+                <fullName>Karvenagar</fullName>
+                <default>false</default>
+                <label>Karvenagar</label>
+            </value>
+            <value>
+                <fullName>Katraj</fullName>
+                <default>false</default>
+                <label>Katraj</label>
+            </value>
+            <value>
+                <fullName>Khadki</fullName>
+                <default>false</default>
+                <label>Khadki</label>
+            </value>
+            <value>
+                <fullName>Kharadi</fullName>
+                <default>false</default>
+                <label>Kharadi</label>
+            </value>
+            <value>
+                <fullName>Kondhwa</fullName>
+                <default>false</default>
+                <label>Kondhwa</label>
+            </value>
+            <value>
+                <fullName>Koregaon Park</fullName>
+                <default>false</default>
+                <label>Koregaon Park</label>
+            </value>
+            <value>
+                <fullName>Kothrud</fullName>
+                <default>false</default>
+                <label>Kothrud</label>
+            </value>
+            <value>
+                <fullName>Lohegaon</fullName>
+                <default>false</default>
+                <label>Lohegaon</label>
+            </value>
+            <value>
+                <fullName>Magarpatta</fullName>
+                <default>false</default>
+                <label>Magarpatta</label>
+            </value>
+            <value>
+                <fullName>MG Road</fullName>
+                <default>false</default>
+                <label>MG Road</label>
+            </value>
+            <value>
+                <fullName>Mundhwa</fullName>
+                <default>false</default>
+                <label>Mundhwa</label>
+            </value>
+            <value>
+                <fullName>New Sanghvi</fullName>
+                <default>false</default>
+                <label>New Sanghvi</label>
+            </value>
+            <value>
+                <fullName>NIBM Road</fullName>
+                <default>false</default>
+                <label>NIBM Road</label>
+            </value>
+            <value>
+                <fullName>Old Sanghvi</fullName>
+                <default>false</default>
+                <label>Old Sanghvi</label>
+            </value>
+            <value>
+                <fullName>Pashan</fullName>
+                <default>false</default>
+                <label>Pashan</label>
+            </value>
+            <value>
+                <fullName>Paud Road</fullName>
+                <default>false</default>
+                <label>Paud Road</label>
+            </value>
+            <value>
+                <fullName>Pimple Nilakh</fullName>
+                <default>false</default>
+                <label>Pimple Nilakh</label>
+            </value>
+            <value>
+                <fullName>Pimple Saudagar</fullName>
+                <default>false</default>
+                <label>Pimple Saudagar</label>
+            </value>
+            <value>
+                <fullName>Pimpri</fullName>
+                <default>false</default>
+                <label>PIMPRI</label>
+            </value>
+            <value>
+                <fullName>Punawale</fullName>
+                <default>false</default>
+                <label>Punawale</label>
+            </value>
+            <value>
+                <fullName>Sahakarnagar</fullName>
+                <default>false</default>
+                <label>Sahakarnagar</label>
+            </value>
+            <value>
+                <fullName>SB Road</fullName>
+                <default>false</default>
+                <label>SB Road</label>
+            </value>
+            <value>
+                <fullName>Shastrinagar</fullName>
+                <default>false</default>
+                <label>Shastrinagar</label>
+            </value>
+            <value>
+                <fullName>Shivajinagar</fullName>
+                <default>false</default>
+                <label>Shivajinagar</label>
+            </value>
+            <value>
+                <fullName>Sinhagad Road</fullName>
+                <default>false</default>
+                <label>Sinhagad Road</label>
+            </value>
+            <value>
+                <fullName>Sus Road</fullName>
+                <default>false</default>
+                <label>Sus Road</label>
+            </value>
+            <value>
+                <fullName>Swargate</fullName>
+                <default>false</default>
+                <label>Swargate</label>
+            </value>
+            <value>
+                <fullName>Talegaon</fullName>
+                <default>false</default>
+                <label>Talegaon</label>
+            </value>
+            <value>
+                <fullName>Tathawade</fullName>
+                <default>false</default>
+                <label>Tathawade</label>
+            </value>
+            <value>
+                <fullName>Tingrenagar</fullName>
+                <default>false</default>
+                <label>Tingrenagar</label>
+            </value>
+            <value>
+                <fullName>Undri</fullName>
+                <default>false</default>
+                <label>Undri</label>
+            </value>
+            <value>
+                <fullName>Vimannagar</fullName>
+                <default>false</default>
+                <label>Vimannagar</label>
+            </value>
+            <value>
+                <fullName>Vishrantwadi</fullName>
+                <default>false</default>
+                <label>Vishrantwadi</label>
+            </value>
+            <value>
+                <fullName>Wadgaon Sheri</fullName>
+                <default>false</default>
+                <label>Wadgaon Sheri</label>
+            </value>
+            <value>
+                <fullName>Wagholi</fullName>
+                <default>false</default>
+                <label>Wagholi</label>
+            </value>
+            <value>
+                <fullName>Wakad</fullName>
+                <default>false</default>
+                <label>Wakad</label>
+            </value>
+            <value>
+                <fullName>Warje</fullName>
+                <default>false</default>
+                <label>Warje</label>
+            </value>
+            <value>
+                <fullName>Yerawada</fullName>
+                <default>false</default>
+                <label>Yerawada</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

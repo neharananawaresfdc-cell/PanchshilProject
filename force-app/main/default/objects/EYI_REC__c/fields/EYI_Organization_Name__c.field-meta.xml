@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Organization_Name__c</fullName>
+    <label>Organization Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>3M</fullName>
+                <default>false</default>
+                <label>3M</label>
+            </value>
+            <value>
+                <fullName>ABB</fullName>
+                <default>false</default>
+                <label>ABB</label>
+            </value>
+            <value>
+                <fullName>ACC Limited</fullName>
+                <default>false</default>
+                <label>ACC Limited</label>
+            </value>
+            <value>
+                <fullName>Accenture</fullName>
+                <default>false</default>
+                <label>Accenture</label>
+            </value>
+            <value>
+                <fullName>Addeco India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Addeco India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Aditya Brila</fullName>
+                <default>false</default>
+                <label>Aditya Brila</label>
+            </value>
+            <value>
+                <fullName>Adobe</fullName>
+                <default>false</default>
+                <label>Adobe</label>
+            </value>
+            <value>
+                <fullName>Airbus</fullName>
+                <default>false</default>
+                <label>Airbus</label>
+            </value>
+            <value>
+                <fullName>Alltire</fullName>
+                <default>false</default>
+                <label>Alltire</label>
+            </value>
+            <value>
+                <fullName>Alstom&apos;s</fullName>
+                <default>false</default>
+                <label>Alstom&apos;s</label>
+            </value>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>Amdocs</fullName>
+                <default>false</default>
+                <label>Amdocs</label>
+            </value>
+            <value>
+                <fullName>Anna University</fullName>
+                <default>false</default>
+                <label>Anna University</label>
+            </value>
+            <value>
+                <fullName>ANZ</fullName>
+                <default>false</default>
+                <label>ANZ</label>
+            </value>
+            <value>
+                <fullName>Apolo Hospital</fullName>
+                <default>false</default>
+                <label>Apolo Hospital</label>
+            </value>
+            <value>
+                <fullName>Ashokleyland</fullName>
+                <default>false</default>
+                <label>Ashokleyland</label>
+            </value>
+            <value>
+                <fullName>Aster CMI Hospital</fullName>
+                <default>false</default>
+                <label>Aster CMI Hospital</label>
+            </value>
+            <value>
+                <fullName>Astra Zeneca</fullName>
+                <default>false</default>
+                <label>Astra Zeneca</label>
+            </value>
+            <value>
+                <fullName>Avaya</fullName>
+                <default>false</default>
+                <label>Avaya</label>
+            </value>
+            <value>
+                <fullName>Axis</fullName>
+                <default>false</default>
+                <label>Axis</label>
+            </value>
+            <value>
+                <fullName>Bank Of New York</fullName>
+                <default>false</default>
+                <label>Bank Of New York</label>
+            </value>
+            <value>
+                <fullName>Barclays India Pvt ltd</fullName>
+                <default>false</default>
+                <label>Barclays India Pvt ltd</label>
+            </value>
+            <value>
+                <fullName>BEML Areospace Division</fullName>
+                <default>false</default>
+                <label>BEML Areospace Division</label>
+            </value>
+            <value>
+                <fullName>Bharat Forge</fullName>
+                <default>false</default>
+                <label>Bharat Forge</label>
+            </value>
+            <value>
+                <fullName>BIAL</fullName>
+                <default>false</default>
+                <label>BIAL</label>
+            </value>
+            <value>
+                <fullName>Biocon</fullName>
+                <default>false</default>
+                <label>Biocon</label>
+            </value>
+            <value>
+                <fullName>Bisleri</fullName>
+                <default>false</default>
+                <label>Bisleri</label>
+            </value>
+            <value>
+                <fullName>BNY Mellon</fullName>
+                <default>false</default>
+                <label>BNY Mellon</label>
+            </value>
+            <value>
+                <fullName>Boeing India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Boeing India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Bosch</fullName>
+                <default>false</default>
+                <label>Bosch</label>
+            </value>
+            <value>
+                <fullName>Canara Bank</fullName>
+                <default>false</default>
+                <label>Canara Bank</label>
+            </value>
+            <value>
+                <fullName>CapGemini</fullName>
+                <default>false</default>
+                <label>CapGemini</label>
+            </value>
+            <value>
+                <fullName>Capita India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Capita India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Cerner Health Care</fullName>
+                <default>false</default>
+                <label>Cerner Health Care</label>
+            </value>
+            <value>
+                <fullName>CGI</fullName>
+                <default>false</default>
+                <label>CGI</label>
+            </value>
+            <value>
+                <fullName>Chettinad Hospital</fullName>
+                <default>false</default>
+                <label>Chettinad Hospital</label>
+            </value>
+            <value>
+                <fullName>Cisco</fullName>
+                <default>false</default>
+                <label>Cisco</label>
+            </value>
+            <value>
+                <fullName>Citi Bank</fullName>
+                <default>false</default>
+                <label>Citi Bank</label>
+            </value>
+            <value>
+                <fullName>Citrix</fullName>
+                <default>false</default>
+                <label>Citrix</label>
+            </value>
+            <value>
+                <fullName>Coca-Cola</fullName>
+                <default>false</default>
+                <label>Coca-Cola</label>
+            </value>
+            <value>
+                <fullName>Cognizant</fullName>
+                <default>false</default>
+                <label>Cognizant</label>
+            </value>
+            <value>
+                <fullName>Columbia Asia Hospital</fullName>
+                <default>false</default>
+                <label>Columbia Asia Hospital</label>
+            </value>
+            <value>
+                <fullName>Concentrix</fullName>
+                <default>false</default>
+                <label>Concentrix</label>
+            </value>
+            <value>
+                <fullName>Credit Suisse</fullName>
+                <default>false</default>
+                <label>Credit Suisse</label>
+            </value>
+            <value>
+                <fullName>CTS</fullName>
+                <default>false</default>
+                <label>CTS</label>
+            </value>
+            <value>
+                <fullName>Cummins India Limited</fullName>
+                <default>false</default>
+                <label>Cummins India Limited</label>
+            </value>
+            <value>
+                <fullName>Cybage</fullName>
+                <default>false</default>
+                <label>Cybage</label>
+            </value>
+            <value>
+                <fullName>Dabur India Limited</fullName>
+                <default>false</default>
+                <label>Dabur India Limited</label>
+            </value>
+            <value>
+                <fullName>Dalmia Bharat Group</fullName>
+                <default>false</default>
+                <label>Dalmia Bharat Group</label>
+            </value>
+            <value>
+                <fullName>Dell</fullName>
+                <default>false</default>
+                <label>Dell</label>
+            </value>
+            <value>
+                <fullName>Deloitte</fullName>
+                <default>false</default>
+                <label>Deloitte</label>
+            </value>
+            <value>
+                <fullName>Deutsche Bank</fullName>
+                <default>false</default>
+                <label>Deutsche Bank</label>
+            </value>
+            <value>
+                <fullName>Diageo India</fullName>
+                <default>false</default>
+                <label>Diageo India</label>
+            </value>
+            <value>
+                <fullName>Dr Agarwal Hospital</fullName>
+                <default>false</default>
+                <label>Dr Agarwal Hospital</label>
+            </value>
+            <value>
+                <fullName>E&amp;Y</fullName>
+                <default>false</default>
+                <label>E&amp;Y</label>
+            </value>
+            <value>
+                <fullName>Finserv</fullName>
+                <default>false</default>
+                <label>Finserv</label>
+            </value>
+            <value>
+                <fullName>Flipkart</fullName>
+                <default>false</default>
+                <label>Flipkart</label>
+            </value>
+            <value>
+                <fullName>Ford</fullName>
+                <default>false</default>
+                <label>Ford</label>
+            </value>
+            <value>
+                <fullName>Foresight Offshore Drilling</fullName>
+                <default>false</default>
+                <label>Foresight Offshore Drilling</label>
+            </value>
+            <value>
+                <fullName>Fortis</fullName>
+                <default>false</default>
+                <label>Fortis</label>
+            </value>
+            <value>
+                <fullName>Fortis Malar Hospital</fullName>
+                <default>false</default>
+                <label>Fortis Malar Hospital</label>
+            </value>
+            <value>
+                <fullName>Glenmark</fullName>
+                <default>false</default>
+                <label>Glenmark</label>
+            </value>
+            <value>
+                <fullName>Global Hospital</fullName>
+                <default>false</default>
+                <label>Global Hospital</label>
+            </value>
+            <value>
+                <fullName>Goldman Sachs</fullName>
+                <default>false</default>
+                <label>Goldman Sachs</label>
+            </value>
+            <value>
+                <fullName>Harman</fullName>
+                <default>false</default>
+                <label>Harman</label>
+            </value>
+            <value>
+                <fullName>HCL</fullName>
+                <default>false</default>
+                <label>HCL</label>
+            </value>
+            <value>
+                <fullName>HCS</fullName>
+                <default>false</default>
+                <label>HCS</label>
+            </value>
+            <value>
+                <fullName>HDFC</fullName>
+                <default>false</default>
+                <label>HDFC</label>
+            </value>
+            <value>
+                <fullName>Hinduja Group</fullName>
+                <default>false</default>
+                <label>Hinduja Group</label>
+            </value>
+            <value>
+                <fullName>Honeywell</fullName>
+                <default>false</default>
+                <label>Honeywell</label>
+            </value>
+            <value>
+                <fullName>HP</fullName>
+                <default>false</default>
+                <label>HP</label>
+            </value>
+            <value>
+                <fullName>HSBC</fullName>
+                <default>false</default>
+                <label>HSBC</label>
+            </value>
+            <value>
+                <fullName>HUL</fullName>
+                <default>false</default>
+                <label>HUL</label>
+            </value>
+            <value>
+                <fullName>Hyundai Motors</fullName>
+                <default>false</default>
+                <label>Hyundai Motors</label>
+            </value>
+            <value>
+                <fullName>IBM</fullName>
+                <default>false</default>
+                <label>IBM</label>
+            </value>
+            <value>
+                <fullName>ICICI Bank</fullName>
+                <default>false</default>
+                <label>ICICI Bank</label>
+            </value>
+            <value>
+                <fullName>Indian Oil Corporation Ltd</fullName>
+                <default>false</default>
+                <label>Indian Oil Corporation Ltd</label>
+            </value>
+            <value>
+                <fullName>Indigo</fullName>
+                <default>false</default>
+                <label>Indigo</label>
+            </value>
+            <value>
+                <fullName>Indusind Bank</fullName>
+                <default>false</default>
+                <label>Indusind Bank</label>
+            </value>
+            <value>
+                <fullName>Infosys</fullName>
+                <default>false</default>
+                <label>Infosys</label>
+            </value>
+            <value>
+                <fullName>Intel</fullName>
+                <default>false</default>
+                <label>Intel</label>
+            </value>
+            <value>
+                <fullName>ITC</fullName>
+                <default>false</default>
+                <label>ITC</label>
+            </value>
+            <value>
+                <fullName>John Deere India Pvt Ltd</fullName>
+                <default>false</default>
+                <label>John Deere India Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>JSW</fullName>
+                <default>false</default>
+                <label>JSW</label>
+            </value>
+            <value>
+                <fullName>Juniper Network</fullName>
+                <default>false</default>
+                <label>Juniper Network</label>
+            </value>
+            <value>
+                <fullName>Kings Institute</fullName>
+                <default>false</default>
+                <label>Kings Institute</label>
+            </value>
+            <value>
+                <fullName>Kotak Mahindra Bank</fullName>
+                <default>false</default>
+                <label>Kotak Mahindra Bank</label>
+            </value>
+            <value>
+                <fullName>KPMG</fullName>
+                <default>false</default>
+                <label>KPMG</label>
+            </value>
+            <value>
+                <fullName>Lava International</fullName>
+                <default>false</default>
+                <label>Lava International</label>
+            </value>
+            <value>
+                <fullName>Lenovo</fullName>
+                <default>false</default>
+                <label>Lenovo</label>
+            </value>
+            <value>
+                <fullName>Linkedin</fullName>
+                <default>false</default>
+                <label>Linkedin</label>
+            </value>
+            <value>
+                <fullName>L&apos;oreal Paris</fullName>
+                <default>false</default>
+                <label>L&apos;oreal Paris</label>
+            </value>
+            <value>
+                <fullName>Manhattan Associates</fullName>
+                <default>false</default>
+                <label>Manhattan Associates</label>
+            </value>
+            <value>
+                <fullName>Mercedes</fullName>
+                <default>false</default>
+                <label>Mercedes</label>
+            </value>
+            <value>
+                <fullName>Microsoft</fullName>
+                <default>false</default>
+                <label>Microsoft</label>
+            </value>
+            <value>
+                <fullName>Mindtree</fullName>
+                <default>false</default>
+                <label>Mindtree</label>
+            </value>
+            <value>
+                <fullName>Murugappa Group</fullName>
+                <default>false</default>
+                <label>Murugappa Group</label>
+            </value>
+            <value>
+                <fullName>Nokia</fullName>
+                <default>false</default>
+                <label>Nokia</label>
+            </value>
+            <value>
+                <fullName>Northern Trust</fullName>
+                <default>false</default>
+                <label>Northern Trust</label>
+            </value>
+            <value>
+                <fullName>NTT Data</fullName>
+                <default>false</default>
+                <label>NTT Data</label>
+            </value>
+            <value>
+                <fullName>NTT Global</fullName>
+                <default>false</default>
+                <label>NTT Global</label>
+            </value>
+            <value>
+                <fullName>Ogilvy Group</fullName>
+                <default>false</default>
+                <label>Ogilvy Group</label>
+            </value>
+            <value>
+                <fullName>Oracle</fullName>
+                <default>false</default>
+                <label>Oracle</label>
+            </value>
+            <value>
+                <fullName>Philips India Ltd</fullName>
+                <default>false</default>
+                <label>Philips India Ltd</label>
+            </value>
+            <value>
+                <fullName>Polaris</fullName>
+                <default>false</default>
+                <label>Polaris</label>
+            </value>
+            <value>
+                <fullName>PwC</fullName>
+                <default>false</default>
+                <label>PwC</label>
+            </value>
+            <value>
+                <fullName>Rambus Chip Technologies Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Rambus Chip Technologies Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Rane</fullName>
+                <default>false</default>
+                <label>Rane</label>
+            </value>
+            <value>
+                <fullName>Reliance Industries</fullName>
+                <default>false</default>
+                <label>Reliance Industries</label>
+            </value>
+            <value>
+                <fullName>Reliance Jio</fullName>
+                <default>false</default>
+                <label>Reliance Jio</label>
+            </value>
+            <value>
+                <fullName>Royal Enfield</fullName>
+                <default>false</default>
+                <label>Royal Enfield</label>
+            </value>
+            <value>
+                <fullName>RRD</fullName>
+                <default>false</default>
+                <label>RRD</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Samsung</fullName>
+                <default>false</default>
+                <label>Samsung</label>
+            </value>
+            <value>
+                <fullName>SAP Labs</fullName>
+                <default>false</default>
+                <label>SAP Labs</label>
+            </value>
+            <value>
+                <fullName>SBI</fullName>
+                <default>false</default>
+                <label>SBI</label>
+            </value>
+            <value>
+                <fullName>Sella</fullName>
+                <default>false</default>
+                <label>Sella</label>
+            </value>
+            <value>
+                <fullName>Shell</fullName>
+                <default>false</default>
+                <label>Shell</label>
+            </value>
+            <value>
+                <fullName>Shoba</fullName>
+                <default>false</default>
+                <label>Shoba</label>
+            </value>
+            <value>
+                <fullName>Shoppers Stop</fullName>
+                <default>false</default>
+                <label>Shoppers Stop</label>
+            </value>
+            <value>
+                <fullName>Siemens</fullName>
+                <default>false</default>
+                <label>Siemens</label>
+            </value>
+            <value>
+                <fullName>Sonata Software</fullName>
+                <default>false</default>
+                <label>Sonata Software</label>
+            </value>
+            <value>
+                <fullName>222</fullName>
+                <default>false</default>
+                <label>222</label>
+            </value>
+            <value>
+                <fullName>Standard Chartered Bank</fullName>
+                <default>false</default>
+                <label>Standard Chartered Bank</label>
+            </value>
+            <value>
+                <fullName>Strides</fullName>
+                <default>false</default>
+                <label>Strides</label>
+            </value>
+            <value>
+                <fullName>Swiss Re</fullName>
+                <default>false</default>
+                <label>Swiss Re</label>
+            </value>
+            <value>
+                <fullName>Syngene Int. Ltd</fullName>
+                <default>false</default>
+                <label>Syngene Int. Ltd</label>
+            </value>
+            <value>
+                <fullName>Syntel</fullName>
+                <default>false</default>
+                <label>Syntel</label>
+            </value>
+            <value>
+                <fullName>Taj Hotel</fullName>
+                <default>false</default>
+                <label>Taj Hotel</label>
+            </value>
+            <value>
+                <fullName>Tally Solutions Pvt Ltd</fullName>
+                <default>false</default>
+                <label>Tally Solutions Pvt Ltd</label>
+            </value>
+            <value>
+                <fullName>Target</fullName>
+                <default>false</default>
+                <label>Target</label>
+            </value>
+            <value>
+                <fullName>Tata Motors</fullName>
+                <default>false</default>
+                <label>Tata Motors</label>
+            </value>
+            <value>
+                <fullName>Tata Power</fullName>
+                <default>false</default>
+                <label>Tata Power</label>
+            </value>
+            <value>
+                <fullName>Tata Steel</fullName>
+                <default>false</default>
+                <label>Tata Steel</label>
+            </value>
+            <value>
+                <fullName>TCS</fullName>
+                <default>false</default>
+                <label>TCS</label>
+            </value>
+            <value>
+                <fullName>Tech Mahindra</fullName>
+                <default>false</default>
+                <label>Tech Mahindra</label>
+            </value>
+            <value>
+                <fullName>Teck Systems</fullName>
+                <default>false</default>
+                <label>Teck Systems</label>
+            </value>
+            <value>
+                <fullName>Tesco</fullName>
+                <default>false</default>
+                <label>Tesco</label>
+            </value>
+            <value>
+                <fullName>Toyota Kirloskar</fullName>
+                <default>false</default>
+                <label>Toyota Kirloskar</label>
+            </value>
+            <value>
+                <fullName>TVS</fullName>
+                <default>false</default>
+                <label>TVS</label>
+            </value>
+            <value>
+                <fullName>Urbaser Sumeet</fullName>
+                <default>false</default>
+                <label>Urbaser Sumeet</label>
+            </value>
+            <value>
+                <fullName>VMware</fullName>
+                <default>false</default>
+                <label>VMware</label>
+            </value>
+            <value>
+                <fullName>Vodafone</fullName>
+                <default>false</default>
+                <label>Vodafone</label>
+            </value>
+            <value>
+                <fullName>Volvo</fullName>
+                <default>false</default>
+                <label>Volvo</label>
+            </value>
+            <value>
+                <fullName>Wipro</fullName>
+                <default>false</default>
+                <label>Wipro</label>
+            </value>
+            <value>
+                <fullName>Zensar Technologies</fullName>
+                <default>false</default>
+                <label>Zensar Technologies</label>
+            </value>
+            <value>
+                <fullName>ZS Associates</fullName>
+                <default>false</default>
+                <label>ZS Associates</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

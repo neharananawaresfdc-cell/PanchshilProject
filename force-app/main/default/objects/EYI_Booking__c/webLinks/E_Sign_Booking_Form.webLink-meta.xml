@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>E_Sign_Booking_Form</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>E-Sign Booking Form</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/flow/EYI_Booking_ESign_Email_Notification?recordId={!EYI_Booking__c.Id}</url>
+</WebLink>

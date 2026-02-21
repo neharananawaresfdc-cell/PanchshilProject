@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Tax_classification__c</fullName>
+    <label>Tax classification</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Taxable GST(MHADA)</fullName>
+                <default>false</default>
+                <label>Taxable GST(MHADA)</label>
+            </value>
+            <value>
+                <fullName>Taxable Under GST</fullName>
+                <default>false</default>
+                <label>Taxable Under GST</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

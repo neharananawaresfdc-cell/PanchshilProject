@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X1st_Level_Booking_Checklist_Esc_Send__c</fullName>
+    <defaultValue>false</defaultValue>
+    <label>1st Level Booking Checklist Esc Send</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

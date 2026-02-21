@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Date_of_Agreement_to_Sell__c</fullName>
+    <formula>EYI_Opportunity__r.EYI_Date_of_Agreement_to_Sell__c</formula>
+    <label>Date of Agreement to Sell</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

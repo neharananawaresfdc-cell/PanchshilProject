@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Reconciliation_Account__c</fullName>
+    <label>Reconciliation Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10250000</fullName>
+                <default>false</default>
+                <label>Debtors : Lease / Rentals</label>
+            </value>
+            <value>
+                <fullName>10250010</fullName>
+                <default>false</default>
+                <label>Debtors : Group Company</label>
+            </value>
+            <value>
+                <fullName>10250020</fullName>
+                <default>false</default>
+                <label>Debtors : Unit Sales</label>
+            </value>
+            <value>
+                <fullName>10250030</fullName>
+                <default>false</default>
+                <label>Debtors : Others</label>
+            </value>
+            <value>
+                <fullName>10250040</fullName>
+                <default>false</default>
+                <label>Debtors : TDR</label>
+            </value>
+            <value>
+                <fullName>10250050</fullName>
+                <default>false</default>
+                <label>Debtors : Property</label>
+            </value>
+            <value>
+                <fullName>10250060</fullName>
+                <default>false</default>
+                <label>Debtors : Trading Sales</label>
+            </value>
+            <value>
+                <fullName>10250070</fullName>
+                <default>false</default>
+                <label>Debtors : Manufacturing Sales</label>
+            </value>
+            <value>
+                <fullName>10250080</fullName>
+                <default>false</default>
+                <label>Debtors : Power Distibution</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_user_to_update_Disbursemen_Date</fullName>
+    <active>true</active>
+    <description>Restrict user to update Disbursement Date if registration status is not Registration Completed.</description>
+    <errorConditionFormula>AND(
+    NOT(ISPICKVAL(EYI_Opportunity__r.EYI_Registration_Status__c, &quot;Registration Completed&quot;)),
+    OR(
+        ISCHANGED(EYI_Disbursement_Docket_Readiness_Date__c),
+        ISCHANGED(EYI_Disbursement_Docket_Handed_Over_Date__c)
+    )
+)</errorConditionFormula>
+    <errorMessage>Registration status is not Registration Completed</errorMessage>
+</ValidationRule>

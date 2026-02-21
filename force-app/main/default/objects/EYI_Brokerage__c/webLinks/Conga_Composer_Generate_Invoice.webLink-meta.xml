@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Generate_Invoice</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://panchshil--uat.sandbox.my.salesforce.com/a0H9H000000yJMLUA2
+22-Sep-2025 06:20:19 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Invoice</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!EYI_Brokerage__c.Id}
+&amp;QueryId=[BrokData]0Q_234UAA378353,
+[BankInvDetails]0Q_235UAA991685,
+[InfrachargeNew]0Q_221UAA673171?pv0={!EYI_Brokerage__c.EYI_Inventory_Id_Conga__c},
+[GstPerc]0Q_236UAA492651?pv0={!EYI_Brokerage__c.EYI_Project_Id__c},
+[BaseAmt]0Q_233UAA141357?pv0={!EYI_Brokerage__c.EYI_Inventory_Id_Conga__c},
+[FloorAmt]0Q_232UAA078777?pv0={!EYI_Brokerage__c.EYI_Inventory_Id_Conga__c},
+[baseFloorAmt]0Q_238UAA783371
+&amp;SC0=1
+&amp;SC1=SalesforceFile
+&amp;TemplateId=0T_121UAA503070
+&amp;EmailAdditionalTo={!EYI_Brokerage__c.EYI_REC_Email__c}
+&amp;UF0=1
+&amp;MFTS0=Stages__c
+&amp;mftsvalue0=Invoice Generated
+&amp;DS7=11
+&amp;EmailSubject=Invoice
+&amp;DefaultPDF=1
+&amp;PDFA=1a</url>
+    <width>900</width>
+</WebLink>

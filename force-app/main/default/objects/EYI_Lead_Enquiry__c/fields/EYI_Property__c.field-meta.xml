@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Property__c</fullName>
+    <label>Project</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Segment__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>46 Banyan Tree</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>46 Banyan Tree</label>
+            </value>
+            <value>
+                <fullName>57 Avenue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>57 Avenue</label>
+            </value>
+            <value>
+                <fullName>86 Banyan Tree</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>86 Banyan Tree</label>
+            </value>
+            <value>
+                <fullName>Avant Garde</fullName>
+                <default>false</default>
+                <label>Avant Garde</label>
+            </value>
+            <value>
+                <fullName>Balewadi</fullName>
+                <default>false</default>
+                <label>Balewadi</label>
+            </value>
+            <value>
+                <fullName>Bougain Villa</fullName>
+                <default>false</default>
+                <label>Bougain Villa</label>
+            </value>
+            <value>
+                <fullName>Casa 9</fullName>
+                <default>false</default>
+                <label>Casa 9</label>
+            </value>
+            <value>
+                <fullName>Central Park</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Central Park</label>
+            </value>
+            <value>
+                <fullName>ELEVEN WEST</fullName>
+                <default>false</default>
+                <label>ELEVEN WEST</label>
+            </value>
+            <value>
+                <fullName>EON Waterfront II</fullName>
+                <default>false</default>
+                <label>EON Waterfront II</label>
+            </value>
+            <value>
+                <fullName>Eon Waterfront PH I</fullName>
+                <default>false</default>
+                <label>Eon Waterfront PH I</label>
+            </value>
+            <value>
+                <fullName>Forest Castle</fullName>
+                <default>false</default>
+                <label>Forest Castle</label>
+            </value>
+            <value>
+                <fullName>Futura</fullName>
+                <default>false</default>
+                <label>Futura</label>
+            </value>
+            <value>
+                <fullName>Generic</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Generic</label>
+            </value>
+            <value>
+                <fullName>Gold Craft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Gold Craft</label>
+            </value>
+            <value>
+                <fullName>Golden Bell</fullName>
+                <default>false</default>
+                <label>Golden Bell</label>
+            </value>
+            <value>
+                <fullName>New Commercial</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Commercial</label>
+            </value>
+            <value>
+                <fullName>New Residential</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>New Residential</label>
+            </value>
+            <value>
+                <fullName>Ocean Tower</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Ocean Tower</label>
+            </value>
+            <value>
+                <fullName>One North</fullName>
+                <default>false</default>
+                <label>One North</label>
+            </value>
+            <value>
+                <fullName>Panchshil Avenue</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Panchshil Avenue</label>
+            </value>
+            <value>
+                <fullName>Panchshil Towers</fullName>
+                <default>false</default>
+                <label>Panchshil Towers</label>
+            </value>
+            <value>
+                <fullName>Queens Court</fullName>
+                <default>false</default>
+                <label>Queens Court</label>
+            </value>
+            <value>
+                <fullName>Satellite Towers</fullName>
+                <default>false</default>
+                <label>Satellite Towers</label>
+            </value>
+            <value>
+                <fullName>SoHo</fullName>
+                <default>false</default>
+                <label>SoHo</label>
+            </value>
+            <value>
+                <fullName>Ssilverwoods</fullName>
+                <default>false</default>
+                <label>Ssilverwoods</label>
+            </value>
+            <value>
+                <fullName>The Address</fullName>
+                <default>false</default>
+                <label>The Address</label>
+            </value>
+            <value>
+                <fullName>The Chambers</fullName>
+                <default>false</default>
+                <label>The Chambers</label>
+            </value>
+            <value>
+                <fullName>The Golden Bell II</fullName>
+                <default>false</default>
+                <label>The Golden Bell II</label>
+            </value>
+            <value>
+                <fullName>Trump Towers</fullName>
+                <default>false</default>
+                <label>Trump Towers</label>
+            </value>
+            <value>
+                <fullName>Waterfront</fullName>
+                <default>false</default>
+                <label>Waterfront</label>
+            </value>
+            <value>
+                <fullName>WestView</fullName>
+                <default>false</default>
+                <label>WestView</label>
+            </value>
+            <value>
+                <fullName>WTC</fullName>
+                <default>false</default>
+                <label>WTC</label>
+            </value>
+            <value>
+                <fullName>yoopune</fullName>
+                <default>false</default>
+                <label>yoopune</label>
+            </value>
+            <value>
+                <fullName>Yoo Villas</fullName>
+                <default>false</default>
+                <label>Yoo Villas</label>
+            </value>
+            <value>
+                <fullName>Yoo Villas II</fullName>
+                <default>false</default>
+                <label>Yoo Villas II</label>
+            </value>
+            <value>
+                <fullName>Yoo Villas III</fullName>
+                <default>false</default>
+                <label>Yoo Villas III</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Avant Garde</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Bougain Villa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Casa 9</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>EON Waterfront II</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Eon Waterfront PH I</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Forest Castle</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>One North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Panchshil Towers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Queens Court</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Satellite Towers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Ssilverwoods</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>The Address</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Trump Towers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Waterfront</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>yoopune</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Yoo Villas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Yoo Villas II</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Residential</controllingFieldValue>
+            <valueName>Yoo Villas III</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Balewadi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>ELEVEN WEST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Futura</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>Golden Bell</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>SoHo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>The Chambers</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>The Golden Bell II</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>WestView</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Commercial</controllingFieldValue>
+            <valueName>WTC</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

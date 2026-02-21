@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Master_Object_Field_to_Update__c</fullName>
+    <description>Please provide the field names which you want to merge with master object</description>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Master Object Field to Update</label>
+    <length>32768</length>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_RERA_Is_Applicable</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( AND(Inventory__r.EYI_RERA_Applicable__c  = true ,( EYI_Booking_Amount_Received__c  &lt;=  ((  EYI_Quote__r.EYI_Agreement_Value__c  *  EYI_Project_Name__r.EYI_Minimum_Booking_Amt__c )/100))) , true,    false)</errorConditionFormula>
+    <errorDisplayField>EYI_Booking_Amount_Received__c</errorDisplayField>
+    <errorMessage>Booking amount should not be greater than 9.9 per of agreement value</errorMessage>
+</ValidationRule>

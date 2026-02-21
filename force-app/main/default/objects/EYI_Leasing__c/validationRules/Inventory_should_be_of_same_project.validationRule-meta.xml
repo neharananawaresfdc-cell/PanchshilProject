@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inventory_should_be_of_same_project</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK( EYI_Inventory__c )),
+     EYI_Project__c &lt;&gt; EYI_Inventory__r.EYI_Project__c 
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Inventory__c</errorDisplayField>
+    <errorMessage>Please select valid inventory.</errorMessage>
+</ValidationRule>

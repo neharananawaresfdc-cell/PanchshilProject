@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Owner__c</fullName>
+    <formula>IF(
+    OR(
+         OwnerId  = $User.Id,
+         Owner:User.ManagerId  = $User.Id,
+         Owner:User.Manager.ManagerId  = $User.Id,
+         $User.ProfileId  = &quot;00e9H000002Dd4B&quot;,
+         $User.ProfileId = &quot;00eWd0000000FOr&quot;
+    ),
+    TRUE,
+    FALSE
+)</formula>
+    <label>Is Owner</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

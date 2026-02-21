@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sales_Office__c</fullName>
+    <label>Regional Office</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EYI World Tower</fullName>
+                <default>false</default>
+                <label>EYI World Tower</label>
+            </value>
+            <value>
+                <fullName>EYI High Street</fullName>
+                <default>false</default>
+                <label>EYI High Street</label>
+            </value>
+            <value>
+                <fullName>EYI World Towers-Mundhawa</fullName>
+                <default>false</default>
+                <label>EYI World Towers-Mundhawa</label>
+            </value>
+            <value>
+                <fullName>EYI Kaleido</fullName>
+                <default>false</default>
+                <label>EYI Kaleido</label>
+            </value>
+            <value>
+                <fullName>Kohonoor Westview Reserve</fullName>
+                <default>false</default>
+                <label>Kohonoor Westview Reserve</label>
+            </value>
+            <value>
+                <fullName>EYI Jeeva</fullName>
+                <default>false</default>
+                <label>EYI Jeeva</label>
+            </value>
+            <value>
+                <fullName>EYI Sapphire</fullName>
+                <default>false</default>
+                <label>EYI Sapphire</label>
+            </value>
+            <value>
+                <fullName>EYI Grandeur</fullName>
+                <default>false</default>
+                <label>EYI Grandeur</label>
+            </value>
+            <value>
+                <fullName>EYI Emreald</fullName>
+                <default>false</default>
+                <label>EYI Emreald</label>
+            </value>
+            <value>
+                <fullName>EYI B-zone - ShivajiNagar</fullName>
+                <default>false</default>
+                <label>EYI B-zone - ShivajiNagar</label>
+            </value>
+            <value>
+                <fullName>B-ZONE -- BANER</fullName>
+                <default>false</default>
+                <label>B-ZONE -- BANER</label>
+            </value>
+            <value>
+                <fullName>EYI Sapphire 3</fullName>
+                <default>false</default>
+                <label>EYI Sapphire 3</label>
+            </value>
+            <value>
+                <fullName>EYI Viva Pixel Phase - I</fullName>
+                <default>false</default>
+                <label>EYI Viva Pixel Phase - I</label>
+            </value>
+            <value>
+                <fullName>KOHINOOR BUSINESS TOWER</fullName>
+                <default>false</default>
+                <label>KOHINOOR BUSINESS TOWER</label>
+            </value>
+            <value>
+                <fullName>EYI Sapphire 2</fullName>
+                <default>false</default>
+                <label>EYI Sapphire 2</label>
+            </value>
+            <value>
+                <fullName>EYI Viva City</fullName>
+                <default>false</default>
+                <label>EYI Viva City</label>
+            </value>
+            <value>
+                <fullName>EYI Courtyard One</fullName>
+                <default>false</default>
+                <label>EYI Courtyard One</label>
+            </value>
+            <value>
+                <fullName>EYI Famville</fullName>
+                <default>false</default>
+                <label>EYI Famville</label>
+            </value>
+            <value>
+                <fullName>EYI Sportsville</fullName>
+                <default>false</default>
+                <label>EYI Sportsville</label>
+            </value>
+            <value>
+                <fullName>EYI Coral</fullName>
+                <default>false</default>
+                <label>EYI Coral</label>
+            </value>
+            <value>
+                <fullName>EYI Presidentia</fullName>
+                <default>false</default>
+                <label>EYI Presidentia</label>
+            </value>
+            <value>
+                <fullName>EYI Abhiman Homes</fullName>
+                <default>false</default>
+                <label>EYI Abhiman Homes</label>
+            </value>
+            <value>
+                <fullName>EYI Shangrila</fullName>
+                <default>false</default>
+                <label>EYI Shangrila</label>
+            </value>
+            <value>
+                <fullName>KOHINOOR WEST VIEW AVENUE</fullName>
+                <default>false</default>
+                <label>KOHINOOR WEST VIEW AVENUE</label>
+            </value>
+            <value>
+                <fullName>EYI Westview Reserve</fullName>
+                <default>false</default>
+                <label>EYI Westview Reserve</label>
+            </value>
+            <value>
+                <fullName>KOHINOOR VIVA PIXEL-PHASE II</fullName>
+                <default>false</default>
+                <label>KOHINOOR VIVA PIXEL-PHASE II</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Abhiman Homes</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Abhiman Homes</label>
+            </value>
+            <value>
+                <fullName>Kohinoor B-zone - ShivajiNagar</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor B-zone - ShivajiNagar</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Coral</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Coral</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Courtyard One</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Courtyard One</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Emreald</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Emreald</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Famville</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Famville</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Grandeur</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Grandeur</label>
+            </value>
+            <value>
+                <fullName>Kohinoor High Street</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor High Street</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Jeeva</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Jeeva</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Kaleido</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Kaleido</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Presidentia</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Presidentia</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Sapphire</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Sapphire</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Sapphire 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Sapphire 2</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Sapphire 3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Sapphire 3</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Shangrila</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Shangrila</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Sportsville</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Sportsville</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Viva City</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Viva City</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Viva Pixel Phase - I</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Viva Pixel Phase - I</label>
+            </value>
+            <value>
+                <fullName>Kohinoor Westview Reserve</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor Westview Reserve</label>
+            </value>
+            <value>
+                <fullName>Kohinoor World Tower</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor World Tower</label>
+            </value>
+            <value>
+                <fullName>Kohinoor World Towers-Mundhawa</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Kohinoor World Towers-Mundhawa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

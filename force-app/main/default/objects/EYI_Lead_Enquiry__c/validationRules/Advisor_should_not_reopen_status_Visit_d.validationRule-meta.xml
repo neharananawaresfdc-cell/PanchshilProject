@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisor_should_not_reopen_status_Visit_d</fullName>
+    <active>true</active>
+    <description>After Lead is vist done presales advisor should be able to reopen the Lead Enquiry</description>
+    <errorConditionFormula>AND(
+ISCHANGED(  EYI_Lead_Status__c  )
+,ISPICKVAL(PRIORVALUE(EYI_Lead_Status__c), &apos;Visit Done&apos;),
+OR(
+$UserRole.Name = &apos;Pre-Sales Advisor&apos;,
+$UserRole.Name = &apos;Pre-Sales TL&apos;
+)
+)</errorConditionFormula>
+    <errorMessage>You cannot update the stage after visit done</errorMessage>
+</ValidationRule>

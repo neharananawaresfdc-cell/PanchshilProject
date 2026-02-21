@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Demand_Raised_1st_to_15th_Share__c</fullName>
+    <formula>EYI_Demand_Raised_1st_to_15th__c *  EYI_Demand_Raised_1st_to_15th_percent__c</formula>
+    <label>Target (To be Raised Demand)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

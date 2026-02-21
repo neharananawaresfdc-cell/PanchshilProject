@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Parking_Size__c</fullName>
+    <label>Parking Size</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Parking - Regular</fullName>
+                <default>false</default>
+                <label>Parking - Regular</label>
+            </value>
+            <value>
+                <fullName>Parking - Small</fullName>
+                <default>false</default>
+                <label>Parking - Small</label>
+            </value>
+            <value>
+                <fullName>Parking- Specially Abled</fullName>
+                <default>false</default>
+                <label>Parking- Specially Abled</label>
+            </value>
+            <value>
+                <fullName>Parking - Tandem</fullName>
+                <default>false</default>
+                <label>Parking - Tandem</label>
+            </value>
+            <value>
+                <fullName>Tower</fullName>
+                <default>false</default>
+                <label>Tower</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

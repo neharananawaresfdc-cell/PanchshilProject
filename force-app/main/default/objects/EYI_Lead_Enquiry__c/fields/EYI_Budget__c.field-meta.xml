@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Budget__c</fullName>
+    <label>Budget</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Nature_of_Lead__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>EYI_Budget</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>&lt;2 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>2-4 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>4-7 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>7-10 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>10-12 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>12-15 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>15-20 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Outright</controllingFieldValue>
+            <valueName>&gt;20 Cr</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>&lt; 50K</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>50K - 1 L</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>1 L - 1.5 L</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>1.5 L - 2 L</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>2 L - 3 L</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>3 L - 5 L</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Leasing</controllingFieldValue>
+            <valueName>5 L or more</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

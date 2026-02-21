@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Reconciliation_Account__c</fullName>
+    <label>Reconciliation Account</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Creditors - Material Domestic</fullName>
+                <default>false</default>
+                <label>Creditors - Material Domestic</label>
+            </value>
+            <value>
+                <fullName>Creditors - Material Imports</fullName>
+                <default>false</default>
+                <label>Creditors - Material Imports</label>
+            </value>
+            <value>
+                <fullName>Creditors - Contractors &amp; Services</fullName>
+                <default>false</default>
+                <label>Creditors - Contractors &amp; Services</label>
+            </value>
+            <value>
+                <fullName>Creditors - Employees</fullName>
+                <default>false</default>
+                <label>Creditors - Employees</label>
+            </value>
+            <value>
+                <fullName>Creditors - Expenses</fullName>
+                <default>false</default>
+                <label>Creditors - Expenses</label>
+            </value>
+            <value>
+                <fullName>Creditors - Banks &amp; Financial Inst</fullName>
+                <default>false</default>
+                <label>Creditors - Banks &amp; Financial Inst</label>
+            </value>
+            <value>
+                <fullName>Creditors - Group Companies</fullName>
+                <default>false</default>
+                <label>Creditors - Group Companies</label>
+            </value>
+            <value>
+                <fullName>Retention Money Payable</fullName>
+                <default>false</default>
+                <label>Retention Money Payable</label>
+            </value>
+            <value>
+                <fullName>Creditors For TDR</fullName>
+                <default>false</default>
+                <label>Creditors For TDR</label>
+            </value>
+            <value>
+                <fullName>Creditor for Property</fullName>
+                <default>false</default>
+                <label>Creditor for Property</label>
+            </value>
+            <value>
+                <fullName>Creditor for Trading Sales</fullName>
+                <default>false</default>
+                <label>Creditor for Trading Sales</label>
+            </value>
+            <value>
+                <fullName>Creditor : Branch</fullName>
+                <default>false</default>
+                <label>Creditor : Branch</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

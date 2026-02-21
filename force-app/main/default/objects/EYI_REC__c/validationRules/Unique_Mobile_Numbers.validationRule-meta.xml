@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unique_Mobile_Numbers</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(EYI_IsAutomationBypassed__c),
+    NOT(ISBLANK(EYI_Mobile__c)),
+    NOT(ISBLANK(EYI_Alternate_Mobile__c)),
+    EYI_Mobile__c = EYI_Alternate_Mobile__c
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Alternate_Mobile__c</errorDisplayField>
+    <errorMessage>Primary Mobile Number and Secondary Mobile Number cannot be the same.</errorMessage>
+</ValidationRule>

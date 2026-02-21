@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Bank_Name_is_Other</fullName>
+    <active>true</active>
+    <description>If Bank Name is Other, then &apos;Other Bank&apos; field is required.</description>
+    <errorConditionFormula>AND(
+     ISPICKVAL( EYI_Bank_Name__c , &apos;Other&apos;),  
+     ISBLANK( EYI_Other_Bank__c )
+   )</errorConditionFormula>
+    <errorDisplayField>EYI_Other_Bank__c</errorDisplayField>
+    <errorMessage>Please provide a Other Bank Name</errorMessage>
+</ValidationRule>

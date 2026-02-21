@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Activity_type__c</fullName>
+    <label>Activity type</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tele calling</fullName>
+                <default>false</default>
+                <label>Tele calling</label>
+            </value>
+            <value>
+                <fullName>SMS</fullName>
+                <default>false</default>
+                <label>SMS</label>
+            </value>
+            <value>
+                <fullName>WhatsApp</fullName>
+                <default>false</default>
+                <label>WhatsApp</label>
+            </value>
+            <value>
+                <fullName>Emailer</fullName>
+                <default>false</default>
+                <label>Emailer</label>
+            </value>
+            <value>
+                <fullName>Microsite of broker</fullName>
+                <default>false</default>
+                <label>Microsite of broker</label>
+            </value>
+            <value>
+                <fullName>Property portal</fullName>
+                <default>false</default>
+                <label>Property portal</label>
+            </value>
+            <value>
+                <fullName>Reference</fullName>
+                <default>false</default>
+                <label>Reference</label>
+            </value>
+            <value>
+                <fullName>Events and exhibitions</fullName>
+                <default>false</default>
+                <label>Events and exhibitions</label>
+            </value>
+            <value>
+                <fullName>Digital Campaigns</fullName>
+                <default>false</default>
+                <label>Digital Campaigns</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

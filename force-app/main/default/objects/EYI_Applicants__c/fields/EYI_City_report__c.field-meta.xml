@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_City_report__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(EYI_City__r.Name = &quot;Pune&quot; ,&quot;Pune&quot;,
+IF((EYI_City__r.Name = &quot;Mumbai&quot; || EYI_City__r.Name = &quot;Navi mumbai&quot;), &quot;Mumbai&quot;,
+IF((EYI_City__r.Name &lt;&gt; &quot;Pune&quot; || EYI_City__r.Name &lt;&gt; &quot;Mumbai&quot;) &amp;&amp; ISPICKVAL(EYI_State__c , &quot;Maharashtra&quot; ) ,&quot;ROM&quot;,
+IF(ISPICKVAL(EYI_Country__c , &quot;India&quot; ), &quot;ROI&quot;,
+IF(ISBLANK(TEXT(EYI_Country__c)), &quot;Not Mentioned&quot;,
+&quot;NRI&quot;)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>City report</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

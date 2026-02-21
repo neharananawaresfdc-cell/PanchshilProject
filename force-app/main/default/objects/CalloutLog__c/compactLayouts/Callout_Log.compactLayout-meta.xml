@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Callout_Log</fullName>
+    <fields>LastModifiedById</fields>
+    <fields>HttpStatusCode__c</fields>
+    <fields>Endpoint__c</fields>
+    <label>Callout Log</label>
+</CompactLayout>

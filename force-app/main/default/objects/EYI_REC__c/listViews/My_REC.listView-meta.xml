@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_REC</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_REC_Code__c</columns>
+    <columns>EYI_REC_Vendor_Code__c</columns>
+    <columns>EYI_RERA_Certificate_No__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <label>My REC</label>
+</ListView>

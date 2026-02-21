@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stages__c</fullName>
+    <label>Stages</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Booking Pending</fullName>
+                <default>false</default>
+                <label>Booking (Token Amount Received)</label>
+            </value>
+            <value>
+                <fullName>Booking Registration Pending</fullName>
+                <default>false</default>
+                <label>Booking (Registration Pending)</label>
+            </value>
+            <value>
+                <fullName>Booking Registration Done</fullName>
+                <default>false</default>
+                <label>Booking (Registration Done)</label>
+            </value>
+            <value>
+                <fullName>Booking 20% Received</fullName>
+                <default>false</default>
+                <label>Booking (20% Received)</label>
+            </value>
+            <value>
+                <fullName>Invoice Generated</fullName>
+                <default>false</default>
+                <label>Performa Generated</label>
+            </value>
+            <value>
+                <fullName>Invoice Received</fullName>
+                <default>false</default>
+                <label>Invoice Received</label>
+            </value>
+            <value>
+                <fullName>Eligible To Raise Invoice</fullName>
+                <default>false</default>
+                <label>Eligible To Raise Invoice</label>
+            </value>
+            <value>
+                <fullName>Invoice Accepted Sales</fullName>
+                <default>false</default>
+                <label>Invoice Accepted Sales</label>
+            </value>
+            <value>
+                <fullName>Invoice Accepted Finance</fullName>
+                <default>false</default>
+                <label>Invoice Accepted Finance (SAP)</label>
+            </value>
+            <value>
+                <fullName>Invoice Rejected</fullName>
+                <default>false</default>
+                <label>Invoice Hold/Rejected</label>
+            </value>
+            <value>
+                <fullName>Payout Completed</fullName>
+                <default>false</default>
+                <label>Payout Completed</label>
+            </value>
+            <value>
+                <fullName>Invoice Accepted Compliance</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invoice Accepted Compliance</label>
+            </value>
+            <value>
+                <fullName>Invoice Raised</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Invoice Raised</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

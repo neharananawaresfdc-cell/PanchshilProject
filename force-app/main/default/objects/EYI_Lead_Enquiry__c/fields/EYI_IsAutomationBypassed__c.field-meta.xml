@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_IsAutomationBypassed__c</fullName>
+    <description>This to check the automation datetime for 5 secs</description>
+    <formula>EYI_AutomationBypassDatetime__c  &gt; NOW()  -  0.00005787037</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsAutomationBypassed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Category__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(Name = &quot;Pune&quot;,&quot;Pune&quot;,
+IF(Name = &quot;Mumbai&quot;, &quot;Mumbai&quot;,
+IF(Name &lt;&gt; &quot;Pune&quot; &amp;&amp; Name &lt;&gt; &quot;Mumbai&quot; &amp;&amp; ISPICKVAL(EYI_State__c , &quot;Maharashtra&quot; ) ,&quot;ROM&quot;,
+IF(CONTAINS( TEXT(EYI_State__c) , $Label.EYI_NRI_States ) ,&quot;NRI&quot;,&quot;ROI&quot;
+))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

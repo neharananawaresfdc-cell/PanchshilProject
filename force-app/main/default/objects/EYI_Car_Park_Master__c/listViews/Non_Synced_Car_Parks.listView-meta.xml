@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Synced_Car_Parks</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Parking_Number__c</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Status__c</columns>
+    <columns>EYI_SAP_Profit_Center__c</columns>
+    <columns>EYI_SAP_Error__c</columns>
+    <columns>EYI_Is_Syc__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Project__c</field>
+        <operation>contains</operation>
+        <value>golden</value>
+    </filters>
+    <filters>
+        <field>EYI_Is_Syc__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Non Synced Car Parks</label>
+</ListView>

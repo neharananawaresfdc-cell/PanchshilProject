@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Payment_Schedule__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Fiel created to update date for specific demand.</description>
+    <label>Payment Schedule</label>
+    <referenceTo>EYI_Payment_Schedule__c</referenceTo>
+    <relationshipLabel>Demands</relationshipLabel>
+    <relationshipName>Demands</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

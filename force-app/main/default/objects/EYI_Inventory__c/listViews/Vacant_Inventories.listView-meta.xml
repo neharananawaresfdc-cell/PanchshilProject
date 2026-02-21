@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Vacant_Inventories</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Tower__c</columns>
+    <columns>EYI_Inventory_Number__c</columns>
+    <columns>EYI_Inventory_Status__c</columns>
+    <columns>EYI_Leasing_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Lease__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>EYI_Leasing_Status__c</field>
+        <operation>equals</operation>
+        <value>Vacant</value>
+    </filters>
+    <filters>
+        <field>EYI_Inventory_Status__c</field>
+        <operation>equals</operation>
+        <value>Vacant</value>
+    </filters>
+    <label>Vacant Inventories</label>
+    <sharedTo>
+        <roleAndSubordinatesInternal>Leasing_Head</roleAndSubordinatesInternal>
+    </sharedTo>
+</ListView>

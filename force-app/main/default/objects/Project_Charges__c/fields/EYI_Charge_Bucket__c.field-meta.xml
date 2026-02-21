@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Charge_Bucket__c</fullName>
+    <label>Charge Bucket</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agreement Value</fullName>
+                <default>false</default>
+                <label>Agreement Value</label>
+            </value>
+            <value>
+                <fullName>Other Charges</fullName>
+                <default>false</default>
+                <label>Other Charges</label>
+            </value>
+            <value>
+                <fullName>Society Charges</fullName>
+                <default>false</default>
+                <label>Society Charges</label>
+            </value>
+            <value>
+                <fullName>Stamp Duty and Registration</fullName>
+                <default>false</default>
+                <label>Stamp Duty and Registration</label>
+            </value>
+            <value>
+                <fullName>Maintenance Charges</fullName>
+                <default>false</default>
+                <label>Maintenance Charges</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

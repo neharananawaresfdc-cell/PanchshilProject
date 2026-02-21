@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_SD_applied__c</fullName>
+    <description>This field is used capture SD paid by as Identifier.</description>
+    <formula>IF(  ISPICKVAL(EYI_Offer__r.Source__c, &apos;SD (Stamp Duty)&apos;), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is SD applied?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

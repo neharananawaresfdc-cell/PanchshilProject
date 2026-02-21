@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Create_Invoice__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;queryid=[BrokData]0Q_234UAA378353,[BankInvDetails]0Q_235UAA991685?pv0=&quot; + EYI_Opportunity__c +
+&quot;&amp;templateid=0T_121UAA503070&quot; + 
+&quot;&amp;uf0=1&quot; + 
+&quot;&amp;mfts0=Stages__c&quot; + 
+&quot;&amp;mftsvalue0=Invoice Generated&quot; + 
+&quot;&amp;qmode=SalesforceFile&quot; + 
+&quot;&amp;sc0=1&quot; + 
+&quot;&amp;sc1=SalesforceFile&quot; + 
+&quot;&amp;emailadditionalto=&quot; + EYI_REC_Email__c +
+&quot;&amp;emailsubject=Invoice &quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;pdfa=1a&quot;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Create Invoice</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

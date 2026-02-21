@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_SAP_Milestone_Code__c</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Tower__c</columns>
+    <columns>EYI_Milestone_Number__c</columns>
+    <columns>EYI_SAP_Activity_Number__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>EYI_Milestone_Type__c</columns>
+    <columns>EYI_Usage_Description__c</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>EYI_Usage__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

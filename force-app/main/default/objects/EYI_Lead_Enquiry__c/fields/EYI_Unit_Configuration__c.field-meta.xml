@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Unit_Configuration__c</fullName>
+    <label>Unit Configuration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_Property__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2BHK</fullName>
+                <default>false</default>
+                <label>2BHK</label>
+            </value>
+            <value>
+                <fullName>3BHK</fullName>
+                <default>false</default>
+                <label>3BHK</label>
+            </value>
+            <value>
+                <fullName>4BHK</fullName>
+                <default>false</default>
+                <label>4BHK</label>
+            </value>
+            <value>
+                <fullName>3.5BHK</fullName>
+                <default>false</default>
+                <label>3.5BHK</label>
+            </value>
+            <value>
+                <fullName>4.5BHK</fullName>
+                <default>false</default>
+                <label>4.5BHK</label>
+            </value>
+            <value>
+                <fullName>Penthouse</fullName>
+                <default>false</default>
+                <label>Penthouse</label>
+            </value>
+            <value>
+                <fullName>Business Unit</fullName>
+                <default>false</default>
+                <label>Business Unit</label>
+            </value>
+            <value>
+                <fullName>Office Spaces</fullName>
+                <default>false</default>
+                <label>Office Spaces</label>
+            </value>
+            <value>
+                <fullName>Retail Store</fullName>
+                <default>false</default>
+                <label>Retail Store</label>
+            </value>
+            <value>
+                <fullName>Retail Unit</fullName>
+                <default>false</default>
+                <label>Retail Unit</label>
+            </value>
+            <value>
+                <fullName>Duplex</fullName>
+                <default>false</default>
+                <label>Duplex</label>
+            </value>
+            <value>
+                <fullName>Simplex</fullName>
+                <default>false</default>
+                <label>Simplex</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+            <value>
+                <fullName>Plot</fullName>
+                <default>false</default>
+                <label>Plot</label>
+            </value>
+            <value>
+                <fullName>1.5BHK</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1.5BHK</label>
+            </value>
+            <value>
+                <fullName>1000 -2000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1000 -2000 Sqft</label>
+            </value>
+            <value>
+                <fullName>2.5BHK</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2.5BHK</label>
+            </value>
+            <value>
+                <fullName>2000-3000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2000-3000 Sqft</label>
+            </value>
+            <value>
+                <fullName>3.5 BHK</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3.5 BHK</label>
+            </value>
+            <value>
+                <fullName>3000-4000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3000-4000 Sqft</label>
+            </value>
+            <value>
+                <fullName>4000-5000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4000-5000 Sqft</label>
+            </value>
+            <value>
+                <fullName>5 BHK</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5 BHK</label>
+            </value>
+            <value>
+                <fullName>5000-6000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5000-6000 Sqft</label>
+            </value>
+            <value>
+                <fullName>&lt; 1000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>&lt; 1000 Sqft</label>
+            </value>
+            <value>
+                <fullName>&gt;6000 Sqft</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>&gt;6000 Sqft</label>
+            </value>
+            <value>
+                <fullName>FUTURE</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>FUTURE</label>
+            </value>
+            <value>
+                <fullName>Floor Plate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Floor Plate</label>
+            </value>
+            <value>
+                <fullName>Joshi Villa</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Joshi Villa</label>
+            </value>
+            <value>
+                <fullName>Office Space</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Office Space</label>
+            </value>
+            <value>
+                <fullName>Podium Villas</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Podium Villas</label>
+            </value>
+            <value>
+                <fullName>Shops</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Shops</label>
+            </value>
+            <value>
+                <fullName>TYPE A</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TYPE A</label>
+            </value>
+            <value>
+                <fullName>TYPE B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TYPE B</label>
+            </value>
+            <value>
+                <fullName>Villa V1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Villa V1</label>
+            </value>
+            <value>
+                <fullName>Villa V2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Villa V2</label>
+            </value>
+            <value>
+                <fullName>Villa V3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Villa V3</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Satellite Towers</controllingFieldValue>
+            <controllingFieldValue>Ssilverwoods</controllingFieldValue>
+            <controllingFieldValue>The Address</controllingFieldValue>
+            <controllingFieldValue>Trump Towers</controllingFieldValue>
+            <controllingFieldValue>Waterfront</controllingFieldValue>
+            <controllingFieldValue>Forest Castle</controllingFieldValue>
+            <controllingFieldValue>yoopune</controllingFieldValue>
+            <controllingFieldValue>One North</controllingFieldValue>
+            <controllingFieldValue>Casa 9</controllingFieldValue>
+            <controllingFieldValue>EON Waterfront II</controllingFieldValue>
+            <controllingFieldValue>Eon Waterfront PH I</controllingFieldValue>
+            <controllingFieldValue>Queens Court</controllingFieldValue>
+            <valueName>3BHK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Satellite Towers</controllingFieldValue>
+            <controllingFieldValue>Ssilverwoods</controllingFieldValue>
+            <controllingFieldValue>The Address</controllingFieldValue>
+            <controllingFieldValue>Trump Towers</controllingFieldValue>
+            <controllingFieldValue>Waterfront</controllingFieldValue>
+            <controllingFieldValue>Forest Castle</controllingFieldValue>
+            <controllingFieldValue>yoopune</controllingFieldValue>
+            <controllingFieldValue>One North</controllingFieldValue>
+            <controllingFieldValue>Avant Garde</controllingFieldValue>
+            <controllingFieldValue>Casa 9</controllingFieldValue>
+            <controllingFieldValue>EON Waterfront II</controllingFieldValue>
+            <controllingFieldValue>Eon Waterfront PH I</controllingFieldValue>
+            <controllingFieldValue>Queens Court</controllingFieldValue>
+            <valueName>4BHK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Satellite Towers</controllingFieldValue>
+            <controllingFieldValue>Ssilverwoods</controllingFieldValue>
+            <controllingFieldValue>The Address</controllingFieldValue>
+            <controllingFieldValue>Trump Towers</controllingFieldValue>
+            <controllingFieldValue>Waterfront</controllingFieldValue>
+            <controllingFieldValue>Forest Castle</controllingFieldValue>
+            <controllingFieldValue>yoopune</controllingFieldValue>
+            <controllingFieldValue>One North</controllingFieldValue>
+            <controllingFieldValue>Avant Garde</controllingFieldValue>
+            <controllingFieldValue>Casa 9</controllingFieldValue>
+            <controllingFieldValue>EON Waterfront II</controllingFieldValue>
+            <controllingFieldValue>Eon Waterfront PH I</controllingFieldValue>
+            <controllingFieldValue>Panchshil Towers</controllingFieldValue>
+            <controllingFieldValue>Queens Court</controllingFieldValue>
+            <valueName>Penthouse</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SoHo</controllingFieldValue>
+            <controllingFieldValue>The Chambers</controllingFieldValue>
+            <controllingFieldValue>The Golden Bell II</controllingFieldValue>
+            <controllingFieldValue>WestView</controllingFieldValue>
+            <controllingFieldValue>WTC</controllingFieldValue>
+            <controllingFieldValue>Futura</controllingFieldValue>
+            <controllingFieldValue>Golden Bell</controllingFieldValue>
+            <controllingFieldValue>Balewadi</controllingFieldValue>
+            <controllingFieldValue>ELEVEN WEST</controllingFieldValue>
+            <valueName>Business Unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SoHo</controllingFieldValue>
+            <controllingFieldValue>The Chambers</controllingFieldValue>
+            <controllingFieldValue>The Golden Bell II</controllingFieldValue>
+            <controllingFieldValue>WestView</controllingFieldValue>
+            <controllingFieldValue>WTC</controllingFieldValue>
+            <controllingFieldValue>Futura</controllingFieldValue>
+            <controllingFieldValue>Golden Bell</controllingFieldValue>
+            <controllingFieldValue>Balewadi</controllingFieldValue>
+            <controllingFieldValue>ELEVEN WEST</controllingFieldValue>
+            <valueName>Retail Store</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SoHo</controllingFieldValue>
+            <controllingFieldValue>The Chambers</controllingFieldValue>
+            <controllingFieldValue>The Golden Bell II</controllingFieldValue>
+            <controllingFieldValue>WestView</controllingFieldValue>
+            <controllingFieldValue>WTC</controllingFieldValue>
+            <controllingFieldValue>Futura</controllingFieldValue>
+            <controllingFieldValue>Golden Bell</controllingFieldValue>
+            <controllingFieldValue>Balewadi</controllingFieldValue>
+            <controllingFieldValue>ELEVEN WEST</controllingFieldValue>
+            <valueName>Retail Unit</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>The Address</controllingFieldValue>
+            <controllingFieldValue>Trump Towers</controllingFieldValue>
+            <controllingFieldValue>Waterfront</controllingFieldValue>
+            <controllingFieldValue>yoopune</controllingFieldValue>
+            <controllingFieldValue>Avant Garde</controllingFieldValue>
+            <controllingFieldValue>Panchshil Towers</controllingFieldValue>
+            <valueName>4.5BHK</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yoo Villas</controllingFieldValue>
+            <valueName>Villa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yoo Villas</controllingFieldValue>
+            <controllingFieldValue>Bougain Villa</controllingFieldValue>
+            <valueName>Plot</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Panchshil Towers</controllingFieldValue>
+            <valueName>Duplex</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Panchshil Towers</controllingFieldValue>
+            <valueName>Simplex</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

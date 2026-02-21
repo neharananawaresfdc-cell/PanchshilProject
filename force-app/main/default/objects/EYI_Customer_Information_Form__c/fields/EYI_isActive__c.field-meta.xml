@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_isActive__c</fullName>
+    <formula>IF( ISBLANK( EYI_Opportunity__c ) , false, IF(EYI_Opportunity__r.EYI_Days_Remaining_For_Expiry__c = &apos;Expired&apos;,false,true))</formula>
+    <label>isActive</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

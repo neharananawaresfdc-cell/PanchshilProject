@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_creation_SAP_Customer_NO_absent</fullName>
+    <active>false</active>
+    <errorConditionFormula>ISBLANK(EYI_Opportunity__r.EYI_SAP_Customer_Number__c )</errorConditionFormula>
+    <errorMessage>The customer is not registered in SAP. Please verify the SAP customer number.</errorMessage>
+</ValidationRule>

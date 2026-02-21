@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Car_Park_Type_3__c</fullName>
+    <label>Common Area 3</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2 Covered</fullName>
+                <default>false</default>
+                <label>2 Covered</label>
+            </value>
+            <value>
+                <fullName>Below Metal deck</fullName>
+                <default>false</default>
+                <label>Below Metal deck</label>
+            </value>
+            <value>
+                <fullName>Compact Covered lower ground</fullName>
+                <default>false</default>
+                <label>Compact Covered lower ground</label>
+            </value>
+            <value>
+                <fullName>Covered</fullName>
+                <default>false</default>
+                <label>Covered</label>
+            </value>
+            <value>
+                <fullName>Covered - Below building</fullName>
+                <default>false</default>
+                <label>Covered - Below building</label>
+            </value>
+            <value>
+                <fullName>Covered- Below Metal Deck</fullName>
+                <default>false</default>
+                <label>Covered- Below Metal Deck</label>
+            </value>
+            <value>
+                <fullName>Covered for office</fullName>
+                <default>false</default>
+                <label>Covered for office</label>
+            </value>
+            <value>
+                <fullName>Covered for retail/restaurant</fullName>
+                <default>false</default>
+                <label>Covered for retail/restaurant</label>
+            </value>
+            <value>
+                <fullName>Large Covered</fullName>
+                <default>false</default>
+                <label>Large Covered</label>
+            </value>
+            <value>
+                <fullName>Large Covered Lower Ground</fullName>
+                <default>false</default>
+                <label>Large Covered Lower Ground</label>
+            </value>
+            <value>
+                <fullName>Large Covered - Premium</fullName>
+                <default>false</default>
+                <label>Large Covered - Premium</label>
+            </value>
+            <value>
+                <fullName>Large Covered Upper Ground</fullName>
+                <default>false</default>
+                <label>Large Covered Upper Ground</label>
+            </value>
+            <value>
+                <fullName>Large Open Upper Ground</fullName>
+                <default>false</default>
+                <label>Large Open Upper Ground</label>
+            </value>
+            <value>
+                <fullName>Larges Cover</fullName>
+                <default>false</default>
+                <label>Larges Cover</label>
+            </value>
+            <value>
+                <fullName>Mech Covered</fullName>
+                <default>false</default>
+                <label>Mech Covered</label>
+            </value>
+            <value>
+                <fullName>Mech Open</fullName>
+                <default>false</default>
+                <label>Mech Open</label>
+            </value>
+            <value>
+                <fullName>Medium Covered</fullName>
+                <default>false</default>
+                <label>Medium Covered</label>
+            </value>
+            <value>
+                <fullName>Medium Covered Lower Ground</fullName>
+                <default>false</default>
+                <label>Medium Covered Lower Ground</label>
+            </value>
+            <value>
+                <fullName>One covered and one open</fullName>
+                <default>false</default>
+                <label>One covered and one open</label>
+            </value>
+            <value>
+                <fullName>Open</fullName>
+                <default>false</default>
+                <label>Open</label>
+            </value>
+            <value>
+                <fullName>Open - Premium</fullName>
+                <default>false</default>
+                <label>Open - Premium</label>
+            </value>
+            <value>
+                <fullName>Side by Side</fullName>
+                <default>false</default>
+                <label>Side by Side</label>
+            </value>
+            <value>
+                <fullName>Side by Side covered</fullName>
+                <default>false</default>
+                <label>Side by Side covered</label>
+            </value>
+            <value>
+                <fullName>Single Covered and Open</fullName>
+                <default>false</default>
+                <label>Single Covered and Open</label>
+            </value>
+            <value>
+                <fullName>Single Covered and Side by Side</fullName>
+                <default>false</default>
+                <label>Single Covered and Side by Side</label>
+            </value>
+            <value>
+                <fullName>Single Covered and Tandem</fullName>
+                <default>false</default>
+                <label>Single Covered and Tandem</label>
+            </value>
+            <value>
+                <fullName>Small Covered</fullName>
+                <default>false</default>
+                <label>Small Covered</label>
+            </value>
+            <value>
+                <fullName>Tandem - Covered</fullName>
+                <default>false</default>
+                <label>Tandem - Covered</label>
+            </value>
+            <value>
+                <fullName>Tandem</fullName>
+                <default>false</default>
+                <label>Tandem</label>
+            </value>
+            <value>
+                <fullName>Two Wheeler Parking</fullName>
+                <default>false</default>
+                <label>Two Wheeler Parking</label>
+            </value>
+            <value>
+                <fullName>Ground Podium</fullName>
+                <default>false</default>
+                <label>Ground Podium</label>
+            </value>
+            <value>
+                <fullName>Measurement Podium</fullName>
+                <default>false</default>
+                <label>Measurement Podium</label>
+            </value>
+            <value>
+                <fullName>Ground Stilt</fullName>
+                <default>false</default>
+                <label>Ground Stilt</label>
+            </value>
+            <value>
+                <fullName>Measurement Stilt</fullName>
+                <default>false</default>
+                <label>Measurement Stilt</label>
+            </value>
+            <value>
+                <fullName>Open Car Parking</fullName>
+                <default>false</default>
+                <label>Open Car Parking</label>
+            </value>
+            <value>
+                <fullName>Stack Car Parking</fullName>
+                <default>false</default>
+                <label>Stack Car Parking</label>
+            </value>
+            <value>
+                <fullName>VILLA V1</fullName>
+                <default>false</default>
+                <label>VILLA V1</label>
+            </value>
+            <value>
+                <fullName>VILLA V2</fullName>
+                <default>false</default>
+                <label>VILLA V2</label>
+            </value>
+            <value>
+                <fullName>VILLA V3</fullName>
+                <default>false</default>
+                <label>VILLA V3</label>
+            </value>
+            <value>
+                <fullName>Tanti Villa</fullName>
+                <default>false</default>
+                <label>Tanti Villa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

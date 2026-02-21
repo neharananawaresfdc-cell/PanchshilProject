@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount__c</fullName>
+    <formula>CASE(EYI_Condition_Type__c,
+&apos;Base Price&apos;, CASE( EYI_Calculation_Mode__c ,
+&apos;Saleable Area&apos;, EYI_Rate__c * EYI_Inventory__r.EYI_Saleable_Area__c,
+&apos;RERA Carpet Area&apos;, EYI_Rate__c * EYI_Inventory__r.EYI_RERA_Carpet_Area__c ,0) ,
+&apos;Floor Rise&apos;, CASE( EYI_Calculation_Mode__c ,
+&apos;Saleable Area&apos;, EYI_Rate__c * EYI_Inventory__r.EYI_Saleable_Area__c ,
+&apos;RERA Carpet Area&apos;, EYI_Rate__c * EYI_Inventory__r.EYI_RERA_Carpet_Area__c ,0) ,
+
+CASE(EYI_Calculation_Type__c ,
+&apos;Fixed Amount&apos;, EYI_Pricing_Amount__c ,
+&apos;Quantity&apos;, EYI_Pricing_Quantity__c * EYI_Rate__c ,
+0) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Amount</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

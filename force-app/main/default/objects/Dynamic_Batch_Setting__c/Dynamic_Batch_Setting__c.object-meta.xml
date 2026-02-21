@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Setting to handle batch size and last batch run modstamp</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Dynamic Batch Setting</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Booking_Form</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://panchshilrealtyorg--devorg.sandbox.my.salesforce.com/a0IC4000000sK5ZMAU
+22-Nov-2024 01:06:12 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Booking Form</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id={!EYI_Booking__c.Id}
+
+&amp;QueryId=[BookingAccount]0Q_006MAG801995,
+[BookingProject]0Q_008MAG938694,
+[BookingOpptys]0Q_009MAG833789
+
+&amp;TemplateId=0T_002MAG291077
+
+&amp;OFN=Booking+Form+Letter+-+{!EYI_Booking__c.Name}+-+{!Today}
+&amp;AC0=1
+&amp;AC1=Booking+Form+Letter+By+{!User.Name}
+&amp;SC0=1
+&amp;SC1=Attachments
+&amp;DefaultPDF=1
+&amp;ReturnPath={!EYI_Booking__c.Id}
+&amp;BML=Generating+Booking+Form+Letter+for+{!EYI_Booking__c.Name}
+&amp;DS7=3</url>
+    <width>900</width>
+</WebLink>

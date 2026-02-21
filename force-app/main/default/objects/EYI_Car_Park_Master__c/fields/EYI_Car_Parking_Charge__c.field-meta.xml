@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Car_Parking_Charge__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Car Parking Charge</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>$Source.EYI_Parking_Type__c</field>
+            <operation>equals</operation>
+            <valueField>EYI_Car_Parking_Charge__c.EYI_Parking_Type__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.EYI_Project__c</field>
+            <operation>equals</operation>
+            <valueField>EYI_Car_Parking_Charge__c.EYI_Project__c</valueField>
+        </filterItems>
+        <filterItems>
+            <field>$Source.EYI_Tower__c</field>
+            <operation>equals</operation>
+            <valueField>EYI_Car_Parking_Charge__c.EYI_Tower__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>EYI_Car_Parking_Charge__c</referenceTo>
+    <relationshipLabel>Car Park Masters</relationshipLabel>
+    <relationshipName>Car_Park_Masters</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

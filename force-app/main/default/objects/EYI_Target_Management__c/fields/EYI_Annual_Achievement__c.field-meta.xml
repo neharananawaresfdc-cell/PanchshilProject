@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Annual_Achievement__c</fullName>
+    <formula>EYI_Q1_Total_Achievement__c +  EYI_Q2_Total_Achievement__c + EYI_Q3_Total_Achievement__c + EYI_Q4_Total_Achievement__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Annual Achievement</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

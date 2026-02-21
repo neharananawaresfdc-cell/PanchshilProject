@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Date_Should_not_greater_than_today</fullName>
+    <active>false</active>
+    <errorConditionFormula>EYI_Out_of_Office_Start__c &gt;  TODAY()</errorConditionFormula>
+    <errorDisplayField>EYI_Out_of_Office_Start__c</errorDisplayField>
+    <errorMessage>Start date should not be greater than today&apos;s date.</errorMessage>
+</ValidationRule>

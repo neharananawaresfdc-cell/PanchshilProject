@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NOT_Is_Sync</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_SAP_Affordable_Type__c</columns>
+    <columns>EYI_Available_For_Booking__c</columns>
+    <columns>EYI_Balcony_Area__c</columns>
+    <columns>EYI_Booking__c</columns>
+    <columns>EYI_Carpet_Area__c</columns>
+    <columns>EYI_SubProject__c</columns>
+    <columns>EYI_Inventory_Number__c</columns>
+    <columns>EYI_Tower__c</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_Is_Syc__c</columns>
+    <columns>EYI_SAP_Error__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Is_Syc__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Not Is Syc</label>
+</ListView>

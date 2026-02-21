@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sanction_Rejection_Reason__c</fullName>
+    <label>Sanction Rejection Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CIBIL Issue</fullName>
+                <default>false</default>
+                <label>CIBIL Issue</label>
+            </value>
+            <value>
+                <fullName>Customer Stalling/Not Submitting Docs</fullName>
+                <default>false</default>
+                <label>Customer Stalling/Not Submitting Docs</label>
+            </value>
+            <value>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+                <label>Cancellation</label>
+            </value>
+            <value>
+                <fullName>Transfer</fullName>
+                <default>false</default>
+                <label>Transfer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

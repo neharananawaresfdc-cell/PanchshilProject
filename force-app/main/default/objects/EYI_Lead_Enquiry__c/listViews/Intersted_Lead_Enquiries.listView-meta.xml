@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Intersted_Lead_Enquiries</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <label>Interested Lead Enquiries</label>
+    <sharedTo>
+        <role>Pre_Sales_Advisor</role>
+    </sharedTo>
+</ListView>

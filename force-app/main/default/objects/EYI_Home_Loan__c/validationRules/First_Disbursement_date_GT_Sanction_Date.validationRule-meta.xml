@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Disbursement_date_GT_Sanction_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  EYI_IsAutomationBypassed__c = FALSE,
+  EYI_First_Disbursement_Date__c &lt; EYI_Sanction_Received_Date__c
+)</errorConditionFormula>
+    <errorMessage>First Disbursement Date should be greater than Sanction Received Date.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Common_Documents</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Project__c</field>
+        <operation>equals</operation>
+    </filters>
+    <filters>
+        <field>EYI_Tower__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>Common Documents</label>
+</ListView>

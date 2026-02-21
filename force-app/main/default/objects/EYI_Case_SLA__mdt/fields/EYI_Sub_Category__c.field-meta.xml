@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Sub_Category__c</fullName>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <label>Sub-Category</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amenities Details</fullName>
+                <default>true</default>
+                <label>Amenities Details</label>
+            </value>
+            <value>
+                <fullName>Amenities Usage and Issues</fullName>
+                <default>false</default>
+                <label>Amenities Usage and Issues</label>
+            </value>
+            <value>
+                <fullName>Apartment Specification</fullName>
+                <default>false</default>
+                <label>Apartment Specification</label>
+            </value>
+            <value>
+                <fullName>Apartment Visit - Inspection Request</fullName>
+                <default>false</default>
+                <label>Apartment Visit - Inspection Request</label>
+            </value>
+            <value>
+                <fullName>Applicant Address Update</fullName>
+                <default>false</default>
+                <label>Applicant Address Update</label>
+            </value>
+            <value>
+                <fullName>Applicant Email Update</fullName>
+                <default>false</default>
+                <label>Applicant Email Update</label>
+            </value>
+            <value>
+                <fullName>Applicant Mobile Number Update</fullName>
+                <default>false</default>
+                <label>Applicant Mobile Number Update</label>
+            </value>
+            <value>
+                <fullName>Applicant Name Update</fullName>
+                <default>false</default>
+                <label>Applicant Name Update</label>
+            </value>
+            <value>
+                <fullName>Applicants Swap</fullName>
+                <default>false</default>
+                <label>Applicants Swap</label>
+            </value>
+            <value>
+                <fullName>Automation</fullName>
+                <default>false</default>
+                <label>Automation</label>
+            </value>
+            <value>
+                <fullName>Branding At Office</fullName>
+                <default>false</default>
+                <label>Branding At Office</label>
+            </value>
+            <value>
+                <fullName>Brokerage Information</fullName>
+                <default>false</default>
+                <label>Brokerage Information</label>
+            </value>
+            <value>
+                <fullName>Building Infrastructure Complaints</fullName>
+                <default>false</default>
+                <label>Building Infrastructure Complaints</label>
+            </value>
+            <value>
+                <fullName>Building Infrastructure Queries</fullName>
+                <default>false</default>
+                <label>Building Infrastructure Queries</label>
+            </value>
+            <value>
+                <fullName>Change Floor/Unit no</fullName>
+                <default>false</default>
+                <label>Change Floor/Unit no</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership (Resale, Gift Deed)</fullName>
+                <default>false</default>
+                <label>Change of Ownership (Resale, Gift Deed)</label>
+            </value>
+            <value>
+                <fullName>Change of Ownership( Resale before possession)</fullName>
+                <default>false</default>
+                <label>Change of Ownership( Resale before possession)</label>
+            </value>
+            <value>
+                <fullName>Clarification on Agreement Terms</fullName>
+                <default>false</default>
+                <label>Clarification on Agreement Terms</label>
+            </value>
+            <value>
+                <fullName>Client Event</fullName>
+                <default>false</default>
+                <label>Client Event</label>
+            </value>
+            <value>
+                <fullName>Client Experience</fullName>
+                <default>false</default>
+                <label>Client Experience</label>
+            </value>
+            <value>
+                <fullName>Client Pick-up Request</fullName>
+                <default>false</default>
+                <label>Client Pick-up Request</label>
+            </value>
+            <value>
+                <fullName>Commission Delay</fullName>
+                <default>false</default>
+                <label>Commission Delay</label>
+            </value>
+            <value>
+                <fullName>Commission Dispute</fullName>
+                <default>false</default>
+                <label>Commission Dispute</label>
+            </value>
+            <value>
+                <fullName>Community and Association Communication</fullName>
+                <default>false</default>
+                <label>Community and Association Communication</label>
+            </value>
+            <value>
+                <fullName>Construction or Quality Complaints</fullName>
+                <default>false</default>
+                <label>Construction or Quality Complaints</label>
+            </value>
+            <value>
+                <fullName>Conveyance &amp; Handover</fullName>
+                <default>false</default>
+                <label>Conveyance &amp; Handover</label>
+            </value>
+            <value>
+                <fullName>Customer Service and Support Complaints</fullName>
+                <default>false</default>
+                <label>Customer Service and Support Complaints</label>
+            </value>
+            <value>
+                <fullName>Customer Support and Assistance</fullName>
+                <default>false</default>
+                <label>Customer Support and Assistance</label>
+            </value>
+            <value>
+                <fullName>Customization</fullName>
+                <default>false</default>
+                <label>Customization</label>
+            </value>
+            <value>
+                <fullName>Customization or Modification Requests</fullName>
+                <default>false</default>
+                <label>Customization or Modification Requests</label>
+            </value>
+            <value>
+                <fullName>Declaration Of Account Change</fullName>
+                <default>false</default>
+                <label>Declaration Of Account Change</label>
+            </value>
+            <value>
+                <fullName>Delay In Possession</fullName>
+                <default>false</default>
+                <label>Delay In Possession</label>
+            </value>
+            <value>
+                <fullName>Delay In REC Empanelment</fullName>
+                <default>false</default>
+                <label>Delay In REC Empanelment</label>
+            </value>
+            <value>
+                <fullName>Delay in Receving Documents</fullName>
+                <default>false</default>
+                <label>Delay in Receving Documents</label>
+            </value>
+            <value>
+                <fullName>Delay In Registration</fullName>
+                <default>false</default>
+                <label>Delay In Registration</label>
+            </value>
+            <value>
+                <fullName>Delays in Communication</fullName>
+                <default>false</default>
+                <label>Delays in Communication</label>
+            </value>
+            <value>
+                <fullName>Delays in Documentation</fullName>
+                <default>false</default>
+                <label>Delays in Documentation</label>
+            </value>
+            <value>
+                <fullName>Documentation Queries</fullName>
+                <default>false</default>
+                <label>Documentation Queries</label>
+            </value>
+            <value>
+                <fullName>Document request</fullName>
+                <default>false</default>
+                <label>Document request</label>
+            </value>
+            <value>
+                <fullName>Escalation Matrix</fullName>
+                <default>false</default>
+                <label>Escalation Matrix</label>
+            </value>
+            <value>
+                <fullName>Escalation process</fullName>
+                <default>false</default>
+                <label>Escalation process</label>
+            </value>
+            <value>
+                <fullName>False Commitment</fullName>
+                <default>false</default>
+                <label>False Commitment</label>
+            </value>
+            <value>
+                <fullName>Feedback and Suggestions</fullName>
+                <default>false</default>
+                <label>Feedback and Suggestions</label>
+            </value>
+            <value>
+                <fullName>Fitout Guidelines</fullName>
+                <default>false</default>
+                <label>Fitout Guidelines</label>
+            </value>
+            <value>
+                <fullName>Floor Plan</fullName>
+                <default>false</default>
+                <label>Floor Plan</label>
+            </value>
+            <value>
+                <fullName>FM My Gate App</fullName>
+                <default>false</default>
+                <label>FM My Gate App</label>
+            </value>
+            <value>
+                <fullName>General Complaints</fullName>
+                <default>false</default>
+                <label>General Complaints</label>
+            </value>
+            <value>
+                <fullName>General Inquiries and Information</fullName>
+                <default>false</default>
+                <label>General Inquiries and Information</label>
+            </value>
+            <value>
+                <fullName>General Queries</fullName>
+                <default>false</default>
+                <label>General Queries</label>
+            </value>
+            <value>
+                <fullName>General Request</fullName>
+                <default>false</default>
+                <label>General Request</label>
+            </value>
+            <value>
+                <fullName>Handover Process &amp; Formalities</fullName>
+                <default>false</default>
+                <label>Handover Process &amp; Formalities</label>
+            </value>
+            <value>
+                <fullName>Handover Related</fullName>
+                <default>false</default>
+                <label>Handover Related</label>
+            </value>
+            <value>
+                <fullName>Lead Clash</fullName>
+                <default>false</default>
+                <label>Lead Clash</label>
+            </value>
+            <value>
+                <fullName>Lead Generation Support</fullName>
+                <default>false</default>
+                <label>Lead Generation Support</label>
+            </value>
+            <value>
+                <fullName>Legal Queries</fullName>
+                <default>false</default>
+                <label>Legal Queries</label>
+            </value>
+            <value>
+                <fullName>Maintenance and Repairs Communication</fullName>
+                <default>false</default>
+                <label>Maintenance and Repairs Communication</label>
+            </value>
+            <value>
+                <fullName>Maintenance and Repairs Requests</fullName>
+                <default>false</default>
+                <label>Maintenance and Repairs Requests</label>
+            </value>
+            <value>
+                <fullName>Maintenance and Support</fullName>
+                <default>false</default>
+                <label>Maintenance and Support</label>
+            </value>
+            <value>
+                <fullName>Marketing Support</fullName>
+                <default>false</default>
+                <label>Marketing Support</label>
+            </value>
+            <value>
+                <fullName>New Registration /Empanelment</fullName>
+                <default>false</default>
+                <label>New Registration /Empanelment</label>
+            </value>
+            <value>
+                <fullName>Over-Promising</fullName>
+                <default>false</default>
+                <label>Over-Promising</label>
+            </value>
+            <value>
+                <fullName>Ownership and Documentation</fullName>
+                <default>false</default>
+                <label>Ownership and Documentation</label>
+            </value>
+            <value>
+                <fullName>Panchshil App Login</fullName>
+                <default>false</default>
+                <label>Panchshil App Login</label>
+            </value>
+            <value>
+                <fullName>Payment and Financial Issues</fullName>
+                <default>false</default>
+                <label>Payment and Financial Issues</label>
+            </value>
+            <value>
+                <fullName>Payment Queries</fullName>
+                <default>false</default>
+                <label>Payment Queries</label>
+            </value>
+            <value>
+                <fullName>Payments and Billing Complaints</fullName>
+                <default>false</default>
+                <label>Payments and Billing Complaints</label>
+            </value>
+            <value>
+                <fullName>Payment Schedule</fullName>
+                <default>false</default>
+                <label>Payment Schedule</label>
+            </value>
+            <value>
+                <fullName>Personal Information Update</fullName>
+                <default>false</default>
+                <label>Personal Information Update</label>
+            </value>
+            <value>
+                <fullName>Point of Contact</fullName>
+                <default>false</default>
+                <label>Point of Contact</label>
+            </value>
+            <value>
+                <fullName>Post Sales - Response/Complaint</fullName>
+                <default>false</default>
+                <label>Post Sales - Response/Complaint</label>
+            </value>
+            <value>
+                <fullName>Project Information</fullName>
+                <default>false</default>
+                <label>Project Information</label>
+            </value>
+            <value>
+                <fullName>Project Legal/Compliance Issues</fullName>
+                <default>false</default>
+                <label>Project Legal/Compliance Issues</label>
+            </value>
+            <value>
+                <fullName>Project Related</fullName>
+                <default>false</default>
+                <label>Project Related</label>
+            </value>
+            <value>
+                <fullName>Project Team Visit</fullName>
+                <default>false</default>
+                <label>Project Team Visit</label>
+            </value>
+            <value>
+                <fullName>Security and Safety</fullName>
+                <default>false</default>
+                <label>Security and Safety</label>
+            </value>
+            <value>
+                <fullName>Security and Safety Complaints</fullName>
+                <default>false</default>
+                <label>Security and Safety Complaints</label>
+            </value>
+            <value>
+                <fullName>Slow Response Time</fullName>
+                <default>false</default>
+                <label>Slow Response Time</label>
+            </value>
+            <value>
+                <fullName>SM Integrity</fullName>
+                <default>false</default>
+                <label>SM Integrity</label>
+            </value>
+            <value>
+                <fullName>Society Formation</fullName>
+                <default>false</default>
+                <label>Society Formation</label>
+            </value>
+            <value>
+                <fullName>Special Request</fullName>
+                <default>false</default>
+                <label>Special Request</label>
+            </value>
+            <value>
+                <fullName>Status of the Unit</fullName>
+                <default>false</default>
+                <label>Status of the Unit</label>
+            </value>
+            <value>
+                <fullName>Status Updates and Progress Communication</fullName>
+                <default>false</default>
+                <label>Status Updates and Progress Communication</label>
+            </value>
+            <value>
+                <fullName>Unclear Communication</fullName>
+                <default>false</default>
+                <label>Unclear Communication</label>
+            </value>
+            <value>
+                <fullName>Update KYC</fullName>
+                <default>false</default>
+                <label>Update KYC</label>
+            </value>
+            <value>
+                <fullName>Update on Follow up</fullName>
+                <default>false</default>
+                <label>Update on Follow up</label>
+            </value>
+            <value>
+                <fullName>Utilities and Connections</fullName>
+                <default>false</default>
+                <label>Utilities and Connections</label>
+            </value>
+            <value>
+                <fullName>Utilities and Services Communication</fullName>
+                <default>false</default>
+                <label>Utilities and Services Communication</label>
+            </value>
+            <value>
+                <fullName>Utilities and Services Complaints</fullName>
+                <default>false</default>
+                <label>Utilities and Services Complaints</label>
+            </value>
+            <value>
+                <fullName>Utilities and Services Requests</fullName>
+                <default>false</default>
+                <label>Utilities and Services Requests</label>
+            </value>
+            <value>
+                <fullName>Utility and Service Complaints</fullName>
+                <default>false</default>
+                <label>Utility and Service Complaints</label>
+            </value>
+            <value>
+                <fullName>Utility Connections and Setup Requests</fullName>
+                <default>false</default>
+                <label>Utility Connections and Setup Requests</label>
+            </value>
+            <value>
+                <fullName>Warrenty &amp; Defects</fullName>
+                <default>false</default>
+                <label>Warrenty &amp; Defects</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Full Name</fullName>
+                <default>false</default>
+                <label>Full Name</label>
+            </value>
+            <value>
+                <fullName>Age</fullName>
+                <default>false</default>
+                <label>Age</label>
+            </value>
+            <value>
+                <fullName>Occupation</fullName>
+                <default>false</default>
+                <label>Occupation</label>
+            </value>
+            <value>
+                <fullName>Current Address</fullName>
+                <default>false</default>
+                <label>Current Address</label>
+            </value>
+            <value>
+                <fullName>Add/Update Applicant</fullName>
+                <default>false</default>
+                <label>Add/Update Applicant</label>
+            </value>
+            <value>
+                <fullName>Change in Applicant Sequence</fullName>
+                <default>false</default>
+                <label>Change in Applicant Sequence</label>
+            </value>
+            <value>
+                <fullName>Remove Applicant</fullName>
+                <default>false</default>
+                <label>Remove Applicant</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

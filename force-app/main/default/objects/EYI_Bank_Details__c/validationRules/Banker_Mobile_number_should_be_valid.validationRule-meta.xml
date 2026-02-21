@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Banker_Mobile_number_should_be_valid</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+EYI_IsAutomationBypassed__c = FALSE,
+NOT(ISBLANK(EYI_Banker_Mobile__c)),
+NOT(REGEX(EYI_Banker_Mobile__c, &quot;^[0-9]{10}$&quot;))
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Banker_Mobile__c</errorDisplayField>
+    <errorMessage>Please enter valid 10-digit mobile number.</errorMessage>
+</ValidationRule>

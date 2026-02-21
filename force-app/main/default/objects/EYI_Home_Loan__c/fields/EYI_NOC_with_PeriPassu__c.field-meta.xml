@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_NOC_with_PeriPassu__c</fullName>
+    <formula>AND(
+    NOT(ISBLANK(NOC_Document_Generated_Date__c)),
+    IsPariPassu__c
+)</formula>
+    <label>NOC with PeriPassu</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

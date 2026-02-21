@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Disbursement_Status_to_Recived</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(EYI_IsAutomationBypassed__c = false,
+    NOT(ISPICKVAL(EYI_First_Disbursement_Status__c, &quot;Received&quot;)),
+    ISPICKVAL(EYI_Status__c, &quot;First Amount Disbursed&quot;)
+
+)</errorConditionFormula>
+    <errorMessage>You can&apos;t change status without updating First Disbursement Status to Received</errorMessage>
+</ValidationRule>

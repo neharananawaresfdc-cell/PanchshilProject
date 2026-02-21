@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Marketing_Approach__c</fullName>
+    <label>Marketing Approach</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Marketing &amp; operational approach</fullName>
+                <default>false</default>
+                <label>Marketing &amp; Operational Approach</label>
+            </value>
+            <value>
+                <fullName>Digital</fullName>
+                <default>false</default>
+                <label>Digital</label>
+            </value>
+            <value>
+                <fullName>Data calling</fullName>
+                <default>false</default>
+                <label>Data calling</label>
+            </value>
+            <value>
+                <fullName>References</fullName>
+                <default>false</default>
+                <label>References</label>
+            </value>
+            <value>
+                <fullName>Outdoor Activation</fullName>
+                <default>false</default>
+                <label>Outdoor Activation</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <label>Corporate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

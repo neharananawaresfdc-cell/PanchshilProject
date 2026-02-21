@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activity_Number_Mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    ISBLANK(EYI_SAP_Activity_Number__c),
+    EYI_IsAutomationBypassed__c = FALSE
+)</errorConditionFormula>
+    <errorDisplayField>EYI_SAP_Activity_Number__c</errorDisplayField>
+    <errorMessage>Activity Number is required.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Occupation__c</fullName>
+    <label>Occupation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Salaried</fullName>
+                <default>false</default>
+                <label>Salaried</label>
+            </value>
+            <value>
+                <fullName>Business</fullName>
+                <default>false</default>
+                <label>Business</label>
+            </value>
+            <value>
+                <fullName>Professional</fullName>
+                <default>false</default>
+                <label>Professional</label>
+            </value>
+            <value>
+                <fullName>Self Employed</fullName>
+                <default>false</default>
+                <label>Self Employed</label>
+            </value>
+            <value>
+                <fullName>Homemaker</fullName>
+                <default>false</default>
+                <label>Homemaker</label>
+            </value>
+            <value>
+                <fullName>Retired</fullName>
+                <default>false</default>
+                <label>Retired</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Student</label>
+            </value>
+            <value>
+                <fullName>Defence</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Defence</label>
+            </value>
+            <value>
+                <fullName>Govt employee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Govt employee</label>
+            </value>
+            <value>
+                <fullName>Private Service</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Private Service</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

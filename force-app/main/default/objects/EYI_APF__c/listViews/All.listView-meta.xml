@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_RERA_Project_Name__c</columns>
+    <columns>EYI_Bank_Name__c</columns>
+    <columns>EYI_Project__c</columns>
+    <columns>EYI_APF_Document_Submission_Date__c</columns>
+    <columns>EYI_APF_Approval_Date__c</columns>
+    <columns>EYI_APF_Number__c</columns>
+    <columns>EYI_Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

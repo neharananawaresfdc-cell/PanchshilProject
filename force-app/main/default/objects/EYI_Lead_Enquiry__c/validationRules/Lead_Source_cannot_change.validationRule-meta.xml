@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Source_cannot_change</fullName>
+    <active>true</active>
+    <description>Lead Source cannot be change.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(EYI_Lead_Source__c),
+    EYI_IsAutomationBypassed__c = false,
+    NOT(ISBLANK(PRIORVALUE(EYI_Lead_Source__c))),
+    OR(
+        $Profile.Name = &quot;Pre-Sales&quot;,
+        $Profile.Name = &quot;Marketing&quot;
+    )
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Lead_Source__c</errorDisplayField>
+    <errorMessage>Lead Source cannot be change.</errorMessage>
+</ValidationRule>

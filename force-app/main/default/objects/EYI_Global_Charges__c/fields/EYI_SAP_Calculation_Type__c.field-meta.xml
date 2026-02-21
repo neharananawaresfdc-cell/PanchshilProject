@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SAP_Calculation_Type__c</fullName>
+    <label>SAP Calculation Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>EYI_SAP_Condition_Type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Fixed Amount</fullName>
+                <default>false</default>
+                <label>Fixed Amount</label>
+            </value>
+            <value>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+                <label>Quantity</label>
+            </value>
+            <value>
+                <fullName>Percentage</fullName>
+                <default>false</default>
+                <label>Percentage</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SDR-RECOVERABLE</controllingFieldValue>
+            <controllingFieldValue>SDR-NONRECOVER</controllingFieldValue>
+            <controllingFieldValue>ZBP0</controllingFieldValue>
+            <controllingFieldValue>ZBRA</controllingFieldValue>
+            <controllingFieldValue>ZCLB</controllingFieldValue>
+            <controllingFieldValue>ZPRM</controllingFieldValue>
+            <controllingFieldValue>MSEB</controllingFieldValue>
+            <valueName>Fixed Amount</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZADC</controllingFieldValue>
+            <controllingFieldValue>ZFRC</controllingFieldValue>
+            <controllingFieldValue>ZRCP</controllingFieldValue>
+            <valueName>Quantity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>ZBRK</controllingFieldValue>
+            <controllingFieldValue>ZLAN</controllingFieldValue>
+            <valueName>Percentage</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Non_Synced_Inventories</fullName>
+    <columns>NAME</columns>
+    <columns>EYI_Inventory_Number__c</columns>
+    <columns>EYI_Inventory_Status__c</columns>
+    <columns>EYI_Is_Syc__c</columns>
+    <columns>EYI_SAP_Error__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>EYI_Project__c</field>
+        <operation>contains</operation>
+        <value>Trump Towers</value>
+    </filters>
+    <filters>
+        <field>EYI_Is_Syc__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>Non Synced Inventories</label>
+</ListView>

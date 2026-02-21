@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APFCoordinationInitiatedDate_not_future</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  ISCHANGED(  EYI_APF_Coordination_Initiated_Date__c  ) ,NOT( ISNULL(EYI_APF_Coordination_Initiated_Date__c  ))
+,EYI_APF_Coordination_Initiated_Date__c   &gt; TODAY() )</errorConditionFormula>
+    <errorDisplayField>EYI_APF_Coordination_Initiated_Date__c</errorDisplayField>
+    <errorMessage>Please enter valid APF Coordination Initiated Date.</errorMessage>
+</ValidationRule>

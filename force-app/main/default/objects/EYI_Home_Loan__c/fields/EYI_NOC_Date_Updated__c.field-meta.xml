@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_NOC_Date_Updated__c</fullName>
+    <description>It is used for handle LRP for NOC Generate button</description>
+    <formula>NOT(ISBLANK(NOC_Document_Generated_Date__c))</formula>
+    <label>NOC Date Updated</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

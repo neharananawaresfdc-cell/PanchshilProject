@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sanction_Letter_Mandatory</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(EYI_IsAutomationBypassed__c) &amp;&amp;
+(
+    ISPICKVAL(EYI_Status__c, &apos;NOC Generated&apos;) ||
+    ISPICKVAL(EYI_Status__c, &apos;First Amount Disbursed&apos;) ||
+    ISPICKVAL(EYI_Status__c, &apos;First Disbursement received&apos;)
+) &amp;&amp;
+ISBLANK(TEXT(EYI_Source_of_Home_Loan__c))</errorConditionFormula>
+    <errorDisplayField>EYI_Status__c</errorDisplayField>
+    <errorMessage>Sanction Letter Should be upload!</errorMessage>
+</ValidationRule>

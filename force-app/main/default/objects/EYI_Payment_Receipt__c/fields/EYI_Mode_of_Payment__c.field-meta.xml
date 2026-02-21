@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Mode_of_Payment__c</fullName>
+    <label>Mode of Payment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>NEFT</fullName>
+                <default>false</default>
+                <label>NEFT</label>
+            </value>
+            <value>
+                <fullName>RTGS</fullName>
+                <default>false</default>
+                <label>RTGS</label>
+            </value>
+            <value>
+                <fullName>Card Swipe</fullName>
+                <default>false</default>
+                <label>Card Swipe</label>
+            </value>
+            <value>
+                <fullName>DD</fullName>
+                <default>false</default>
+                <label>DD</label>
+            </value>
+            <value>
+                <fullName>PDC Cheque</fullName>
+                <default>false</default>
+                <label>PDC Cheque</label>
+            </value>
+            <value>
+                <fullName>Cheque</fullName>
+                <default>false</default>
+                <label>Cheque</label>
+            </value>
+            <value>
+                <fullName>IMPS</fullName>
+                <default>false</default>
+                <label>IMPS</label>
+            </value>
+            <value>
+                <fullName>Bank</fullName>
+                <default>false</default>
+                <label>Bank</label>
+            </value>
+            <value>
+                <fullName>Bank Deposit</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bank Deposit</label>
+            </value>
+            <value>
+                <fullName>Debit/Credit Card</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Debit/Credit Card</label>
+            </value>
+            <value>
+                <fullName>Regular Cheque</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Regular Cheque</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

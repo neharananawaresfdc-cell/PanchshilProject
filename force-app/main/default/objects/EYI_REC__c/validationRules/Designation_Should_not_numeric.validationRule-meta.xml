@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designation_Should_not_numeric</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISNUMBER( EYI_Designation__c ),EYI_IsAutomationBypassed__c = false)</errorConditionFormula>
+    <errorDisplayField>EYI_Designation__c</errorDisplayField>
+    <errorMessage>Please enter valid Designation.</errorMessage>
+</ValidationRule>

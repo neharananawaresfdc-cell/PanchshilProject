@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Garage_Parking_space_area_in_Sq_Mtr__c</fullName>
+    <description>Additional</description>
+    <externalId>false</externalId>
+    <formula>EYI_Garage_Parking_space_area_in_Sq_ft__c * 0.092903</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Garage/Parking space area in Sq Mtr</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

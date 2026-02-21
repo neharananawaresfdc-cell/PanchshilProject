@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RERA_Registration_date_should_be_expired</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(EYI_RERA_Expiry_Date__c &lt; TODAY(),EYI_IsAutomationBypassed__c = false)</errorConditionFormula>
+    <errorDisplayField>EYI_RERA_Expiry_Date__c</errorDisplayField>
+    <errorMessage>Your RERA certification has expired.</errorMessage>
+</ValidationRule>

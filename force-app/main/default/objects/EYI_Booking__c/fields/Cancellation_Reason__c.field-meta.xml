@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Reason__c</fullName>
+    <label>Cancellation Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Poor quality</fullName>
+                <default>false</default>
+                <label>Poor quality</label>
+            </value>
+            <value>
+                <fullName>Sales call</fullName>
+                <default>false</default>
+                <label>Sales call</label>
+            </value>
+            <value>
+                <fullName>Damaged in transit</fullName>
+                <default>false</default>
+                <label>Damaged in transit</label>
+            </value>
+            <value>
+                <fullName>Booking Form not Approved on Time</fullName>
+                <default>false</default>
+                <label>Booking Form not Approved on Time</label>
+            </value>
+            <value>
+                <fullName>Customer Requested</fullName>
+                <default>false</default>
+                <label>Customer Requested</label>
+            </value>
+            <value>
+                <fullName>Due to Non Payment</fullName>
+                <default>false</default>
+                <label>Due to Non Payment</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>MISMATCH OF PAYMENT SCHEDULE</fullName>
+                <default>false</default>
+                <label>MISMATCH OF PAYMENT SCHEDULE</label>
+            </value>
+            <value>
+                <fullName>Applicant to Co-applicant Transfer</fullName>
+                <default>false</default>
+                <label>Applicant to Co-applicant Transfer</label>
+            </value>
+            <value>
+                <fullName>Unit Transfer</fullName>
+                <default>false</default>
+                <label>Unit Transfer</label>
+            </value>
+            <value>
+                <fullName>Assigned by the System (Internal)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assigned by the System (Internal)</label>
+            </value>
+            <value>
+                <fullName>Bill of services completed</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bill of services completed</label>
+            </value>
+            <value>
+                <fullName>Competitor better</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competitor better</label>
+            </value>
+            <value>
+                <fullName>Copied and Rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Copied and Rejected</label>
+            </value>
+            <value>
+                <fullName>Copy Failure: New SA Rejected</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Copy Failure: New SA Rejected</label>
+            </value>
+            <value>
+                <fullName>Cust.to receive replacement</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cust.to receive replacement</label>
+            </value>
+            <value>
+                <fullName>DRM Claim Canellation/Rejection</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DRM Claim Canellation/Rejection</label>
+            </value>
+            <value>
+                <fullName>Delivery date too late</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Delivery date too late</label>
+            </value>
+            <value>
+                <fullName>Guarantee</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Guarantee</label>
+            </value>
+            <value>
+                <fullName>Rejected by Selling Company</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Rejected by Selling Company</label>
+            </value>
+            <value>
+                <fullName>SMP-Declined</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMP-Declined</label>
+            </value>
+            <value>
+                <fullName>SMP-Flagged (Deleted during Release)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMP-Flagged (Deleted during Release)</label>
+            </value>
+            <value>
+                <fullName>SMP-Notification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMP-Notification</label>
+            </value>
+            <value>
+                <fullName>SMP-Suspended</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>SMP-Suspended</label>
+            </value>
+            <value>
+                <fullName>Too expensive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Too expensive</label>
+            </value>
+            <value>
+                <fullName>Transaction is being checked</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Transaction is being checked</label>
+            </value>
+            <value>
+                <fullName>Unreasonable request</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Unreasonable request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

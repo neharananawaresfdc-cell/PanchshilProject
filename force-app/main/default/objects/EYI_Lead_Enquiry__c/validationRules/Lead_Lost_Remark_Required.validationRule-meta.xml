@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Lost_Remark_Required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ EYI_IsAutomationBypassed__c = false,
+    NOT(ISBLANK( TEXT(EYI_Lost_Reason__c) )),
+    ISBLANK( EYI_Lead_Lost_Remarks__c )
+)</errorConditionFormula>
+    <errorDisplayField>EYI_Lead_Lost_Remarks__c</errorDisplayField>
+    <errorMessage>Please provide remarks for the lost reason</errorMessage>
+</ValidationRule>

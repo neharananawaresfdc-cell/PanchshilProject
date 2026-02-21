@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_SFDC_Object_Name__c</fullName>
+    <label>SFDC Object Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>EYI_Project__c</fullName>
+                <default>false</default>
+                <label>EYI_Project__c</label>
+            </value>
+            <value>
+                <fullName>EYI_Tower__c</fullName>
+                <default>false</default>
+                <label>EYI_Tower__c</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

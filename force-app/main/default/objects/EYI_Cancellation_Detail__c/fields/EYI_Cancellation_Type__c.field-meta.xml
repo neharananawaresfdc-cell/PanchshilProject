@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Cancellation_Type__c</fullName>
+    <label>Cancellation type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Voluntary</fullName>
+                <default>false</default>
+                <label>Voluntary</label>
+            </value>
+            <value>
+                <fullName>Involuntary</fullName>
+                <default>false</default>
+                <label>Involuntary</label>
+            </value>
+            <value>
+                <fullName>Legal Compliance</fullName>
+                <default>false</default>
+                <label>Legal Compliance</label>
+            </value>
+            <value>
+                <fullName>Management initiated</fullName>
+                <default>false</default>
+                <label>Management initiated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

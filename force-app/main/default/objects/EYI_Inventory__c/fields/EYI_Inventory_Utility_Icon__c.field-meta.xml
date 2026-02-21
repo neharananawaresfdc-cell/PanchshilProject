@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Inventory_Utility_Icon__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+TEXT(  EYI_Inventory_Status__c ) ,
+&quot;Available&quot;, &quot;utility:check&quot;,
+&quot;Blocked&quot;, &quot;utility:away&quot;,
+&quot;Sold&quot;, &quot;utility:close&quot;,
+&quot;Hold For Booking&quot;, &quot;utility:budget_category_value&quot;,
+&quot;Refuge&quot;, &quot;utility:cancel_transfer&quot;,
+&quot;Possession Given&quot;, &quot;utility:checkout&quot;,
+&quot;EOI Blocked&quot;, &quot;utility:coupon_codes&quot;,
+&quot;Booked&quot;, &quot;utility:checkout&quot;,
+&quot;Payment In Progress&quot;, &quot;utility:moneybag&quot;,
+&quot;Quotation Is Sent&quot;, &quot;utility:meet_present_panel&quot;,
+&quot;Not Sanctioned&quot;, &quot;utility:away&quot;,
+&quot;utility:away&quot;
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>EYI Inventory Utility Icon</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

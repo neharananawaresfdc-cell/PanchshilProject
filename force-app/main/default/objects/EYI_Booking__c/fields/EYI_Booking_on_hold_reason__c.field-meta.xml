@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EYI_Booking_on_hold_reason__c</fullName>
+    <label>Booking on hold reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>KYC pending</fullName>
+                <default>false</default>
+                <label>KYC pending</label>
+            </value>
+            <value>
+                <fullName>Customer requested to hold</fullName>
+                <default>false</default>
+                <label>Customer requested to hold</label>
+            </value>
+            <value>
+                <fullName>Site head requested to Hold</fullName>
+                <default>false</default>
+                <label>Site head requested to Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

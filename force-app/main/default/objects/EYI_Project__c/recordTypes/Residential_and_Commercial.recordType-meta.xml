@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residential_and_Commercial</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>EYI_Project_Layout</compactLayoutAssignment>
+    <label>Residential and Commercial</label>
+    <picklistValues>
+        <picklist>EYI_Asset_Class__c</picklist>
+        <values>
+            <fullName>Leasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outright</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Car_Park_Type_1__c</picklist>
+        <values>
+            <fullName>2 Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Below Metal deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compact Covered lower ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered - Below building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for retail%2Frestaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered- Below Metal Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Open Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larges Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One covered and one open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stack Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem - Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanti Villa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Wheeler Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Car_Park_Type_2__c</picklist>
+        <values>
+            <fullName>2 Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Below Metal deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compact Covered lower ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered - Below building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for retail%2Frestaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered- Below Metal Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Open Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larges Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One covered and one open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stack Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem - Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanti Villa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Wheeler Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Car_Park_Type_3__c</picklist>
+        <values>
+            <fullName>2 Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Below Metal deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compact Covered lower ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered - Below building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for retail%2Frestaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered- Below Metal Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Open Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larges Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One covered and one open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stack Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem - Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanti Villa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Wheeler Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Car_Park_Type_4__c</picklist>
+        <values>
+            <fullName>2 Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Below Metal deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compact Covered lower ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered - Below building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for retail%2Frestaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered- Below Metal Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Open Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larges Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One covered and one open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stack Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem - Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanti Villa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Wheeler Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Car_Park_Type_5__c</picklist>
+        <values>
+            <fullName>2 Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Below Metal deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Compact Covered lower ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered - Below building</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for office</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered for retail%2Frestaurant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Covered- Below Metal Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ground Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Covered Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Large Open Upper Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Larges Cover</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Podium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Measurement Stilt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mech Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Covered Lower Ground</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>One covered and one open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open - Premium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Open Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Side by Side covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Open</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Side by Side</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Covered and Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stack Car Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tandem - Covered</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanti Villa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two Wheeler Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VILLA V3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Condition_Group_1__c</picklist>
+        <values>
+            <fullName>PCMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PMRDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Township</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Configuration_Types__c</picklist>
+        <values>
+            <fullName>2BHK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E5BHK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3BHK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E5BHK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4BHK</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Spaces</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Penthouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Store</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Simplex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Villa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Distribution_Channel__c</picklist>
+        <values>
+            <fullName>00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>70</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>80</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Global_Charges__c</picklist>
+        <values>
+            <fullName>Base</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Club House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Floor Rise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Infra</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal Charges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MSEB</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Level__c</picklist>
+        <values>
+            <fullName>00</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>01</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>02</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>03</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>04</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>05</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Project_Property_Type__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Project_Status__c</picklist>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre- Launch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustenance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teaser</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Project_Type__c</picklist>
+        <values>
+            <fullName>Business Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Residential_Type__c</picklist>
+        <values>
+            <fullName>Commercial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platinum</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Sales_District__c</picklist>
+        <values>
+            <fullName>IN0001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IN0002</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Sales_Group__c</picklist>
+        <values>
+            <fullName>100</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>101</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>103</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Sales_Office__c</picklist>
+        <values>
+            <fullName>1000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1001</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1003</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1004</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Sub_Asset_Class__c</picklist>
+        <values>
+            <fullName>Apartment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Unit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Office Space</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Plot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail and F%26B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Villa</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EYI_Zone__c</picklist>
+        <values>
+            <fullName>PCMC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pune City</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
