@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Payment Cancellation Details</description>
+    <label>Payment Cancellation Details	Case</label>
+    <lwcComponent>eYI_SAP_CancellationPaymentDetails2</lwcComponent>
+    <motif>Custom32: Factory</motif>
+</CustomTab>

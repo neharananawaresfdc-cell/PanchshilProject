@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Eligible_to_Raise_Invoice</fullName>
+        <description>Eligible to Raise Invoice</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Eligible_To_Raise_Invoice</template>
+    </alerts>
+    <alerts>
+        <fullName>Invoice_Rejected_Email_alert</fullName>
+        <description>Invoice Rejected Email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Invoice_Rejected</template>
+    </alerts>
+    <alerts>
+        <fullName>Not_Eligible_to_Raise_Invoice</fullName>
+        <description>Not Eligible to Raise Invoice</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Not_Eligible_for_Invoice</template>
+    </alerts>
+    <alerts>
+        <fullName>Registartion_is_Completed</fullName>
+        <description>Registartion is Completed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Registration_Completed</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Final_Approval_Status</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Final Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approval_Status_Approve</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Final Approval Status Approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approval_Status_Approved</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Final Approval Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Approved</fullName>
+        <field>Stages__c</field>
+        <literalValue>Invoice Accepted Compliance</literalValue>
+        <name>Finance Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Approval_Approved</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Approved by Head</literalValue>
+        <name>Invoice Approval Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Approval_Status_Rejected</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Invoice Approval Status Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Approval_Status_Submitted</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Invoice Approval Status Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Checklist_Accept_Status</fullName>
+        <field>EYI_Invoice_Checklist__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Invoice Checklist Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Checklist_Status</fullName>
+        <field>EYI_Invoice_Checklist__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Invoice Checklist Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Checklist_Status_Update</fullName>
+        <field>EYI_Invoice_Checklist__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Invoice Checklist Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Invoice_Rejected</fullName>
+        <field>Stages__c</field>
+        <literalValue>Invoice Received</literalValue>
+        <name>Invoice Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reset_Final_Approval_Status</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <name>Reset Final Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Restore</fullName>
+        <field>Stages__c</field>
+        <literalValue>Invoice Received</literalValue>
+        <name>Stage Restore</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Stage_Update</fullName>
+        <field>Stages__c</field>
+        <literalValue>Invoice Accepted Sales</literalValue>
+        <name>Stage Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Invoice_Approval_Reject_by_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Update Invoice Approval Reject by Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Invoice_Approval_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Approved by TL</literalValue>
+        <name>Update Invoice Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Invoice_Approval_by_Financ_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Approved by Finance</literalValue>
+        <name>Update Invoice Approval by Financ Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Invoice_Approval_by_Head_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Approved by Head</literalValue>
+        <name>Update Invoice Approval by Head Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Invoice_Rejected_by_Head_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Rejected by Head</literalValue>
+        <name>Update Invoice Approval by Head Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Rejected by Head</literalValue>
+        <name>Update Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejected_by_Finance_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Rejected by Finance</literalValue>
+        <name>Update Rejected by Finance Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Sales_Approval_Status</fullName>
+        <field>EYI_Invoice_Approval_Status__c</field>
+        <literalValue>Approved by Head</literalValue>
+        <name>Update Sales Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage</fullName>
+        <field>Stages__c</field>
+        <literalValue>Eligible To Raise Invoice</literalValue>
+        <name>Update Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Create_Invoice</fullName>
+        <apiVersion>64.0</apiVersion>
+        <endpointUrl>https://ap-workflow.congamerge.com/OBMListener.ashx</endpointUrl>
+        <fields>EYI_Create_Invoice__c</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>tushar.mathur1+panchshil@in.ey.com.uatorg</integrationUser>
+        <name>Create Invoice</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+</Workflow>

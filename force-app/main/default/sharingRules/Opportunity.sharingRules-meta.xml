@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Opportunity_Apartment_Date_not_equal_null</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Opportunity Apartment Date not equal null</label>
+        <sharedTo>
+            <role>Possession_Manager</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>EYI_Apartment_Ready_Date_Present__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Share_Dummy_Opportunity</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share Dummy Opportunity</label>
+        <sharedTo>
+            <roleAndSubordinatesInternal>CEO</roleAndSubordinatesInternal>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>contains</operation>
+            <value>Placeholder</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>Access_to_Guest_User</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Access to Guest User</label>
+        <sharedTo>
+            <guestUser>PAN_and_Aadhar_Verification_EKYC</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>OwnerId</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

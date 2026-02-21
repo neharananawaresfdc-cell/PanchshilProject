@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Account_Approval_Rejection_for_TL</fullName>
+        <description>Account Approval Rejection for TL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sourcing_TL_1</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Account_Approval_for_TL</fullName>
+        <description>Account Approval for TL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sourcing_TL_1</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_REC_Account_Created</fullName>
+        <description>Alert for REC Account Created</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Alternate_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/New_REC_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_REC_Account_Registered</fullName>
+        <description>Send notification when REC Account Registered</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Registered</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_REC_Registration</fullName>
+        <description>Alert for REC Registration</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Alternate_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sourcing/REC_Account_Registered</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_for_rera_expiration_date</fullName>
+        <description>Alert for rera expiration date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Email_Template_for_RERA_Expiry_Date</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_if_Oppo_Closed_Date_Passed</fullName>
+        <description>Alert if Oppo Closed Date Passed</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Template_if_Oppo_Closed_Date_passed</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_REC_Account_about_Anniversary</fullName>
+        <description>Alert to REC Account about Anniversary</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Template_to_send_Anniversary_notification_to_REC_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_REC_Account_about_birthday</fullName>
+        <description>Alert to REC Account about birthday</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Template_to_send_Birthday_wishes_to_REC_Account</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_REC_before_10_days_of_Opportunity_Close_Date</fullName>
+        <description>Alert to REC before 10 days of Opportunity Close Date</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Send_Notification_before_10_days_of_Opportunity_closure</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_Sourcing_Head_for_approval_rejection</fullName>
+        <description>Alert to Sourcing Head for approval/rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Send_notification_to_Sourcing_Head_for_Approval</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_notify_about_RERA_Expiration</fullName>
+        <description>Alert to notify about RERA Expiration</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Notification_for_RERA_Expiry</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_send_notification_for_Sourcing_TL</fullName>
+        <description>Alert to send notification for Sourcing TL</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approval_Req_to_Sourcing_TL</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_send_notification_to_REC_Account_and_SM_regarding_in_Account_Owner</fullName>
+        <description>Alert to send notification to REC Account and SM regarding in Account Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Alternate_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Send_Notification_to_rec_account_regarding_rec_account_owner_change</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_send_notification_to_owner_when_rec_owner_changed</fullName>
+        <description>Alert to send notification to owner when rec owner changed</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sourcing/Template_to_send_email_to_Owner_of_REC</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_when_REC_Account_Registered</fullName>
+        <description>Send notification when REC Account Registered</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Registered</template>
+    </alerts>
+    <alerts>
+        <fullName>Approval_for_TL</fullName>
+        <description>Approval for TL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sourcing_TL_1</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Approved_Email_Notification</fullName>
+        <description>Approved Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Approved_Email_Notification1</fullName>
+        <description>Approved Email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Manual_EKYC_send_over_email_to_REC</fullName>
+        <description>Manual EKYC send over email to REC</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Manual_send_KYC_Link</template>
+    </alerts>
+    <alerts>
+        <fullName>REC_approved_alert</fullName>
+        <description>REC approved alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>LastModifiedById</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Registration_Approval_Email_to_SM_and_TL</fullName>
+        <description>Registration Approval Email to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Registration_Approval_Email_to_TL_and_SM</template>
+    </alerts>
+    <alerts>
+        <fullName>Rera_Registration_Is_Not_Received</fullName>
+        <description>Rera Registration Is Not Received</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Alternate_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Rera_is_not_Received_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Rera_Registration_Is_Received</fullName>
+        <description>Rera Registration Is Received</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Alternate_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Rera_is_Received_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approval_Email_to_TL</fullName>
+        <description>Send Approval Email to TL</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approval_Notification_to_Head</fullName>
+        <description>Send Registration Rejection Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Rejection_Notification_to_SM_and_TL</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approval_Notification_to_Head_1</fullName>
+        <description>Send Inactive/Duplicate to Active Approval Notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approved_notification_to_SM_Head</fullName>
+        <description>Send Registration Approved notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_TL_Approval_Notification_to_SM</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approved_notification_to_SM_and_TL</fullName>
+        <description>Send Approved notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Approved_notification_to_SM_and_TL_And_SM_Head</fullName>
+        <description>Send Approved notification to SM and TL And SM Head</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_to_TL_On_Submission</fullName>
+        <description>Send Email to TL</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sourcing_TL_1</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Approval_Notification_to_SM</fullName>
+        <description>Send Frozen to Active Approval Notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Approved_notification_to_SM_and_TL</fullName>
+        <description>Send Frozen to Active Approved notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Approved_notification_to_SM_and_TL_And_SM_Head</fullName>
+        <description>Send Frozen to Active Approved notification to SM and TL And SM Head</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Rejected_Notification_to_SM_and_Head_and_TL_Head</fullName>
+        <description>Send Frozen to Active Rejected Notification to SM and Head and TL &amp; Head</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Rejected_Notification_to_SM_and_TL</fullName>
+        <description>Send Frozen to Active Rejected Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Frozen_to_Active_Rejection_Notification_to_SM</fullName>
+        <description>Send Frozen to Active Rejection Notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Frozen_to_Active_Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Inactive_Dup_to_Active_Approved_notification_to_SM_and_TL</fullName>
+        <description>Send Inactive Dup to Active Approved notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Inactive_Duplicate_to_Active_Approval_Notification_to_SM_and_TL</fullName>
+        <description>Send Inactive/Duplicate to Active Approval Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Active_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Inactive_Duplicate_to_Active_Rejected_Notification_to_SM_and_TL</fullName>
+        <description>Send Inactive/Duplicate to Active Rejected Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Rejected_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Registration_rejection_notification_to_SM</fullName>
+        <description>Send Registration rejection notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_TL_Rejection_Notification_to_SM</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Rejected_Notification_to_Head</fullName>
+        <description>Send Rejected Notification to Sourcing Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Rejected_Notification_to_SM_Head</fullName>
+        <description>Send Rejected Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Rejected_Notification_to_SM_Head_and_TL</fullName>
+        <description>Send Rejected Notification to SM and Head and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Account_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Rejected_Notification_to_SM_and_TL</fullName>
+        <description>Send Rejected Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Rejected_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Rejected_Notification_to_Sourcing_Manager_1</fullName>
+        <description>Send Inactive Duplicate to Active Reject Notification to SM</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/REC_Inactive_Duplicate_to_Rejected_Approved_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Add_Rejection_Remark</fullName>
+        <field>EYI_Rejection_Remark__c</field>
+        <formula>&apos;Rejected by Sourcing TL&apos;</formula>
+        <name>Add Rejection Remark</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Add_Rejection_Remark_1</fullName>
+        <field>EYI_Rejection_Remark__c</field>
+        <formula>&apos;Rejected by Sourcing Head&apos;</formula>
+        <name>Add Rejection Remark</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Approved</fullName>
+        <description>REC Approval status update.</description>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Approved by Sourcing TL</literalValue>
+        <name>REC Approval Status TL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Head_Rejected1</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Head Rejected</literalValue>
+        <name>REC Approval Status Head Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Rejected</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Rejected by Sourcing TL</literalValue>
+        <name>REC Approval Status TL Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Rejected_by_Head</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Rejected by Sourcing Head</literalValue>
+        <name>REC Approval Status Update to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_SM_Head_Approved1</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Approved By Sales &amp; CRM Head</literalValue>
+        <name>REC Approval Status SM Head Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_SM_Head_Rejected11</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Sales &amp; CRM Head Rejected</literalValue>
+        <name>REC Approval Status SM Head Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_TL_Approved1</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>TL Approved</literalValue>
+        <name>REC Approval Status TL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_TL_Approved11</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>TL Approved</literalValue>
+        <name>REC Approval Status TL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_TL_Approved_1</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>TL Approved</literalValue>
+        <name>REC Approval Status TL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_TL_Rejected</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>TL Rejected</literalValue>
+        <name>REC Approval Status TL Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_TL_Rejected1</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>TL Rejected</literalValue>
+        <name>REC Approval Status TL Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Update_to_Approved1</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>Head Approved</literalValue>
+        <name>REC Approval Status Update to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Update_to_Approved2</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Head Approved</literalValue>
+        <name>REC Approval Status Update to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Update_to_Head</fullName>
+        <description>REC Approval status Update</description>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Approved by Sourcing Head</literalValue>
+        <name>REC Approval Status Update to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Approval_Status_Update_to_Rejected</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>Head Rejected</literalValue>
+        <name>REC Approval Status Update to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>REC_Status_update_to_Active</fullName>
+        <field>EYI_REC_Status__c</field>
+        <literalValue>Active</literalValue>
+        <name>REC Status update to Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Registration_Approved_by_Finance_user</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Approved by Finance Executive</literalValue>
+        <name>Registration Approved by Finance user</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Registration_Rejected_by_Finance_user</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Rejected by Finance Executive</literalValue>
+        <name>Registration Rejected by Finance user</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Status_on_Ina_dup_by_head</fullName>
+        <field>EYI_Approval_of_Inactive_Duplicate_toAct__c</field>
+        <literalValue>Rejected by Sourcing Head</literalValue>
+        <name>Rejected Status on Ina/dup by head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Status_on_Ina_dup_to_Activ</fullName>
+        <field>EYI_Approval_of_Inactive_Duplicate_toAct__c</field>
+        <literalValue>Rejected by Sourcing TL</literalValue>
+        <name>Rejected Status on Ina/dup to Activ</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_from_Ina_Dup_to_Active</fullName>
+        <field>EYI_Approval_of_Inactive_Duplicate_toAct__c</field>
+        <literalValue>Approved by Sourcing Head</literalValue>
+        <name>Status from Ina/Dup to Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_Approval</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_Approval_1</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_Approval_InActive</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>Submitted for Approval</literalValue>
+        <name>Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Approved by Finance Executive</literalValue>
+        <name>Update Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_Status_Field</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Update Approval Status Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_status_to_Submitted</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Update Approval status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Inactive_Active_Approval_Status</fullName>
+        <field>EYI_Approval_of_Inactive_Duplicate_toAct__c</field>
+        <literalValue>Approved by Sourcing TL</literalValue>
+        <name>Update Inactive / Active Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Inactive_Duplicate_to_Active</fullName>
+        <field>EYI_Approval_of_Inactive_Duplicate_toAct__c</field>
+        <literalValue>Submitted for Approval</literalValue>
+        <name>Update Inactive/Duplicate to Active</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejection_Remark</fullName>
+        <field>EYI_Rejection_Remark__c</field>
+        <name>Update Rejection Remark</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejection_Remark_1</fullName>
+        <field>EYI_Rejection_Remark__c</field>
+        <name>Update Rejection Remark</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejection_Status</fullName>
+        <field>EYI_Approval_Status_to_Activate_REC__c</field>
+        <literalValue>Sales &amp; CRM Head Rejected</literalValue>
+        <name>Update Rejection Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Rejection_Status_Finance</fullName>
+        <field>EYI_REC_Approval_Status__c</field>
+        <literalValue>Rejected by Finance Executive</literalValue>
+        <name>Update Rejection Status Finance</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Updated_Approved_Status2</fullName>
+        <field>EIY_Approval_Status_to_Inactive__c</field>
+        <literalValue>Head Approved</literalValue>
+        <name>Updated Approved Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

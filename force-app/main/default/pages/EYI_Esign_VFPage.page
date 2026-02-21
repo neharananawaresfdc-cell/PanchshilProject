@@ -1,0 +1,28 @@
+<apex:page standardController="EYI_REC__c" extensions="EYI_Esign_VFPageController">
+    <html>
+        <head>
+            <style>
+                .pdf-button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background-color: Blue;
+                    color: Black;
+                    padding: 10px 20px;
+                    text-align: center;
+                    border-radius: 5px;
+                    border: none;
+                    font-size: 14px;
+                }
+            </style>
+        </head>
+        <body>
+            <apex:form >
+            <h1>Test E-sign doc</h1>
+            <apex:commandButton action="{!esignCall}" value="E-Sign" reRender="target"></apex:commandButton>
+            
+            <p>This is a sample page with an interactive button.</p>
+                </apex:form>
+        </body>
+    </html>
+</apex:page>

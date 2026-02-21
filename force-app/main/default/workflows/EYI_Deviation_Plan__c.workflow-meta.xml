@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Deviation_Approved_by_Head_Notification_Email</fullName>
+        <description>Deviation Approved by Head Notification Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>EYI_TL_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Deviation_Approved_by_TL_Notification_Email</fullName>
+        <description>Deviation Approved by TL Notification Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Deviation_Rejected_by_Head_Notification_Email</fullName>
+        <description>Deviation Rejected by Head Notification Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>EYI_TL_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Deviation_Rejected_by_TL_Notification_Email</fullName>
+        <description>Deviation Rejected by TL Notification Email</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approved_Deviation_Form_Notification</fullName>
+        <description>Final Approved Deviation Form Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_CRM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejected_Deviation_Form_Notification</fullName>
+        <description>Rejected Deviation Form Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Functional_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>EYI_TL_Approver__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_Email_for_Deviation_approval_to_head</fullName>
+        <description>Send Email for Deviation approval to Head</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Functional_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sales_Email_Templates/EYI_Deviation_Form_Approved_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approved_by_Head</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Approved by L2 Approver</literalValue>
+        <name>Approved by Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_by_L1</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Approved by L1 Approver</literalValue>
+        <name>Approved by L1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_by_the_Final_Approver</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Approved by Final Approver</literalValue>
+        <name>Approved by the Final Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approved_Check_True</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Final Approved Check True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approved_Checkox_True</fullName>
+        <field>EYI_Final_Quotation_DAF__c</field>
+        <literalValue>1</literalValue>
+        <name>Final Approved Checkox True</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Approver_Status_as_Rejected</fullName>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Final Approver Status as Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_By_Final_Approver</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Rejected by Final Approver</literalValue>
+        <name>Rejected By Final Approver</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_By_Functional_Head</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Rejected by L2 Approver</literalValue>
+        <name>Rejected By Functional Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_By_TL</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Rejected by L1 Approver</literalValue>
+        <name>Rejected By TL</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_by_L1</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Rejected by L1 Approver</literalValue>
+        <name>Rejected by L1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_Approval</fullName>
+        <field>EYI_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Submitted Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_FA</fullName>
+        <description>Tushar Update for Final Approval status</description>
+        <field>EYI_Final_Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Update FA</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

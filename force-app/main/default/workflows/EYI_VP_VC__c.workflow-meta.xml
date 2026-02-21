@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alert_at_the_day_of_visit_confirmation</fullName>
+        <description>Alert at the day of visit confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Send_Notification_at_the_time_of_Visit_date</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_send_notification_before_1_hour</fullName>
+        <description>Alert to send notification before 1 hour</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Send_notification_1_hour_before_visit_confirmation</template>
+    </alerts>
+    <alerts>
+        <fullName>Alert_to_send_notification_for_now_show_status</fullName>
+        <description>Alert to send notification for now show status</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Sourcing/Template_to_send_notification_for_no_show</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>APF_Expiry_Alert_to_Loan_Care_Team</fullName>
+        <description>APF Expiry Alert to Loan Care Team</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_Loan_Executive__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>EYI_RM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Post_Sales_Email_Templates/APF_Expiry_Alert_to_Loan_Care_Team</template>
+    </alerts>
+    <alerts>
+        <fullName>Home_Loan_Process_Initiated_Alert_to_RM_CH_EM_CM_Alert</fullName>
+        <ccEmails>info@myfinlabs.com</ccEmails>
+        <ccEmails>care@panchshil.com</ccEmails>
+        <description>Home Loan Process Initiated Alert to RM/CH/EM/CM Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>EYI_CRM_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Closing_Manager__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>EYI_Loan_Executive__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>EYI_RM__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Post_Sales_Email_Templates/Home_Loan_Process_Initiated_Alert_to_RM_CH_EM_CM</template>
+    </alerts>
+</Workflow>

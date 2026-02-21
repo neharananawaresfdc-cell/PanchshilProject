@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approval_Notification</fullName>
+        <description>Approval Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>Marketing_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Pre_Sales_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>Sales_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Campaign_Budget_utilization_notification</fullName>
+        <description>Campaign Budget utilization notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>Marketing_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>MarketingTemplates/Budget_Utilized_Notification_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Notification</fullName>
+        <description>Rejection Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/Rejection_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Submission_for_Approval</fullName>
+        <description>Submission for Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>MarketingTemplates/Submission_for_Approval</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_status_update_open</fullName>
+        <field>EYI_Approval_status__c</field>
+        <name>Approval status update open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approved_Approval_Status</fullName>
+        <field>EYI_Approval_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approved Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L1_Approval_Status</fullName>
+        <field>EYI_L1_Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>L1 Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L1_Approval_status_to_open</fullName>
+        <field>EYI_L1_Approval_Status__c</field>
+        <name>L1 Approval status to open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L1_Rejected_Status</fullName>
+        <field>EYI_L1_Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>L1 Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L2_Approval</fullName>
+        <field>EYI_L2_approval_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>L2 Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L2_Approval_Status</fullName>
+        <field>EYI_L2_approval_status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>L2 Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L2_Approval_status_to_open</fullName>
+        <field>EYI_L2_approval_status__c</field>
+        <name>L2 Approval status to open</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L2_Rejected</fullName>
+        <field>EYI_L2_approval_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>L2 Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>L2_Rejected_Status</fullName>
+        <field>EYI_L2_approval_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>L2 Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_Approval_Status</fullName>
+        <field>EYI_Approval_status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Rejected Approval Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted_for_Approval</fullName>
+        <field>EYI_Approval_status__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Submitted for Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sourcing TL Members queue</description>
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>Sourcing TL</name>
+    <queueSobject>
+        <sobjectType>EYI_REC__c</sobjectType>
+    </queueSobject>
+</Queue>

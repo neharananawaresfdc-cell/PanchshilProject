@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Resend Digital Slot Booking Link</description>
+    <flowDefinition>Reset_Digital_Slot_Matrix</flowDefinition>
+    <label>Resend Possession Slot Link</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <type>Flow</type>
+</QuickAction>

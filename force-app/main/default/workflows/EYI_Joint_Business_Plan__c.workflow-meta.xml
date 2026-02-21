@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>JBP_Send_Approval_Notification_to_Head</fullName>
+        <ccEmails>Akshay.Salunke1@in.ey.com</ccEmails>
+        <description>JBP Send Approval Notification to Head</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>JBP_Send_Approved_notification_to_SM_TL_and_Head</fullName>
+        <description>JBP Send Approved notification to SM TL and Head</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>JBP_Send_Approved_notification_to_SM_and_TL</fullName>
+        <description>JBP Send Approved notification to HOD</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Sourcing_Sales_CRM_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Approval_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>JBP_Send_Rejected_Notification_to_SM_and_TL</fullName>
+        <description>JBP Send Rejected Notification to SM and TL</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>JBP_Send_Rejected_Notification_to_Sourcing_Manager</fullName>
+        <description>JBP Send Rejected Notification to Sourcing Manager</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Rejected_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>JBP_Send_Rejected_notification_to_SM_TL_and_Head</fullName>
+        <description>JBP Send Rejected notification to SM TL and Head</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_Head__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <recipients>
+            <field>Sourcing_TL__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Joint_Business/JBP_Rejected_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Head_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Head Approved</literalValue>
+        <name>Approval Status to Head Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Head_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Head Rejected</literalValue>
+        <name>Approval Status to Head Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_Rejected1</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Approval Status to Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_TL_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>TL Approved</literalValue>
+        <name>Approval Status to  TL Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_to_TL_Rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>TL Rejected</literalValue>
+        <name>Approval Status to TL Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_status_to_Approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_status_to_Approved1</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Approval status to Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Activity_Support_Required_to_No</fullName>
+        <field>EYI_Activity_Support_Required__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Activity Support Required to No</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Activity_Support_Required_to_No_1</fullName>
+        <field>EYI_Activity_Support_Required__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Activity Support Required to No</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Activity_Support_Required_to_No_2</fullName>
+        <field>EYI_Activity_Support_Required__c</field>
+        <literalValue>No</literalValue>
+        <name>Update Activity Support Required to No_2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Approval_status_to_Submitted</fullName>
+        <description>Update Approval status to Submitted for Approval</description>
+        <field>Approval_Status__c</field>
+        <literalValue>Submitted For Approval</literalValue>
+        <name>Update Approval status to Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

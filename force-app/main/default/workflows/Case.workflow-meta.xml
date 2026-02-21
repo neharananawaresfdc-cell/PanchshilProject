@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Case_Acknowledgement_Mail_Alert</fullName>
+        <description>Case Acknowledgement Mail Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>care@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/EYI_Case_Acknowledgement_Mail</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Assignment_to_Owner</fullName>
+        <description>Case Assignment to Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>partnersupport@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Case_Assigned_Mail_to_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_Reopen_Alert</fullName>
+        <description>Case Reopen Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Sourcing_Email_Template/Case_Reponed_notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Case_close_email_template_to_Care_Team</fullName>
+        <description>Case close email template to Care Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CRM_Support_Manager</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Post_Sales_Email_Templates/Case_close_notify_to_Care_team</template>
+    </alerts>
+    <alerts>
+        <fullName>EYI_Case_ReOpen_Mail_to_Owner_Alert</fullName>
+        <description>Case ReOpen Mail to Owner Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/EYI_Case_ReOpen_Mail_to_Owner</template>
+    </alerts>
+    <alerts>
+        <fullName>EYI_Feedback_poor_rating_escalation_Alert</fullName>
+        <description>Feedback poor rating escalation Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>CRM_Head</recipient>
+            <type>role</type>
+        </recipients>
+        <senderAddress>eytest1999@gmail.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/EYI_Feedback_poor_rating_escalation</template>
+    </alerts>
+    <alerts>
+        <fullName>EYI_Post_Sales_Case_Closed_Email_Alert</fullName>
+        <description>Post Sales Case Closed Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>SuppliedEmail</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>sales@panchshil.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/EYI_Post_Sales_Case_Closed_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_Status_Update</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Approval Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Approval_Status_Update2</fullName>
+        <field>EYI_RM_Retention_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Approval Status Update2</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRM_Head_Approved_Cancellation_Deed</fullName>
+        <field>Cancellation_Deed_Approval_Status__c</field>
+        <literalValue>Approved by CRM Head</literalValue>
+        <name>CRM Head Approved Cancellation Deed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRM_Head_Rejected_Cancellation_Deed</fullName>
+        <field>Cancellation_Deed_Approval_Status__c</field>
+        <literalValue>Rejected by CRM Head</literalValue>
+        <name>CRM Head Rejected Cancellation Deed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRM_TL_Approved_Cancellation_Deed</fullName>
+        <field>Cancellation_Deed_Approval_Status__c</field>
+        <literalValue>Approved by CRM TL</literalValue>
+        <name>CRM TL Approved Cancellation Deed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CRM_TL_Rejected_Cancellation_Deed</fullName>
+        <field>Cancellation_Deed_Approval_Status__c</field>
+        <literalValue>Rejected by CRM TL</literalValue>
+        <name>CRM TL Rejected Cancellation Deed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approval_Date_Update</fullName>
+        <field>EYI_Cancellation_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Cancellation Approval Date Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_Date</fullName>
+        <field>EYI_Cancellation_Approval_Date__c</field>
+        <formula>TODAY()</formula>
+        <name>Cancellation Approved Date</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_CRM_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by Functional Head</literalValue>
+        <name>Cancellation Approved by CRM Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by Functional Head</literalValue>
+        <name>Cancellation Approved by Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_SC_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by S&amp;C Head</literalValue>
+        <name>Cancellation Approved by S&amp;C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_S_C_Head</fullName>
+        <field>EYI_RM_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by S&amp;C Head</literalValue>
+        <name>Cancellation Approved by S &amp; C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_S_C_Head_RM</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by S&amp;C Head</literalValue>
+        <name>Cancellation Approved by S&amp;C Head for RM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Approved_by_S_C_Head_for_RM</fullName>
+        <field>EYI_RM_Cancellation_Approval_Status__c</field>
+        <literalValue>Approved by S&amp;C Head</literalValue>
+        <name>Cancellation Approved by S&amp;C Head for RM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejected_by_CRM_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by Functional Head</literalValue>
+        <name>Cancellation Rejected by CRM Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejected_by_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by Functional Head</literalValue>
+        <name>Cancellation Rejected by Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejected_by_SC_Head</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Cancellation Rejected by S&amp;C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejected_by_S_C_Head_RM</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Cancellation Rejected by S&amp;C Head for RM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejected_by_S_C_Head_for_RM</fullName>
+        <field>EYI_RM_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Cancellation Rejected by S&amp;C Head for RM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Rejectedby_S_C_Head</fullName>
+        <field>EYI_RM_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Cancellation Rejectedby S &amp; C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Cancellation_Submitted_Update</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Cancellation Submitted Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Approval_Approved</fullName>
+        <field>EYI_Case_Approval_Status__c</field>
+        <literalValue>Approved by Functional Head</literalValue>
+        <name>Case Approval Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Approval_Rejected</fullName>
+        <field>EYI_Case_Approval_Status__c</field>
+        <literalValue>Rejected by Functional Head</literalValue>
+        <name>Case Approval Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Approval_Submitted</fullName>
+        <field>EYI_Case_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Case Approval Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Case_Status_Update</fullName>
+        <field>Status</field>
+        <literalValue>Working</literalValue>
+        <name>Update Case Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>ChangePriorityToHigh</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Changes the case priority to high.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Date_of_Cancellation_initiate</fullName>
+        <field>EYI_Date_of_Cancellation_initiated__c</field>
+        <formula>TODAY()</formula>
+        <name>Date of Cancellation initiate</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Cancellation_Rejected</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Final Cancellation Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Cancellation_Rejected_Status</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Rejected by S&amp;C Head</literalValue>
+        <name>Final Cancellation Rejected Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Rejected_by_S_C_rejected1</fullName>
+        <field>EYI_RM_Retention_Approval_Status__c</field>
+        <literalValue>Rejected by S &amp; C Head</literalValue>
+        <name>Rejected by S &amp; C rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Approved_by_CRM_Head</fullName>
+        <field>EYI_RM_Retention_Approval_Status__c</field>
+        <literalValue>Approved by Functional Head</literalValue>
+        <name>Retention Approved by CRM Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Approved_by_S_C_Head</fullName>
+        <field>EYI_RM_Retention_Approval_Status__c</field>
+        <literalValue>Approved by S &amp; C Head</literalValue>
+        <name>Retention Approved by S &amp; C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Approved_by_S_C_Head1</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Approved by S &amp; C Head</literalValue>
+        <name>Retention Approved by S &amp; C Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Approved_by_S_C_Head_for_SM</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Approved by S &amp; C Head</literalValue>
+        <name>Retention Approved by S &amp; C Head for SM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Approved_by_Sales_Head</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Approved by Functional Head</literalValue>
+        <name>Retention Approved by Sales Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Rejected_by_CRM_Head</fullName>
+        <field>EYI_RM_Retention_Approval_Status__c</field>
+        <literalValue>Rejected by Function Head</literalValue>
+        <name>Retention Rejected by CRM Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Rejected_by_Function_Head</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Rejected by S &amp; C Head</literalValue>
+        <name>Retention Rejected by Function Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Rejected_by_S_C_Head_for_SM</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Rejected by S &amp; C Head</literalValue>
+        <name>Retention Rejected by S &amp; C Head for SM</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Retention_Rejected_by_Sales_Head</fullName>
+        <field>EYI_SM_Retention_Approval_Status__c</field>
+        <literalValue>Rejected by Function Head</literalValue>
+        <name>Retention Rejected by Sales Head</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cancellation_Approved_Stage</fullName>
+        <description>Final Cancellation Approved Stage.</description>
+        <field>EYI_Stages__c</field>
+        <literalValue>Cancellation Approved</literalValue>
+        <name>Update Case Cancellation Approved Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cancellation_Deed_Status</fullName>
+        <field>Cancellation_Deed_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Update Cancellation Deed Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Cancellation_Submitted_Status</fullName>
+        <field>EYI_Cancellation_Approval_Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Update Cancellation Submitted Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_CaseRetention_Status_after_Cancel</fullName>
+        <field>EYI_Stages__c</field>
+        <literalValue>Cancellation Retention in Progress</literalValue>
+        <name>Update CaseRetention Status after Cancel</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Cancellation_Approved_Stage</fullName>
+        <field>EYI_Stages__c</field>
+        <literalValue>Cancellation Approved</literalValue>
+        <name>Update Case Cancellation Approved Stage</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Reason</fullName>
+        <field>Reason</field>
+        <literalValue>Cancellation</literalValue>
+        <name>Update Case Reason</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Status</fullName>
+        <field>Status</field>
+        <literalValue>Working</literalValue>
+        <name>Update Case Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Case_Status_Head_Approved</fullName>
+        <field>Status</field>
+        <literalValue>Working</literalValue>
+        <name>Update Case Status Head Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage_Retention_Approved</fullName>
+        <field>EYI_Stages__c</field>
+        <literalValue>Retention Approved</literalValue>
+        <name>Update Stage Retention Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Stage_for_Cancellation</fullName>
+        <field>EYI_Stages__c</field>
+        <literalValue>Cancellation Approval in Progress</literalValue>
+        <name>Update Stage for Cancellation</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_by_S_C_Approved_Status</fullName>
+        <field>EYI_Stages__c</field>
+        <literalValue>Cancellation Approved</literalValue>
+        <name>Update by S&amp;C Approved Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

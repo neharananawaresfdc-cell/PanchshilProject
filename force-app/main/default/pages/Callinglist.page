@@ -1,0 +1,10 @@
+<apex:page standardController="EYI_Lead_Enquiry__c" recordSetVar="records">
+    <script>
+        var objectName = 'EYI_Lead_Enquiry__c';
+        var selectedRecordIds = [];
+        <apex:repeat value="{!selected}" var="rec">
+            selectedRecordIds.push('{!JSENCODE(rec.id)}');
+        </apex:repeat>
+    </script>
+    <tdc_360CTI:CallingListCmp />
+</apex:page>

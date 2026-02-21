@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <name>Leasing Queue</name>
+    <queueMembers>
+        <users>
+            <user>salesforcetesting2008@gmail.com.uatorg</user>
+            <user>yatharth.meena@parthenon.ey.com.uatorg</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>EYI_Lead_Enquiry__c</sobjectType>
+    </queueSobject>
+</Queue>
