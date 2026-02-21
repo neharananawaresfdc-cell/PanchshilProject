@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="E-Sign Form" icon-name="custom:custom63">
+        <div style="background-color:lemonchiffon">
+            <div class="container slds-m-bottom_x-large" style="padding: 8px;">
+                <img src={imageUrl} class="logoDesign" />
+                <div class="text">
+                    <h1>Welcome to Panchshil Realty - India&#039;s Top Real Estate Developer.</h1>
+                </div>
+            </div>
+        </div>
+        <div class="slds-align_absolute-center slds-m-around_xx-large" style="margin-top: 10px;">
+            <lightning-button label="Preview Booking Form" onclick={handlePreview}></lightning-button>
+            <template if:true={foundPageCount}>
+            <lightning-button label="Initiate E-Sign" onclick={handleInitiate}
+                disabled={disableInitiateBtn}></lightning-button></template>
+            <template if:true={showSpinner}>
+                <!-- <div class="exampleHolder">
+                    <lightning-spinner alternative-text="Loading" size="medium" class="slds-spinner_brand custom-spinner"></lightning-spinner>
+                </div> -->
+                <div class="slds-m-horizontal_xx-large demo-only" style="height:6rem;position:relative">
+                    <div class="slds-spinner_container">
+                        <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template if:true={enableESign}>
+                <div class="slds-p-horizontal_medium">
+                    <form id="URL" name="URL" method="POST" enctype="multipart/formdata" action={postUrl}>
+                        <input type="Submit" value="Submit" class="slds-button slds-button_neutral" />
+                        <input type="hidden" name="msg" value={esignrequest} />
+                    </form>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,32 @@
+<!--
+  @description       : 
+  @author            : Abhishek Verma
+  @group             : 
+  @last modified on  : 03-18-2025
+  @last modified by  : Abhishek Verma
+-->
+<template>
+    
+    <template if:true={showDownload}>
+
+        <lightning-card variant="Narrow" title="Download started." icon-name="utility:download">
+            <p class="slds-p-horizontal_small slds-text-heading_medium">Please click on close the window once the
+                download
+                is complete.</p>
+            <p slot="footer" align="center">
+                <lightning-button variant="Brand" icon-name="utility:close" label="Click here to close window"
+                    alternative-text="Show More" slot="actions" onclick={oncloseWindow}></lightning-button> &nbsp;
+                <lightning-button variant="brand-outline" icon-name="utility:loop" label="Click here to Download Again"
+                    alternative-text="Show More" slot="actions" onclick={onDownloadAgain}></lightning-button>
+            </p>
+        </lightning-card>
+    </template>
+    <template if:false={showDownload}>
+        <lightning-card icon-name="standard:account" variant="base">
+          <div slot="title">
+              {error}
+          </div>
+        </lightning-card>
+    </template>
+    <!--<a href={getDownloaLink} variant="brand" label="" title="Download Files" class="slds-button slds-button_brand">Download Files</a>-->
+</template>

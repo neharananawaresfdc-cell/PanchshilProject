@@ -1,0 +1,71 @@
+.intl-tel-input,
+.iti{
+  width: 100%;
+}
+.dummyDIV{
+  position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  margin-top: 7px;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+.slds-modal__content{
+  
+  background-image: url(&quot;/resource/1737113446000/PanchShilLogo&quot;);
+  background-position: center center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-size: 20%; /* Reduce the size of the image to 10% of its original size */
+  position: relative; /* Ensure the overlay can be applied on top */
+  
+
+}
+.overlay {
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ 
+  z-index: 1; /* Ensure the overlay is above the background */
+}
+.ltgbody {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.background-image {
+  position: fixed;
+            top: 0;
+            left: 0;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: 9999;
+}
+.ltgcontent {
+  position: relative;
+  z-index: 1;
+}
+
+/* .lightning-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+} */

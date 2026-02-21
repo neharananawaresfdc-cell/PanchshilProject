@@ -1,0 +1,188 @@
+.nav-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.left {
+    margin-right: auto;  /* Pushes the Previous button to the left */
+}
+
+.center {
+   /* margin: 0 auto; */ /* Centers the Save button */
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.right {
+    margin-left: auto;  /* Pushes the Next button to the right */
+}
+
+/* Styling the Save button to be smaller */
+
+/* .small-button{
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: rgb(111 189 136);
+} */
+
+.checklist-container {
+    padding: 1rem;
+}
+
+.checklist-section {
+    margin-bottom: 1rem;
+}
+
+.checklist-title {
+    list-style-type: none; /* Removes default list bullet points */
+    padding-left: 0; /* Removes padding from the list */
+}
+
+.checklist-item {
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 1rem; /* Creates space for the letter bullet */
+}
+
+.slds-box {
+    border: 1px solid #d8dde6;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #f3f6f9;
+}
+
+.checklist-table {
+    margin-left: 2rem; /* Adds space to the left side of the table */
+}
+
+.slds-m-bottom_medium {
+    margin-bottom: 1rem;
+}
+
+
+
+/* .small-button:hover {
+    background-color: #005fa3;
+} */
+
+/*********************/
+.booking-details {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #d8dde6; /* SLDS Border Color */
+    border-radius: 0.25rem;
+    background-color: #f4f6f9;
+}
+
+.booking-detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.booking-detail-row lightning-output-field {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.booking-detail-row lightning-output-field:last-child {
+    margin-right: 0;
+}
+
+.booking-detail-row .slds-output-field__label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.slds-text-align_center {
+    text-align: center !important;
+}
+
+.form-container {
+    border: 2px solid #000;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust height if needed */
+}
+
+.small-button {
+    padding: 0.5rem 1rem;
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+} 
+/********************************************************************************/
+.fixed-width-table {
+    border-left: 2px solid #d8dde6; /* Left border */
+    border-right: 2px solid #d8dde6; /* Right border */
+    border-collapse: collapse;
+}
+
+.fixed-width-table th, .fixed-width-table td {
+    border-top: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+    padding: 10px;
+    text-align: left;
+}
+
+.fixed-width-table th {
+    background-color: #f3f6f9;
+}
+
+/* .fixed-width-table th:nth-child(1),
+.fixed-width-table td:nth-child(1) {
+    width: 25%; 
+}
+
+.fixed-width-table th:nth-child(2),
+.fixed-width-table td:nth-child(2) {
+    width: 20%; 
+}
+
+.fixed-width-table th:nth-child(3),
+.fixed-width-table td:nth-child(3) {
+    width: 25%;
+}
+
+.fixed-width-table th:nth-child(4),
+.fixed-width-table td:nth-child(4) {
+    width: 30%; 
+} */
+
+.slds-table {
+    width: 100%; /* Allow table to take full available width */
+    table-layout: auto; /* Auto table layout to allow responsive behavior */
+}
+
+.wrap-text {
+    white-space: normal;  /* Allow text to wrap */
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+    word-break: break-word; /* For additional word-breaking support */
+    max-width: 300px; /* Optional: set a max width for the cell if needed */
+}
+
+.booking-detail-row p {
+    display: flex;
+    justify-content: space-evenly; /* Ensures even spacing between the fields */
+    align-items: center; /* Aligns items vertically in the middle */
+}
+
+.booking-detail-row span {
+    padding-left: 20px; /* Optional, for padding on the left side of each field */
+}

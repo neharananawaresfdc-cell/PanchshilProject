@@ -1,0 +1,147 @@
+<template>
+    <lightning-card class="custom-card"  variant="Narrow" title={brochureTitle} icon-name="utility:sender_email">
+        <div class="slds-p-around_medium">
+            <!-- Trigger Button -->
+        <div class="slds-align_absolute-center slds-p-around_medium">
+            <lightning-button variant="brand" label="Send Email" onclick={openModal}></lightning-button>
+        </div>
+
+            <!-- Modal Popup -->
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <h2 class="slds-modal__title">Send Lead Emails</h2>
+                        </header>
+
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <!-- Step 1: Email Subject & Body -->
+                            <template if:false={hasLeads}>
+                                <!-- Optional: fallback message -->
+                                <div class="slds-box slds-theme_alert-texture">No Lead Enquiries found.</div>
+                            </template>
+                            <template if:true={hasLeads}>
+                                <template if:true={isStepOne}>
+                                    <lightning-layout vertical-align="end">
+                                        <template if:false={isNewEmail}>
+                                            <lightning-layout-item size="8" padding="around-small">
+                                                <span class="normal-text">Select Email Template<span style="color: red;"></span></span>
+                                                <lightning-combobox name="emailTemplateFolders" value={selectedTemplateId}
+                                                    placeholder="Select a template" options={templateOptions}
+                                                    onchange={handleEmailFolderChange} class="normal-text" >
+                                                </lightning-combobox>
+                                            </lightning-layout-item>
+                                        </template>
+                                        <template if:false={istemplate}>
+                                            <lightning-layout-item size="3" padding="around-small">
+                                                    <lightning-button 
+                                                        variant="brand" 
+                                                        label="Send Custom Email" 
+                                                        class="custom-margin-top" 
+                                                        onclick={handlenewEmailChange}>
+                                                    </lightning-button>
+                                            </lightning-layout-item>
+                                        </template>
+                                    </lightning-layout>
+                                    <template if:true={showTemplateSection}>
+                                        <lightning-input 
+                                            label="Email Subject" 
+                                            value={emailSubject} 
+                                            onchange={handleSubjectChange}>
+                                        </lightning-input>
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label" for="emailBody">Email Body</label>
+                                            <div class="slds-form-element__control">
+                                                <textarea
+                                                id="emailBody"
+                                                class="slds-textarea"
+                                                style="height: 200px;"
+                                                onchange={handleBodyChange}>
+                                                {emailBody}
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </template>
+                            </template>
+
+                            <!-- Step 2: Opportunity Selection -->
+                           <template if:true={isStepTwo}>
+                                <div class="slds-grid slds-gutters">
+                                    <template for:each={filterData} for:item="currentFilterData">
+                                        <lightning-combobox
+                                            key={currentFilterData.fieldIndex}
+                                            name={currentFilterData.fieldName}
+                                            label={currentFilterData.fieldLabel}
+                                            value={currentFilterData.fieldValue}
+                                            options={currentFilterData.fieldOptions}
+                                            onchange={changeHandler}
+                                            class="slds-p-vertical_x-small slds-p-horizontal_medium"
+                                        ></lightning-combobox>
+                                    </template>
+                                    <lightning-button variant="neutral" label="Reset" onclick={resetAll} class="slds-p-top_x-large"></lightning-button>
+                                </div>
+                                <div class="header-spacing">Select Leads</div>
+                                <div class="datatable-wrapper">
+                                    <lightning-datatable
+                                        key-field="id"
+                                        data={leadData}
+                                        columns={columns}
+                                        onrowselection={handleOpportunitySelection}
+                                        show-row-number-column>
+                                    </lightning-datatable>
+                                </div>
+                            </template>
+
+                            <template if:true={isStepThree}>
+                                <div class="header-spacing">Select Documents</div>
+                                <template if:false={hasLeadDocs}>
+                                    <!-- Optional: fallback message -->
+                                    <div class="slds-box slds-theme_alert-texture">No Lead Documents found.</div>
+                                </template>
+                                <template if:true={hasLeadDocs}>
+                                    <div class="datatable-wrapper">
+                                        <lightning-datatable
+                                            key-field="ContentDocumentId"
+                                            data={documentData}
+                                            columns={docColumns}
+                                            onrowselection={handleDocumentSelection}
+                                            show-row-number-column>
+                                        </lightning-datatable>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+
+                        <footer class="slds-modal__footer slds-p-around_medium">
+                            <lightning-button variant="neutral" class="slds-p-around_small" label="Cancel" onclick={closeModal}></lightning-button>
+                            <template if:true={istemplate}>
+                                <template if:false={isStepOne}>
+                                    <lightning-button variant="neutral" class="slds-p-around_small" label="Back" onclick={handleBack}></lightning-button>
+                                </template>
+                                <template if:true={isStepOne}>
+                                    <lightning-button variant="brand" class="slds-p-around_small" label="Next" onclick={handleNext}></lightning-button>
+                                </template>
+                                <template if:true={isStepTwo}>
+                                    <lightning-button variant="brand" class="slds-p-around_small" label="Send Email" onclick={sendEmail}></lightning-button>
+                                </template>
+                            </template>
+                            <template if:true={isNewEmail}>
+                                <template if:false={isStepOne}>
+                                    <lightning-button variant="neutral" class="slds-p-around_small" label="Back" onclick={handleBack}></lightning-button>
+                                </template>
+                                <template if:false={isStepThree}>
+                                    <lightning-button variant="brand" class="slds-p-around_small" label="Next" onclick={handleNext}></lightning-button>
+                                </template>
+                                <template if:true={isStepThree}>
+                                    <lightning-button variant="brand" class="slds-p-around_small" label="Send Email" onclick={sendEmail}></lightning-button>
+                                </template>
+                            </template>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Assign_Call_Log_Details</name>
+        <label>Assign Call Log Details</label>
+        <locationX>193</locationX>
+        <locationY>1703</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.EYI_Communication_Type__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CommunicationType</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Triggering_Task</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Reminder_date_time</name>
+        <label>Assign Reminder date time</label>
+        <locationX>468</locationX>
+        <locationY>1319</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.IsReminderSet</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ReminderDateTime</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ReminderDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Call_Log_Present</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Task_as_closed</name>
+        <label>Assign Task as closed</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.EYI_AutomationBypassDatetime__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_Call_Log_Present</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>ExistingTasksFoundError</name>
+        <label>ExistingTasksFoundError</label>
+        <locationX>314</locationX>
+        <locationY>827</locationY>
+        <customErrorMessages>
+            <errorMessage>There are pending tasks on this, please complete !</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Check_Call_Log_Present</name>
+        <label>Check Call Log Present</label>
+        <locationX>325</locationX>
+        <locationY>1595</locationY>
+        <defaultConnector>
+            <targetReference>Update_Triggering_Task</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Call_Log</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.tdc_360CTI__Call_Log__c</leftValueReference>
+                <operator>IsBlank</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Call_Log_Details</targetReference>
+            </connector>
+            <label>Call Log</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_next_action_date_time_is_present</name>
+        <label>Check if next action date time is present</label>
+        <locationX>600</locationX>
+        <locationY>1211</locationY>
+        <defaultConnector>
+            <targetReference>Check_Call_Log_Present</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_next_action_date_time</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Next_Action_Date_Time__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Reminder_date_time</targetReference>
+            </connector>
+            <label>check next action date time</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_record_is_new</name>
+        <label>Check if record is new</label>
+        <locationX>600</locationX>
+        <locationY>503</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_next_action_date_time_is_present</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkNew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CheckRecordCreateUpdate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FetchTaskRelatedToLeads</targetReference>
+            </connector>
+            <label>checkNew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Tasks_next_actions</name>
+        <label>Check Tasks next actions</label>
+        <locationX>325</locationX>
+        <locationY>395</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_record_is_new</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Task_for_no_action</name>
+            <conditionLogic>(1 AND 2) OR 3 OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Next_Action_Status__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Next_Action_Date_Time__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Disposition_Rating__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Lost</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Disposition_Rating__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Won</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Task_as_closed</targetReference>
+            </connector>
+            <label>Check Task for no action</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckExitingTasksList</name>
+        <label>CheckExitingTasksList</label>
+        <locationX>446</locationX>
+        <locationY>719</locationY>
+        <defaultConnector>
+            <targetReference>Check_if_next_action_date_time_is_present</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkExisitingPendingTasks</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FetchTaskRelatedToLeads</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.TaskSubtype</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Task</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ExistingTasksFoundError</targetReference>
+            </connector>
+            <label>checkExisitingPendingTasks</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>To check whether the related to id is of Lead Enquiry Object</description>
+        <name>IdentifyRelatedId</name>
+        <label>IdentifyRelatedId</label>
+        <locationX>627</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Outcome_1_of_Decision_1</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>a11</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.WhatId</leftValueReference>
+                <operator>StartsWith</operator>
+                <rightValue>
+                    <stringValue>006</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Tasks_next_actions</targetReference>
+            </connector>
+            <label>Outcome 1 of</label>
+        </rules>
+    </decisions>
+    <description>This flow auto close the previous tasks on the lead, when a new task is created.
+This flow auto close the tasks if the there are no action needed.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CallStatus</name>
+        <dataType>String</dataType>
+        <expression>IF({!$Record.tdc_360CTI__Call_Log__r.tdc_360CTI__Answered_Seconds__c} &gt; 9, &apos;Connected&apos;, &apos;Not Connected&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>CheckRecordCreateUpdate</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>CommunicationType</name>
+        <dataType>String</dataType>
+        <expression>IF(CONTAINS({!$Record.tdc_360CTI__Call_Log__r.tdc_360CTI__Call_Type__c}, &apos;Incoming&apos;) , &apos;Inbound Call&apos;,&apos;Outbound Call&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>ConvTimetoTextTime</name>
+        <dataType>String</dataType>
+        <expression>IF(
+        CONTAINS({!GenStartTimefromNextActionTimeSlot}, &quot;PM&quot;) &amp;&amp; VALUE(LEFT({!GenStartTimefromNextActionTimeSlot}, FIND(&quot;:&quot;, {!GenStartTimefromNextActionTimeSlot}) - 1)) &lt; 12,
+        TEXT(VALUE(LEFT({!GenStartTimefromNextActionTimeSlot}, FIND(&quot;:&quot;, {!GenStartTimefromNextActionTimeSlot}) - 1)) + 12) &amp; &quot;:&quot; &amp; MID({!GenStartTimefromNextActionTimeSlot}, FIND(&quot;:&quot;, {!GenStartTimefromNextActionTimeSlot}) + 1, 2),
+        IF(
+            CONTAINS({!GenStartTimefromNextActionTimeSlot}, &quot;AM&quot;) &amp;&amp; LEFT({!GenStartTimefromNextActionTimeSlot}, 2) = &quot;12&quot;,
+            &quot;00:&quot; &amp; MID({!GenStartTimefromNextActionTimeSlot}, FIND(&quot;:&quot;, {!GenStartTimefromNextActionTimeSlot}) + 1, 2),
+            LEFT({!GenStartTimefromNextActionTimeSlot}, FIND(&quot;:&quot;, {!GenStartTimefromNextActionTimeSlot}) + 2)
+        )
+    )</expression>
+    </formulas>
+    <formulas>
+        <name>GenStartTimefromNextActionTimeSlot</name>
+        <dataType>String</dataType>
+        <expression>LEFT(TEXT({!$Record.EYI_Next_Action_Time__c}), FIND(&quot; -&quot;, TEXT({!$Record.EYI_Next_Action_Time__c})) - 1)</expression>
+    </formulas>
+    <formulas>
+        <name>NextActionDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT({!$Record.EYI_Next_Action_Date__c}) &amp; &quot; &quot; &amp; {!ConvTimetoTextTime} &amp;&quot;:00&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>To be set as reminder date time</description>
+        <name>ReminderDateTime</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(
+    TEXT({!$Record.EYI_Next_Action_Date_Time__c})) - (5.5+(5/60))/24</expression>
+    </formulas>
+    <interviewLabel>EYI Task Before Update {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EYI Task Before Update Task for Lead Enquiry</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>FetchTaskRelatedToLeads</name>
+        <label>FetchTaskRelatedToLeads</label>
+        <locationX>446</locationX>
+        <locationY>611</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>CheckExitingTasksList</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.WhatId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Id</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>EYI_IsAutomationBypassed__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>TaskSubtype</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Task</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Triggering_Task</name>
+        <label>Update Triggering Task</label>
+        <locationX>325</locationX>
+        <locationY>1895</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>$Record.ActivityDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>501</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IdentifyRelatedId</targetReference>
+        </connector>
+        <object>Task</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

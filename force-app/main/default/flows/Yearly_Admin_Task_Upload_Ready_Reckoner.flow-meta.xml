@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_CRM_Admin_User</name>
+        <label>Check CRM Admin User</label>
+        <locationX>182</locationX>
+        <locationY>684</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Admin_User_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_CRM_Admin_User.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Task_for_Admin</targetReference>
+            </connector>
+            <label>Admin User Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_the_Current_Month_is_April</name>
+        <label>Check if the Current Month is April</label>
+        <locationX>611</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>It_is_April</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>CurrentMonth</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>4.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Existing_Task</targetReference>
+            </connector>
+            <label>It is April</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Task_Already_Exists</name>
+        <label>Task Already Exists?</label>
+        <locationX>380</locationX>
+        <locationY>468</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>No_Task_Exists</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Existing_Task</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_CRM_Admin_User</targetReference>
+            </connector>
+            <label>No Task Exists</label>
+        </rules>
+    </decisions>
+    <description>Salesforce for the Admin user to upload the &quot;Ready Reckoner Value&quot; every year in the month of April. Update v2 Testing</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ActivityDate</name>
+        <dataType>Date</dataType>
+        <expression>DATE(YEAR(TODAY()), 4, 1)</expression>
+    </formulas>
+    <formulas>
+        <name>CurrentMonth</name>
+        <dataType>Number</dataType>
+        <expression>MONTH(TODAY())</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>DueDateUpdate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() +15</expression>
+    </formulas>
+    <interviewLabel>Yearly Admin Task Upload Ready Reckoner Value {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Yearly Admin Task Upload Ready Reckoner Value</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Task_for_Admin</name>
+        <label>Create Task for Admin</label>
+        <locationX>50</locationX>
+        <locationY>792</locationY>
+        <inputAssignments>
+            <field>ActivityDate</field>
+            <value>
+                <elementReference>DueDateUpdate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <stringValue>Reminder to upload Ready Reckoner Value on Project object</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EYI_Activity_Start_Date__c</field>
+            <value>
+                <elementReference>ActivityDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EYI_AutomationBypassDatetime__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_CRM_Admin_User.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Priority</field>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Open</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Upload Ready Reckoner Value</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_CRM_Admin_User</name>
+        <label>Get CRM Admin User</label>
+        <locationX>182</locationX>
+        <locationY>576</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_CRM_Admin_User</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Username</field>
+            <operator>Contains</operator>
+            <value>
+                <stringValue>Swapnil</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Existing_Task</name>
+        <label>Get Existing Task</label>
+        <locationX>380</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Task_Already_Exists</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Subject</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Upload Ready Reckoner Value</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_if_the_Current_Month_is_April</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Weekly</frequency>
+            <startDate>2025-04-01</startDate>
+            <startTime>00:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

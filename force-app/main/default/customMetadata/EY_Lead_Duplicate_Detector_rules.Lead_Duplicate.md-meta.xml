@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Lead Duplicate</label>
+    <protected>false</protected>
+    <values>
+        <field>EYI_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>EYI_Child_Object_API_Name__c</field>
+        <value xsi:type="xsd:string">EYI_Lead_Enquiry__c</value>
+    </values>
+    <values>
+        <field>EYI_Create_Child_Records__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>EYI_Duplicate_logic__c</field>
+        <value xsi:type="xsd:string">( 1 OR 2 ) OR 3</value>
+    </values>
+    <values>
+        <field>EYI_Fields_to_detect_Duplicate__c</field>
+        <value xsi:type="xsd:string">Email,MobilePhone,Phone</value>
+    </values>
+    <values>
+        <field>EYI_Key_Field__c</field>
+        <value xsi:type="xsd:string">EYI_Lead_Generation_Medium__c,EYI_Closing_Manager__c,EYI_Campaign_Name__c,EYI_PREC_Code__c,EYI_Unit_Configuration__c,EYI_Property__c,EYI_LeadType__c,EYI_Segment__c,EYI_Purpose_of_Purchase__c,EYI_Phone__c,EYI_Alternate_Mobile_No__c,EYI_Client_Communication_Preference__c,EYI_Lead_Source__c,EYI_Lead_Sub_Source__c,EYI_Project_Enquired__c,EYI_Email__c,EYI_Mobile__c,EYI_Nature_of_Lead__c,EYI_Rating__c,EYI_Ethnicity__c,EYI_Company__c,EYI_Budget__c,EYI_Area_Requirement_sq_ft__c,EYI_Age_group__c,EYI_Remarks__c,EYI_Salutation__c,EYI_Site_Visit_Date__c,EYI_SAP_Customer_Number__c,EYI_Referred_By__c,EYI_UTM_Source__c,EYI_UTM_Medium__c,EYI_UTM_Campaign__c,EYI_Country_Code__c,EYI_SM_Lead_Enquiry__c</value>
+    </values>
+    <values>
+        <field>EYI_Lead_Duplicate_Error_Message__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>EYI_Master_Object_API_Name__c</field>
+        <value xsi:type="xsd:string">Lead</value>
+    </values>
+    <values>
+        <field>EYI_Master_Object_Field_to_Update__c</field>
+        <value xsi:type="xsd:string">EYI_Campaign_Name__c,EYI_Closing_Manager__c,EYI_PREC_Code__c,EYI_Unit_Configuration__c,EYI_Property__c,EYI_LeadType__c,EYI_Segment__c,EYI_Purpose_of_Purchase__c,EYI_Age_group__c,LeadSource,EYI_Alternate_Mobile_No__c,EYI_Nature_of_Lead__c,EYI_Client_Communication_Preference__c,EYI_Lead_Sub_Source__c,EYI_Project_Enquired__c,Rating,EYI_Ethnicity__c,Company,EYI_Budget__c,EYI_Area_Requirement_sq_ft__c,EYI_Remarks__c,Salutation,EYI_Site_Visit_Date__c,EYI_SAP_Customer_Number__c,EYI_Referred_By__c,EYI_UTM_Source__c,EYI_UTM_Medium__c,EYI_UTM_Campaign__c,EYI_Country_Code__c,EYI_SM_Lead_Enquiry__c</value>
+    </values>
+</CustomMetadata>

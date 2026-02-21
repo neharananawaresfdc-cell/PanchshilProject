@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_To_customer</name>
+        <label>Send Email To customer</label>
+        <locationX>176</locationX>
+        <locationY>1874</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_Email_Sent_Date</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Opportunity_Details.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>ccEmails.value</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Email_Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>attachmentId</name>
+            <value>
+                <elementReference>SelectedAttachmentID</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>add_contentversionid</name>
+        <label>add contentversionid</label>
+        <locationX>264</locationX>
+        <locationY>1682</locationY>
+        <assignmentItems>
+            <assignToReference>SelectedAttachmentID</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>get_selected_items.LatestPublishedVersionId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>SelectedAttachmentID</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <stringValue>,</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>get_selected_items</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_DefaultFiles</name>
+        <label>Add DefaultFiles</label>
+        <locationX>264</locationX>
+        <locationY>1082</locationY>
+        <assignmentItems>
+            <assignToReference>DefaultContentDocument</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Default_Rows</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Default_Rows</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Add_oppId_and_Project_Id</name>
+        <label>Add oppId and Project Id</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <assignmentItems>
+            <assignToReference>ParentLinkEntityIds_oppProj</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ParentLinkEntityIds_oppProj</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Get_Opportunity_Details.EYI_Project_Enquired__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Get_Contendocument_Links</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Get_All_contentDocuments</name>
+        <label>Get All contentDocuments</label>
+        <locationX>264</locationX>
+        <locationY>566</locationY>
+        <assignmentItems>
+            <assignToReference>CollectionofContentDocumentIds</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Iterate_over_contentdocuments.ContentDocumentId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Iterate_over_contentdocuments</targetReference>
+        </connector>
+    </assignments>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>Verify_Titles</name>
+        <label>Verify Titles</label>
+        <locationX>396</locationX>
+        <locationY>974</locationY>
+        <defaultConnector>
+            <targetReference>Default_Rows</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Titles_verification</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Default_Rows.Title</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Welcome</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Default_Rows.Title</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>NCF</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Default_Rows.Title</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Name</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Add_DefaultFiles</targetReference>
+            </connector>
+            <label>Titles verification</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Today_Date</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <interviewLabel>Welcome Letter and NCF Send Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Welcome Letter and NCF Send Flow</label>
+    <loops>
+        <name>Default_Rows</name>
+        <label>Default Rows</label>
+        <locationX>176</locationX>
+        <locationY>866</locationY>
+        <collectionReference>Get_Contentdocuments</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Verify_Titles</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Email_And_Email_Body</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>get_selected_items</name>
+        <label>get selected items</label>
+        <locationX>176</locationX>
+        <locationY>1574</locationY>
+        <collectionReference>Attachment.selectedRows</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>add_contentversionid</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Send_Email_To_customer</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Iterate_over_contentdocuments</name>
+        <label>Iterate over contentdocuments</label>
+        <locationX>176</locationX>
+        <locationY>458</locationY>
+        <collectionReference>Get_Contendocument_Links</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Get_All_contentDocuments</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Get_Contentdocuments</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Contendocument_Links</name>
+        <label>Get Contendocument Links</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Iterate_over_contentdocuments</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>LinkedEntityId</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>ParentLinkEntityIds_oppProj</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocumentLink</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Contentdocuments</name>
+        <label>Get Contentdocuments</label>
+        <locationX>176</locationX>
+        <locationY>758</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Default_Rows</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>In</operator>
+            <value>
+                <elementReference>CollectionofContentDocumentIds</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>ContentDocument</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Opportunity_Details</name>
+        <label>Get Opportunity Details</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_oppId_and_Project_Id</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Email_Sent_Date</name>
+        <label>Update Email Sent Date</label>
+        <locationX>176</locationX>
+        <locationY>1982</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EYI_AutomationBypassDatetime__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>EYI_Welcome_Letter_NCF_Sent_Date1__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <runInMode>DefaultMode</runInMode>
+    <screens>
+        <name>Email_And_Email_Body</name>
+        <label>Email And Email Body</label>
+        <locationX>176</locationX>
+        <locationY>1358</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>Please_select_attachments</targetReference>
+        </connector>
+        <fields>
+            <name>Email</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>value</name>
+                <value>
+                    <elementReference>Get_Opportunity_Details.EYI_Email__c</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>readonly</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>ccEmails</name>
+            <extensionName>flowruntime:email</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>CC Email</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Subject</name>
+            <dataType>String</dataType>
+            <defaultValue>
+                <stringValue>Name Confirmation for Your Property Booking</stringValue>
+            </defaultValue>
+            <fieldText>Subject</fieldText>
+            <fieldType>InputField</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Email_Body</name>
+            <defaultValue>
+                <stringValue>{!NCFLetterBody}</stringValue>
+            </defaultValue>
+            <fieldText>Email Body</fieldText>
+            <fieldType>LargeTextArea</fieldType>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+        </fields>
+        <nextOrFinishButtonLabel>Next</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Please_select_attachments</name>
+        <label>Please select attachments</label>
+        <locationX>176</locationX>
+        <locationY>1466</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <connector>
+            <targetReference>get_selected_items</targetReference>
+        </connector>
+        <fields>
+            <name>Attachment</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>ContentDocument</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Attachments</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>MULTI_SELECT</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Contentdocuments</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Title&quot;,&quot;guid&quot;:&quot;column-278f&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Title&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;CreatedDate&quot;,&quot;guid&quot;:&quot;column-55da&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Created&quot;,&quot;type&quot;:&quot;customDateTime&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>selectedRows</name>
+                <value>
+                    <elementReference>DefaultContentDocument</elementReference>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <nextOrFinishButtonLabel>Send</nextOrFinishButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_Details</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>NCFLetterBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_Opportunity_Details.Name},
+
+Warm Greetings from Panchshil!
+We are delighted to extend a heartfelt welcome to you as part of the Panchshil family. Congratulations on successfully booking your office unit with us at {!Get_Opportunity_Details.EYI_Project_Enquired__r.Name}.
+
+Please find attached the booking form and the proposal for your chosen unit at Westview. We kindly request you to take a moment to review these documents. Your acknowledgment of the same will help us smoothly proceed with the subsequent steps.
+
+In case of any discrepancy, request you to kindly address it to us within three working days else the attached details will be deemed confirmed in our records.
+
+Please note Under Section 194-IA of the Income-tax Act, 1961 (‘the Act’), it is the responsibility of the person paying for acquisition of the immovable property to deduct 1 % TDS. Primary responsibility to deduct TDS rests with the purchaser of the property and not with the developer. In case, purchaser fails to do so, or does a delay in the payment, the purchaser will be liable to pay interest/penalty as provided under section 201 of the Act.
+
+Request you to kindly use the account information of the SELLER to deposit your TDS payment for Westview mentioned below:
+
+•	Permanent Account No. (PAN) of Seller –  AARFG6771D 
+•	Category of PAN of Seller – Other than Company
+•	Full Name of the Seller – GAGAN HABITATS LLP
+•	Complete Address of the Seller - 301, 3rd Floor, “Marvel Alaina”, Lane No.5, Koregaon Park, Pune 411001
+•	URL - https://eportal.incometax.gov.in/i
+
+        Login with PAN based details &amp; follow the below steps: 
+
+•	Go to Efile on the Home Screen
+•	Select Epay tax 
+•	Select New payment tab 
+•	Select Form no 26 QB (TDS on sale of property) 
+
+Request you to kindly share challan copy once the payment is done. Request you to make a note of the same for all future transactions towards TDS.
+ 
+We are excited to inform you about our exclusive Panchshil Privilege membership card, this exclusive membership card is your entrée to the glitzy world of Pune’s finest lifestyle and shopping destinations. Earn rich rewards each time by showing your card at any of the participating properties in this programme. So, when on an evening out with friends and family, do pamper yourselves at some of the best-rated hotels, and shop until you drop at select retail stores. For more info log on www.panchshilprivelege.com. We welcome you to be a part of this initiative, and hope you enjoy the experiences offered.
+
+For any inquiries, future coordination, or assistance, please do not hesitate to reach out to your dedicated Customer Relationship Manager {!Get_Opportunity_Details.EYI_Relationship_Manager__r.Name}, {!Get_Opportunity_Details.EYI_Relationship_Manager__r.MobilePhone}, {!Get_Opportunity_Details.EYI_Relationship_Manager__r.Email}
+
+We are here to support you at every step of the way. Please feel free to contact us should you require any further assistance.</text>
+    </textTemplates>
+    <variables>
+        <name>AttachmentIDs</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>CollectionofContentDocumentIds</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>DefaultContentDocument</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>ContentDocument</objectType>
+    </variables>
+    <variables>
+        <name>ParentLinkEntityIds_oppProj</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SelectedAttachmentID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

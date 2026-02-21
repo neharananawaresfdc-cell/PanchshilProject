@@ -1,0 +1,27 @@
+<template>
+      <div style="border: 1px solid rgb(112, 110, 110); border-radius:10px;">
+      <lightning-card style="margin-left: 5px" title=''>
+          <div class="slds-m-around_medium">
+              <div class="slds-grid slds-gutters">
+                
+                  <div class="slds-col">
+                      <span><lightning-input type="text" value={documentName} label="Document Name" onchange={handleDocumentNameChange}></lightning-input></span>
+                      <div class="error-message" style="color: red;"></div>
+                    </div>
+                  <div class="slds-col">
+                    <span><lightning-input type="file" label="Upload File" onchange={handleFileChange}></lightning-input></span>
+                    <template if:true={isFileUploaded}>
+                      <div class="slds-text-color_success">File Uploaded</div>
+                  </template>
+                  </div>
+                  <div class="slds-col" style="padding-top: 25px;">
+                    <span><lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button></span>
+                  </div>
+                  <div class="slds-col">
+                      <span></span>
+                    </div>
+                </div>
+          </div>
+      </lightning-card>
+    </div>
+  </template>

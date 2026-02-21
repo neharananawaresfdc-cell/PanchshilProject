@@ -1,0 +1,237 @@
+/*lightning card*/
+.container {
+    margin: 20px;
+}
+/* Used in titles*/
+.slds-text-title{
+    font-weight: bold;
+    font-size: 12px;
+}
+.slds-summarytext-height{
+    margin-top: -10px;
+}
+
+/**Card title*/
+.centered-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: -15px;
+    color: #0070d2;
+}
+
+/* Adjust button width if necessary */
+.slds-button {
+    width: auto !important;  /* Allow the button to take its natural size */
+}
+
+/* Container for the buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space equally between buttons */
+    gap: 10px; /* Adds a small space between the buttons */
+    width: 100%; /* Ensures the container takes up the full width */
+}
+
+/* General button styles */
+.custom-button {
+    margin: 0; /* Remove any default margin applied to buttons */
+    padding: 10px 20px; /* Adds padding inside the buttons */
+    flex: 1; /* Makes the buttons take up equal width */
+    height: 30px; /* Set height of the buttons */
+}
+
+/* Remove background and border for action icon buttons (Call, Meeting) */
+.slds-button_icon {
+    background-color: transparent; /* No background color */
+    border: none; /* Remove border */
+    padding: 0; /* No padding around the icon */
+    box-shadow: none; /* No shadow effect */
+    height: 30px; /* Set the height to match the icon height */
+    display: flex;
+    justify-content: center; /* Centers the icon horizontally */
+    align-items: center; /* Vertically aligns the icon */
+}
+
+/* Action buttons (Call, Meeting) will retain the icon-only look */
+.slds-button_icon .slds-icon {
+    fill: #0070d2; /* Set color of icon to blue (or any color you prefer) */
+    height: 20px; /* Icon height */
+    width: 20px; /* Icon width */
+}
+
+/* JBP, Activity, and VC/VP buttons will have box-like styling */
+.activity-button, .jbp-button, .vcvp-button {
+    background-color: #f1f1f1; /* Default light background color */
+    border: 2px solid #d8dde6; /* Soft border color */
+    border-radius: 5px; /* Rounded corners for the box */
+    text-align: center; /* Centers the text inside the button */
+    font-weight: bold; /* Makes the text stand out */
+    color: #0070d2; /* Set text color */
+    transition: all 0.3s ease; /* Smooth transition for background color */
+    flex: 1; /* Ensures equal width for all buttons */
+    height: 30px; /* Set the height of the button to match the icon height */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Styling for Activity Button */
+.activity-button {
+    background-color: #d8e5f4; /* Light blue background for Activity */
+    border-color: #0070d2; /* Blue border for Activity */
+    color: #0070d2; /* Blue text color */
+    width: 20px;
+    padding: 10px 10px;
+}
+
+/* Styling for JBP Button */
+.jbp-button {
+    background-color: #f1f1f1; /* Light grey background for JBP */
+    border-color: #0070d2; /* Soft grey border */
+    color: #0070d2; /* Blue text color */
+}
+
+/* Styling for VC/VP Button */
+.vcvp-button {
+    background-color: #e6f7ff; /* Light blue background for VC/VP */
+    border-color: #0070d2; /* Blue border for VC/VP */
+    color: #0070d2; /* Blue text color */
+    padding: 10px 13px;
+}
+
+/* Hover state for Activity, JBP, and VC/VP buttons */
+.activity-button:hover, .jbp-button:hover, .vcvp-button:hover {
+    background-color: #0070d2; /* Darker background color on hover */
+    border-color: #005bb5; /* Darker blue border */
+    color: white; /* White text on hover */
+}
+
+/* Removes margin from the last button */
+.custom-button:last-child {
+    margin-right: 0; /* Removes the margin from the last button */
+}
+
+/* Ensure all columns are equal width except the Activity column */
+th, td {
+    /*width: 16%;  Set all columns to have equal width */
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+    text-overflow: ellipsis; /* Adds ellipsis when the text overflows */
+    overflow: hidden; /* Ensures content doesn't overflow visually */
+    white-space: nowrap; /* Prevents wrapping within the cell */
+    display: table-cell; /* Ensures proper alignment */
+}
+/* Center align headers */
+.thalign {
+    text-align: center; /* Center-align text in the headers */
+    vertical-align: middle; /* Ensures vertical alignment is also centered */
+}
+
+/* Specific width for Activity column */
+th:last-child, td:last-child {
+    width: auto; /* Allow Activity column to adjust */
+    white-space: normal; /* Allow text wrapping in the Activity column */
+    overflow: visible; /* Allow overflow in Activity button container */
+}
+
+.filter-section {
+    margin-top: 20px;
+    display: flex;          /* Use flexbox to arrange elements in a row */
+    gap: 10px;              /* Add space between elements */
+    align-items: center;    /* Vertically align the elements */
+    width: 100%;            /* Ensure it takes up the full width of the parent */
+    margin-bottom: 20px;    /* Space below the filter section */
+}
+.filter-dropdown {
+    width: 300px;           /* Set a fixed width for the combobox */
+}
+ 
+.radio-filters {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;  /* Distribute space equally */
+    gap: 20px; 
+    width: fit-content;
+}
+ 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+ 
+table, th, td {
+    border: 1px solid black;
+}
+ 
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style the button section */
+.button-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+}
+/* .button {
+    flex: 1;
+    margin: 0 10px;
+} */
+/* Style each button to have equal width */
+.button {
+    flex: 1;  /* Makes the buttons equally wide */
+    margin: 0 10px; /* Adds space between buttons */
+    padding: 10px;
+    text-align: center;
+} 
+/* .button {
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+} */
+
+.headingColor{
+   background-color: rgb(35, 35, 67);
+   color: antiquewhite;
+}
+
+.custom-margin-top {
+    margin-top: 1rem; /* Adjust the value as needed */
+}
+
+/* .recname{
+    margin-top: -20px;
+} */
+.projectname{
+    width: 250px; 
+    margin-top: -15px;
+}
+.searchrefresh{
+    margin-top: 15px;
+
+}
+
+
+.hover-item {
+    border-right: 1px solid #d8dde6;
+    cursor: pointer;
+}
+.hover-item:last-child {
+    border-right: none;
+}
+
+.custom-dual-listbox .slds-duel-listbox__options {
+    height: 50px !important; /* Adjust height as needed */
+    overflow-y: auto !important; /* Ensure scroll if items exceed */
+}
+
+.custom-dual-listbox .slds-duel-listbox__list {
+    max-height: 50px !important; /* Adjust max height as needed */
+    overflow-y: auto !important; /* Add scrollbar */
+}

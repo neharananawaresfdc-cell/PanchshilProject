@@ -1,0 +1,315 @@
+<template>
+    <!-- Loading Spinner -->
+    <template if:true={isLoading}>
+        <lightning-spinner 
+            alternative-text={loadingMessage} 
+            size="medium">
+        </lightning-spinner>
+    </template>
+
+    <lightning-card>
+        <!-- Combined Related Information Section
+        <div class="slds-card slds-m-bottom_medium">
+            <div class="slds-card__header">
+                <h2 class="slds-card__header-title slds-text-heading_small">
+                    <lightning-icon icon-name="standard:related_list" size="small" class="slds-m-right_x-small"></lightning-icon>
+                    Registration Checklist - Related Information
+                </h2>
+            </div>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-grid slds-gutters">
+                    
+                    <div class="slds-col slds-size_1-of-3">
+                        <template if:true={hasOpportunityDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:opportunity" 
+                                                  alternative-text="View Opportunity Record" 
+                                                  size="small">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>Opportunity Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small">
+                                        <a href={opportunityDisplayInfo.url} 
+                                           target="_blank" 
+                                           class="slds-text-link"
+                                           onclick={handleOpportunityLinkClick}>
+                                            🔗 {opportunityDisplayInfo.name}
+                                        </a>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        Click to view Opportunity details
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={hasOpportunityDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:opportunity" 
+                                                  alternative-text="No Opportunity Record" 
+                                                  size="small"
+                                                  class="slds-icon-text-default">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>Opportunity Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        No Opportunity record found
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <template if:true={hasRECDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:record" 
+                                                  alternative-text="View REC Record" 
+                                                  size="small">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>REC Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small">
+                                        <a href={recDisplayInfo.url} 
+                                           target="_blank" 
+                                           class="slds-text-link"
+                                           onclick={handleRECLinkClick}>
+                                            🔗 {recDisplayInfo.name}
+                                        </a>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        Click to view REC details
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={hasRECDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:record" 
+                                                  alternative-text="No REC Record" 
+                                                  size="small"
+                                                  class="slds-icon-text-default">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>REC Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        No REC record found
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <template if:true={hasBrokerageDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:currency" 
+                                                  alternative-text="View Brokerage Record" 
+                                                  size="small">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>Brokerage Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small">
+                                        <a href={brokerageDisplayInfo.url} 
+                                           target="_blank" 
+                                           class="slds-text-link"
+                                           onclick={handleBrokerageLinkClick}>
+                                            🔗 {brokerageDisplayInfo.name}
+                                        </a>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        Click to view Brokerage details
+                                    </p>
+                                    <template if:true={brokerageDisplayInfo.amount}>
+                                        <p class="slds-text-body_small">
+                                            <strong>Amount:</strong> {brokerageDisplayInfo.amount}
+                                        </p>
+                                    </template>
+                                    <template if:true={brokerageDisplayInfo.status}>
+                                        <p class="slds-text-body_small">
+                                            <strong>Status:</strong> {brokerageDisplayInfo.status}
+                                        </p>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                        <template if:false={hasBrokerageDetails}>
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <lightning-icon icon-name="standard:currency" 
+                                                  alternative-text="No Brokerage Record" 
+                                                  size="small"
+                                                  class="slds-icon-text-default">
+                                    </lightning-icon>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-body_regular">
+                                        <strong>Brokerage Information</strong>
+                                    </p>
+                                    <p class="slds-text-body_small slds-text-color_weak">
+                                        No Brokerage record found
+                                    </p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <template if:true={bankDetails}>
+            <template if:true={bankDetails.length}>
+                <lightning-accordion allow-multiple-sections-open>
+                    <lightning-accordion-section name="bankDetails" label="View All Bank Details">
+                        <div class="slds-card slds-m-bottom_medium">
+                            <div class="slds-card__header">
+                                <h2 class="slds-card__header-title slds-text-heading_small">
+                                    <lightning-icon icon-name="standard:account" size="small" class="slds-m-right_x-small"></lightning-icon>
+                                    Active Bank Details
+                            </h2>
+                            </div>
+                            <div class="slds-card__body slds-card__body_inner">
+                                <div class="slds-grid slds-wrap">
+                                    <template for:each={bankDetails} for:item="bank">
+                                        <div key={bank.Id} class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-p-around_small">
+                                            <div class="slds-box slds-theme_default">
+                                                <a href={bank.url} target="_blank" class="slds-text-link">
+                                                    <strong>{bank.Name}</strong>
+                                                </a><br/>
+                                                Bank Name: {bank.EYI_Bank_Name__c}<br/>
+                                                Account Number: {bank.EYI_Bank_Account_Number__c}<br/>
+                                                IFSC: {bank.EYI_IFSC_Code__c}
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </template>
+            <template if:false={bankDetails.length}>
+                <div class="slds-text-color_error slds-m-bottom_medium">
+                    <lightning-icon icon-name="standard:account" size="small" class="slds-m-right_x-small"></lightning-icon>
+                    No active bank details available or you do not have access to view them.
+                </div>
+            </template>
+        </template>
+        <template if:false={bankDetails}>
+            <div class="slds-text-color_error slds-m-bottom_medium">
+                <lightning-icon icon-name="standard:account" size="small" class="slds-m-right_x-small"></lightning-icon>
+                No active bank details available or you do not have access to view them.
+            </div>
+        </template> -->
+        
+    <template if:true={welcomeCallQuestions.length}>
+        <table class="slds-table slds-table_bordered fixed-width-table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th class="slds-text-title_caps" scope="col" style="width: 120px;">
+                        <div class="slds-truncate" title="Check">Check</div>
+                    </th>
+                    <!-- <th>Status</th>
+                    <th>Category</th> -->
+                    <th>Remark</th>
+                    <th>Checked By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={welcomeCallQuestions} for:item="question">
+                    <tr key={question.Id}>
+                        <td class="wrap-text">{question.Question__c}</td>
+                        <td>
+                            <lightning-input
+                                type="checkbox"
+                                name="valid"
+                                checked={question.Valid__c}
+                                data-id={question.Id}
+                                onchange={handleInputChange}
+                                disabled={isButtonDisabled}>
+                            </lightning-input>
+                        </td>
+                        <!-- <td>
+                            <lightning-combobox
+                                name="category"
+                                data-id={question.Id}
+                                value={question.Category__c}
+                                options={categoryOptions}
+                                onchange={handleInputChange}
+                                disabled=true
+                            ></lightning-combobox>
+                        </td> -->
+                        <!-- <td>
+                            <lightning-combobox
+                                name="status"
+                                value={question.Status__c}
+                                data-id={question.Id}
+                                options={statusOptions}
+                                onchange={handleInputChange}
+                                disabled={disableFields}
+                            ></lightning-combobox>
+                        </td> -->
+                        
+                        <td>
+                            <lightning-textarea
+                                name="remark"
+                                data-id={question.Id}
+                                value={question.Remarks__c}
+                                onchange={handleInputChange}
+                                disabled={isButtonDisabled}
+                            ></lightning-textarea>
+                        </td>
+                        <td>{question.CreatedBy.Name}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table><br/>
+        <div class="button-container">
+            <!-- <button type="button" onclick={handleSave} class="small-button">Save Draft</button>
+            <button style="margin-left:20px" type="button" onclick={handleSave} class="small-button">Submit</button> -->
+            <lightning-button 
+                label="Save Draft" 
+                onclick={handleSave}
+                disabled={isButtonDisabled}
+                class="slds-m-right_small">
+            </lightning-button>
+
+            <!-- Submit Button -->
+            <lightning-button 
+                label="Submit" 
+                variant="brand" 
+                onclick={handleSave}
+                disabled={isButtonDisabled}
+                class="slds-m-right_small">
+            </lightning-button>
+            <template if:true={showCancelBtn}>
+                <lightning-button label="Cancel" onclick={handleCancel} style="margin-left: 20px;"></lightning-button>
+            </template>
+            
+            <!-- <template if:true={disableFields}>
+                <button style="margin-left:20px" type="button" onclick={handlePrint} class="small-button">Print</button>
+            </template> -->
+        </div>
+    </template>
+</lightning-card>
+</template>

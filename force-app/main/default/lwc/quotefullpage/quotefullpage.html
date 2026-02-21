@@ -1,0 +1,365 @@
+<template>
+    <div class="quotation-container">
+
+
+<template if:true={showinstruction}>
+    <div class="steps-font"> 
+Steps for creating Quotation.
+<div>1. Verify Registration and Stamp Duty details if editable and click on Generate Quote.</div>
+<div>2. Apply Discounts and Offers.</div>
+<div>3. Save Quotation.</div>
+<div>4. Verify and Edit Payment Schedule if required.</div>
+</div>
+
+
+
+        <!-- Base Rate Section -->
+        <div class="base-rate-section">
+            <span>Base Rate : </span>
+            <span class="base-rate">{baseRate}</span>
+        </div>
+
+        <!-- Prepared For Section -->
+        <!-- <div class="prepared-for-section">
+            <div class="left">Prepared For :</div>
+            <div class="right">Quotation Prepared Date: 20/1/2025</div>
+        </div> -->
+
+        <!-- Approval Status Section -->
+        <div class="approval-status-section">
+            <span>Approval Status: <strong>N/A</strong></span>
+            
+            <!--<button class="save-button">Save</button>
+            <button class="discount-button" >Apply Discount</button>
+            <lightning-button variant="brand" onclick={previousHandler}>back</lightning-button>
+                venkatesh code  -->
+        </div>
+</template>
+        <!-- <div class="main-button">
+            <button class="save-button" onclick={createQuoatation}>Save</button>
+            <template if:true={showDiscount}>
+            <button class="discount-button" onclick={discountSection}>Apply Discount</button>
+        </template>
+            <template if:false={disabledOffers}>
+                <button class="discount-button" onclick={searchOfferSection} disabled={disabledOffers}>Apply Offers</button>
+            </template>
+            <button class="back-button" onclick={previousHandler} >Back</button>
+            
+        </div> -->
+
+
+        <div class="slds-grid slds-gutters">
+  <div class="slds-col slds-size_1-of-3 mobileResponsive">
+    
+    <!-- Flat Details Section -->
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>Flat Details</th>
+                    <th>{invFloor} - {invNumber}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tower</td>
+                    <td>{invTower}</td>
+                </tr>
+                <tr>
+                    <td>Floor</td>
+                    <td>{invFloor}</td>
+                </tr>
+                <tr>
+                    <td>Unit No</td>
+                    <td>{invNumber}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>{invType}</td>
+                </tr>
+                <tr>
+                    <td>Actual Area (Sq. Ft.)</td>
+                    <td>{invActualArea}</td>
+                </tr>
+                <tr>
+                    <td>Carpet Area (Sq. Ft.)</td>
+                    <td>{invCarpetArea}</td>
+                </tr>
+                <tr>
+                    <td>Balcony Area (Sq. Ft.)</td>
+                    <td>{invBalconyArea}</td>
+                </tr>
+                <tr>
+                    <td>Enclosed Balcony Area (Sq. Ft.)</td>
+                    <td>{invEnclosedBalconyArea}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Additional Car Parks Section -->
+        <table class="car-parks-table">
+            <thead>
+                
+                <tr>
+                    <th>Car Parks</th>
+                    <th>Category</th>
+                    <th>Count</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={groupedCarParkDetails} for:item="carPark">
+                <tr key={carPark.Id}>
+                    <td>{carPark.EYI_Parking_Type__c}</td>
+                    <td>{carPark.EYI_Category__c}</td>
+                    <td>{carPark.count}</td>
+                    <td>{carPark.totalCarParkCharge}</td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+        <!-- <button class="apply-button">Apply Selection</button> -->
+
+
+  </div>
+  <div class="slds-col slds-size_2-of-3 mobileResoponsive2">
+    <template if:true={isLoadingSheet}>
+    <div class="exampleHolder">
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    </template>
+      <!-- Amount Section -->
+      <template if:true={inventoryValues}>
+        <!--VENKAETSH CODE 
+        <table class="amount-table">
+            <thead>
+                <tr>
+                    <th>Amount Type</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Unit Value</td>
+                    <td>{inventoryValues.unit}</td>
+                </tr>
+                <tr>
+                    <td>Infrastrucutre Charges</td>
+                    <td>{inventoryValues.infrastructureCharge} </td>
+                </tr>
+                <tr>
+                    <th>Agreement Value</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>State GST</td>
+                    <td>{inventoryValues.stateGst}</td>
+                </tr>
+                <tr>
+                    <td>Central GST</td>
+                    <td>{inventoryValues.centralGst}</td>
+                </tr>
+                <tr>
+                    <td>Stamp Duty #</td>
+                    <td>{inventoryValues.stampDuty}</td>
+                </tr>
+                <tr>
+                    <td>Registration #</td>
+                    <td>{inventoryValues.registration}</td>
+                </tr>
+                <tr>
+                    <td>Mainitenance Deposit @ 150/- Sqft</td>
+                    <td>{inventoryValues.mainitenance_deposit}</td>
+                </tr>
+                <tr>
+                    <td>MSEB Charges @ 200/- Sqft</td>
+                    <td>{inventoryValues.msebc_charges}</td>
+                </tr>
+                <tr>
+                    <td>Legal Charges </td>
+                    <td>{inventoryValues.legal_charges}</td>
+                </tr>
+                <tr>
+                    <td>Maintenance Charges @ approx 10/- Sqft</td>
+                    <td>{inventoryValues.maintenance_charges}</td>
+                </tr>
+            </tbody>
+        </table> VENKAETSH CODE-->
+         
+        <table class="amount-table">
+            <thead>
+                <tr>
+                    <th>Amount Type</th>
+                    <th>Amount(INR)</th>
+                </tr>
+            </thead>
+            <tbody>
+            <template for:each={accordionItems} for:item="item">
+                
+                <tr class="mainsection" key={item.mainsectionName}>
+                    <td>{item.mainsectionName}</td>
+                    <td><lightning-formatted-number value={item.mainsectionvalue} maximum-fraction-digits="2"></lightning-formatted-number></td>
+                    <!--<td>{item.mainsectionvalue}</td>-->
+                </tr>
+            <template for:each={item.Subsection} for:item="section">
+            
+                <tr key={section}>
+                    <td>{section.subsectionName}</td>
+                    <td><lightning-formatted-number value={section.subsectionvalue} maximum-fraction-digits="2"></lightning-formatted-number></td>
+                    <!--<td>{section.subsectionvalue}</td>-->
+                </tr>
+              </template>
+          </template>
+        </tbody>
+        </table>
+        <!--Discount Page-->
+        <template if:true={showdiscountSection}>
+            <table class="amount-table">
+            <tr class="mainsection">
+                <td>Type</td>
+                <td>Per Sq.Ft</td>
+                <td>Lumpsum</td>
+            </tr>
+            <tr >
+                <td>Base Rate Discount</td>
+                <td>    
+                    <lightning-input type="number" name ="baseRatePSF" value={baseRatePSF} onchange={discountChange} disabled={isDisablebaseRatePSF} max={baseRate}> </lightning-input>
+                </td>
+                <td>    
+                    <lightning-input type="number" name ="baseRateLS" value={baseRateLS}  onchange={discountChange} disabled={isDisablebaseRateLS} > </lightning-input>
+                </td>
+            </tr>
+            <tr >
+                <td>Floor Rise Discount</td>
+                <td>    
+                    <lightning-input type="number" name ="floorRatePSF" value={floorRatePSF} onchange={discountChange} disabled={isDisablefloorRatePSF} max={floorRise}> </lightning-input>
+                </td>
+                <td>    
+                    <lightning-input type="number" name ="floorRateLS" value={floorRateLS} onchange={discountChange} disabled={isDisablefloorRateLS}> </lightning-input>
+                </td>
+            </tr>
+        </table>
+        <div>
+            <lightning-button class="slds-m-left_x-small" variant="brand" icon-name="utility:check" label="Confirm Disount" onclick={discountConfirm}></lightning-button>
+            <lightning-button class="slds-m-left_x-small" variant="neutral" icon-name="utility:clear" label="Clear" onclick={onclear} ></lightning-button>
+        </div>
+         </template>
+         <!--offer modal start-->
+         <template if:true={offerModalOpen}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Header -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" onclick={closeModal} title="Close">
+                            <lightning-icon icon-name="utility:close" size="small" alternative-text="close" class="slds-button__icon slds-button__icon_large"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Offers</h2>
+                    </header>
+    
+                    <!-- Modal/Popup Body -->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!--<lightning-combobox
+                            name="Offer Type"
+                            label="Offer Type"
+                            value={optionsTypeOfferVal}
+                            placeholder="Select Progress"
+                            options={optionsTypeOffer}
+                            onchange={handleChangeOfferType} >
+                        </lightning-combobox>-->
+                        <div style="color:red">
+                           {offerErrorMessage}
+                        </div>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!--<lightning-button
+                         label="Search Offer"
+                         variant="brand" onclick={searchOffer}
+                          ></lightning-button>-->
+
+                 <div class="slds-scrollable" >
+                    <!-- offer list -->
+                     <template if:true={showOffer}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={offerList}
+                        columns={columnsOffer}
+                        
+                        selected-rows={selectedOffers}
+                        onrowselection={handleRowSelection}
+                        max-row-selection="10">
+                    </lightning-datatable>
+                </template>
+                </div>
+                    </div>
+    
+                    <!-- Modal Footer -->
+                    <footer class="slds-modal__footer">
+                        <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                        <lightning-button variant="brand" label="Add Offer" onclick={addOffertoQuoatation}></lightning-button>
+                    </footer>
+                </div>
+            </section>
+    
+            <!-- Backdrop -->
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <!--offer modal end-->
+      </template>
+  </div>
+  
+  
+
+
+</div>
+<div class="main-button slds-m-top_medium">
+    <lightning-button class="slds-m-left_x-small" icon-name="utility:save" label="Save" variant="success" onclick={createQuoatation}></lightning-button>
+    <template if:true={showDiscount}>
+    <lightning-button class="slds-m-left_x-small" label="Apply Discount" variant="brand-outline" onclick={discountSection}></lightning-button>
+    </template>
+    <template if:false={disabledOffers}>
+        <lightning-button class="slds-m-left_x-small" label="Apply Offers" variant="brand" onclick={searchOfferSection} disabled={disabledOffers}></lightning-button>
+    </template>
+    <lightning-button class="slds-m-left_x-small" icon-name="utility:back" label="Back" variant="neutral" onclick={previousHandler} ></lightning-button>
+ </div>
+</div>
+
+<!--ADDED JG-->
+<!--
+<div>
+<lightning-card title="Quoatation Data">
+    
+    <lightning-accordion>
+    
+    <template for:each={accordionItems} for:item="item">
+        
+        <lightning-accordion-section key={item.mainsectionName} label={item.mainsectionName}>
+            <table class="amount-table">
+                <thead>
+                    <tr>
+                        <th>Amount Type</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={item.Subsection} for:item="section">
+
+                    <tr key={section}>
+                        <td>{section.subsectionName}</td>
+                        <td>{section.subsectionvalue}</td>
+                    </tr>
+                </template>
+                    </tbody>
+
+             </table>
+            <p></p>
+        </lightning-accordion-section>
+    
+    </template>
+
+ </lightning-accordion>
+
+</lightning-card>
+</div>-->
+<!--ADDED JG-->
+
+</template>

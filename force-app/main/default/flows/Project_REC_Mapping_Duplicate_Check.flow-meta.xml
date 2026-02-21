@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>Duplicate_Error_Message</name>
+        <label>Duplicate Error Message</label>
+        <locationX>50</locationX>
+        <locationY>503</locationY>
+        <customErrorMessages>
+            <errorMessage>A Project REC Mapping record already exists for this Project under the same REC Account.
+Please check.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>Error_for_Get_Record</name>
+        <label>Error for Get Record</label>
+        <locationX>578</locationX>
+        <locationY>395</locationY>
+        <customErrorMessages>
+            <errorMessage>Error for Getting Project REC Mapping record.</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <name>Project_Already_Present_Check</name>
+        <label>Project Already Present Check</label>
+        <locationX>182</locationX>
+        <locationY>395</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Project_already_exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Project_Mapping_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Project__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Duplicate_Error_Message</targetReference>
+            </connector>
+            <label>Project already exist</label>
+        </rules>
+    </decisions>
+    <description>This record-triggered flow prevents the creation of a Project REC Mapping record if a record with the same Project and REC Account already exists.</description>
+    <environments>Default</environments>
+    <interviewLabel>Project REC Mapping Duplicate Check {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Project REC Mapping Duplicate Check</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Project_Mapping_Records</name>
+        <label>Get Project Mapping Records</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Project_Already_Present_Check</targetReference>
+        </connector>
+        <faultConnector>
+            <targetReference>Error_for_Get_Record</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>EYI_REC_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>EYI_Project__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.EYI_Project__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>EYI_Project_REC_Mapping__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Project_Mapping_Records</targetReference>
+        </connector>
+        <object>EYI_Project_REC_Mapping__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

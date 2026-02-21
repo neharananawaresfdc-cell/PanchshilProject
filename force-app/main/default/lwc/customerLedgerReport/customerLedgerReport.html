@@ -1,0 +1,176 @@
+<template>
+    <lightning-card title='Customer Ledger Report'>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+                <div class="slds-p-horizontal_small">
+    <div class="slds-grid slds-wrap slds-gutters slds-var-m-bottom_medium">
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="text" 
+                name="Customer Name" 
+                value={customerName}
+                label="Customer Name"
+                disabled>
+            </lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="text" 
+                name="Customer Number" 
+                value={customerNumber}
+                label="Customer Number"
+                disabled>
+            </lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="text" 
+                name="Unit Number" 
+                value={unitNumber}
+                label="Unit Number"
+                disabled>
+            </lightning-input>
+        </div>
+        <!-- </div>
+        <div class="slds-grid slds-gutters slds-var-m-bottom_medium"> -->
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="text" 
+                name="Saleable Area" 
+                value={saleableArea}
+                label="Saleable Area"
+                disabled>
+            </lightning-input>
+            
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="text" 
+                name="Per Sq.Ft Rate" 
+                value={psrSqftRate}
+                label="Per Sq.Ft Rate"
+                disabled>
+            </lightning-input>
+        </div>
+        <!-- </div>
+        <div class="slds-grid slds-gutters slds-var-m-bottom_medium"> -->
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="Date" 
+                name="Registration date" 
+                value={registrationDate}
+                label="Registration date"
+                disabled>
+            </lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="Date" 
+                name="Possession Date" 
+                value={possessionDate}
+                label="Possession Date"
+                disabled>
+            </lightning-input>
+        </div> 
+    <!-- </div>
+    <div class="slds-grid slds-gutters slds-var-m-bottom_medium"> -->
+        <div class="slds-col slds-size_1-of-5">
+           <lightning-input 
+                type="text" 
+                name="REC Name" 
+                value={recName}
+                label="REC Name"
+                disabled>
+            </lightning-input> 
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input 
+                type="Date" 
+                name="Apartment Ready Date" 
+                value={aptmtReadyDate}
+                label="Apartment Ready Date"
+                disabled>
+            </lightning-input>
+        </div> 
+    </div>
+    <div class="slds-grid slds-grid_align-center slds-var-m-top_medium slds-m-bottom_small">
+    <lightning-button 
+        onclick={handleSearch}
+        label="Search"                       
+        variant="brand">
+    </lightning-button>
+</div>
+    <!--<div class="slds-grid slds-gutters slds-var-m-bottom_medium">
+         <div class="slds-col slds-size_1-of-4 slds-align-bottom">
+            <lightning-button 
+                onclick={handleSearch}
+                label="Search"                       
+                variant="brand">
+            </lightning-button>
+        </div> 
+        
+    </div>-->
+</div>
+
+
+
+         <template if:true={showDataTable}>
+                <div style="height: 300px;"><!--slds-box datatable-wrapper-->
+                <lightning-datatable 
+                    key-field="docNumber" 
+                    data={ledgerData} 
+                    columns={columns} 
+                    hide-checkbox-column="true"
+                    min-column-width="150" 
+                    max-column-width="300">
+                </lightning-datatable>
+            </div>
+        
+
+            <!-- Pagination & Export Buttons -->
+            <div class="slds-grid slds-grid_align-center slds-var-m-top_medium footerButtons">
+                <!-- Pagination Controls -->
+                <div>
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisablePrev}
+                        label="First"
+                        onclick={firstPage}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisablePrev}
+                        label="Previous"
+                        onclick={previous}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisableNext}
+                        label="Next"
+                        onclick={next}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisableNext}
+                        label="Last"
+                        onclick={lastPage}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+                    <c-test-export-to-excel header-data-table={fieldSummary} parent-table-data={exportData} file-name={fileName}></c-test-export-to-excelparent-table-data></c-test-export-to-excel>
+                </div>
+
+                <!-- Export Button -
+                <div>
+                    
+                </div> -->
+            </div>
+        </template>
+    </lightning-card>
+</template>

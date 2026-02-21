@@ -1,0 +1,159 @@
+.input-container {
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 1rem;
+    background-color: #ffffff;
+}
+.main-div {
+    background-color: #ffffff; 
+    padding-left: 30px; 
+    padding-top: 30px; 
+    padding-right: 30px; 
+    padding-bottom: 60px; 
+}
+
+.main-box {
+    border: 5px solid #0000;
+    padding: 1rem;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+.header-text {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.cell {
+    border: 3px solid #0000;
+    padding: 0.75rem;
+    text-align: center;
+    background-color: white;
+    font-weight: 500;
+}
+/********************************************************/
+.table-wrapper {
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    border-top: 1px solid #d8dde6;
+}
+
+.row:first-child {
+    border-top: none;
+}
+
+.col {
+    padding: 10px;
+    border-left: 1px solid #d8dde6;
+}
+
+.col:first-child {
+    border-left: none;
+}
+
+.type-col {
+    width: 25%;
+    font-weight: bold;
+    background-color: #f4f6f9;
+}
+
+.details-col {
+    width: 75%;
+}
+
+.header .col {
+    background-color: #eef1f6;
+    font-weight: bold;
+}
+/****************************************/
+.table-row {
+    background-color: #f3f6f9;
+}
+
+.table-cell {
+    border: 1px solid #050505;
+    padding: 10px;
+    font-size: 14px;
+    /*height: 65px !important;*/
+}
+/*.fontSize {
+    height: 100px !important;
+}*/
+.table-cell-first {
+    border: 1px solid #050505;
+    padding: 10px;
+    font-size: 14px;
+    
+}
+
+.header-Layout{
+    background-color:rgb(217, 160, 221);
+}
+.table-cell-input {
+    border: 1px solid #050505;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    
+}
+
+.table-cell-custom {
+    border: 1px solid #050505;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 14px;
+}
+
+.header-row {
+    background-color: #f3f6f9;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.error-box {
+    color: red;
+    border: 1px solid red;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    background-color: #ffe6e6; /* Optional: light red background */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+.headerStyle{
+    background-color: var(--slds-g-color-neutral-base-95, var(--lwc-colorBackground,rgb(243, 243, 243)));
+    font-size: 18px;
+    margin-top: 10px; 
+}
+
+.sapHeader{
+    background-color: var(--slds-g-color-neutral-base-95, var(--lwc-colorBackground,rgb(243, 243, 243)));
+    font-size: 22px;
+    margin-top: 15px; 
+    margin-Bottom: 15px;
+}
+.quoteURL{
+    padding-top: 30px;
+}

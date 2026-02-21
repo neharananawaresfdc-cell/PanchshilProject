@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Marketing Team</fullName>
+        <default>false</default>
+        <label>Marketing Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Sourcing Manager</fullName>
+        <default>false</default>
+        <label>Sourcing Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Closing Manager</fullName>
+        <default>false</default>
+        <label>Closing Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Sales Team</fullName>
+        <default>false</default>
+        <label>Sales Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Sourcing Team</fullName>
+        <default>false</default>
+        <label>Sourcing Team</label>
+    </customValue>
+    <masterLabel>EYI Team Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

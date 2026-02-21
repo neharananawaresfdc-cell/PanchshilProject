@@ -1,0 +1,136 @@
+<template>
+    <template if:true={isSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </template>
+    <lightning-card class="custom-card">
+        <div class="slds-grid slds-grid_align-center">
+            <h1 slot="title" class="header">Payment Plan Details</h1>
+        </div>
+        <div>
+            <div class="slds-grid slds-wrap" style="text-align:center; border: 1px solid black;">
+                <div class="slds-col slds-size_1-of-4">
+                Outstanding Amount : <lightning-formatted-number value={outstandingTotal}
+                                        format-style="currency" currency-code="INR"></lightning-formatted-number>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                Actual Declared    : <lightning-formatted-number value={remainingActualTotal}
+                                        format-style="currency" currency-code="INR"></lightning-formatted-number>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                Amount Difference  : <lightning-formatted-number value={finaldiff}
+                                        format-style="currency" currency-code="INR"></lightning-formatted-number>
+                </div>
+                <div class="slds-col slds-size_1-of-4">        
+                Remaining percent  : {finalremainingper}
+                </div>
+            </div>    
+        </div>
+        <div class="table-container">
+            
+        <template if:true={paymentSchedulesdata}>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>Project Stage</th>
+                        <th>Basic ({basicTotal}%)</th>
+                        <th>Date</th>
+                        <template if:false={extendedPlan}>
+                            <th>Actual Date</th>
+                            <th>Milestone Number</th>
+                        </template>
+                        <template if:true={extendedPlan}>
+                            <th>Number of days</th>
+                            <!-- <th>Payable Amount (A)</th> -->
+                            <th>Actual Payment (A)</th>
+                            <th>Due Payment</th>
+                            <th>GST (B)</th>
+                            <th>TDS (C)</th>
+                            <th>Net Payable ((A+B) - C)</th>
+                            <th>NPV (Total : {npvTotal})</th>
+                            <th>Action</th>
+                        </template>
+                    </tr>
+                </thead>
+                <tbody class="slds-scrollable_y">
+                    <template for:each={paymentSchedulesdata} for:item="record" for:index="index">
+                        <tr key={record.Id}>
+                            <td if:false={record.disabled}>
+                                <lightning-combobox name="EYI_Usage__c" data-index={index} options={usageoptions}
+                                    onchange={onchangeinput} value={record.EYI_Usage__c}>
+                                    </lightning-combobox>
+                            </td>
+                            <td if:true={record.disabled}><lightning-input type="text" data-index={index}
+                                    onchange={onchangeinput} name="EYI_Usage_Description__c"
+                                    field-level-help={record.EYI_Usage_Description__c}
+                                    value={record.EYI_Usage_Description__c}
+                                    disabled={record.disabled}></lightning-input></td>
+                            <td><lightning-input type="percent" data-index={index} onchange={onchangeinput}
+                                    name="EYI_Invoice_Percentage__c" value={record.EYI_Invoice_Percentage__c}
+                                    disabled={record.disabled}></lightning-input> </td>
+                            <td><lightning-input type="date" data-index={index} onchange={onchangeinput}
+                                    name="EYI_Billing_Date__c" value={record.EYI_Billing_Date__c}
+                                    disabled={record.datedisabled}></lightning-input></td>
+                            <template if:false={extendedPlan}>
+                                <td><lightning-input type="date" data-index={index} onchange={onchangeinput}
+                                        name="EYI_Actual_Date__c" value={record.EYI_Actual_Date__c}
+                                        disabled></lightning-input></td>
+                                <td><lightning-input type="Number" data-index={index} onchange={onchangeinput}
+                                        name="EYI_Milestone_Number__c" value={record.EYI_Milestone_Number__c}
+                                        disabled></lightning-input></td>
+                            </template>
+                            <template if:true={extendedPlan}>
+                                <td style="text-align:center">{record.DiffDays}</td>
+                                <!-- <td><lightning-input type="number" formatter="currency" data-index={index}
+                                        onchange={onchangeinput} name="EYI_Due_Amount__c"
+                                        value={record.EYI_Due_Amount__c} disabled={showsave}></lightning-input></td> -->
+                                <td><lightning-input type="number" formatter="currency" data-index={index}
+                                        onblur={updatecalculations} onchange={updatepercent} name="EYI_Amount_to_be_paid__c"
+                                        value={record.EYI_Amount_to_be_paid__c} disabled={record.disabled}></lightning-input></td>
+                                <td style="text-align:center">
+                                    <lightning-formatted-number value={record.EYI_Due_Diff__c}
+                                        format-style="currency" currency-code="INR"></lightning-formatted-number>
+                                </td>
+                                <td><lightning-input type="number" formatter="currency" data-index={index}
+                                        onchange={onchangeinput} name="EYI_GST__c" value={record.EYI_GST__c}
+                                        disabled={showsave}></lightning-input></td>
+                                <td><lightning-input type="number" formatter="currency" data-index={index}
+                                        onchange={onchangeinput} name="EYI_TDS__c" value={record.EYI_TDS__c}
+                                        disabled={showsave}></lightning-input></td>
+                                <td style="text-align:center">
+                                    <lightning-formatted-number value={record.EYI_Net_Payable__c}
+                                        format-style="currency" currency-code="INR"></lightning-formatted-number>
+                                </td>
+                                <td style="text-align:center">
+                                    <lightning-formatted-number value={record.EYI_NPV_Cal__c} format-style="currency"
+                                        currency-code="INR"></lightning-formatted-number>
+                                </td>
+                                <td>
+
+                                    <lightning-button-icon icon-name="utility:delete" alternative-text="delete"
+                                        class="slds-m-left_xx-small" data-index={index} data-id={record.Id}
+                                        onclick={deleteRow} disabled={record.disabled}>
+                                    </lightning-button-icon>
+                                </td>
+                            </template>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        </div>
+        <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center slds-m-around_medium">
+            <template if:true={showAddRow}>
+                <lightning-button variant="neutral" label="Add Row" icon-name="utility:add"
+                    class="slds-p-around_xxx-small" onclick={addRow}>
+                </lightning-button>
+            </template>
+            <lightning-button if:true={showsave} variant="Brand" label="Save" icon-name="utility:save"
+                class="slds-p-around_xxx-small" onclick={handleSave}>
+            </lightning-button>
+            <lightning-button if:true={showsubmit} variant="Success" label="Submit" name="Submit" icon-name="utility:save"
+                class="slds-p-around_xxx-small" onclick={handleSave}>
+            </lightning-button>
+
+        </div>
+    </lightning-card>
+</template>

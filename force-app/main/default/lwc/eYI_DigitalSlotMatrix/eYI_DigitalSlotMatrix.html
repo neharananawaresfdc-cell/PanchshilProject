@@ -1,0 +1,150 @@
+<template>
+    <lightning-card title="Check Available Time Slots">
+        <div class="slds-p-around_medium">
+            <template if:true={isOpportunityLinked}>
+                <!-- Centered Container Div -->
+                <div class="center-container">
+                    <!-- Div with Border to hold event details -->
+                    <div class={statusClass}>
+                        <strong>Opportunity Name:</strong> {opportunityName} <br/>
+                       
+                        <!-- Event Details Section -->
+                        <!--<div class="event-details">-->
+                            <!--<div class="event-date">-->
+                                <strong>Event Date:</strong> {eventDate} <br/>
+                            <!--</div>-->
+                            <!--<div class="event-time">-->
+                                <strong>Event Time:</strong> {eventStartTime} - {eventEndTime}
+                                <!--<strong>End Time:</strong> -->
+                            <!--</div>-->
+                        <!--</div>-->
+                        
+                        <!-- Reschedule Button -->
+                        <div class="center-button">
+                            <lightning-button 
+                                label="Reschedule" 
+                                onclick={handleReschedule} 
+                                class="slds-m-top_medium"
+                                >
+                            </lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        <span style="color:green; font-size: 14px; padding -bottom: 8px;"><strong>Note</strong> {errorMessage}</span>
+        
+        <template if:false={isOpportunityLinked}>
+                <lightning-input 
+                    type="date" 
+                    label="Select Date" 
+                    value={selectedDate} 
+                    onchange={handleDateChange}
+                    min={minSelectableDate}
+                    max={maxSelectableDate}
+                    >
+                </lightning-input>
+        
+                <div class="center-button">
+                    <lightning-button 
+                        label="Search Available Slots" 
+                        onclick={handleSearch} 
+                        disabled={isDateValid}
+                        class="slds-m-top_medium">
+                    </lightning-button>
+                </div>
+            </template>
+                
+                <!-- Displye time slot -->
+                 <template if:true={displaySlot}>
+                    <template if:true={showSlot}>
+                        <div class="slds-m-top_medium">
+                            <p><strong>Available Time Slots:</strong></p>
+                            <div class="available-time">
+                                <template for:each={availableTimeSlots} for:item="slot">
+                                    <button key={slot.Id} 
+                                            class={slot.ButtonColor}
+                                            onclick={handleSlotClick} 
+                                            data-id={slot.Id}>
+                                        {slot.Id}
+                                    </button>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                    
+                    <template if:false={showSlot}>
+                        <div class="center-container">
+                            <p>No available time slots found for the selected date.</p>
+                        </div>
+                        
+                    </template>
+                 </template>
+                
+
+                <!-- <template if:true={isReschedulesSlot}>
+                    <div class="center-container">
+                        <div class="green-status">
+                            <p>You have already scheduled slot on {slotScheduleTime}.</p>
+                            <p>Do you want to Re-Schedule slot Please click on below Re-Schedule button.</p>
+                            <div class="center-button">
+                                <lightning-button 
+                                    label="Reschedule" 
+                                    onclick={handleReschedule} 
+                                    class="slds-m-top_medium">
+                                </lightning-button>
+                        </div>
+                        </div>
+                        </div>
+                     
+                </template>
+            
+                <template if:true={isRecheduledSlot}>
+                    <div class="center-container">
+                        <div class="yellow-status">
+                            <p>You have already Re-Scheduled slot on {slotScheduleTime}.</p>
+                            <p> Do you want to Re-Schedule slot Please click on below Re-Schedule button.</p>
+                            <div class="center-button">
+                                <lightning-button 
+                                    label="Reschedule" 
+                                    onclick={handleReschedule} 
+                                    class="slds-m-top_medium">
+                                </lightning-button>
+                        </div>
+                    </div>
+                    </div> 
+                </template> -->
+        
+        
+        
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                title="Close" onclick={closeModal}>
+                                <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 class="slds-text-heading_medium">Book Time Slot</h2>
+                        </header>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <p><strong>Selected Time Slot:</strong> {selectedSlotId} </p>
+                            <p><strong>Do you want to book slot please click on the Book button</strong></p>
+                            <template if:true={isReschedulesSlot}>
+                                <lightning-input type="textarea" label="Remarks"
+                                    value={rescheduleremarks} onchange={handleRemarksChange}></lightning-input>
+                            </template>
+                        </div>
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={bookTimeSlot}>Book</button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+
+        
+    </lightning-card>
+    </template>

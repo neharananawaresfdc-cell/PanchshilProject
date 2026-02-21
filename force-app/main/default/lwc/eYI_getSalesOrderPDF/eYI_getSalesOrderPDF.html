@@ -1,0 +1,52 @@
+<template>
+    <template if:true={isSOA}>
+        <template if:true={accountList}>
+            <div if:true={isLoadedpdf} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <lightning-datatable
+                        data={accountList}
+                        columns={columns}
+                        key-field="Id"
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column
+                        hide-row-number-column>
+            </lightning-datatable>
+        </template>
+        <template if:true={recordId}>
+            <div if:true={isLoadedpdf} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <lightning-button variant="brand" label="Get SOA PDF" title="Get SOA PDF" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        </template>
+    </template>
+    <template if:true={isInterestLetter}>
+        <template if:true={accountList}>
+            <div if:true={isLoadedpdf} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <lightning-datatable
+                        data={accountList}
+                        columns={interestColumns}
+                        key-field="Id"
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column
+                        hide-row-number-column>
+            </lightning-datatable>
+        </template>
+        <template if:true={recordId}>
+            <div if:true={isLoadedpdf} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+            <lightning-button variant="brand" label="Get Interest Letter" title="Get Interest Letter" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        </template>
+    </template>
+</template>

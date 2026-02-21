@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Rera_Expiry_Alert</name>
+        <label>Rera Expiry Alert</label>
+        <locationX>264</locationX>
+        <locationY>468</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_Notification_To_Each</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>RecipientList</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>Datecalculator</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 30</expression>
+    </formulas>
+    <formulas>
+        <name>RecipientList</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;Send_Notification_To_Each.EYI_Mobile__c&quot; , &quot;templateId&quot;:&quot;&apos; + {!$Label.Raise_Invoice_SMS} + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!Send_Notification_To_Each.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>Send Rera Expiry Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Rera Expiry Notification</label>
+    <loops>
+        <name>Send_Notification_To_Each</name>
+        <label>Send Notification To Each</label>
+        <locationX>176</locationX>
+        <locationY>360</locationY>
+        <collectionReference>Get_REC_Accounts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Rera_Expiry_Alert</targetReference>
+        </nextValueConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_REC_Accounts</name>
+        <label>Get REC Accounts</label>
+        <locationX>176</locationX>
+        <locationY>252</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Send_Notification_To_Each</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>EYI_RERA_Expiry_Date__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Datecalculator</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>EYI_REC__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_REC_Accounts</targetReference>
+        </connector>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-06-04</startDate>
+            <startTime>09:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -1,0 +1,542 @@
+<template>
+    <lightning-card variant="Narrow" title={inventoryMatrixFinalTitle} icon-name="standard:home">            
+        <!-- Buttons code Start -->
+        <div class="button-container">
+            <template if:true={isBackButtonVisible}>
+                <lightning-button label="Back" icon-name="utility:back" slot="actions" onclick={handleBack} ></lightning-button>
+            </template>            
+            <lightning-button label={buttonLable} icon-name={buttonIcon} slot="actions" onclick={showHideFilter} variant="Brand"></lightning-button>
+        </div>
+        <!-- Buttons code Finish -->
+        <br/>
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+        </template>
+        <template if:true={oppProjectSelected}>
+            <!-- Filters code Start -->
+            <template if:true={showFilter}>
+                <div class="slds-p-horizontal_medium">
+                    <div class="slds-grid slds-gutters">
+                        <!-- <div class="slds-col">
+                            <lightning-combobox name="projectType" label="Select Project Type" value={selectedProjectType} placeholder="Select Project Type"
+                                options={projectTypeOptions} onchange={handleChange} required></lightning-combobox>
+                        </div> -->
+                        <div class="slds-col">
+                            <lightning-combobox name="project" label="Select Project" value={selectedProject} placeholder="Select Project"
+                                options={filteredProjectOptions} disabled={disableProject} onchange={handleChange} required></lightning-combobox>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-combobox name="subProject" label="Select Cluster" value={selectedSubProject} placeholder="Select SubProject"
+                                options={filteredSubProjectOptions} onchange={handleChange} required></lightning-combobox>
+                        </div>
+                        <template if:false = {isPlotting}>
+                            <div class="slds-col">
+                                <lightning-combobox name="tower" label="Select Tower" value={selectedTower} placeholder="Select Tower"
+                                    options={filteredTowerOptions}  onchange={handleChange} required></lightning-combobox>
+                            </div>
+                            <div class="slds-col">
+                                <lightning-combobox name="floor" label="Select Floor"  value={selectedFloor}  placeholder="Select Floor"
+                                    options={filteredFloorOptions} onchange={handleChange}></lightning-combobox>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <br>
+                <div class="slds-p-horizontal_medium statusContainer">
+                    <template if:true={isStatusLoading}>
+                        <div class="spinner-overlay">
+                            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                        </div>
+                    </template>
+                    <div >
+                        <label class="bold-label">UNIT STATUS:</label>
+                        <div class="checkbox-container">
+                            <lightning-input
+                                type="checkbox"
+                                label="Select All"
+                                checked={statusAllSelected}
+                                onchange={handleStatusAllChange}>
+                            </lightning-input>
+                    
+                            <template for:each={unitStatusOptions} for:item="option">
+                                <lightning-input
+                                    key={option.value}
+                                    type="checkbox"
+                                    label={option.label}
+                                    checked={option.checked}
+                                    data-value={option.value}
+                                    onchange={handleStatusChange}>
+                                </lightning-input>
+                            </template>
+                        </div>
+                    </div>
+                    <br/>
+                    <!-- <div >
+                        <label class="bold-label">UNIT VIEW:</label>
+                        <div class="checkbox-container">
+                            <lightning-input
+                                type="checkbox"
+                                label="Select All"
+                                checked={viewAllSelected}
+                                onchange={handleViewAllChange}>
+                            </lightning-input>
+                    
+                            <template for:each={unitViewOptions} for:item="option">
+                                <lightning-input
+                                    key={option.value}
+                                    type="checkbox"
+                                    label={option.label}
+                                    checked={option.checked}
+                                    data-value={option.value}
+                                    onchange={handleViewChange}>
+                                </lightning-input>
+                            </template>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="slds-p-horizontal_medium ">
+                    <br>
+                    <lightning-button variant="brand" icon-name="utility:search" label="Search Property"
+                        onclick={handleFetchData}></lightning-button> &nbsp;
+                    <!-- <lightning-button label="Show Car Parking" icon-name="utility:travel_and_places"
+                        onclick={navigateToAllParkings} variant="brand"></lightning-button> &nbsp; -->
+                    <lightning-button variant="base" label="Clear Filter" icon-name="utility:close"
+                        onclick={handleClearFilter}></lightning-button>
+                </div>
+                <br>
+            </template>
+            <!-- Filters code Finish -->
+        </template>
+        <template if:false={oppProjectSelected}>
+            <div class="slds-grid slds-align-middle slds-box">
+                <lightning-icon icon-name="utility:table" alternative-text="Table Icon" size="small"></lightning-icon>
+                <span class="slds-m-left_small">{noProjMessage}</span>
+            </div>
+        </template>
+        
+        <!-- Properties code Start -->
+        <template if:true={showProperty}>
+            <template if:true={showLegends}>
+                <div class="slds-border_top">
+                    <div class="slds-p-horizontal_medium badgeContainer" >
+                        <template for:each={badgeData} for:item="badge">
+                            <lightning-badge 
+                                key={badge.EYI_Label__c}
+                                label={badge.EYI_Label__c}
+                                style={badge.className} 
+                                icon-name={badge.EYI_IconName__c} 
+                                class="slds-badge_inverse"
+                                icon-position="start">
+                            </lightning-badge>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <p slot="footer"></p>
+
+
+        <template if:true={showProperty}>   
+            <div class="slds-p-horizontal_medium statusContainer">
+                <!--Spinner Start-->
+                <template if:true={isPropertiesLoading}>
+                    <div class="spinner-overlay">
+                        <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <!--Spinner End-->
+                <template if:true={isPlotting}>
+                    <span class="slds-text-heading_small slds-p-left_small custom-background">
+                       Plot's Layout
+                    </span>
+                    <template if:true={isGroupedData}>
+                        <div class="record-container">
+                            <template for:each={groupedData} for:item="record">
+                            <div key={record.Id} class={record.className} id={record.Id}>
+                                <div class="record-container">
+                                    <div class={displayBlock}>
+                                        <span>
+                                            <lightning-icon class="icon-style" icon-name="utility:your_account" 
+                                            alternative-text="Account" size="x-small" variant="inverse"></lightning-icon>&nbsp;
+                                        </span>
+                                        <span onclick={handleRecordClick} data-record-id={record.Id} style="cursor:pointer;">
+                                            {record.Name} | {record.EYI_Saleable_Area__c}
+                                        </span>
+                                    </div>
+                                    <div class="icon-buttons">
+                                        <lightning-icon class="icon-style-hover" data-oppownermanagerid={record.oppOwnerManagerID} data-ownerid={record.oppOwnerId} onclick={reserveUnit} icon-name="action:adjust_value" 
+                                        alternative-text="Reserve" title="Reserve" size="xx-small"></lightning-icon>
+                                        <!-- <lightning-icon class="icon-style-hover" onclick={createEOI} icon-name="action:adjust_value" 
+                                        alternative-text="Send EOI" title="Send EOI" size="xx-small"></lightning-icon> -->
+                                        <lightning-icon class="icon-style-hover" data-oppownermanagerid={record.oppOwnerManagerID} data-ownerid={record.oppOwnerId} data-id={record.Id} onclick={createQuote} icon-name="action:quote" 
+                                        alternative-text="Create Quote" title="Create Quote" size="xx-small"></lightning-icon>
+                                        <!-- <lightning-icon class="icon-style-hover" onclick={createBooking} icon-name="action:new_note" 
+                                        alternative-text="Book Now" title="Book Now" size="xx-small"></lightning-icon> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                    </template>   
+                    <template if:false={isGroupedData}>
+                        <div class="slds-grid slds-align-middle slds-box">
+                            <lightning-icon icon-name="utility:table" alternative-text="Table Icon" size="small"></lightning-icon>
+                            <span class="slds-m-left_small">{noRecordsMSG}</span>
+                        </div>
+                    </template>                 
+                </template>
+
+                <template if:false={isPlotting}>
+                    <template if:true={isGroupedData}>
+                        <template for:each={groupedData} for:item="floorData">
+                            <div key={floorData.floorNumber} class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-1 slds-box slds-var-p-around_medium slds-box_xx-small custom-background slds-grid slds-grid_align-spread">
+                                    <span class="slds-text-heading_small">
+                                        <lightning-icon icon-name="utility:company" alternative-text="Connected" size="small" title="large size" variant="inverse"></lightning-icon>
+                                        &nbsp;  Floor : {floorData.floorNumber}
+                                    </span>
+                                    <div class="slds-grid slds-grid_align-end hover-container">
+                                        <lightning-icon 
+                                            onclick={handleCollapse} 
+                                            icon-name={floorData.icon}
+                                            alternative-text="Expand" 
+                                            data-floornumber={floorData.floorNumber} 
+                                            size="small"
+                                            variant="inverse"
+                                            class="hover-icon"
+                                            >
+                                        </lightning-icon>
+                                    </div>
+                                </div>
+                                <div class="record-container">
+                                    <template if:true={floorData.showInventories}>
+                                        <template if:true={floorData.records.length}>
+                                            <template for:each={floorData.records} for:item="record">
+                                                <div key={record.Id}  style={record.className} class="record-item" id={record.Id}>
+                                                    <div class="record-container">
+                                                    <div class={displayBlock}>
+                                                        <div>
+                                                            <span>
+                                                                <lightning-icon class="icon-style" icon-name="utility:your_account" 
+                                                                alternative-text="Account" size="x-small" variant="inverse"></lightning-icon>&nbsp;
+                                                            </span>
+                                                            <!-- <span>{record.Name} | {record.EYI_Typology__c} | {record.EYI_Carpet_Area__c}</span> -->
+                                                            <span onclick={handleRecordClick} data-record-id={record.Id} style="cursor:pointer;">
+                                                                {record.Name} | {record.EYI_Typology__c} | {record.EYI_Saleable_Area__c}<br>
+                                                                Parkings: C - {record.EYI_Car_Park_Count__c} <template if:true={isCommercial} >| T - {record.EYI_Two_Wheeler_Count__c}</template>
+                                                            </span>
+                                                        </div>
+                                                        <div class="icon-buttons">
+                                                            <template if:true={hasOppId}>
+                                                                <template if:true={record.isBlocked}>
+                                                                    <lightning-icon class="icon-style-hover" onclick={blockUnit} icon-name="action:approval"
+                                                                        alternative-text="Block" data-oppownermanagerid={record.oppOwnerManagerID} data-ownerid={record.oppOwnerId} data-record-id={record.Id}
+                                                                        data-minimum-tokenamt={record.EYI_Project__r.EYI_Minimum_Token_Amount__c} title="Block"
+                                                                        size="xx-small"></lightning-icon>
+                                                        
+                                                                    <lightning-icon class="icon-style-hover" data-oppownermanagerid={record.oppOwnerManagerID} onclick={unReserveUnit} icon-name="action:remove_relationship"
+                                                                        alternative-text="UnReserve" data-ownerid={record.oppOwnerId} data-record-id={record.Id} title="Release" size="x-small"></lightning-icon>
+                                                                    <lightning-helptext content={record.reservedMessage} icon-variant="inverse"></lightning-helptext>
+                                                                </template>
+                                                            </template>
+
+                                                            <template if:true={hasOppId}>
+                                                            <template if:true={record.isReserved}>
+                                                                <lightning-icon class="icon-style-hover" data-oppownermanagerid={record.oppOwnerManagerID} onclick={reserveUnit} icon-name="action:preview"
+                                                                alternative-text="Reserve" data-ownerid={record.oppOwnerId} data-record-id={record.Id} title="Reserve" size="xx-small"></lightning-icon>
+                                                            </template>
+                                                            </template>
+                                                            
+                                                            <!-- <lightning-icon class="icon-style-hover" onclick={createEOI} icon-name="action:adjust_value" 
+                                                            alternative-text="Send EOI" title="Send EOI" size="xx-small"></lightning-icon> -->
+                                                            <lightning-icon class="icon-style-hover" data-id={record.Id} data-oppownermanagerid={record.oppOwnerManagerID} data-ownerid={record.oppOwnerId} data-invstatus={record.EYI_Inventory_Status__c} data-blockreason={record.Remarks_for_Block__c}  onclick={createQuote} icon-name="action:quote" 
+                                                            alternative-text="Create Quote"  title="Create Quote" size="xx-small"></lightning-icon>
+                                                            <!-- <lightning-icon class="icon-style-hover" onclick={createBooking} icon-name="action:new_note" 
+                                                            alternative-text="Book Now" title="Book Now" size="xx-small"></lightning-icon> -->
+                                                            <template if:true={showBlockBtn}>   
+                                                                <lightning-icon class="icon-style-hover" data-id={record.Id} onclick={handleBlock} data-oppownermanagerid={record.oppOwnerManagerID} data-ownerid={record.oppOwnerId} data-invstatus={record.EYI_Inventory_Status__c} data-blockreason={record.Remarks_for_Block__c} icon-name="action:approval" 
+                                                                alternative-text="Block/Vacant"  title="Block/Vacant" size="xx-small"></lightning-icon>
+                                                            </template> 
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </template>
+                                        </template>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                
+                    <template if:false={isGroupedData}>
+                        <div class="slds-grid slds-align-middle slds-box">
+                            <lightning-icon icon-name="utility:table" alternative-text="Table Icon" size="small"></lightning-icon>
+                            <span class="slds-m-left_small">{noRecordsMSG}</span>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </template>
+        
+        <!-- Properties code Finish -->
+         <!--Modal Popup Start-->
+       
+        <template if:true={isModalOpen}>
+              
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open ">
+                <div class={modalClass}>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse button-hover-effect" 
+                                title="Close" 
+                                onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">{modalTitle}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                    <c-quotation-page 
+              sendquotevalues={sendquotevalues}
+              tablevalues={handleTableValues}
+               inventoryid={inventoryId}>
+              </c-quotation-page>
+              </div>
+              <footer class="slds-modal__footer">
+
+              </footer>
+                    
+                    
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+        <!-- Modal for selecting opportunity -->
+        <template if:true={isReserveOppModalOpen}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class={modalReserveOppClass}>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeReserveModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">{modalReserveOppTitle}</h2>
+                    </header>
+                    <lightning-record-edit-form object-api-name="EYI_Inventory__c" record-id={selectedInvID} onsuccess={handleSuccess} onerror={handleError}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        
+                            <lightning-messages></lightning-messages>
+                            <lightning-input-field field-name="EYI_Opportunity__c" required></lightning-input-field>
+                            <lightning-input-field field-name="EYI_Inventory_Status__c" value="Reserve" class="hidden"></lightning-input-field>
+                            <lightning-input-field field-name="EYI_Reserver_Date__c" value={reserveStatusDateTime} class="hidden"></lightning-input-field>
+                            
+                            
+                        
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeReserveModal}>Cancel</button>
+                        <lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update"></lightning-button>
+                    </footer>
+                </lightning-record-edit-form>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+
+        <template if:true={isBlockInventoryModelOpen}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class={modalBlockInventoryClass}>
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeBlockInventoryModel}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">{modalBlockInventoryTitle}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <div style="margin: 20px; border: 2px solid lightblue; padding: 10px;">
+                            <h2 style="color: black; font-family: Arial, sans-serif; font-weight: bold; text-align: left; font-size: 18px;">Total Token Amount Required to Block the Unit: {blockAmount}</h2>
+                            <h2 style="color: black; font-family: Arial, sans-serif; font-weight: bold; text-align: left; font-size: 18px;">Total Token Amount Received: {totalTokenAmtReceived}</h2>
+                        </div>
+                        <div if:false={hasSapCustomerNumber}>
+                            <h2 style="color: red; font-family: Arial, sans-serif; font-weight: bold; text-align: left; font-size: 18px;">Please create customer number in SAP</h2>
+                            <lightning-button 
+                            variant="Brand"
+                            label="Create Payment Receipt"
+                            icon-name="utility:save"
+                            class="slds-p-around_xxx-small"
+                            onclick={handlePRNav}
+                            disabled>
+                        </lightning-button>
+                        </div>
+                            
+                        <div if:true={hasSapCustomerNumber}>
+                        <lightning-button 
+                            variant="Brand"
+                            label="Create Payment Receipt"
+                            icon-name="utility:save"
+                            class="slds-p-around_xxx-small"
+                            onclick={handlePRNav}>
+                        </lightning-button>
+                        </div>
+                        <!-- <div class="slds-table_edit_container" style="box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  border: 1px solid #d3d3d3;  padding: 10px; border-radius: 4px;  background-color: #fff;" >
+                            <table >
+                                <thead style="background-color: #d9f2ff; margin:10px; border: 2px solid lightblue">
+                                    <tr class="slds-line-height_reset addPaddingToHeader" style="padding:10px">
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Payment Type">Payment Type</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Bank Name">Bank Name</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Payment Mode">Payment Mode</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Payment Status">Payment Status</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Instrument No">Instrument No</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Date">Date</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Amount">Amount</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="Action">Action</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="border: 2px solid lightblue">
+                                   
+                                    <template for:each={paymentSchedulesdata} for:item="record" for:index="index">
+                                        <tr key={record.Id}>
+                                            <td >
+                                                <lightning-combobox 
+                                                    name="EYI_Transaction_Type__c" 
+                                                    style="margin-top: -10px;"
+                                                class="slds-m-around_xx-small"
+                                                value={record.EYI_Transaction_Type__c} 
+                                                    options={paymentTypeOptions} 
+                                                    data-index={index} 
+                                                    onchange={handleFieldChange}>
+                                                </lightning-combobox>
+                                            </td>
+                                            
+                                            <td >
+                                                <lightning-combobox 
+                                                    name="EYI_Bank_Name__c" 
+                                                    style="margin-top: -10px;"
+                                                    class="slds-m-around_xx-small"
+                                                    value={record.EYI_Bank_Name__c} 
+                                                    options={bankNameOptions} 
+                                                    data-index={index} 
+                                                    onchange={handleFieldChange}>
+                                                </lightning-combobox></td>
+                                            <td >
+                                                <lightning-combobox 
+                                                    name="EYI_Mode_of_Payment__c" 
+                                                    style="margin-top: -10px;"
+                                                    class="slds-m-around_xx-small"
+                                                    value={record.EYI_Mode_of_Payment__c} 
+                                                    options={modeOfPaymentOptions} 
+                                                    data-index={index} 
+                                                    onchange={handleFieldChange}>
+                                                </lightning-combobox>
+                                            </td>
+                                            <td >
+                                                <lightning-combobox 
+                                                    name="EYI_Payment_Status__c"
+                                                    style="margin-top: -10px;"
+                                                    class="slds-m-around_xx-small" 
+                                                    disabled
+                                                    value={record.EYI_Payment_Status__c} 
+                                                    options={paymentStatusOptions} 
+                                                    data-index={index} 
+                                                    onchange={handleFieldChange}>
+                                                </lightning-combobox>
+                                            </td>
+                                            <template if:true={record.showInstrumentFields}>
+                                                <td ><lightning-input style="margin-top: -10px;" value={record.EYI_Instrument_Number__c}  onchange={handleFieldChange} name="EYI_Instrument_Number__c" pattern="^\d{6,9}$" message-when-pattern-mismatch="Please enter a number between 6 and 9 digits"  class="slds-m-around_xx-small" type="text" data-index={index} ></lightning-input></td>
+                                            </template>
+                                            <template if:false={record.showInstrumentFields}>
+                                                <td ><lightning-input style="margin-top: -10px;" value={record.EYI_Instrument_Number__c}  onchange={handleFieldChange} name="EYI_Instrument_Number__c"  class="slds-m-around_xx-small" type="text" data-index={index} ></lightning-input></td>
+                                            </template>
+                                            <td ><lightning-input style="margin-top: -10px;" value={record.EYI_Instrument_Date__c}  onchange={handleFieldChange} name="EYI_Instrument_Date__c"  class="slds-m-around_xx-small" type="date" data-index={index} ></lightning-input></td>
+                                            <td ><lightning-input style="margin-top: -10px;" value={record.EYI_Amount__c} onchange={handleFieldChange} name="EYI_Amount__c" class="slds-m-around_xx-small" type="text" data-index={index} ></lightning-input></td>
+                                            <td>
+                                                <div class="slds-grid slds-grid_align-start">
+                                                
+                                                    <lightning-button-icon
+                                                        icon-name="utility:delete"
+                                                        alternative-text="delete"
+                                                        class="slds-m-left_xx-small"
+                                                        data-index={index}
+                                                        onclick={deleteRow}>
+                                                    </lightning-button-icon>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                    
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        <div class="slds-grid slds-grid_align-center slds-grid_vertical-align-center slds-m-around_medium">
+                            <lightning-button
+                            variant="neutral"
+                            label="Add Row"
+                            icon-name="utility:add"
+                            class="slds-p-around_xxx-small"
+                            onclick={addRow}>
+                            </lightning-button>
+                            <lightning-button 
+                            variant="Brand"
+                            label="Save"
+                            icon-name="utility:save"
+                            class="slds-p-around_xxx-small"
+                            onclick={handleSubmitInv}>
+                            </lightning-button>
+                            </div> -->
+                        
+                        
+                    </div>
+                    
+                
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+       <template if:true={isAdminBlockOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <button class="slds-button slds-modal__close slds-button_icon slds-button_icon-inverse" title="Close" onclick={closeAdminBlock}>
+                    <lightning-icon icon-name="utility:close" alternative-text="Close" size="small"></lightning-icon>
+                </button>
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">{modalName}</h2>
+                </header>
+                <template if:true={isVacant}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-input label={blockInputLabel} value={reasonForBlock} onchange={handleRasonChange} required></lightning-input>
+                    </div>
+                </template>
+                <template if:false={isVacant}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning-input label={blockInputLabel} value={reasonForBlock} onchange={handleRasonChange} readonly></lightning-input>
+                    </div>
+                </template>
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeAdminBlock} class="slds-m-right_small"></lightning-button>
+                    <lightning-button variant="brand" label={blockButton} onclick={updateStatus}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+        <!--Modal Popup Start-->
+    </lightning-card>
+</template>

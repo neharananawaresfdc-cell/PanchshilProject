@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_Applicant_Birth_Day</name>
+        <label>Check Applicant Birth Day</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Applicant_Birth_Day_is_Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>check_BirthDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <label>If Applicant Birth Day is Today</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>check_BirthDate</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    MONTH({!$Record.EYI_Date_of_Birth__c}) = MONTH(TODAY()),
+    DAY({!$Record.EYI_Date_of_Birth__c}) = DAY(TODAY())
+)</expression>
+    </formulas>
+    <interviewLabel>EYI Send Birth Day and Anniversary Notification to Applicant {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EYI Send Birth Day and Anniversary Notification to Applicant</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Applicant_Birth_Day</targetReference>
+        </connector>
+        <object>EYI_Applicants__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-11-18</startDate>
+            <startTime>09:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

@@ -1,0 +1,681 @@
+<template>
+    <lightning-card>
+        <div>
+            <h1 class="centered-title">Sourcing Manager Activity Model</h1>
+        </div>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        <template if:false={isLoading}>
+            <div class="container">
+                <div>
+                    <lightning-layout horizontal-align="spread" class="slds-grid slds-p-none slds-size_1-of-1">
+                        <!-- Total Bookings -->
+                        <lightning-layout-item
+                            class="slds-text-align_center slds-size_1-of-4 slds-button slds-button_brand"
+                            onclick={handleItemClick} data-popup="bookings">
+                            <div style="width: 250px;">
+                                <div class="slds-text-heading_x-small">Total Bookings</div>
+                                <div class="slds-text-body_regular slds-m-top_xx-small slds-summarytext-height">
+                                    <lightning-formatted-number value={totalBookings}></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <!-- Total Walk-Ins -->
+                        <lightning-layout-item
+                            class="slds-text-align_center slds-size_1-of-4 slds-button slds-button_brand"
+                            onclick={handleItemClick} data-popup="walkins">
+                            <div style="width: 250px;">
+                                <div class="slds-text-heading_x-small">Total Walk-Ins</div>
+                                <div class="slds-text-body_regular slds-m-top_xx-small slds-summarytext-height">
+                                    <lightning-formatted-number value={totalWalkins}></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <!-- Total Activities -->
+                        <lightning-layout-item
+                            class="slds-text-align_center slds-size_1-of-4 slds-button slds-button_brand"
+                            onclick={handleItemClick} data-popup="activities">
+                            <div style="width: 250px;">
+                                <div class="slds-text-heading_x-small">Total Activities</div>
+                                <div class="slds-text-body_regular slds-m-top_xx-small slds-summarytext-height">
+                                    <lightning-formatted-number value={totalActivities}></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                        <!-- Total VP/VC -->
+                        <lightning-layout-item
+                            class="slds-text-align_center slds-size_1-of-4 slds-button slds-button_brand"
+                            onclick={handleItemClick} data-popup="vpvc">
+                            <div style="width: 250px;">
+                                <div class="slds-text-heading_x-small">Total VP/VC</div>
+                                <div class="slds-text-body_regular slds-m-top_xx-small slds-summarytext-height">
+                                    <lightning-formatted-number value={totalVPVC}></lightning-formatted-number>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>
+                <div class="filter-section">
+                    <div>
+                        <div class="slds-text-title">Select Project Name</div>
+                        <lightning-combobox name="projectLaunch" class="projectname" value={selectedProject}
+                            options={projects} placeholder="Select Project Launch" onchange={handleProjectChange}>
+                        </lightning-combobox>
+                    </div>
+                    <!-- Title for REC Name / Code -->
+                    <div>
+                        <div class="slds-text-title">REC Name / Code</div>
+                        <lightning-input class="projectname " type="text" placeholder="Search by REC Name or REC Code or Category"
+                            value={searchKey} onchange={handleSearchKeyChange}>
+                        </lightning-input>
+                    </div>
+                    <lightning-button class="searchrefresh" label="Search" variant="brand"
+                        onclick={handleSearch}></lightning-button>
+                    <lightning-button class="searchrefresh" label="Clear Filter" variant="brand"
+                        onclick={handleRefresh}></lightning-button>
+                </div>
+                <template if:true={isDataAvailable}>
+                    <div style="overflow: auto;">
+                        <table aria-multiselectable="true"
+                            class="slds-table slds-table_cell-buffer slds-table_bordered" role="grid">
+                            <thead>
+                                <tr class="slds-line-height_reset">
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="REC CODE">REC CODE</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="NAME">NAME</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="MOBILE NO.">MOBILE NO.</div>
+                                    </th>
+                                    <th class="" scope="col">
+                                        <div class="slds-truncate" title="BEAT">BEAT</div>
+                                    </th>
+                                    <th class="thalign" scope="col">
+                                        <div class="slds-truncate" title="REC CATEGORY" style="border-bottom: 1px solid #060708; padding-bottom: 4px;">
+                                            REC CATEGORY </div>
+                                        <div style="padding-top: 4px;">
+                                            Legacy | Current</div>
+                                    </th>
+                                    <template if:true={selectedProject}>
+                                        <th class="thalign" scope="col">
+                                            <div class="slds-truncate" title="PROJECT CLASSIFICATION"  style="border-bottom: 1px solid #060708; padding-bottom: 4px;">                                          
+                                                PROJECT CLASSIFICATION</div>
+                                                <div style="padding-top: 4px;">
+                                                    Legacy | Current</div>
+                                        </th>
+                                    </template>
+                                    <th class="thalign" scope="col">
+                                        <div class="slds-truncate" title="ACTIONS">ACTIONS</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={displayedAccounts} for:item="account">
+                                    <tr key={account.recId}>
+                                        <!-- <td>
+                                        <lightning-input style="text-align: center;" type="checkbox" data-id={account.recId} onchange={handleRowSelect} checked={account.isSelected}></lightning-input>
+                                    </td> -->
+                                        <td class="slds-truncate">{account.recCode}</td>
+                                        <td class="slds-truncate">
+                                            <a href={account.recURL} target="_blank">
+                                                {account.recName}
+                                            </a>
+                                        </td>
+                                        <td>{account.recMobile}</td>
+                                        <td>{account.recBeat}</td>
+                                        <td class="thalign">{account.recLifetimeCategory} | {account.recCurrentCategory}</td>
+                                        <template if:true={selectedProject}>
+                                            <td class="thalign">{account.recProjLifetimeCat} | {account.recProjCurrentCat}</td>
+                                        </template>
+                                        <td style="width: 100px;">
+                                            <!-- Container to hold all action buttons -->
+                                            <div class="button-container">
+                                                <!-- Call Button (Icon only) -->
+                                                <button
+                                                    class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                                    onclick={handleCall} title="Call" data-id={account.recId}
+                                                    data-reccode={account.recCode} data-mappingid={account.recMappingId}
+                                                    data-recname={account.recName}>
+                                                    <lightning-icon icon-name="action:call"
+                                                        size="xx-small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Call</span>
+                                                </button>
+                                                <!-- Meeting Button (Icon only) -->
+                                                <button
+                                                    class="slds-button slds-button_icon slds-button_icon-border-filled"
+                                                    onclick={handleMeeting} title="Meeting" data-id={account.recId}
+                                                    data-reccode={account.recCode} data-mappingid={account.recMappingId}
+                                                    data-recname={account.recName}>
+                                                    <lightning-icon icon-name="action:new_event"
+                                                        size="xx-small"></lightning-icon>
+                                                    <span class="slds-assistive-text">Meeting</span>
+                                                </button>
+                                                <!-- JBP Button (Boxed) -->
+                                                <button class="slds-button slds-button_brand" onclick={handleJbp}
+                                                    title="JBP" data-id={account.recId} data-reccode={account.recCode}
+                                                    data-mappingid={account.recMappingId} data-recname={account.recName}
+                                                    disabled={isprojectSelected}>JBP</button>
+                                                <!-- Activity Button (Boxed) -->
+                                                <button class="slds-button slds-button_brand" onclick={handleActivity}
+                                                    data-reccode={account.recCode} title="Activity"
+                                                    data-id={account.recId} data-recname={account.recName}
+                                                    data-mappingid={account.recMappingId}>Activity</button>
+                                                <!-- VC/VP Button -->
+                                                <button class="slds-button slds-button_brand" onclick={handleVcvp}
+                                                    title="VC/VP" data-id={account.recId} data-reccode={account.recCode}
+                                                    data-mappingid={account.recMappingId} data-recname={account.recName}
+                                                    disabled={isprojectSelected}>VP/VC</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="slds-grid slds-grid_align-end custom-margin-top">
+                        <lightning-button variant="brand" label="<<" onclick={handleFirstPage} disabled={isFirstPage}
+                            class="slds-m-right_small"></lightning-button>
+                        <lightning-button variant="brand" label="<" onclick={handlePrevious} disabled={isFirstPage}
+                            class="slds-m-right_small"></lightning-button>
+                        <lightning-button variant="brand" label=">" onclick={handleNext} disabled={isLastPage}
+                            class="slds-m-right_small"></lightning-button>
+                        <lightning-button variant="brand" label=">>" onclick={handleLastPage} disabled={isLastPage}
+                            class="slds-m-right_small"></lightning-button>
+                    </div>
+                </template>
+                <template if:false={isDataAvailable}>
+                    <div class="slds-grid slds-align-middle slds-box">
+                        <lightning-icon icon-name="utility:table" alternative-text="Table Icon"
+                            size="small"></lightning-icon>
+                        <span class="slds-m-left_small">No Project Mappings Found for Selected Project </span>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"
+                            style="background-color: white;"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Create {actionName} Record</h2>
+                </header>
+                <template if:true={isCall}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!-- 2 Columns layout with padding between them -->
+                        <lightning-layout horizontal-align="spread" class="slds-grid">
+                            <!-- First Column -->
+                            <lightning-layout-item size="6" class="slds-p-right_medium">
+                                <lightning-combobox label="Call Type" value={selectedCallType} options={callTypeOptions}
+                                    onchange={handleCallTypeChange} required>
+                                </lightning-combobox>
+                                <lightning-combobox label="Calling Reason" value={selectedCallReason}
+                                    options={callReasonOptions} onchange={handleCallReasonChange} required>
+                                </lightning-combobox>
+                                <lightning-combobox label="Call Status" value={selectedCallStatus}
+                                    options={callStatusOptions} onchange={handleCallStatusChange}>
+                                </lightning-combobox>
+                                <template if:true={isCallConnect}>
+                                    <lightning-combobox label="Call Not Connected Reasons" value={selectedCallNotConnnectReason}
+                                        options={callNotConnectReasonOptions} onchange={handleCallNotConnectChange} required>
+                                    </lightning-combobox>
+                                </template>
+                                
+                            </lightning-layout-item>
+                            <!-- Second Column -->
+                            <lightning-layout-item size="6" class="slds-p-left_medium">
+                                <lightning-input label="REC Name" value={recName} type="text"
+                                read-only></lightning-input>
+                                <template if:true={selectedProject}>
+                                    <lightning-input label="Project Name" value={projectName} type="text"
+                                    read-only></lightning-input> 
+                                </template> 
+                               
+                                <lightning-combobox label="Next Action" value={nextAction}
+                                options={nextActionOptions} onchange={handleNextActionChange}>
+                            </lightning-combobox>
+                            <template if:true={isFollowup}>     
+                                <lightning-input label="Next Action Date" type="datetime-local" value={nextActionDate}
+                                    onchange={handlenextActionDateChange} required>
+                                </lightning-input>  
+                            </template>          
+                            <lightning-textarea
+                                type="textarea"
+                                label="Call Remarks" 
+                                value={callRemarks}
+                                onchange={handleCallRemarksChange} required>
+                            </lightning-textarea>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </template>
+                <template if:true={isMeeting}>
+                    <template if:false={isLocationEnabled}>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <p>{locationerrormessage}</p>
+                        </div>
+                    </template>
+                    <template if:true={isLocationEnabled}>
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <!-- 2 Columns layout with padding between them -->
+                            <lightning-layout horizontal-align="spread" class="slds-grid">
+                                <!-- First Column -->
+                                <lightning-layout-item size="6" class="slds-p-right_medium">
+                                    <lightning-combobox label="Meeting Type" value={selectedMeetingType} options={meetingTypeOptions}
+                                        onchange={handleMeetingTypeChange} required>
+                                    </lightning-combobox>
+                                    <lightning-combobox label="Meeting Location" value={meetingLocation}
+                                        options={meetingLocationOptions} onchange={handleMeetingLocationChange}>
+                                    </lightning-combobox>
+                                    <lightning-combobox label="Meeting Reason"  value={selectedMeetingReason}
+                                        options={meetingReasonOptions} onchange={handleMeetingReasonChange} required>
+                                    </lightning-combobox>
+                                    <template if:true={isEventMeet}>
+                                        <lightning-combobox label="Interested in Events" value={recInterst}
+                                            options={interestedOptions} onchange={handleinterestChange} required>
+                                        </lightning-combobox>
+                                    </template>
+
+                                
+                                    <lightning-combobox label="Next Action" value={nextAction}
+                                    options={nextActionOptions} onchange={handleNextActionChange}>
+                                </lightning-combobox>
+                                    <template if:true={isFollowup}>     
+                                    <lightning-input label="Next Action Date" type="datetime-local" value={nextActionDate}
+                                    onchange={handlenextActionDateChange} required></lightning-input>  
+                                </template>
+                                </lightning-layout-item>
+                                <!-- Second Column -->
+                                <lightning-layout-item size="6" class="slds-p-left_medium">
+                                    <lightning-input label="REC Name" value={recName} type="text"
+                                    read-only></lightning-input>
+                                    <template if:true={selectedProject}>
+                                        <lightning-input label="Project Name" value={projectName} type="text"
+                                        read-only></lightning-input> 
+                                    </template> 
+                                    <lightning-combobox label="Meeting Status" value={selectedMeetingStatus}
+                                        options={meetingStatusOptions} onchange={handleMeetingStatusChange}>
+                                    </lightning-combobox>
+                                    <lightning-textarea label="Meeting Remarks" value={meetingRemarks}
+                                    onchange={handleMeetingRemarksChange} required></lightning-textarea>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </div>
+                    </template>
+                </template>
+                <!-- Modal/Popup Body -->
+                <template if:true={isJbp}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!-- 2 Columns layout with padding between them -->
+                        <lightning-layout horizontal-align="spread" class="slds-grid">
+                            <!-- First Column -->
+                            <lightning-layout-item size="6" class="slds-p-right_medium">
+                                <lightning-input label="JBP Name" value={jbpName} type="text" onchange={handleJbpNameChange}
+                                    required></lightning-input>
+                                <lightning-combobox label="Activity Type" value={jbpAType} options={jbpTypeOptions}
+                                    onchange={handleJbpActivityType} required>
+                                </lightning-combobox>
+                                <lightning-combobox label="Activity Support Required" value={supportRequired}
+                                    options={actionOptions} onchange={handleJbpActionRequired} required>
+                                </lightning-combobox>
+                                <template if:true={isSupportRequired}>
+                                    <lightning-input label="Cost (INR)" type={formattedCurrencyValue} value={costValue}
+                                        onchange={handleCostChange}>
+                                    </lightning-input>
+                                </template>
+                                <lightning-combobox label="Activity Status" value={jbpStatus} options={jbpStatusOptions}
+                                    onchange={handleJBPStatusChange}>
+                                </lightning-combobox>
+                                <lightning-dual-listbox class="custom-dual-listbox" name="resourceTypes"
+                                    label="Type Of Resources" options={jbpResourceTypeOptions}
+                                    value={selectedResourceTypes} onchange={handleJBPResourceChange}>
+                                </lightning-dual-listbox>
+                            </lightning-layout-item>
+                            <!-- Second Column -->
+                            <lightning-layout-item size="6" class="slds-p-left_medium">
+                                <lightning-input label="Project Name" type="text" value={projectName}
+                                    onchange={handleCostChange} read-only>
+                                </lightning-input>
+                                <lightning-input label="REC Name" type="text" value={recName}
+                                    onchange={handleCostChange} read-only>
+                                </lightning-input>
+                                <lightning-input label="Start Date" value={jbpStartDate} type="Date"
+                                    onchange={handleJBPStartDate} required error-message={errorMessage}></lightning-input>
+                                <lightning-input label="End Date" value={jbpEndDate} type="Date"
+                                    onchange={handleJBPEndDate} required error-message={errorMessage}></lightning-input>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        <template if:true={isJBPDatabase}>
+                            <lightning-layout horizontal-align="spread" class="slds-grid">
+                                <lightning-layout-item size="12">
+                                    <h2 class="slds-text-heading_medium">Database Fields</h2> <!-- Custom Title -->
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout horizontal-align="spread" class="slds-grid">
+                                <!-- First Column -->
+                                <lightning-layout-item size="6" class="slds-p-right_medium">
+                                    <lightning-dual-listbox class="custom-dual-listbox" name="End User" label="End User"
+                                        options={jbpEndUserOptions} value={selectedEndUser}
+                                        onchange={handleEndUserOptionChange}>
+                                    </lightning-dual-listbox>
+                                    <lightning-input label="Investor" value={investorName} type="text"
+                                        onchange={handleInvestorChange}></lightning-input>
+                                    <lightning-input label="Others" value={jbpOthers} type="text"
+                                        onchange={handleJBPOthersChange}></lightning-input>
+                                </lightning-layout-item>
+                                <!-- Second Column -->
+                                <lightning-layout-item size="6" class="slds-p-left_medium">
+                                    <lightning-dual-listbox class="custom-dual-listbox" name="Community"
+                                        label="Community" options={jbpCommunityOptions} value={selectedCommunity}
+                                        onchange={handleCommunityChange}>
+                                    </lightning-dual-listbox>
+                                    <lightning-input label="Total Database" value={totalDatabase} type="number"
+                                        onchange={handleTotalDatabaseChange}>
+                                    </lightning-input>
+                                    <lightning-input label="Relevant Database" value={relevantDatabase} type="number"
+                                        onchange={handleRelevantDatabaseChange}>
+                                    </lightning-input>
+                                    <lightning-input label="NRI Data" value={nriData} type="number"
+                                        onchange={handleNriDataChange}>
+                                    </lightning-input>
+                                    <lightning-input label="OS Data" value={osData} type="number"
+                                        onchange={handleOsDataChange}>
+                                    </lightning-input>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={isOnRoads}>
+                            <lightning-layout horizontal-align="spread" class="slds-grid">
+                                <lightning-layout-item size="12">
+                                    <h2 class="slds-text-heading_medium">InRoads Fields</h2> <!-- Custom Title -->
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout horizontal-align="spread" class="slds-grid" title="Test">
+                                <!-- First Column -->
+                                <lightning-layout-item size="6" class="slds-p-right_medium">
+                                    <lightning-input label="Corporate (Private Organization)"
+                                        value={corporatePrivateOrg} type="text" onchange={handleCorporateChange}
+                                        data-id="corporatePrivateOrg"></lightning-input>
+                                    <!-- Club -->
+                                    <lightning-input label="Club" value={club} type="text" onchange={handleClubChange}
+                                        data-id="club"></lightning-input>
+                                    <!-- Association -->
+                                    <lightning-input label="Association" value={association} type="text"
+                                        onchange={handleAssociationChange} data-id="association"></lightning-input>
+                                    <!-- Society -->
+                                    <lightning-input label="Society" value={society} type="text"
+                                        onchange={handleSocietyChange} data-id="society"></lightning-input>
+                                </lightning-layout-item>
+                                <!-- Second Column -->
+                                <lightning-layout-item size="6" class="slds-p-left_medium">
+                                    <lightning-input label="Government Org" value={governmentOrg} type="text"
+                                        onchange={handleGovOrgChange} data-id="governmentOrg"></lightning-input>
+                                    <!-- PSU -->
+                                    <lightning-input label="PSU" value={psu} type="text" onchange={handlePSUChange}
+                                        data-id="psu"></lightning-input>
+                                    <!-- Religious Place -->
+                                    <lightning-input label="Religious Place (Ex. ISCON)" value={religiousPlace}
+                                        type="text" onchange={handleRelPlaceChange}
+                                        data-id="religiousPlace"></lightning-input>
+                                    <!-- Inroad Expected Reach -->
+                                    <lightning-input label="Inroad Expected Reach" value={inroadExpectedReach}
+                                        type="number" onchange={handleInroadReachhange}
+                                        data-id="inroadExpectedReach"></lightning-input>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={isJbp}>
+                            <lightning-layout horizontal-align="spread" class="slds-grid">
+                                <lightning-layout-item size="12">
+                                    <h2 class="slds-text-heading_medium">Ratings</h2> <!-- Custom Title -->
+                                </lightning-layout-item>
+                            </lightning-layout>
+                            <lightning-layout horizontal-align="spread" class="slds-grid" title="Test">
+                                <!-- First Column -->
+                                <lightning-layout-item size="6" class="slds-p-right_medium">
+                                    <lightning-combobox label="REC Interest Level" value={selectedInterestLevel} options={jbpIntLevelOptions}
+                                    onchange={handleJBPIntLevelChange}></lightning-combobox>
+                                    
+                                </lightning-layout-item>
+                                <!-- Second Column -->
+                                <lightning-layout-item size="6" class="slds-p-left_medium">
+                                    <lightning-combobox label="SM Rating" value={selectedSMRating} options={jbpRatingOptions}
+                                    onchange={handleSMRatingChange}></lightning-combobox>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                    </div>
+                </template>
+                <template if:true={isActivity}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!-- 2 Columns layout with padding between them -->
+                        <lightning-layout horizontal-align="spread" class="slds-grid">
+                            <!-- First Column -->
+                            <lightning-layout-item size="6" class="slds-p-right_medium">
+                                <lightning-input label="Activity Name" value={taskSubject}
+                                    onchange={handleTaskSubject} required></lightning-input>
+                                <lightning-combobox label="Activity Type" value={selectedMeetingType} options={jbpTypeOptions}
+                                    onchange={handleMeetingTypeChange}>
+                                </lightning-combobox>
+                                
+                                <template if:true={selectedProject}>
+                                    <lightning-input label="Activity Start Date" type="date" value={activityStartDate}
+                                        onchange={handleActivityStartDate}>
+                                    </lightning-input>
+                                    <lightning-input label="Activity End Date" type="date" value={activityEndDate}
+                                        onchange={handleActivityEndDate}>
+                                    </lightning-input>
+                                </template>
+                            </lightning-layout-item>
+                            <!-- Second Column -->
+                            <lightning-layout-item size="6" class="slds-p-left_medium">
+                                <lightning-input label="REC Name" value={recName} type="text"
+                                    read-only></lightning-input>
+                                <template if:true={selectedProject}>
+                                    <lightning-input label="Project Name" value={projectName} type="text"
+                                        read-only></lightning-input> 
+                                </template> 
+                                <template if:true={projectName}>
+                                    <template if:true={jbpOptions.length}>                                
+                                        <lightning-combobox label="JBP Name" value={taskjbpName} options={jbpOptions} placeholder="Select JBP if Applicable"
+                                            onchange={handleJbpNameChange}></lightning-combobox>
+                                    </template>
+                                </template>
+                                <template if:false={selectedProject}>
+                                    <lightning-input label="Activity Start Date" type="date" value={activityStartDate}
+                                        onchange={handleActivityStartDate}>
+                                    </lightning-input>
+                                     <lightning-input label="Activity End Date" type="date" value={activityEndDate}
+                                        onchange={handleActivityEndDate}>
+                                    </lightning-input>
+                                </template>
+                               
+                            <lightning-textarea label="Activity Remarks" value={taskDescription}
+                                    onchange={handleTaskDescription} required></lightning-textarea>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+                </template>
+                <template if:true={isVpvc}>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <!-- 2 Columns layout with padding between them -->
+                        <lightning-layout horizontal-align="spread" class="slds-grid">
+                            <!-- First Column -->
+                            <lightning-layout-item size="6" class="slds-p-right_medium">
+                                <lightning-input label="Client Name" value={clientName}
+                                    onchange={handleClientNameChange} required></lightning-input>
+                                <lightning-input label="Company Name" value={companyName}
+                                    onchange={handleCompanyNameChange} ></lightning-input>
+                                <lightning-input label="Designation" value={designation}
+                                    onchange={handleDesignationChange}></lightning-input>
+                                <lightning-input label="Email" value={email} type="email"
+                                    onchange={handleEmailChange} ></lightning-input>
+                                <lightning-input label="Mobile Number" value={mobileNumber}
+                                    onchange={handleMobileNumberChange}></lightning-input>
+                                <lightning-input label="Digital Footprint" value={profile}
+                                    onchange={handleProfileChange}></lightning-input>
+                                <lightning-input label="Linkedin" value={linkdinURL}
+                                    onchange={handlelinkdinURLChange}></lightning-input>
+                                <lightning-file-upload
+                                    label="Upload Business card or Visiting Card"
+                                    name="fileUploader"
+                                    accept={acceptedFormats}
+                                    record-id={recAccount}
+                                    onuploadfinished={handleUploadFinished}
+                                    >
+                                </lightning-file-upload>   
+                                {fileuploadedName}
+                            </lightning-layout-item>
+                            <!-- Second Column -->
+                            <lightning-layout-item size="6" class="slds-p-left_medium">
+                                <!-- <lightning-input label="Rec Mapping" value={recMapping} onchange={handleRecMappingChange}></lightning-input> -->
+                                <lightning-input label="REC Name" value={recName} type="text"
+                                    read-only></lightning-input>
+                                <lightning-input label="REC Code" value={recCode} readonly></lightning-input>
+                                <!-- <lightning-input label="Rec Account" value={recAccount} onchange={handleRecAccountChange}></lightning-input> -->
+                                <lightning-input label="Project Name" value={projectName} onchange={handleRecCodeChange}
+                                    readonly></lightning-input>
+                                <lightning-dual-listbox label="Typology" value={typology} options={typologyOptions}
+                                    onchange={handleTypologyChange} >
+                                </lightning-dual-listbox>
+                                <!-- <lightning-combobox label="Budget" value={budget} options={budgetOptions}
+                                onchange={handleBudgetChange}></lightning-combobox> -->
+                                <lightning-combobox label="Visit Status" value={recStatus} options={recStatusOptions}
+                                    onchange={handleRecStatusChange} required>
+                                </lightning-combobox>
+
+                                <!-- <lightning-input label="Typology" value={typology} onchange={handleTypologyChange}></lightning-input> -->
+                                <template if:true={isVcStatus}>
+                                    <lightning-input label="VC Date" type="datetime-local" value={vcDate}
+                                        onchange={handleVcDateChange} required></lightning-input>
+                                </template>
+                                <template if:true={isVpStatus}>
+                                    <lightning-input label="VP Date" type="datetime-local" value={vpDate}
+                                        onchange={handleVpDateChange} ></lightning-input>
+                                </template>
+                            </lightning-layout-item>
+
+                        </lightning-layout>
+                    </div>
+                </template>
+                <!-- Modal/Popup Footer -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_brand" onclick={closeModal}>Cancel</button>
+                    <template if:true={isActivity}><button class="slds-button slds-button_brand" onclick={handleSaveAndNew}>Save & New</button></template>
+                    <button class="slds-button slds-button_brand" onclick={handleSave}>Save</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+      <!-- Modal element -->
+      <template if:true={isSummaryModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeSummaryModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" size="small"
+                            style="background-color: white;"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium slds-text-weight_bold">{content} Summary Details
+                    </h2>
+                </header>
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_small">
+                    <!-- Using lightning-layout to group combobox and date inputs horizontally -->
+                    <lightning-layout horizontal-align="spread" class="slds-m-bottom_xx-small">
+
+                            <!-- REC Name / Code Input -->
+                            <lightning-layout-item size="3" class="slds-p-around_xx-small">
+                                <lightning-input 
+                                    label="REC Name / Code"
+                                    type="text"
+                                    placeholder="Search by REC Name or REC Code or Category"
+                                    value={searchKey}
+                                    onchange={handleSearchKeyChange}>
+                                </lightning-input>
+                            </lightning-layout-item>
+
+                            <!-- Date Range Combobox -->
+                            <lightning-layout-item size="3" class="slds-p-around_xx-small">
+                                <lightning-combobox 
+                                    name="dateRange"
+                                    label="Date Range"
+                                    placeholder="Select Date"
+                                    value={selectedDateRange}
+                                    options={dateRangeOptions}
+                                    onchange={handleDateRangeChange}>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                            <!-- Placeholder or Start/End Date (based on condition) -->
+                            <template if:false={isCustomDateRange}>
+                                <!-- Empty items to maintain layout -->
+                                <lightning-layout-item size="3" class="slds-p-around_xx-small"></lightning-layout-item>
+                                <lightning-layout-item size="3" class="slds-p-around_xx-small"></lightning-layout-item>
+                            </template>
+
+                            <!-- Start & End Dates for Custom Range -->
+                            <template if:true={isCustomDateRange}>
+                                <lightning-layout-item size="3" class="slds-p-around_xx-small">
+                                    <lightning-input 
+                                        label="Start Date" 
+                                        type="date" 
+                                        value={summaryStartDate}
+                                        onchange={handleSummaryStartDate}>
+                                    </lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout-item size="3" class="slds-p-around_xx-small">
+                                    <lightning-input 
+                                        label="End Date" 
+                                        type="date" 
+                                        value={summaryEndDate}
+                                        onchange={handleSummaryEndDate}>
+                                    </lightning-input>
+                                </lightning-layout-item>
+                            </template>
+
+                        </lightning-layout>
+                    <template if:false={dataList.length}>
+                        <div class="slds-grid slds-align-middle slds-box">
+                            <lightning-icon icon-name="utility:table" alternative-text="Table Icon"
+                                size="small"></lightning-icon>
+                            <span class="slds-m-left_small">No records found for the selected
+                                configuration.</span>
+                        </div>
+                    </template>
+                    <!-- Data Table -->
+                    <template if:true={dataList.length}>
+                        <lightning-datatable key-field="id" data={dataList} columns={dataColumns}
+                            hide-checkbox-column="true">
+                        </lightning-datatable>
+                    </template>
+                </div>
+                <!-- Modal/Popup Footer -->
+                <footer
+                    class="slds-modal__footer slds-p-top_small slds-p-bottom_medium slds-text-align_center">
+                    <lightning-button variant="Brand" label="Apply Filter" onclick={handleApplyFilters}
+                        class="slds-m-right_small"></lightning-button>
+                    <lightning-button variant="Brand" label="Clear Filter" onclick={handleClearFilters}
+                        class="slds-m-right_small"></lightning-button>
+                    <lightning-button variant="Brand" label="Close"
+                        onclick={closeSummaryModal}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

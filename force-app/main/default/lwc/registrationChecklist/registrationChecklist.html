@@ -1,0 +1,69 @@
+<template>
+    <lightning-card>
+    <template if:true={welcomeCallQuestions.length}>
+        <table class="slds-table slds-table_bordered fixed-width-table">
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <!--<th>Category</th>-->
+                    <th>Status</th>
+                    <th>Remark</th>
+                    <!-- <th>Created By</th> -->
+                    <th>Checked By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={welcomeCallQuestions} for:item="question">
+                    <tr key={question.Id}>
+                        <td class="wrap-text">{question.Question__c}</td>
+                        <!--<td>
+                            <lightning-combobox
+                                name="category"
+                                data-id={question.Id}
+                                value={question.Category__c}
+                                options={categoryOptions}
+                                onchange={handleInputChange}
+                                disabled="true"
+                            ></lightning-combobox>
+                        </td>-->
+                        <td>
+                            <lightning-combobox
+                                name="status"
+                                value={question.Status__c}
+                                data-id={question.Id}
+                                options={statusOptions}
+                                onchange={handleInputChange}
+                                disabled={disableFields}
+                            ></lightning-combobox>
+                        </td>
+                        <td>
+                            <lightning-textarea
+                                name="remark"
+                                data-id={question.Id}
+                                value={question.Remarks__c}
+                                onchange={handleInputChange}
+                                disabled={disableFields}
+                            ></lightning-textarea>
+                        </td>
+                        <!-- <td>{question.CreatedBy.Name}</td> -->
+                        <td>{checkedBy}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table><br/>
+        <div class="button-container">
+            <template if:false={disableFields}>
+                <lightning-button label="Save Draft" onclick={handleSave} ></lightning-button>
+                <lightning-button label="Submit" onclick={handleSave} variant="brand" style="margin-left: 20px;"></lightning-button>
+            </template>
+            <template if:true={showCancelBtn}>
+                <lightning-button label="Cancel" onclick={handleCancel} style="margin-left: 20px;"></lightning-button>
+            </template>
+            <template if:true={disableFields}>
+                <button type="button" style="margin-left:20px" onclick={handlePrint} class="small-button">Print</button>
+            </template>
+            
+        </div>
+    </template>
+</lightning-card>
+</template>

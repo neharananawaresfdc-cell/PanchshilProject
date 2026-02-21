@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Post Sales Cancellation Case Escalation</label>
+    <protected>false</protected>
+    <values>
+        <field>Call_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Is_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>L0_Escalation_Time__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>L1_Escalation_Time__c</field>
+        <value xsi:type="xsd:double">0.04</value>
+    </values>
+    <values>
+        <field>L2_Escalation_Time__c</field>
+        <value xsi:type="xsd:double">0.08</value>
+    </values>
+    <values>
+        <field>L3_Escalation_Time__c</field>
+        <value xsi:type="xsd:double">0.13</value>
+    </values>
+    <values>
+        <field>Where_It_Is_Used__c</field>
+        <value xsi:type="xsd:string">Used in after case save flow. Escalation time taken as days</value>
+    </values>
+</CustomMetadata>

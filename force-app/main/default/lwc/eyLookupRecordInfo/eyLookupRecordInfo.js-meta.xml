@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <!--<target>lightning__AppPage</target>-->
+        <!--<target>lightning__HomePage</target>-->
+        <!--<target>lightning__Tab</target>-->
+        <!--<target>lightning__RecordAction</target>-->
+        <!--<target>lightning__Inbox</target>-->
+        <!--<target>lightning__UtilityBar</target>-->
+        <!--<target>lightning__FlowScreen</target>-->
+        <!--<target>lightningSnapin__ChatMessage</target>-->
+        <!--<target>lightningSnapin__Minimized</target>-->
+        <!--<target>lightningSnapin__PreChat</target>-->
+        <!--<target>lightningSnapin__ChatHeader</target>-->
+        <!--<target>lightningCommunity__Page</target>-->
+        <!--<target>lightningCommunity__Default</target>-->
+        <!--<target>lightningCommunity__Page_Layout</target>-->
+        <!--<target>lightningCommunity__Theme_Layout</target>-->
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="title" type="String" required="true" label="Enter Title" default="LWC Table" />
+            <property name="objectName" type="String" required="true" label="Enter Object API Name" default="Contact" />
+            <property name="fieldQ" type="String" required="true" label="Enter Lookup Field API Name on this current object" default="EYI_Lead_Enquiry__c.EYI_Parent_Record__c" />
+            <property name="fieldList" type="String" required="true" label="Comma Seperated List of Fields" description="Please provide the lit of field api names commaseperated for datatable" default="Name" />
+            <property name="noOfSections" type="String" required="true" label="Enter the number of columns/sections for your layout" default="2" />
+            <property name="useStandardLRF" type="Boolean" required="true" label="Use Standard LRF" default="false"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

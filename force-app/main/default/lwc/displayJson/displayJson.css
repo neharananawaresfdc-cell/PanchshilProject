@@ -1,0 +1,34 @@
+.renderjson a              { text-decoration: none; }
+.renderjson .disclosure    { color: black;
+                            font-size: 100%;
+                            -webkit-touch-callout: none;
+                            -webkit-user-select: none;
+                            -khtml-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                           }
+.renderjson .object.syntax { color: grey; }
+.renderjson .array.syntax  { color: grey; }
+
+/*.true {
+
+    background: linear-gradient(to right, #EBEBEB 35px, transparent 0);
+    padding-left: 2.25px;
+}*/
+
+.hide {
+    background: #EBEBEB;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+.error {
+    padding: 10px;
+}

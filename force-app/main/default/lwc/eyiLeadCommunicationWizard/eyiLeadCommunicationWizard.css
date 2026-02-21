@@ -1,0 +1,34 @@
+.buttonPadding {
+    margin-left: 8px;
+}
+.custom-margin-top {
+    margin-top: 1rem; /* Adjust the value as needed */
+}
+
+.buttonStyle{
+    font-size: 10px;
+    padding: 0px;
+}
+
+.dndMessage{
+    padding: 10px;
+    margin-block: 10px;
+    margin-left: 21px;
+    width: 350px;
+    word-break: normal;
+}
+
+.textAreaBody {
+    --sds-c-textarea-sizing-min-height:137px;
+    overflow: auto;
+}
+
+.label-bold {
+    font-weight: bold;
+    display: block;
+    margin-top: 5px; 
+}
+.normal-text {
+    font-weight: normal;
+    margin-top: -20px;
+}

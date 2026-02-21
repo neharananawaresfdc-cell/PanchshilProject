@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Salesforce Call</label>
+    <protected>false</protected>
+    <values>
+        <field>ApiEndPoint__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Consumer_Key__c</field>
+        <value xsi:type="xsd:string">3MVG9gwxgOelbpo_7mspTWPS9Em3klb_MNjiwNLomU3AR4iCC71qZMGmrw7uog.DMEHRwWBcfXYyhPCCGf5Sk</value>
+    </values>
+    <values>
+        <field>Consumer_Secret__c</field>
+        <value xsi:type="xsd:string">2A67057797536EEF198EB6C00CA72DEC7997CC6832980A8477637056F9A7564C</value>
+    </values>
+    <values>
+        <field>HeaderParameters__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Password__c</field>
+        <value xsi:type="xsd:string">Panchshil@2025jC95LZAGnVSJMDJv5FxxBmXz9</value>
+    </values>
+    <values>
+        <field>RequestMethod__c</field>
+        <value xsi:type="xsd:string">POST</value>
+    </values>
+    <values>
+        <field>UserName__c</field>
+        <value xsi:type="xsd:string">integrationuser@panchshil.com.uat</value>
+    </values>
+</CustomMetadata>

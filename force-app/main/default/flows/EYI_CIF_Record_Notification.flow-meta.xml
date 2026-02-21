@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Notification</name>
+        <label>Send Email Notification</label>
+        <locationX>176</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipient_Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>CIF_Record_Created_Email_Subject</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>CIF_Record_Created_Email_Notification</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_Notification_when_CIF_Record_created</name>
+        <label>Send SMS Notification when CIF Record created</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Add_email</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SMS_When_CIF_Created</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification_when_CIF_Record_created</name>
+        <label>Send WhatsApp Notification when CIF Record created</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_Notification_when_CIF_Record_created</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>WhatsApp_Notification_for_new_CIF</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_email</name>
+        <label>Add email</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Recipient_Address</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.Account.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Notification</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>SMS_When_CIF_Created</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Primary_Mob_No_with_Country_Code__c&quot;,&quot;templateId&quot;:&quot;&apos; + {!$Label.SMSTemp_For_CIF_Create}
+ + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification_for_new_CIF</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Primary_Mob_No_with_Country_Code__c&quot;,&quot;templateId&quot;:&quot;&apos; + {!$Label.WhatsApp_For_CIF_Creation} + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>CIF Record Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>CIF Record Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_WhatsApp_Notification_when_CIF_Record_created</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>CIF_Record_Created_Email_Notification</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Thank you for revisiting {!$Record.EYI_CIF_Record__r.EYI_First_Name__c}.
+
+Best Regards,
+Team Panchshil,
++91 8970007700</text>
+    </textTemplates>
+    <textTemplates>
+        <name>CIF_Record_Created_Email_Subject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>New Record Created - Panchshil Team</text>
+    </textTemplates>
+    <variables>
+        <name>Recipient_Address</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

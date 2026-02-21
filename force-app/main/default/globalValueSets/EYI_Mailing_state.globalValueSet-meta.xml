@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Abu Dhabi</fullName>
+        <default>false</default>
+        <label>Abu Dhabi</label>
+    </customValue>
+    <customValue>
+        <fullName>Alabama</fullName>
+        <default>false</default>
+        <label>Alabama</label>
+    </customValue>
+    <customValue>
+        <fullName>Alberta</fullName>
+        <default>false</default>
+        <label>Alberta</label>
+    </customValue>
+    <customValue>
+        <fullName>Andhra Pradesh</fullName>
+        <default>false</default>
+        <label>Andhra Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>Arizona</fullName>
+        <default>false</default>
+        <label>Arizona</label>
+    </customValue>
+    <customValue>
+        <fullName>Arunachal Pradesh</fullName>
+        <default>false</default>
+        <label>Arunachal Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>Assam</fullName>
+        <default>false</default>
+        <label>Assam</label>
+    </customValue>
+    <customValue>
+        <fullName>Auckland</fullName>
+        <default>false</default>
+        <label>Auckland</label>
+    </customValue>
+    <customValue>
+        <fullName>Bihar</fullName>
+        <default>false</default>
+        <label>Bihar</label>
+    </customValue>
+    <customValue>
+        <fullName>British Columbia</fullName>
+        <default>false</default>
+        <label>British Columbia</label>
+    </customValue>
+    <customValue>
+        <fullName>California</fullName>
+        <default>false</default>
+        <label>California</label>
+    </customValue>
+    <customValue>
+        <fullName>Chandigarh</fullName>
+        <default>false</default>
+        <label>Chandigarh</label>
+    </customValue>
+    <customValue>
+        <fullName>Chhattisgarh</fullName>
+        <default>false</default>
+        <label>Chhattisgarh</label>
+    </customValue>
+    <customValue>
+        <fullName>Chicago</fullName>
+        <default>false</default>
+        <label>Chicago</label>
+    </customValue>
+    <customValue>
+        <fullName>Delhi</fullName>
+        <default>false</default>
+        <label>Delhi</label>
+    </customValue>
+    <customValue>
+        <fullName>Dubai</fullName>
+        <default>false</default>
+        <label>Dubai</label>
+    </customValue>
+    <customValue>
+        <fullName>Flordia</fullName>
+        <default>false</default>
+        <label>Flordia</label>
+    </customValue>
+    <customValue>
+        <fullName>Georgia</fullName>
+        <default>false</default>
+        <label>Georgia</label>
+    </customValue>
+    <customValue>
+        <fullName>Goa</fullName>
+        <default>false</default>
+        <label>Goa</label>
+    </customValue>
+    <customValue>
+        <fullName>Gujarat</fullName>
+        <default>false</default>
+        <label>Gujarat</label>
+    </customValue>
+    <customValue>
+        <fullName>Haryana</fullName>
+        <default>false</default>
+        <label>Haryana</label>
+    </customValue>
+    <customValue>
+        <fullName>Himachal Pradesh</fullName>
+        <default>false</default>
+        <label>Himachal Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>Hong Kong</fullName>
+        <default>false</default>
+        <label>Hong Kong</label>
+    </customValue>
+    <customValue>
+        <fullName>Illinois</fullName>
+        <default>false</default>
+        <label>Illinois</label>
+    </customValue>
+    <customValue>
+        <fullName>Jammu and Kashmir</fullName>
+        <default>false</default>
+        <label>Jammu and Kashmir</label>
+    </customValue>
+    <customValue>
+        <fullName>Jharkhand</fullName>
+        <default>false</default>
+        <label>Jharkhand</label>
+    </customValue>
+    <customValue>
+        <fullName>Karnataka</fullName>
+        <default>false</default>
+        <label>Karnataka</label>
+    </customValue>
+    <customValue>
+        <fullName>Kerala</fullName>
+        <default>false</default>
+        <label>Kerala</label>
+    </customValue>
+    <customValue>
+        <fullName>Louisiana</fullName>
+        <default>false</default>
+        <label>Louisiana</label>
+    </customValue>
+    <customValue>
+        <fullName>Madhya Pradesh</fullName>
+        <default>false</default>
+        <label>Madhya Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>Maharashtra</fullName>
+        <default>true</default>
+        <label>Maharashtra</label>
+    </customValue>
+    <customValue>
+        <fullName>Manipur</fullName>
+        <default>false</default>
+        <label>Manipur</label>
+    </customValue>
+    <customValue>
+        <fullName>Manitoba</fullName>
+        <default>false</default>
+        <label>Manitoba</label>
+    </customValue>
+    <customValue>
+        <fullName>Massachusetts</fullName>
+        <default>false</default>
+        <label>Massachusetts</label>
+    </customValue>
+    <customValue>
+        <fullName>Meghalaya</fullName>
+        <default>false</default>
+        <label>Meghalaya</label>
+    </customValue>
+    <customValue>
+        <fullName>Mississippi</fullName>
+        <default>false</default>
+        <label>Mississippi</label>
+    </customValue>
+    <customValue>
+        <fullName>Mizoram</fullName>
+        <default>false</default>
+        <label>Mizoram</label>
+    </customValue>
+    <customValue>
+        <fullName>Nagaland</fullName>
+        <default>false</default>
+        <label>Nagaland</label>
+    </customValue>
+    <customValue>
+        <fullName>New Brunswick</fullName>
+        <default>false</default>
+        <label>New Brunswick</label>
+    </customValue>
+    <customValue>
+        <fullName>New Hampshire</fullName>
+        <default>false</default>
+        <label>New Hampshire</label>
+    </customValue>
+    <customValue>
+        <fullName>New Jeresey</fullName>
+        <default>false</default>
+        <label>New Jeresey</label>
+    </customValue>
+    <customValue>
+        <fullName>New South Wales</fullName>
+        <default>false</default>
+        <label>New South Wales</label>
+    </customValue>
+    <customValue>
+        <fullName>New York</fullName>
+        <default>false</default>
+        <label>New York</label>
+    </customValue>
+    <customValue>
+        <fullName>North-Island</fullName>
+        <default>false</default>
+        <label>North-Island</label>
+    </customValue>
+    <customValue>
+        <fullName>Northwest Territories</fullName>
+        <default>false</default>
+        <label>Northwest Territories</label>
+    </customValue>
+    <customValue>
+        <fullName>Not known</fullName>
+        <default>false</default>
+        <label>Not known</label>
+    </customValue>
+    <customValue>
+        <fullName>Ohio</fullName>
+        <default>false</default>
+        <label>Ohio</label>
+    </customValue>
+    <customValue>
+        <fullName>Oman</fullName>
+        <default>false</default>
+        <label>Oman</label>
+    </customValue>
+    <customValue>
+        <fullName>Ontario</fullName>
+        <default>false</default>
+        <label>Ontario</label>
+    </customValue>
+    <customValue>
+        <fullName>Orissa</fullName>
+        <default>false</default>
+        <label>Orissa</label>
+    </customValue>
+    <customValue>
+        <fullName>Punjab</fullName>
+        <default>false</default>
+        <label>Punjab</label>
+    </customValue>
+    <customValue>
+        <fullName>Quebec</fullName>
+        <default>false</default>
+        <label>Quebec</label>
+    </customValue>
+    <customValue>
+        <fullName>Queensland</fullName>
+        <default>false</default>
+        <label>Queensland</label>
+    </customValue>
+    <customValue>
+        <fullName>Rajasthan</fullName>
+        <default>false</default>
+        <label>Rajasthan</label>
+    </customValue>
+    <customValue>
+        <fullName>Saskatchewan</fullName>
+        <default>false</default>
+        <label>Saskatchewan</label>
+    </customValue>
+    <customValue>
+        <fullName>Sharjah</fullName>
+        <default>false</default>
+        <label>Sharjah</label>
+    </customValue>
+    <customValue>
+        <fullName>Sikkim</fullName>
+        <default>false</default>
+        <label>Sikkim</label>
+    </customValue>
+    <customValue>
+        <fullName>Singapore</fullName>
+        <default>false</default>
+        <label>Singapore</label>
+    </customValue>
+    <customValue>
+        <fullName>South Australia</fullName>
+        <default>false</default>
+        <label>South Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>South-Island</fullName>
+        <default>false</default>
+        <label>South-Island</label>
+    </customValue>
+    <customValue>
+        <fullName>Tamil Nadu</fullName>
+        <default>false</default>
+        <label>Tamil Nadu</label>
+    </customValue>
+    <customValue>
+        <fullName>Tasmania</fullName>
+        <default>false</default>
+        <label>Tasmania</label>
+    </customValue>
+    <customValue>
+        <fullName>Telangana</fullName>
+        <default>false</default>
+        <label>Telangana</label>
+    </customValue>
+    <customValue>
+        <fullName>Texas</fullName>
+        <default>false</default>
+        <label>Texas</label>
+    </customValue>
+    <customValue>
+        <fullName>Tripura</fullName>
+        <default>false</default>
+        <label>Tripura</label>
+    </customValue>
+    <customValue>
+        <fullName>Uttaranchal</fullName>
+        <default>false</default>
+        <label>Uttaranchal</label>
+    </customValue>
+    <customValue>
+        <fullName>Uttar Pradesh</fullName>
+        <default>false</default>
+        <label>Uttar Pradesh</label>
+    </customValue>
+    <customValue>
+        <fullName>Victoria</fullName>
+        <default>false</default>
+        <label>Victoria</label>
+    </customValue>
+    <customValue>
+        <fullName>Washington</fullName>
+        <default>false</default>
+        <label>Washington</label>
+    </customValue>
+    <customValue>
+        <fullName>Wellington</fullName>
+        <default>false</default>
+        <label>Wellington</label>
+    </customValue>
+    <customValue>
+        <fullName>West Bengal</fullName>
+        <default>false</default>
+        <label>West Bengal</label>
+    </customValue>
+    <customValue>
+        <fullName>Western Australia</fullName>
+        <default>false</default>
+        <label>Western Australia</label>
+    </customValue>
+    <customValue>
+        <fullName>Yukon Territory</fullName>
+        <default>false</default>
+        <label>Yukon Territory</label>
+    </customValue>
+    <masterLabel>Mailing state</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,26 @@
+:host {
+    display: block;
+    width: 100%;
+}
+ 
+.datatable-container {
+    width: 100%;
+}
+ 
+.scroll-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+}
+ 
+.slds-table {
+    width: 100%;
+    table-layout: auto;
+}
+ 
+
+@media only screen and (max-width: 600px) {
+    .slds-table td {
+        white-space: nowrap;
+        min-width: 520px; 
+    }
+}

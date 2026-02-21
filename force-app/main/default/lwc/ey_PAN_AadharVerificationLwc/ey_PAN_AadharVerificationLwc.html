@@ -1,0 +1,302 @@
+<template>
+
+    <div style="background-color:lemonchiffon">
+
+        <div class="container" style="padding: 8px;">
+
+            <img src={imageUrl} class="logoDesign" />
+
+
+            <div class="text">
+                <h1>Welcome to Panchshil Realty - India&#039;s Top Real Estate Developer.</h1>
+            </div>
+        </div>
+
+
+    </div>
+    <!--Upload Document-->
+    <template if:true={isrecordPageUpload}>
+        <template if:true={recAccountDetails}>
+            <div class="two-column-layout" style="background-color:black; padding: 9px;">
+                <div class="column" style="margin-left: 9px ; ">
+                    <p class="recDetails"><strong>First Name:</strong> {fname}</p>
+                    <p class="recDetails"><strong>Mobile No:</strong> {mobileNo}</p>
+                    <p class="recDetails"><strong>REC Code:</strong> {companyCode}</p>
+                </div>
+                <div class="column">
+                    <p class="recDetails"><strong>Last Name:</strong> {lname}</p>
+                    <p class="recDetails"><strong>Email:</strong> {emailId}</p>
+                    <p class="recDetails"><strong>Sourcing Manager:</strong> {sourcingManager}</p>
+                </div>
+            </div>
+        </template>
+        <lightning-card title="Upload Document">
+            <div class="slds-grid slds-gutters slds-p-around_medium">
+                <div class="slds-col slds-size_4-of-12">
+                    <span>
+                        <lightning-file-upload label="Aadhaar" name="fileUploader" data-id="aadhar"
+                            accept=".pdf,.doc,.docx,.jpg,.png" record-id={recordId} onuploadfinished={handleFileUpload}>
+                        </lightning-file-upload>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_x-large">
+                    <span>
+                        <lightning-button label="Preview" data-id="aadhar" onclick={handlePreview}
+                            disabled={previewDisable.aadhar}></lightning-button>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_4-of-12 ">
+                    <span>
+                        <lightning-file-upload label="Pan card" name="fileUploader" data-id="pan"
+                            accept=".pdf,.doc,.docx,.jpg,.png" record-id={recordId} onuploadfinished={handleFileUpload}>
+                        </lightning-file-upload>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_x-large">
+                    <span>
+                        <lightning-button label="Preview" data-id="pan" onclick={handlePreview}
+                            disabled={previewDisable.pan}></lightning-button>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters slds-p-around_small">
+                <div class="slds-col slds-size_4-of-12">
+                    <span>
+                        <lightning-file-upload label="Company Document" name="fileUploader" data-id="company"
+                            accept=".pdf,.doc,.docx,.jpg,.png" record-id={recordId} onuploadfinished={handleFileUpload}>
+                        </lightning-file-upload>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_x-large">
+                    <span>
+                        <lightning-button label="Preview" data-id="company" class="slds-m-top_x-large"
+                            onclick={handlePreview} disabled={previewDisable.company}></lightning-button>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_4-of-12">
+                    <span>
+                        <lightning-file-upload label="Proof of address" name="fileUploader" data-id="address"
+                            accept=".pdf,.doc,.docx,.jpg,.png" record-id={recordId} onuploadfinished={handleFileUpload}>
+                        </lightning-file-upload>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_x-large">
+                    <span>
+                        <lightning-button label="Preview" data-id="address" class="slds-m-top_x-large"
+                            onclick={handlePreview} disabled={previewDisable.address}></lightning-button>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-grid slds-gutters slds-p-around_small">
+                <div class="slds-col slds-size_4-of-12">
+                    <span>
+                        <lightning-file-upload label="Others upload" name="fileUploader" data-id="other"
+                            accept=".pdf,.doc,.docx,.jpg,.png" record-id={recordId} onuploadfinished={handleFileUpload}>
+                        </lightning-file-upload>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_x-large">
+                    <span>
+                        <lightning-button label="Preview" data-id="other" onclick={handlePreview}
+                            disabled={previewDisable.other}></lightning-button>
+                    </span>
+                </div>
+            </div>
+            <div class="slds-p-around_medium">
+                <!-- File Upload Section -->
+                <!--<lightning-input 
+                type="file" 
+                label="Upload Document" 
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                onchange={handleFileUpload}
+                multiple="true">
+            </lightning-input>-->
+                <div>
+
+                    <!-- Status Message -->
+                    <template if:true={uploadSuccess}>
+                        <lightning-formatted-text value="Document uploaded successfully!"></lightning-formatted-text>
+                    </template>
+                    <template if:true={uploadError}>
+                        <lightning-formatted-text
+                            value="Error in uploading document. Please try again."></lightning-formatted-text>
+                    </template>
+                </div>
+                <div>
+                    <!-- Proceed Button -->
+                    <lightning-button label="Proceed" onclick={handleProceed} disabled={isButtonDisabled}
+                        class="slds-m-top_medium">
+                    </lightning-button>
+                </div>
+            </div>
+        </lightning-card>
+    </template>
+    <!--REC ACC Details-->
+    <div>
+
+        <!--<lightning-card class="no-header-card">-->
+        <template if:false={isrecordPageUpload}>
+            <template if:true={recAccountDetails}>
+                <div class="two-column-layout" style="background-color:black; padding: 9px;">
+                    <div class="column" style="margin-left: 9px ; ">
+                        <p class="recDetails"><strong>First Name:</strong> {fname}</p>
+                        <p class="recDetails"><strong>Mobile No:</strong> {mobileNo}</p>
+                        <p class="recDetails"><strong>REC Code:</strong> {companyCode}</p>
+                    </div>
+                    <div class="column">
+                        <p class="recDetails"><strong>Last Name:</strong> {lname}</p>
+                        <p class="recDetails"><strong>Email:</strong> {emailId}</p>
+                        <p class="recDetails"><strong>Sourcing Manager:</strong> {sourcingManager}</p>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <!--PAN and AADHAR Button-->
+        <!-- <template if:true={isPAN} >
+            <div >  
+            <lightning-button  class="button-container" label="PAN Verify" title="PAN Verify" onclick={handlePANVerifyClick} disabled={panKYCCompleted}></lightning-button>
+            </div>
+        </template>
+        <template if:true={isAadhar} >
+            <div>
+            <lightning-button class="button-container"  label="AADHAR Verify" title="AADHAR Verify" onclick={handleAadharVerifyClick} disabled={aadharKYCCompleted}></lightning-button>
+            </div>
+        </template>
+    -->
+        <div class="button-container2">
+            <template if:true={isPAN}>
+                <div class="button-space">
+                    <template if:true={panKYCCompleted}><lightning-button icon-name="action:approval"
+                            label={panButtonLabel} title="PAN Verify"></lightning-button></template>
+                    <template if:false={panKYCCompleted}><lightning-button label={panButtonLabel} title="PAN Verify"
+                            onclick={handlePANVerifyClick}></lightning-button></template>
+                </div>
+            </template>
+            <template if:true={isAadhar}>
+                <div class="button-space">
+                    <template if:true={aadharKYCCompleted}><lightning-button icon-name="action:approval"
+                            label={aadharButtonLabel} title="PAN Verify"></lightning-button></template>
+
+                    <template if:false={aadharKYCCompleted}>
+                        <template if:true={aadharInProcess}>
+
+                            <lightning-button icon-name="utility:hourglass" label={aadharButtonLabel}
+                                title="AADHAR Verify" onclick={handleAadharVerifyClick}
+                                disabled={aadharKYCCompleted}></lightning-button>
+
+                        </template>
+                        <template if:false={aadharInProcess}>
+
+                            <lightning-button label={aadharButtonLabel} title="AADHAR Verify"
+                                onclick={handleAadharVerifyClick} disabled={aadharKYCCompleted}></lightning-button>
+
+                        </template>
+
+                    </template>
+                </div>
+            </template>
+        </div>
+        <!--PAN Card Details Input-->
+        <template if:true={inputPAN}>
+
+            <lightning-card title="PAN Verification Form">
+                <div class="slds-p-around_medium">
+                    <template if:true={isError}>
+                        <div class="slds-text-color_error">
+                            {errorMessage}
+                        </div>
+                    </template>
+                    <!-- PAN Number Input -->
+                    <lightning-input label="PAN Number" value={panNumber} onchange={handleInputChange}
+                        data-id="panNumber" required maxlength="10" minlength="10" readonly="true">
+                    </lightning-input>
+
+
+                    <!-- Full Name Input -->
+                    <lightning-input label="Full Name (As per PAN)" value={fullName} onchange={handleInputChange} data-id="fullName"
+                        required>
+                    </lightning-input>
+
+                    <!-- Date of Birth Input -->
+                    <lightning-input label="Date of Birth" type="date" value={dob} onchange={handleInputChange}
+                        data-id="dob" required>
+                    </lightning-input>
+                    </br>
+                    <!-- Submit Button -->
+                    <lightning-button label="Submit" onclick={handleSubmit} variant="brand" class="slds-m-top_medium">
+                    </lightning-button>
+                    <template if:true={isLoading}>
+                        <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                    </template>
+                </div>
+            </lightning-card>
+
+        </template>
+        <!--AADHAR Card Details Input-->
+        <template if:true={inputAadhar}>
+
+            <lightning-card title="AADHAR Verification Form">
+                <div class="slds-p-around_medium">
+                    <template if:true={isError}>
+                        <div class="slds-text-color_error">
+                            {errorMessage}
+                        </div>
+                    </template>
+                    <!--  Number Input -->
+                    <lightning-input label="AADHAR Number" value={aadharNumber} onchange={handleInputChange}
+                        data-id="aadharNumber" required readonly="true" maxlength="12" minlength="12" type="text"
+                        pattern="[0-9]{12}">
+                    </lightning-input>
+                    <!-- Full Name Input -->
+                    <lightning-input label="Full Name" value={aadharfullName} onchange={handleInputChange}
+                        data-id="aadharfullName" required>
+                    </lightning-input>
+                    <lightning-combobox label="Gender" value={aadhargender} options={genderOptions}
+                        onchange={handleInputChange} data-id="aadhargender" required>
+                    </lightning-combobox>
+                    <!-- Date of Birth Input -->
+                    <lightning-input label="Date of Birth" type="date" value={aadhardob} onchange={handleInputChange}
+                        data-id="aadhardob" class="slds-m-bottom_medium" required>
+                    </lightning-input>
+                    <!-- Submit Button -->
+                    <lightning-button label="Submit" onclick={handleSubmitAadhar} variant="brand"
+                        class="slds-m-top_medium">
+                    </lightning-button>
+                    <!-- <lightning-button 
+                    label="Back" 
+                    onclick={handleBacktoPreviousPage} 
+                    variant="default" 
+                    class="slds-m-top_medium"
+                    style="margin-left: 10px;"
+                  >
+                </lightning-button> -->
+                </div>
+                <template if:true={isLoading}>
+                    <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                </template>
+            </lightning-card>
+        </template>
+
+        <template if:true={isMessgaePAN}>
+            <div>
+                <p class="heading">{successMessagePAN}</p>
+            </div>
+
+        </template>
+
+        <template if:true={isMessgaeAadhar}>
+            <template if:true={isredirect}>
+                <p class="heading">
+                    Click Aadhar Card via DigiLocker <a href={digliLockerURL} target="_self">Click here to visit
+                        external site</a>
+                </p>
+            </template>
+            <template if:false={isredirect}>
+                <p class="heading">{aadharMessageDisplay}</p>
+            </template>
+
+        </template>
+
+        <!--</lightning-card>-->
+    </div>
+</template>

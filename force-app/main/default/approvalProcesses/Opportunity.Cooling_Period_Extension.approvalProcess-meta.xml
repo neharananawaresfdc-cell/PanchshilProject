@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+        <field>CloseDate</field>
+        <field>Reason_for_Extension__c</field>
+        <field>Proposed_Extension_Duration__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Update_Approval_Status</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>Primary_Closing_Manager_Head__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Functional Head Review</label>
+        <name>Functional_Head_Review</name>
+    </approvalStep>
+    <emailTemplate>Sales_Email_Templates/Sales_Cooling_Period_Extension_Approval_Request</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>AND( NOT( ISNULL( Reason_for_Extension__c ) ) ,NOT( ISNULL(  Proposed_Extension_Duration__c) ), EYI_Cooling_Period_Date__c  &gt;  TODAY() , Extension_Requested__c = false )</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Update_Closing_Date</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Extension_Requested</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Update_Approval_Status_for_Rejection</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Update_Pending_Approval_Status</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Cooling Period Extension</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,1989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Aadhar</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Aadhar</shortDescription>
+        <value>ZINAAD</value>
+    </labels>
+    <labels>
+        <fullName>Applicant_EKYC_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Applicant EKYC Link</shortDescription>
+        <value>https://panchshil--uat.sandbox.my.site.com/EKYC/?appid=</value>
+    </labels>
+    <labels>
+        <fullName>Blocked_Domains</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Blocked_Domains</shortDescription>
+        <value>panchshil.com,yahoo.com</value>
+    </labels>
+    <labels>
+        <fullName>BookingChecklistURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BookingChecklistURL</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id=${opportunityId}&amp;QueryId=[Duly]0Q_031UAA020508,
+[DulyProposal]0Q_032UAA020508,
+[oppo]0Q_030UAA020508,[OppoAmt]0Q_033UAA020508,[opBook]0Q_034UAA020508
+&amp;TemplateId=0T_015UAA447510
+&amp;OFN=${opportunityName}+${opportunityCreatedDate}
+&amp;DefaultPDF=1
+&amp;PDFA=1a
+&amp;DS7=11</value>
+    </labels>
+    <labels>
+        <fullName>Booking_Assigned_Alert_to_RM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Booking Assigned Alert to RM</shortDescription>
+        <value>a12C4000000hKebIAE</value>
+    </labels>
+    <labels>
+        <fullName>Booking_Form_Pricesheet_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Booking Form Pricesheet Label</shortDescription>
+        <value>Application Form</value>
+    </labels>
+    <labels>
+        <fullName>Brokerage_Approved_Percentage_Check</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Brokerage Approved Percentage Check</shortDescription>
+        <value>20</value>
+    </labels>
+    <labels>
+        <fullName>Brokerage_Percent</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Brokerage Percent</shortDescription>
+        <value>2</value>
+    </labels>
+    <labels>
+        <fullName>CHIF_CommercialPossession</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHIF_CommercialPossession</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1&amp;serverUrl={!API.Partner_Server_URL_520}&amp;Id={!Opportunity.Id}&amp;QueryId=[chifdata]0Q_205UAA225668,[oppoChif]0Q_206UAA058364,[OppoPosse]0Q_047UAA020507,[ProOppo]0Q_210UAA042135&amp;DefaultPDF=1&amp;PDFA=1a&amp;TemplateId=0T_055UAA402925&amp;OFN=Checklist-{!Opportunity.EYI_Opportunity_Name__c}+--{!Opportunity.EYI_Opportunity_Number__c}&amp;DS7=11</value>
+    </labels>
+    <labels>
+        <fullName>CHIF_ResidencialPossession</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHIF_ResidencialPossession</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1&amp;serverUrl={!API.Partner_Server_URL_520}&amp;Id={!Opportunity.Id}&amp;QueryId=[chifdata]0Q_205UAA225668,[oppoChif]0Q_206UAA058364,[OppoPosse]0Q_047UAA020507,[ProOppo]0Q_210UAA042135&amp;DefaultPDF=1&amp;PDFA=1a&amp;TemplateId=0T_054UAA727083&amp;DS7=11&amp;OFN=Checklist-{!Opportunity.EYI_Opportunity_Name__c}+--{!Opportunity.EYI_Opportunity_Number__c}</value>
+    </labels>
+    <labels>
+        <fullName>CHIF_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHIF_URL</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1&amp;serverUrl={!API.Partner_Server_URL_520}&amp;Id={!Opportunity.Id}&amp;QueryId=[chifdata]0Q_205UAA225668,[ProOppo]0Q_210UAA042135,[oppoChif]0Q_206UAA058364,[OppoPosse]0Q_047UAA020507&amp;TemplateId=0T_057UAA867251&amp;DefaultPDF=1&amp;PDFA=1a&amp;DS7=11&amp;OFN=Checklist-{!Opportunity.EYI_Opportunity_Name__c}+-{!Opportunity.EYI_Opportunity_Number__c}</value>
+    </labels>
+    <labels>
+        <fullName>CRM_Support_Manager_Role_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRM Support Manager Role ID</shortDescription>
+        <value>00E9H0000016JNZUA2</value>
+    </labels>
+    <labels>
+        <fullName>Cancellation_RecordId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation RecordId</shortDescription>
+        <value>500</value>
+    </labels>
+    <labels>
+        <fullName>ConentVersionFileURL</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ConentVersionFileURL</shortDescription>
+        <value>sfc/servlet.shepherd/document/download/</value>
+    </labels>
+    <labels>
+        <fullName>DigitalSlotRemainderDayOne</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DigitalSlotRemainderDayOne</shortDescription>
+        <value>a12C4000000jO1NIAU</value>
+    </labels>
+    <labels>
+        <fullName>DigitalSlotSMSRemainder</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DigitalSlotSMSRemainder</shortDescription>
+        <value>a12C4000000jLgDIAU</value>
+    </labels>
+    <labels>
+        <fullName>EKYC_SMS_and_WhatsApp_Template_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EKYC SMS and WhatsApp Template ID</shortDescription>
+        <value>a1F9H000000Fl6fUAC</value>
+    </labels>
+    <labels>
+        <fullName>ESIGn_SMS_and_WhatsApp_Template_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ESIGn SMS and WhatsApp Template ID</shortDescription>
+        <value>a1F9H000000FlMnUAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_ActiveProjectStatusValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_ActiveProjectStatusValues</shortDescription>
+        <value>Launch,Post Launch,Sustenance,Pre- Launch</value>
+    </labels>
+    <labels>
+        <fullName>EYI_BF_Accepted_Alert_to_OM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_BF_Accepted Alert to OM</shortDescription>
+        <value>a12C4000000gSZNIA2</value>
+    </labels>
+    <labels>
+        <fullName>EYI_BrochureTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_BrochureTitle</shortDescription>
+        <value>Send Project Brochures</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Brochure_Email_Templates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Brochure_Email_Templates</shortDescription>
+        <value>Post Sales Customer Email Templates, Project Brochures, Payment Overdue Emails</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Business_Admin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Business_Admin</shortDescription>
+        <value>0059H000006rSXNQA2</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Business_Hours_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Business_Hours_Name</shortDescription>
+        <value>Default</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CIF_OTP_Whatsapp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_CIF_OTP_Whatsapp</shortDescription>
+        <value>a1F9H000000JsxZUAS</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CIF_OpportunityStages</fullName>
+        <categories>Please add comma separated values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_CIF_OpportunityStages</shortDescription>
+        <value>Sales Lost, Closed Lost, Closed</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CRM_Admin</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_CRM_Admin</shortDescription>
+        <value>0059H000006s797</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CRM_Head_Role_Head</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CRM Head Role Head</shortDescription>
+        <value>00E9H0000015gE9UAI</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CTI_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_CTI_User</shortDescription>
+        <value>005C4000004FnWSIA0</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Checklist_Completed_SMS</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Checklist Completed SMS</shortDescription>
+        <value>a1F9H000000GGbtUAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Checklist_Completed_WhatsApp</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Checklist Completed WhatsApp</shortDescription>
+        <value>a1F9H000000G9TxUAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Eligible_to_raise_invoice_SMS</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Eligible to raise invoice SMS</shortDescription>
+        <value>a1F9H000000GG7GUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Eligible_to_raise_invoice_WhatsApp</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Eligible to raise invoice WhatsApp</shortDescription>
+        <value>a1F9H000000G9SLUA0</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Finance_InProcess_SMS</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Finance InProcess SMS</shortDescription>
+        <value>a1F9H000000G9TxUAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Finance_InProcess_WhatsApp</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Finance InProcess WhatsApp</shortDescription>
+        <value>a1F9H000000G9TxUAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Invoice_Created_SMS</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Invoice Created SMS</shortDescription>
+        <value>a1F9H000000GGNOUA4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Invoice_Created_WhatsApp</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Invoice Created WhatsApp</shortDescription>
+        <value>a1F9H000000G9P7UAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Invoice_is_Received_SMS</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Invoice is Received SMS</shortDescription>
+        <value>a1F9H000000GG7GUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cancellation_Invoice_is_Received_WhatsApp</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancellation Invoice is Received WhatsApp</shortDescription>
+        <value>a1F9H000000G9SLUA0</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CaseResolutionAttachmentErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseResolutionAttachmentErrorMessage</shortDescription>
+        <value>Case resolution image is not attached</value>
+    </labels>
+    <labels>
+        <fullName>EYI_CaseResolutionAttachmentName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseResolutionAttachmentName</shortDescription>
+        <value>Resolved</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_Cancellation_Record_Type_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Cancellation Record Type Id</shortDescription>
+        <value>0129H000000a9j7QAA</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_Head_Role_Names</fullName>
+        <categories>ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Head Role Names</shortDescription>
+        <value>Sourcing Head</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_Manager_Role_Names</fullName>
+        <categories>ID</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Manager Role Names</shortDescription>
+        <value>Sourcing Manager</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Case_Owner</shortDescription>
+        <value>Rohini Joshi</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_PostSales_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Case_PostSales_Id</shortDescription>
+        <value>0129H000000a9j8QAA</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Case_Record_RM_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Case Record REC Record Id</shortDescription>
+        <value>0129H000000a9j9QAA</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Chatbot_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Chatbot Link</shortDescription>
+        <value>https://www.panchshil.com/</value>
+    </labels>
+    <labels>
+        <fullName>EYI_ClosingManagerGroupName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_ClosingManagerGroupName</shortDescription>
+        <value>Closing Manager</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Cust_Sync_Req_field_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cust Sync Req field Error</shortDescription>
+        <value>Required fields are missing ! Please check the below fields on</value>
+    </labels>
+    <labels>
+        <fullName>EYI_DND_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DND_Message</shortDescription>
+        <value>The client has opted for Do Not Disturb (DND).</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Default_Brochures_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Default_Brochures_Label</shortDescription>
+        <value>Sample Brochure,Sample Creatives,Sample Social Infrastructure List</value>
+    </labels>
+    <labels>
+        <fullName>EYI_DigitalLeadEscalationReport</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_DigitalLeadEscalationReport</shortDescription>
+        <value>EYI_Digital_Leads_With_No_Activity_2Lu</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Digital_Lead_No_Activity_Report_Columns</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Digital Lead No Activity Report Columns</shortDescription>
+        <value>Lead Name,Project Name,Advisor Name,Lead Source,Created Date\n</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Digital_Slot_Reminder_SMS_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Digital Slot Reminder SMS Id</shortDescription>
+        <value>a12C4000000gSZNIA2</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Digital_Slot_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Digital Slot URL</shortDescription>
+        <value>https://panchshil--uat.sandbox.my.site.com/digitalslot/</value>
+    </labels>
+    <labels>
+        <fullName>EYI_EKYC_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EKYC Link</shortDescription>
+        <value>https://panchshil--uat.sandbox.my.site.com/EKYC/</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Enter_Message_to_Send</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Enter Message to Send</shortDescription>
+        <value>Please enter a message to send.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_FINANCIAL_START_MONTH</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_FINANCIAL_START_MONTH</shortDescription>
+        <value>4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_File_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_File_Name</shortDescription>
+        <value>File Name</value>
+    </labels>
+    <labels>
+        <fullName>EYI_FollowUpWhatsAppNotification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_FollowUpWhatsAppNotification</shortDescription>
+        <value>a1F9H000000GA3RUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Home_Loan_Created_SMS</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home Loan Created SMS</shortDescription>
+        <value>a1F9H000000Ef09UAC</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Home_Loan_Created_WhatsApp</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home Loan Created WhatsApp</shortDescription>
+        <value>a1F9H000000Ef09UAC</value>
+    </labels>
+    <labels>
+        <fullName>EYI_InvMatrixGenericError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EYI_InvMatrixGenericError</shortDescription>
+        <value>Oops! something went wrong. Please contact System Administrator.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_InvMatrixNoRecordsFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EYI_InvMatrixNoRecordsFound</shortDescription>
+        <value>Unfortunately, we couldn&apos;t find any matching records.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_InventoryMatrixTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EYI_InventoryMatrixTitle</shortDescription>
+        <value>Inventory Matrix</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadENQVisitConfirmedSMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadENQVisitConfirmedSMS</shortDescription>
+        <value>a1F9H000000GBE1UAO</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadENQVisitConfirmedWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadENQVisitConfirmedWhatsApp</shortDescription>
+        <value>a1F9H000000GBE1UAO</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadEnqInterestedWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadEnqInterestedWhatsApp</shortDescription>
+        <value>a1F9H000000GAEjUAO</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadEnqNonContactibleSMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadEnqNonContactibleSMS</shortDescription>
+        <value>a1F9H000000GA8HUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadEnqNonContactibleWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadEnqNonContactibleWhatsApp</shortDescription>
+        <value>a1F9H000000GA8HUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LeadHistoryCardTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LeadHistoryCardTitle</shortDescription>
+        <value>Lead Status History</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lead_Inquiry_Prefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Lead_Inquiry_Prefix</shortDescription>
+        <value>a11</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lead_Interested_SMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Lead_Interested SMS</shortDescription>
+        <value>a1F9H000000GF7xUAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lead_MissCallSMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Lead_MissCallSMS</shortDescription>
+        <value>a1F9H000000GA6fUAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lead_MissCallWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Lead_MissCallWhatsApp</shortDescription>
+        <value>a1F9H000000GA6fUAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lead_Source_For_Escalation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Source For Escalation</shortDescription>
+        <value>Web,Email,Social,CTI</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Leasing_Queue_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Leasing Queue Id</shortDescription>
+        <value>00G9H000001LqEMUA0</value>
+    </labels>
+    <labels>
+        <fullName>EYI_LostWhatsAppNotification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_LostWhatsAppNotification</shortDescription>
+        <value>a1F9H000000GA53UAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Lost_Disposition</fullName>
+        <categories>Please add comma separated values</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lost Disposition</shortDescription>
+        <value>Disqualified,Invalid Number,Budget Insufficient,Location Not Preferred,Postponed Plan,Dropped Plan,Vaastu Concerns,Wrong Number, Configuration Not Available,Personal Limitation,Job Seeker / Vendor Inquiry,Not looking for property,Incoming call not available,Not Interested,Test Lead,Booked with competitor,Language Barrier,Number does not exist,RTMI/Under Construction,Duplicate Lead,Repeatedly Unresponsive</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Marketing_Manager_Role_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Marketing Manager Role Id</shortDescription>
+        <value>00E9H0000015gMEUAY</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Meeting_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Meeting_Record_Type</shortDescription>
+        <value>012C4000000hNfh</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NRI_States</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NRI States</shortDescription>
+        <value>Queensland ,Victoria,Western Australia,New South Wales,South Australia,Alberta,British Columbia,Manitoba,New Brunswick,Massachusetts,Mississippi,Quebec,Saskatchewan ,North-Island,South-Island,Wellington,Auckland,New York,California,Northwest Territories,Texas,Washington,Illinois,California,Ohio,Arizona,Hong Kong,Abu Dhabi,Dubai,Sharjah,</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NewLeadEnqSMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_NewLeadEnqSMS</shortDescription>
+        <value>a1F9H000000GF6LUAW</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NewLeadEnqWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_NewLeadEnqWhatsApp</shortDescription>
+        <value>a1F9H000000G9s9UAC</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NoInventoryProjSelected</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EYI_NoInventoryProjSelected</shortDescription>
+        <value>The project name has not been selected for this opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NoStatusHistoryMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_NoStatusHistoryMessage</shortDescription>
+        <value>No status history data available for this lead.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_No_Files_for_Selected_Project</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Files for Selected Project</shortDescription>
+        <value>No files are associated with the selected project.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_NonContactibleWhatsAPPToPA</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_NonContactibleWhatsAPPToPA</shortDescription>
+        <value>a1DOS000000qL5B2AU</value>
+    </labels>
+    <labels>
+        <fullName>EYI_OpenTaskReportColumns</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OpenTaskReportColumns</shortDescription>
+        <value>Lead Name,Subject,Date,Due Time, Assigned To,Status\n</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Opp_Brochure_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Opp_Brochure_Title</shortDescription>
+        <value>Email Dispatcher</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Opportunity_Close_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Opportunity Close Date</shortDescription>
+        <value>30</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Opportunity_SegregationCron</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Opportunity_SegregationCron</shortDescription>
+        <value>0 0 8 * * ? *</value>
+    </labels>
+    <labels>
+        <fullName>EYI_PageSizeForDemandList</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_PageSizeForDemandList</shortDescription>
+        <value>100</value>
+    </labels>
+    <labels>
+        <fullName>EYI_PanchshilWebsite</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_PanchshilWebsite</shortDescription>
+        <value>https://www.panchshil.com/</value>
+    </labels>
+    <labels>
+        <fullName>EYI_PaymentReceiptTAT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PaymentReceiptTAT</shortDescription>
+        <value>4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Possession_Team_Post_Sales</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Possession Team Post Sales</shortDescription>
+        <value>00GC4000001mre9MAA</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Postsales_Record_Type_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Postsales Task Record Type Id</shortDescription>
+        <value>0129H000000aAX7QAM</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Pre_Sales_For_Lead_Enquiry_Assignment_Group_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Pre Sales For Lead Enquiry Assignment Group Label</shortDescription>
+        <value>Pre-Sales For Lead Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>EYI_PresalesL3EscalationGroupLabel</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_PresalesL3EscalationGroupLabel</shortDescription>
+        <value>Lead Escalation - Tier 3</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_Assignment_Group_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Presales Assignment Group Label</shortDescription>
+        <value>Pre-Sales</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_Incomplete_Task_Report</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presales Incomplete Task Report</shortDescription>
+        <value>EYI_Open_Task_Escalation_Alert_sEk</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_Record_Type_Id</fullName>
+        <categories>Presales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presales Record Type Id</shortDescription>
+        <value>0129H000000aAX8QAM</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_Role_ID_15_Digit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presales Role ID 15 Digit</shortDescription>
+        <value>00E9H0000015gMI</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_Role_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presales Role Id</shortDescription>
+        <value>00E9H0000015gMI</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Presales_TL_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Presales_TL_ID</shortDescription>
+        <value>005Wd0000016eIQIAY</value>
+    </labels>
+    <labels>
+        <fullName>EYI_ProjectStatusValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_ProjectStatusValues</shortDescription>
+        <value>Launch,Post Launch,Sustenance,Pre- Launch,Complete</value>
+    </labels>
+    <labels>
+        <fullName>EYI_REC_Accounts_Prefix</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_REC_Accounts_Prefix</shortDescription>
+        <value>a12</value>
+    </labels>
+    <labels>
+        <fullName>EYI_REC_Performance_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_REC_Performance_Days</shortDescription>
+        <value>180</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Refund_Process_SMS_WAPP_Alert_to_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refund Process SMS WAPP Alert to Customer</shortDescription>
+        <value>a12C4000000hXFFIA2</value>
+    </labels>
+    <labels>
+        <fullName>EYI_ReportSchedulerCron</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_ReportSchedulerCron</shortDescription>
+        <value>0 30 9 * * ?</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SAP_is_synced_message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAP is sync message</shortDescription>
+        <value>Data has already been synced</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SMSSenderNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SMSSenderNumber</shortDescription>
+        <value>918554988704</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SMSSenderNumber_US</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SMSSenderNumber_US</shortDescription>
+        <value>12543292309</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SalesCustomOTP</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SalesCustomOTP</shortDescription>
+        <value>a1F9H000000GFj3UAG</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Salesforce_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Salesforce_URL</shortDescription>
+        <value>https://panchshil--uat.sandbox.lightning.force.com/</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SelectFilesTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SelectFilesTitle</shortDescription>
+        <value>Please select the attachments.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SelectFilesToSendMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SelectFilesToSendMessage</shortDescription>
+        <value>Please select files to send in the email.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SelectMax10FilesMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SelectMax10FilesMessage</shortDescription>
+        <value>You can select maximum 10 files to send in the email.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Select_Number_For_SMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Select Number For SMS</shortDescription>
+        <value>Please select phone number to send the message.</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Select_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Select_Title</shortDescription>
+        <value>Select</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SelectedFilesTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SelectedFilesTitle</shortDescription>
+        <value>Selected Files:</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SendEmailTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SendEmailTitle</shortDescription>
+        <value>Send Email</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SendSMSTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SendSMSTitle</shortDescription>
+        <value>Send SMS</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SendWhatupTitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SendWhatupTitle</shortDescription>
+        <value>Send WhatsApp</value>
+    </labels>
+    <labels>
+        <fullName>EYI_SourcingTaskRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_SourcingTaskRecordType</shortDescription>
+        <value>0129H000000aAXAQA2</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Sourcing_Manager_For_Lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Sourcing Manager For Lead</shortDescription>
+        <value>Sourcing Manager For Lead</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Sourcing_Manager_For_Lead_Enquiry</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Sourcing Manager For Lead Enquiry</shortDescription>
+        <value>Sourcing Manager For Lead Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>EYI_TaskOpp_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_TaskOpp_Id</shortDescription>
+        <value>0129H000000aAX9QAM</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Task_PostSales_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Task_PostSales_Id</shortDescription>
+        <value>0129H000000aAX7QAM</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VC_TodaySMSTemplate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VC_TodaySMSTemplate</shortDescription>
+        <value>a1F9H000000GALBUA4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VC_TodayWPTemplate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VC_TodayWPTemplate</shortDescription>
+        <value>a1F9H000000GALBUA4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VC_TomorrowSMSTemplate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VC_TomorrowSMSTemplate</shortDescription>
+        <value>a1F9H000000GAJZUA4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VC_TomorrowWPTemplate</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VC_TomorrowWPTemplate</shortDescription>
+        <value>a1F9H000000GAJZUA4</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VisitConfirmationSchedulerCron</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VisitConfirmationSchedulerCron</shortDescription>
+        <value>0 00 9 * * ?</value>
+    </labels>
+    <labels>
+        <fullName>EYI_VpVc_NoShowWhatsApp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_VpVc_NoShowWhatsApp</shortDescription>
+        <value>a1F9H000000G9LtUAK</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Web_to_Lead_Created_By_Id</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI Web to Lead Created By Id</shortDescription>
+        <value>005Wd0000000GuQIAU</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Welcome_Message_to_Customer_After_NCF</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_Welcome Message to Customer After NCF</shortDescription>
+        <value>a12C4000000hKebIAE</value>
+    </labels>
+    <labels>
+        <fullName>EYI_WhatsAppSenderNumber</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EYI_WhatsAppSenderNumber</shortDescription>
+        <value>12543292309</value>
+    </labels>
+    <labels>
+        <fullName>EYI_Whatsapp_Case_Acknowledgement_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp Case Acknowledgement Notification</shortDescription>
+        <value>a0GC4000001f9d4MAA</value>
+    </labels>
+    <labels>
+        <fullName>FCM_Server_Key</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FCM_Server_Key</shortDescription>
+        <value>YOUR_FIREBASE_SERVER_KEY</value>
+    </labels>
+    <labels>
+        <fullName>Finance_Email_File_Name</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Finance Email File Name</shortDescription>
+        <value>Conga</value>
+    </labels>
+    <labels>
+        <fullName>Finance_Users_Email</fullName>
+        <categories>Cancellation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Finance Users Email</shortDescription>
+        <value>Akshay.Salunke1@in.ey.com, swapnil.zambare@in.ey.com</value>
+    </labels>
+    <labels>
+        <fullName>Google_PrivateKey</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Google_PrivateKey</shortDescription>
+        <value>Test</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_152</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_152</shortDescription>
+        <value>152</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_184</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_184</shortDescription>
+        <value>184</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_264</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_264</shortDescription>
+        <value>264</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_275</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_275</shortDescription>
+        <value>275</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_276</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_276</shortDescription>
+        <value>276</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_284</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_284</shortDescription>
+        <value>284</value>
+    </labels>
+    <labels>
+        <fullName>Inv_Villa_below_45</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Inv_Villa_below_45</shortDescription>
+        <value>45</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Id_Starts_with</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Id Starts with</shortDescription>
+        <value>00Q</value>
+    </labels>
+    <labels>
+        <fullName>NCF_Sent_Alert_to_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NCF Sent Alert to Customer</shortDescription>
+        <value>a12C4000000hKebIAE</value>
+    </labels>
+    <labels>
+        <fullName>PORTAL_ACCOUNT_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PORTAL_ACCOUNT_ID</shortDescription>
+        <value>001x000xxx35tPN</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Receipt_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Receipt Error</shortDescription>
+        <value>SAP Payment Advice Number Missing</value>
+    </labels>
+    <labels>
+        <fullName>Post_Sales_Profile_ID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Sales Profile ID</shortDescription>
+        <value>00e9H000002Dd4FQAS</value>
+    </labels>
+    <labels>
+        <fullName>Pre_Sales_For_Lead_Enquiry_Assignment_Group_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Pre-Sales For Lead Enquiry Assignment Group Label</shortDescription>
+        <value>Pre-Sales For Lead Enquiry</value>
+    </labels>
+    <labels>
+        <fullName>Presales_Assignment_Group_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Presales Assignment Group Label</shortDescription>
+        <value>Pre-Sales</value>
+    </labels>
+    <labels>
+        <fullName>PriorOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PriorOwnerId</shortDescription>
+        <value>005Wd0000000GuQIAU</value>
+    </labels>
+    <labels>
+        <fullName>REC_EKYC_Manual_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>REC EKYC Manual Link</shortDescription>
+        <value>a1F9H000000GZQ1UAO</value>
+    </labels>
+    <labels>
+        <fullName>RERA_Expiry_Notification</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RERA Expiry Notification</shortDescription>
+        <value>a1F9H000000FYsbUAG</value>
+    </labels>
+    <labels>
+        <fullName>Raise_Invoice_SMS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Raise Invoice SMS</shortDescription>
+        <value>a1F9H000000FXJpUAO</value>
+    </labels>
+    <labels>
+        <fullName>Refund_Process_Whats_APP_Alert_to_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refund Process Whats APP Alert to Customer</shortDescription>
+        <value>a12C4000000hXFFIA2</value>
+    </labels>
+    <labels>
+        <fullName>Refund_SMS_WAPP_Alert_to_Customer</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Refund SMS WAPP Alert to Customer</shortDescription>
+        <value>a12C4000000hKebIAE</value>
+    </labels>
+    <labels>
+        <fullName>RegistrationChecklistURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RegistrationChecklistURL</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_520}
+&amp;Id=${opportunityId}&amp;QueryId=[regCheck]0Q_035UAA020508,[oppo]0Q_030UAA020508
+&amp;TemplateId=0T_017UAA447510
+&amp;OFN=${opportunityName}+${opportunityCreatedDate}
+&amp;DefaultPDF=1
+&amp;PDFA=1a
+&amp;DS7=11</value>
+    </labels>
+    <labels>
+        <fullName>SAP_CreateCustomerEndpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SAP_CreateCustomerEndpoint</shortDescription>
+        <value>callout:SAP_Integration_Base/CreateCustomerMasterSalesForce</value>
+    </labels>
+    <labels>
+        <fullName>SMSTemp_For_CIF_Create</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CIF Creation SMS Template</shortDescription>
+        <value>a1F9H000000Ef08UAC</value>
+    </labels>
+    <labels>
+        <fullName>SMSTemplateforDigitalSlot</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMSTemplateforDigitalSlot</shortDescription>
+        <value>a12C4000000jF69IAE</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Before_1_hr_of_site_visit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp Before 1 hr of site visit to SM</shortDescription>
+        <value>a12C4000000hNEHIA2</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Before_One_Hour_Site_Visit_REC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_Before_One_Hour_Site_Visit_REC</shortDescription>
+        <value>a12C4000000hPkjIAE</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Confirmation_of_Payment_Received</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Confirmation of Payment Received</shortDescription>
+        <value>a1DOS0000010f4O2AQ</value>
+    </labels>
+    <labels>
+        <fullName>SMS_For_Case_Acknowledge</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS For Case Acknowledge</shortDescription>
+        <value>a1DOS0000006boG2AQ</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Payment_Receipt_Payment_Made</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Payment Receipt Payment Made</shortDescription>
+        <value>a1DOS0000006bzN2AQ</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Pre_Possession_Intimation</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Pre-Possession Intimation</shortDescription>
+        <value>a1DOS0000006bhd2AA</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Registration_Awaiting_Documents</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Registration Awaiting Documents</shortDescription>
+        <value>a1DOS0000010h612AA</value>
+    </labels>
+    <labels>
+        <fullName>SMS_SM_for_Visit_Today</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_SM_for_Visit_Today</shortDescription>
+        <value>a12C4000000hQAXIA2</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Site_Visit_Done_REC</fullName>
+        <categories>Sourcing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_Site_Visit_Done_REC</shortDescription>
+        <value>a1DOS0000006bsv2AA</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Stamp_Duty_Paid</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Stamp Duty Paid</shortDescription>
+        <value>a1DOS0000006c0z2AA</value>
+    </labels>
+    <labels>
+        <fullName>SMS_TDS_Payment_Pending</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS TDS Payment Pending</shortDescription>
+        <value>a1DWd0000000cmrMAA</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Template_for_Anniversary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Template for Anniversary</shortDescription>
+        <value>a12C4000000hMyEIAU</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Template_for_REC_Account_Creation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Template for REC Account Creation</shortDescription>
+        <value>a1F9H000000EfpsUAC</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Template_for_REC_Account_Owner_change</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Template for REC Account Owner change</shortDescription>
+        <value>a1F9H000000G9H3UAK</value>
+    </labels>
+    <labels>
+        <fullName>SMS_Template_when_REC_Status_Registered</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Template when REC Status Registered</shortDescription>
+        <value>a12C4000000hMyCIAU</value>
+    </labels>
+    <labels>
+        <fullName>SMS_To_REC_For_Visit_Today</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_To_REC_For_Visit_Today</shortDescription>
+        <value>a12C4000000hQC9IAM</value>
+    </labels>
+    <labels>
+        <fullName>SMS_To_send_send_one_hr_prior_to_SM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS To send send one hr prior to SM</shortDescription>
+        <value>a12C4000000hNEHIA2</value>
+    </labels>
+    <labels>
+        <fullName>SMS_before_10_days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_before_10_days</shortDescription>
+        <value>a12C4000000hMyBIAU</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Closed_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Closed Case</shortDescription>
+        <value>a1D</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Franking_Done</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Franking Done</shortDescription>
+        <value>SMS_for_Franking_Done</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Franking_Pending</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Franking Pending</shortDescription>
+        <value>SMS_for_Franking_Done</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Franking_Reminder_30days</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Franking Reminder 30days</shortDescription>
+        <value>Franking_Reminder_30days</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Possession_Intimation</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Possession Intimation</shortDescription>
+        <value>Possession Intimation</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Registered_Doc_Collection</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Registered Doc Collection</shortDescription>
+        <value>a1DWd0000000clFMAQ</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Registration_Rescheduled</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS for Registration Rescheduled</shortDescription>
+        <value>a1DOS0000010hE5</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Registration_Scheduled</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_for_Registration_Scheduled</shortDescription>
+        <value>Scheduled</value>
+    </labels>
+    <labels>
+        <fullName>SMS_for_Stamp_Duty_Payment_Details</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS  for Stamp Duty Payment Details</shortDescription>
+        <value>Stamp Duty Payment Details</value>
+    </labels>
+    <labels>
+        <fullName>SMS_to_SM_1_Hour_Before_Visit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_to_SM_1_Hour_Before_Visit</shortDescription>
+        <value>a12C4000000hPj7IAE</value>
+    </labels>
+    <labels>
+        <fullName>SMS_to_send_Birth_day</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS Template for Birth Day</shortDescription>
+        <value>a12C4000000hMyFIAU</value>
+    </labels>
+    <labels>
+        <fullName>SMS_to_send_one_hr_prior</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_to_send_one_hr_prior</shortDescription>
+        <value>a12C4000000hNEJIA2</value>
+    </labels>
+    <labels>
+        <fullName>SMS_when_Oppo_TAT_Expire</fullName>
+        <categories>Sourcing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_when_Oppo_TAT_Expire</shortDescription>
+        <value>a1DOS000000x1RV2AY</value>
+    </labels>
+    <labels>
+        <fullName>SMS_when_oppo_closed_date_passed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SMS_when_oppo_closed_date_passed</shortDescription>
+        <value>a12C4000000hMyDIAU</value>
+    </labels>
+    <labels>
+        <fullName>Sales_3_Hrs_before_revisit_Time_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales 3 Hrs before revisit Time SMS</shortDescription>
+        <value>a1F9H000000Ef0AUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_3_Hrs_before_revisit_Time_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales 3 Hrs before revisit Time WhatsApp</shortDescription>
+        <value>a1F9H000000EfMpUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Booking_SMS_Notification</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Booking SMS Notification</shortDescription>
+        <value>a1F9H000000Ef0IUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Booking_WhatsApp_Notification</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Booking WhatsApp Notification</shortDescription>
+        <value>a1F9H000000EfMtUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Customer_Manual_eKYC_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Customer Manual eKYC SMS</shortDescription>
+        <value>a1DOS0000006SoM2AU</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Customer_Manual_eKYC_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Customer Manual eKYC WhatsApp</shortDescription>
+        <value>a1DOS000000ztij2AA</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Day_Before_Revisit_Date_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Day Before Revisit Date SMS</shortDescription>
+        <value>a1F9H000000Ef0DUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Day_Before_Revisit_Date_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Day Before Revisit Date WhatsApp</shortDescription>
+        <value>a1F9H000000EfMhUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_First_Visit_Feedback_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales First Visit Feedback WhatsApp</shortDescription>
+        <value>a1F9H000000EfMkUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Fresh_Visit_and_Source_is_REC_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Fresh Visit and Source is REC SMS</shortDescription>
+        <value>a1F9H000000Ef0FUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Fresh_Visit_and_Source_is_REC_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Fresh Visit and Source is REC WhatsApp</shortDescription>
+        <value>a1F9H000000EfMrUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_New_Opportunity_Created_with_Walkin</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales New Opportunity Created with Walkin SMS</shortDescription>
+        <value>a1F9H000000Ef0KUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_New_Opportunity_Created_with_Walkin_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales New Opportunity Created with Walkin WhatsApp</shortDescription>
+        <value>a1F9H000000EfMjUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Next_Action_Revisit_Confirmed_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Next Action Revisit Confirmed SMS</shortDescription>
+        <value>a1F9H000000Ef0BUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Next_Action_Revisit_Confirmed_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Next Action Revisit Confirmed WhatsApp</shortDescription>
+        <value>a1F9H000000EfMoUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_Created</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity Created Whatsapp</shortDescription>
+        <value>a1F9H000000EfMiUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_Created_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity Created SMS</shortDescription>
+        <value>a1F9H000000Ef09UAC</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_Home_Loan_Initiate_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity Home Loan Initiate SMS</shortDescription>
+        <value>a1F9H000000Ef0GUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_Home_Loan_Initiate_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity Home Loan Initiate WhatsApp</shortDescription>
+        <value>a1F9H000000EfMsUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_is_Booked_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity is Booked SMS</shortDescription>
+        <value>a1F9H000000Ef0IUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Opportunity_is_Booked_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Opportunity is Booked WhatsApp</shortDescription>
+        <value>a1F9H000000EfMtUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Revisit_No_Show_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Revisit No Show SMS</shortDescription>
+        <value>a1F9H000000GGATUA4</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Revisit_No_Show_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Revisit No Show WhatsApp</shortDescription>
+        <value>a1F9H000000EfMqUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Revisit_Notification_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Revisit Notification CIF submit SMS</shortDescription>
+        <value>a1F9H000000Ef08UAC</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Revisit_Notification_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Revisit Notification CIF submit WhatsApp</shortDescription>
+        <value>a1F9H000000EfMgUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Scheduled_Fresh_Visit_OTP_SMS</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Scheduled Fresh Visit OTP SMS</shortDescription>
+        <value>a1F9H000000Ef07UAC</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Scheduled_Fresh_Visit_OTP_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Scheduled Fresh Visit OTP WhatsApp</shortDescription>
+        <value>a1F9H000000EfMfUAK</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Site_visit_remarks_by_CM</fullName>
+        <categories>Sales SMS Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Site visit remarks by CM SMS</shortDescription>
+        <value>a1F9H000000Ef0CUAS</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Site_visit_remarks_by_CM_WhatsApp</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sales Site visit remarks by CM WhatsApp</shortDescription>
+        <value>a1F9H000000EfMlUAK</value>
+    </labels>
+    <labels>
+        <fullName>Send_WhatsApp_Notification_to_REC_For_visit_Confirm</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Send WhatsApp Notification to REC For visit Confirm</shortDescription>
+        <value>a0GC4000001gCCJMA2</value>
+    </labels>
+    <labels>
+        <fullName>Site_PAN_ans_Aadhar_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Site PAN ans Aadhar Link</shortDescription>
+        <value>https://panchshil--uat.sandbox.my.site.com/EKYC/</value>
+    </labels>
+    <labels>
+        <fullName>TaskRecrodType_CL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TaskRecrodType CL</shortDescription>
+        <value>0129H000000aAX8QAM</value>
+    </labels>
+    <labels>
+        <fullName>WelcomeChecklistURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WelcomeChecklistURL</shortDescription>
+        <value>/apex/APXTConga4__Conga_Composer?SolMgr=1&amp;serverUrl={!API.Partner_Server_URL_520}&amp;Id=${opportunityId}&amp;QueryId=[oppo]0Q_030UAA020508,[WelcomeCheck]0Q_029UAA020508&amp;TemplateId=0T_016UAA447510&amp;OFN=${opportunityName}+${opportunityCreatedDate}&amp;DefaultPDF=1&amp;PDFA=1a&amp;DS7=11</value>
+    </labels>
+    <labels>
+        <fullName>WelcomeGuideAssetFileID</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WelcomeGuideAssetFileID</shortDescription>
+        <value>058Wd00000001sBIAQ</value>
+    </labels>
+    <labels>
+        <fullName>WhatsAppIdForRecCreation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Template_For_REC_Creation</shortDescription>
+        <value>a1F9H000000EfRgUAK</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Booked_with_SAP_to_REC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Booked with SAP to REC</shortDescription>
+        <value>a1DOS000000zsV52AI</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Confirmation_of_Payment_Received</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Confirmation of Payment Received</shortDescription>
+        <value>a1DOS0000010f4O2AQ</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_For_CIF_Creation</fullName>
+        <categories>Sales WhatsApp Template</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CIF Creation Whatsapp Template</shortDescription>
+        <value>a1F9H000000EfMgUAK</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_For_Case_Acknowledge</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp For Case Acknowledge</shortDescription>
+        <value>a1DOS0000010h1B2AQ</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_For_Case_Close</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp For Case Close</shortDescription>
+        <value>a1DOS0000010h1B2AQ</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Notification_Before_one_Hour</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Notification_Before_one_Hour</shortDescription>
+        <value>a12C4000000hNEJIA2</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Notification_Before_one_Hour_REC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Notification_Before_one_Hour_REC</shortDescription>
+        <value>a12C4000000hNEJIA2</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Notification_Before_one_hour_SM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Notification_Before_one_hour_SM</shortDescription>
+        <value>a12C4000000hNEHIA2</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Notification_Closed_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Notification Closed Date</shortDescription>
+        <value>a12C4000000hMwbIAE</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Payment_Receipt_Payment_Made</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Payment Receipt Payment Made</shortDescription>
+        <value>a1DOS0000010gGZ2AY</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Pre_Possession_Intimation</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Pre-Possession Intimation</shortDescription>
+        <value>a1DOS0000010gmf2AA</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Registration_Awaiting_Documents</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Registration Awaiting Documents</shortDescription>
+        <value>a1DOS0000010h612AA</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Site_Visit_Done_REC</fullName>
+        <categories>Sourcing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Site_Visit_Done_REC</shortDescription>
+        <value>a1DOS000000x1ZZ2AY</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Site_Visit_Todat_REC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Site_Visit_Todat_REC</shortDescription>
+        <value>a12C4000000hNEIIA2</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Site_Visit_Today_SM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Site_Visit_Today_SM</shortDescription>
+        <value>a12C4000000hNEKIA2</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Stamp_Duty_Paid</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp Stamp Duty Paid</shortDescription>
+        <value>a1DOS0000010hIv2AI</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_TDS_Payment_Pending</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp TDS Payment Pending</shortDescription>
+        <value>a1DOS0000010hXR2AY</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Template_For_REC_Owner_Change</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Template_For_REC_Owner_Change</shortDescription>
+        <value>a1F9H000000G9H3UAK</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Template_For_REC_Registration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Template_For_REC_Registration</shortDescription>
+        <value>a12C4000000hMwaIAE</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_Template_for_BirthDay</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_Template_for_BirthDay</shortDescription>
+        <value>a12C4000000hMwdIAE</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Franking_Done</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Franking Done</shortDescription>
+        <value>WhatsApp for Franking Done</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Franking_Pending</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Franking Pending</shortDescription>
+        <value>Franking Pending</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Franking_Reminder_30days</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Franking Reminder 30days</shortDescription>
+        <value>Franking Reminder 30days</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Possession_Intimation</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Possession Intimation</shortDescription>
+        <value>Possession Intimation</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Registered_Doc_Collection</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Registered Doc Collection</shortDescription>
+        <value>a1DOS0000010hE52AI</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Registration_Rescheduled</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Registration Rescheduled</shortDescription>
+        <value>a1DOS0000010hE5</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Registration_Scheduled</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp_for_Registration_Scheduled</shortDescription>
+        <value>a1DOS0000010</value>
+    </labels>
+    <labels>
+        <fullName>WhatsApp_for_Stamp_Duty_Payment_Details</fullName>
+        <categories>Post Sales</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>WhatsApp for Stamp Duty Payment Details</shortDescription>
+        <value>Stamp Duty Payment Details</value>
+    </labels>
+    <labels>
+        <fullName>Whatsapp_Notification_when_Oppo_TAT_Expire</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp_Notification_when_Oppo_TAT_Expire</shortDescription>
+        <value>a12C4000000hMyBIAU</value>
+    </labels>
+    <labels>
+        <fullName>Whatsapp_Oppo_TAT_Expire_10Days</fullName>
+        <categories>Sourcing</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp_Oppo_TAT_Expire_10Days</shortDescription>
+        <value>a1DOS000000x1Eb2AI</value>
+    </labels>
+    <labels>
+        <fullName>Whatsapp_Site_Reminder_Today</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp_Site_Reminder_Today_For_SM</shortDescription>
+        <value>a0GC4000001gCVdMAM</value>
+    </labels>
+    <labels>
+        <fullName>Whatsapp_Template_for_Anniversary</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Whatsapp Template for Anniversary</shortDescription>
+        <value>a12C4000000hMwcIAE</value>
+    </labels>
+    <labels>
+        <fullName>eyiRecordDeletedSuccessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>recordDeletedSuccessMessage</shortDescription>
+        <value>Record deleted!</value>
+    </labels>
+    <labels>
+        <fullName>eyiRecordUpdatedSuccessMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>recordUpdatedSuccessMessage</shortDescription>
+        <value>Record Updated!</value>
+    </labels>
+</CustomLabels>

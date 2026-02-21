@@ -1,0 +1,278 @@
+<!--
+  @description       : 
+  @author            : Tushar Mathur
+  @group             : 
+  @last modified on  : 09-01-2025
+  @last modified by  : Tushar Mathur
+-->
+<template>
+    <template if:true={isSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+
+        <!-- <div class="spinner-container">
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            <br>
+            <div class="slds-text-align_center slds-m-top_medium">
+                <p><strong>Please do not close the window while the process is running.</strong></p>
+            </div>
+        </div> -->
+    </template>
+    
+    <lightning-record-edit-form object-api-name="EYI_Customer_Information_Form__c" onsuccess={handleSuccess}
+        onsubmit={handleSubmit} onerror={handleError} record-type-id={recordType}>
+    <div class="slds-p-horizontal_small">
+        <div>
+        <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleSectionToggle} active-section-name={activeAccordions}>
+
+            <lightning-accordion-section name="A" label="Customer Details" class="slds-grid slds-wrap">
+                <template if:true={isPerson}>
+                    <lightning-input-field field-name="EYI_Salutation__c" value={salutation} required> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_First_Name__c" value={firstName} required="true">
+                    </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Middle_Name__c" value={middleName}> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Last_Name__c" value={lastName} required="true">
+                    </lightning-input-field>
+                </template>
+                <lightning-input-field field-name="EYI_Country_code__c"> </lightning-input-field>
+                <lightning-input-field field-name="EYI_Mobile_number__c" value={mobileNumber} disabled="true">
+                </lightning-input-field>
+                <lightning-input-field field-name="EYI_Email_Id__c" value={emailId} disabled="true">
+                </lightning-input-field>
+                
+                <lightning-input-field field-name="EYI_Lead_Source__c" value={source} disabled> </lightning-input-field>
+                <lightning-input-field field-name="EYI_Lead_Sub_Source__c" value={subsource} disabled> </lightning-input-field>
+                <template if:true={error}>
+                    <p class="slds-text-color_error">{error}</p>
+                </template>
+                <template if:true={isNotLeasing}>
+                <div hidden={isleasing}>
+                <lightning-input-field field-name="EYI_Customer_residential_status__c" value={residentialStatus}
+                    onchange={handleResiStatusChange} required="true"> </lightning-input-field>
+                </div></template>
+                <template if:true={nriFields}>
+                    <lightning-input-field field-name="EYI_Passport_Number__c" value={passport}> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Social_Security_Number__c" value={ssn}> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_OCI__c" value={oci}> </lightning-input-field>
+                </template>
+                
+                 <!--<lightning-input-field field-name="EYI_Pincode__c" required> </lightning-input-field>-->
+                <template if:true={isNotLeasing}>
+                <div hidden={isleasing}>
+                 <lightning-input-field field-name="EYI_Customer_Address_Type__c" value={addressType} required onchange={handleChange}> </lightning-input-field>
+                 <lightning-input-field field-name="Customer_Locality__c"  value={locality} required> </lightning-input-field>
+                </div></template>
+                <template if:false={isNotLeasing}>
+                <div hidden={isNotLeasing}>
+                        <lightning-input-field field-name="EYI_Leasing_Nationality__c" value={leaseNationality} required></lightning-input-field>
+                    </div></template>
+                 <template if:true={isOS}>
+                    <lightning-input-field field-name="EYI_Country__c" value="India" disabled></lightning-input-field>
+                    <!-- <lightning-input-field field-name="EYI_State__c" value={state}></lightning-input-field> -->
+                    <lightning-input-field field-name="EYI_Free_Text_City__c" value={city}></lightning-input-field>
+                    <lightning-input-field field-name="Pincode__c" value={pincode} onchange={handlePincode}></lightning-input-field>
+                    <template if:true={pincodeError}>
+                        <div class="slds-text-color_error">{pincodeError}</div>
+                    </template>
+                    
+                 </template>
+                 <template if:true={isNRI}>
+                    <lightning-input-field field-name="EYI_Country__c" value={country}></lightning-input-field>
+                    <lightning-input-field field-name="EYI_Free_Text_City__c" value={city}></lightning-input-field>
+                    <lightning-input-field field-name="Pincode__c" value={pincode}></lightning-input-field>
+                 </template>
+                <!-- <c-eyi-custom-lookup obj-name="EYI_Panchshil_Master__c" icon-name="A:B"
+                label-name="Search Pincode (Please enter atleast 4 chars to search)" lookup-selected={lookupSelected}
+                class="" placeholder="Enter Pincode or Locality" value=''
+                read-only={showNewGapTownDetails} fields={fieldsForPincode} display-fields={displayFieldsForPincode}
+                onlookup={handlepincodeLookup}>
+              </c-eyi-custom-lookup> -->
+                <lightning-input-field field-name="EYI_Address_1__c" required>
+                </lightning-input-field>
+                <lightning-input-field field-name="EYI_Address_2__c" >
+                </lightning-input-field>
+                <lightning-input-field field-name="EYI_Address_3__c" >
+                </lightning-input-field>
+                <template if:false={isNotLeasing}>
+                <div hidden={isNotLeasing}>
+                        <lightning-input-field field-name="EYI_Leasing_State__c" value={leaseState}></lightning-input-field>
+                </div></template>
+                <lightning-input-field field-name="EYI_Occupation__c" value={Occupation} onchange={handleOccupationChange}> </lightning-input-field>
+                <lightning-input-field field-name="EYI_Designation__c" value={designation}> </lightning-input-field>
+                <template if:false={isNotLeasing}>
+                <div hidden={isleasing}>
+                    <template if:true={isSalaried}>
+                        <lightning-input-field field-name="EYI_Company_Business_name__c" value={companyName} required></lightning-input-field>
+                    </template>
+                    <template if:false={isSalaried}>                            
+                        <lightning-input-field field-name="EYI_Company_Business_name__c" value={companyName}></lightning-input-field>
+                    </template>
+                </div></template>
+                <template if:true={isleasing}>
+                    <lightning-input-field field-name="EYI_Company_Business_name__c" value={companyName} required></lightning-input-field>
+                </template>
+
+                <template if:true={isNonIndian}>
+                    <lightning-input-field field-name="EYI_Local_Contact_Name__c"> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Local_Contact_Mobile_Number__c"> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Local_Contact_Relation__c"> </lightning-input-field>
+                </template>
+            </lightning-accordion-section>
+
+            <lightning-accordion-section name="B" label="Customer Requirement Details">
+                <div class="slds-hide">
+                    <lightning-combobox required variant="label-hidden" value={project} onchange={onchangeProject}
+                        placeholder="Select Project" options={optionProjects} disabled="true"></lightning-combobox><br />
+                </div>
+
+                <lightning-input-field field-name="EYI_Property__c" value={property} required="true" disabled>
+                </lightning-input-field>
+
+                <div class="slds-hide">
+                    <lightning-input-field field-name="EYI_Project_Enquired__c" value={project} required="true">
+                    </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Lead_Enquiry__c" value={leadEnquiryId}>
+                    </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Nature_of_Lead__c" value={natureroflead}>
+                    </lightning-input-field>
+                </div>
+                <lightning-input-field field-name="EYI_Budget__c" value={budget} required> </lightning-input-field>
+                <template if:false={isleasing}>
+                    <lightning-input-field field-name="EYI_Purpose_of_Purchase__c" value={purposeOfPurchase} required="true">
+                    </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Possession_Timeline__c" ></lightning-input-field>
+                </template>
+                <lightning-input-field field-name="EYI_Typology_Interested__c" > </lightning-input-field>
+                <lightning-input-field field-name="EYI_Remarks__c" > </lightning-input-field>
+            </lightning-accordion-section>
+
+            <lightning-accordion-section name="C" label="Enquiry Source Details">
+                <template if:true={isFalse}>
+                    <lightning-input-field field-name="EYI_Lead_Name__c" value={leadId} disabled="true">
+                    </lightning-input-field>
+                </template>
+                <lightning-input-field field-name="EYI_Walk_in_Source__c" required="true" value={wsource}
+                    onchange={handleSourceChange}> </lightning-input-field>
+                <lightning-input-field field-name="EYI_Walk_in_Sub_source__c" required="true" value={wsubsource} 
+                onchange={handleSubSourceChange}> </lightning-input-field>
+                <template if:true={isCP}>
+                    <template if:true={isCPExist}>
+                        <lightning-input-field field-name="EYI_REC_Account__c" 
+                        onchange={onchangeRecCode} value={recId} required={isCPExist}></lightning-input-field>
+                        <template if:false={isNotLeasing}>
+                        <div hidden={isNotLeasing}>
+                            <lightning-input-field field-name="EYI_Authentication__c" value={authenticate} required="true"></lightning-input-field>
+                        </div></template>
+                            <!-- <c-eyi-custom-lookup obj-name="EYI_REC__c" icon-name="A:B"
+                label-name="Search REC (Please enter atleast 4 chars to search)" lookup-selected={lookupSelected}
+                class="cap-input" placeholder="Enter Name/Mobile/Pan No./ REC Code" value=''
+                read-only={showNewGapTownDetails} fields={fieldsForREC} display-fields={displayFieldsForREC}
+                onlookup={handleTownLookup}> 
+                </c-eyi-custom-lookup>-->
+                        <lightning-button variant="base" label="New REC ?" title="Consultant not available?" onclick={createManualRec}></lightning-button>
+                    </template>
+                    <template if:true={isCPNotExist}>
+                        <lightning-input-field field-name="EYI_CP_Executive_Name_Not_Registered__c" required={isCPNotExist}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_REC_Executive_LastName_NonRegistered__c" required={isCPNotExist}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_Unregistered_CP_Mobile_Number__c" required={isCPNotExist}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_REC_Email_Non_Registered__c" required={isCPNotExist}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_REC_PAN_No_Non_Registered__c" required={isCPNotExist}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_REC_RERA_Registered__c" >
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_REC_Location__c">
+                        </lightning-input-field>
+                        <lightning-input-field field-name="EYI_Sourcing_Manager__c" required={isCPNotExist}>
+                        </lightning-input-field>                        
+                        <lightning-button variant="base" label="Existing REC?" onclick={cancelManualRec}></lightning-button> 
+                        <lightning-input-field class="slds-hide" field-name="EYI_REC_Account__c" 
+                        onchange={onchangeRecCode} value={recId} required={isCPExist}></lightning-input-field>
+                    </template>
+                    <!-- <lightning-input-field field-name="EYI_Channel_Partner_Code__c" value={cpCode}
+                        onchange={onchangeCpCode} required={isCP}>
+                    </lightning-input-field><br />
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-01">REC Account Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="horizontal-input-id-01" value={cpName} class="slds-input" disabled />
+                        </div>
+
+                    </div> 
+                    <lightning-combobox variant="label-hidden" value={cpExecCode} onchange={onchangeCpExCode}
+                        placeholder="Select Channel Partner Executive" options={optionCpExecCode}></lightning-combobox> -->
+                </template>
+                <div class="slds-hide">
+
+                    <lightning-input-field field-name="EYI_Channel_Partner_Executive_Code__c" value={cpExecCode}>
+                    </lightning-input-field>
+                </div>
+                <template if:true={isOther}>
+                    <lightning-input-field field-name="Walk_in_Source_if_Other__c"> </lightning-input-field>
+                </template>
+                <template if:true={isRef}>
+                    <template if:true={isEmployeeRef}>
+                        <lightning-input-field field-name="EYI_Referral_Employee_Name__c" required={isRef}> </lightning-input-field>
+                        
+                    </template>
+                    <template if:true={isCustomerRef}>
+                        <lightning-input-field field-name="EYI_Client_Name__c" required={isRef}> </lightning-input-field>
+                        <lightning-input-field field-name="EYI_Project_Purchased__c" required={isRef}> </lightning-input-field>
+                    </template>
+                    <template if:true={isCorporateRef}>
+                        <lightning-input-field field-name="EYI_Client_Employer_Name__c" required={isRef}> </lightning-input-field>
+                    </template>
+                    <template if:true={isOtherRef}>
+                        <lightning-input-field field-name="EYI_Client_Name__c" required={isRef}> </lightning-input-field>
+                    </template>
+                    <!-- <lightning-input-field field-name="EYI_Referral_Name__c" onchange={onchangeCpReferral}
+                        value={referralCode} required={isRef}> </lightning-input-field>
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <label class="slds-form-element__label" for="horizontal-input-id-01">Referral Name</label>
+                        <div class="slds-form-element__control">
+                            <input type="text" id="horizontal-input-id-02" value={cpReferral} class="slds-input"
+                                disabled />
+                        </div>
+                    </div>
+                    <lightning-input-field field-name="EYI_Referral_Project_Name__c"> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Referral_Unit_Number__c"> </lightning-input-field>
+                    <lightning-input-field field-name="EYI_Referral_contact_details__c" required={isRef}> -->
+                </template>
+
+            </lightning-accordion-section>
+
+            <lightning-accordion-section name="D" label="Opportunity Details">
+                
+                <template if:true={isNotLeasing}>
+                    <lightning-input-field field-name="EYI_Presales_Executive__c" value={preSales}></lightning-input-field>
+                    <lightning-input-field field-name="EYI_Closing_Manager__c" value={salesManager} required></lightning-input-field>
+                </template>
+
+                <!-- Field visible ONLY when leasing -->
+                <template if:false={isNotLeasing}>
+                <div >
+                    <lightning-input-field field-name="EYI_Leasing_Manager__c" value={leaseManager} required></lightning-input-field>
+                </div></template>
+            </lightning-accordion-section>
+            
+            
+        </lightning-accordion>
+        
+        </div>
+    </div>
+    <template if:false={hideButtons}>
+        <div class="slds-align_absolute-center">
+            
+                <lightning-button class="slds-m-top_small slds-m-around_medium" icon-name="utility:save" variant="brand" type="submit"
+                    label="Save"></lightning-button>
+                <lightning-button class="slds-m-top_small slds-m-around_medium" icon-name="utility:close" variant="brand" label="Cancel"
+                    onclick={hideModalBox}></lightning-button>
+        </div>
+    </template>
+    
+
+
+    </lightning-record-edit-form>
+</template>

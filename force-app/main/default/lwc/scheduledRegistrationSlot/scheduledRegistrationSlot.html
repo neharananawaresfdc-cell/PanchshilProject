@@ -1,0 +1,62 @@
+<template>
+    <lightning-card title="New Event">
+        <!-- Picklist for Slot Type -->
+        <div class="slds-m-around_medium">
+            <lightning-combobox 
+                name="slotType"
+                label="Select Slot Type"
+                value={selectedSlotType}
+                options={slotOptions}
+                onchange={handleSlotTypeChange}>
+            </lightning-combobox>
+        </div>
+
+        <!-- Conditional Rendering of Table -->
+        <template if:true={isTableVisible}>
+            <div class="slds-m-around_medium">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th class="slds-text-align_center">Add</th>
+                            <th class="slds-text-align_center">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={data} for:item="row">
+                            <tr key={row.id}>
+                                <td>
+                                    <lightning-input type="date" value={row.date} data-id={row.id} data-field="date" onchange={handledatechange}></lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="time" value={row.startTime} data-id={row.id} data-field="startDateTime" onchange={handleInputChange} min="09:30:00.000Z" max="18:30:00.000Z"></lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="time" value={row.endTime} data-id={row.id} data-field="endDateTime" onchange={handleInputChange} min="09:30:00.000Z" max="18:30:00.000Z"></lightning-input>
+                                </td>
+                                <!-- <td>
+                                    <lightning-input type="datetime-local" value={row.startDateTime} data-id={row.id} data-field="startDateTime" onchange={handleInputChange}></lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input type="datetime-local" value={row.endDateTime} data-id={row.id} data-field="endDateTime" onchange={handleInputChange}></lightning-input>
+                                </td> -->
+                                <td class="slds-text-align_center">
+                                    <lightning-button-icon icon-name="utility:add" alternative-text="Add Row" onclick={handleAddRow}></lightning-button-icon>
+                                </td>
+                                <td class="slds-text-align_center">
+                                    <lightning-button-icon icon-name="utility:delete" alternative-text="Remove Row" data-id={row.id} onclick={handleRemoveRow}></lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+                <div class="slds-align_absolute-center slds-m-top_medium">
+                    <lightning-button label="Save" variant="brand" onclick={handleSave}></lightning-button>
+                    <lightning-button class="slds-m-left_medium" label="View My Calendar" variant="neutral" onclick={handleViewCalendar}></lightning-button>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

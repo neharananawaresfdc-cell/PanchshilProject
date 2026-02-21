@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>India: GST Identification Number(GSTIN)</fullName>
+        <default>false</default>
+        <label>India: GST Identification Number(GSTIN)</label>
+    </customValue>
+    <customValue>
+        <fullName>India: Aadhaar Number</fullName>
+        <default>false</default>
+        <label>India: Aadhaar Number</label>
+    </customValue>
+    <masterLabel>Tax Category</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Case Acknowledgment</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>swapnil.zambare@in.ey.com</senderEmail>
+            <senderName>Case Acknowledgment</senderName>
+            <template>Sourcing_Email_Template/Case_creation_acknowledgment</template>
+        </ruleEntry>
+    </autoResponseRule>
+    <autoResponseRule>
+        <fullName>Case autoresponse rule</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <criteriaItems>
+                <field>Case.Status</field>
+                <operation>equals</operation>
+                <value>New</value>
+            </criteriaItems>
+            <notifyCcRecipients>false</notifyCcRecipients>
+            <senderEmail>sales@panchshil.com</senderEmail>
+            <senderName>Case Assigned</senderName>
+            <template>unfiled$public/Case_Assigned_Mail_to_Owner</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Email_Notification</name>
+        <label>Send Email Notification</label>
+        <locationX>176</locationX>
+        <locationY>647</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>Recipient_Address</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>Booking_Email_Subject_Template</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>Booking_Email_Template</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_Notification</name>
+        <label>Send SMS Notification</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Add_email_id</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SMSNotification</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification</name>
+        <label>Send WhatsApp Notification</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_Notification</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>WhatsApp_Notification</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_email_id</name>
+        <label>Add email id</label>
+        <locationX>176</locationX>
+        <locationY>539</locationY>
+        <assignmentItems>
+            <assignToReference>Recipient_Address</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Email_Notification</targetReference>
+        </connector>
+    </assignments>
+    <environments>Default</environments>
+    <formulas>
+        <name>SMSNotification</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos; + {!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c} + &apos;&quot;,&quot;templateId&quot;:&quot;&apos; + {!$Label.Sales_Booking_SMS_Notification} + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos; + {!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c} + &apos;&quot;,&quot;templateId&quot;:&quot;&apos; +{!$Label.Sales_Booking_WhatsApp_Notification} + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>Send Booking Notifications {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Booking Notifications</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_WhatsApp_Notification</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>EYI_Booking_Form_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Booking confirmed</stringValue>
+            </value>
+        </filters>
+        <object>EYI_Booking__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+    <textTemplates>
+        <name>Booking_Email_Subject_Template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text># {!$Record.Name} Booking in completed - Panchshil Team</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Booking_Email_Template</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi {!$Record.Customer_Name__c},
+
+Great news! Your booking #{!$Record.Name} has been successfully completed.
+For any questions or assistance, feel free to contact us. We look forward to serving you!
+
+Best Regards,
+Team Panchshil,
++91 8970007700</text>
+    </textTemplates>
+    <variables>
+        <name>Recipient_Address</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

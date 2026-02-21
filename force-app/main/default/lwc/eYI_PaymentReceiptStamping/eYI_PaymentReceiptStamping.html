@@ -1,0 +1,65 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-17-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Payment Receipt Stamping">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+
+        <!-- Fetch Data Button -->
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Fetch Data" 
+                onclick={fetchData} 
+                disabled={isLoading}>
+            </lightning-button>
+        </div>
+
+        <!-- Conditional UI: Only show if data is present -->
+        <template if:true={showTable}>
+                <!-- Create Advance Toggle -->
+                <div class="slds-grid slds-gutters slds-m-bottom_small">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input 
+                            type="toggle" 
+                            label="Create Advance?" 
+                            checked={createAdvance} 
+                            onchange={handleToggleChange}>
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input type="number" label="Payment Amount" value={paymentAmount} onchange={handlePaymentAmountChange}></lightning-input>
+                    </div>
+
+                    <!-- Selected Amount Summary -->
+                    <p class="slds-m-top_small slds-text-title_bold slds-col slds-size_1-of-3">
+                        Selected Amount: <lightning-formatted-number
+            value={selectedAmountSummary}
+            format-style="currency"
+            currency-code="INR">
+                            </lightning-formatted-number>
+                    </p>
+                </div>
+            
+
+            <!-- Datatable -->
+            <div class="slds-scrollable_y slds-p-around_medium" style="max-height: 400px;">
+                <lightning-datatable
+                    key-field="id"
+                    data={data}
+                    columns={columns}
+                    draft-values={draftValues}
+                    onsave={handleSave}
+                    onrowselection={handleRowSelection}
+                    selected-rows={selectedRowIds}
+                    editable>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+</template>

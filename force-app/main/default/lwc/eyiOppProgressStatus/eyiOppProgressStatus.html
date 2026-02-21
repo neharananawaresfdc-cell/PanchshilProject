@@ -1,0 +1,44 @@
+<template>
+    <div class="slds-grid slds-wrap" style="text-align:center; border: 2px solid black;">
+        <template if:false={getprofileId}>
+            <div class="slds-col slds-size_1-of-2">
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_Average_Rating__c" fieldlabel="Average Rating" record-id={recordId}></c-eyitemplabel>
+        </div>
+        </template>
+        <template if:true={getprofileId}>
+        <div class="slds-col slds-size_1-of-1" >
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_TDS_Outstanding__c" fieldlabel="TDS Outstanding" record-id={recordId}></c-eyitemplabel>
+        </div>
+        </template>
+        <template if:false={getprofileId}>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_System_Rating__c" fieldlabel="System Rating" record-id={recordId}></c-eyitemplabel>
+        </div>
+        </template>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_Days_Remaining_For_Expiry__c" fieldlabel="TAT Expiry" record-id={recordId}></c-eyitemplabel>
+        </div>
+        <template if:false={getprofileId}>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_Latest_Rating__c" fieldlabel="Latest Rating" record-id={recordId}></c-eyitemplabel>
+        </div>
+         </template>
+        <template if:false={getprofileId}>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyitemplabel object-api-name="Opportunity" field-api-name="EYI_Initial_Rating__c" fieldlabel="Initial Rating" record-id={recordId}></c-eyitemplabel>
+        </div>
+         </template>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="Opportunity" field-api-name="EYI_Total_KYC_Done_on_Applicant__c" fieldlabel="E-KYC" fieldtype="Percent" variant="base-autocomplete" direction="drain" compsize="large"  record-id={recordId}></c-eyidyprogressring>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="Opportunity" field-api-name="EYI_Total_eSign_Done_on_Applicant__c" fieldlabel="E-Sign" fieldtype="Percent" variant="base-autocomplete" direction="drain" compsize="large" record-id={recordId}></c-eyidyprogressring>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="Opportunity" field-api-name="IsQuotationApproved__c" fieldlabel="DAF" fieldtype="Boolean" variant="base-autocomplete" direction="drain" compsize="large" hidevalue="true" record-id={recordId}></c-eyidyprogressring>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="Opportunity" field-api-name="EYI_Total_Pending_Booking_Amount_in_Per__c" fieldlabel="Payment" fieldtype="Percent" variant="base-autocomplete" direction="drain" compsize="large" record-id={recordId}></c-eyidyprogressring>
+        </div>
+    </div>
+</template>

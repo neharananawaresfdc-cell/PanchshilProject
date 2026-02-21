@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>1 BHK</fullName>
+        <default>false</default>
+        <label>1 BHK</label>
+    </customValue>
+    <customValue>
+        <fullName>2 BHK</fullName>
+        <default>false</default>
+        <label>2 BHK</label>
+    </customValue>
+    <customValue>
+        <fullName>3 BHK</fullName>
+        <default>false</default>
+        <label>3 BHK</label>
+    </customValue>
+    <customValue>
+        <fullName>4 BHK</fullName>
+        <default>false</default>
+        <label>4 BHK</label>
+    </customValue>
+    <customValue>
+        <fullName>Shop</fullName>
+        <default>false</default>
+        <label>Shop</label>
+    </customValue>
+    <customValue>
+        <fullName>Showroom</fullName>
+        <default>false</default>
+        <label>Showroom</label>
+    </customValue>
+    <customValue>
+        <fullName>Office Space</fullName>
+        <default>false</default>
+        <label>Office Space</label>
+    </customValue>
+    <customValue>
+        <fullName>Restaurant Space</fullName>
+        <default>false</default>
+        <label>Restaurant Space</label>
+    </customValue>
+    <customValue>
+        <fullName>Studio Apartment</fullName>
+        <default>false</default>
+        <label>Studio Apartment</label>
+    </customValue>
+    <customValue>
+        <fullName>Row house</fullName>
+        <default>false</default>
+        <label>Row house</label>
+    </customValue>
+    <customValue>
+        <fullName>Bungalow</fullName>
+        <default>false</default>
+        <label>Bungalow</label>
+    </customValue>
+    <customValue>
+        <fullName>Residential</fullName>
+        <default>false</default>
+        <label>Residential</label>
+    </customValue>
+    <masterLabel>Configuration</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

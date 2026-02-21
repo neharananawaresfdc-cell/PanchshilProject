@@ -1,0 +1,40 @@
+.errorMessage{
+    color:red;
+    font-size: 12px;
+    background-color:white;
+    
+}
+
+.successMessage{
+    color:green;
+    font-size:12px;
+    background-color:white;
+    
+}
+
+.warningMessage{
+    color:orange;
+    font-size:12px;
+    background-color:white;
+
+}
+
+.buttonmargin1{
+    margin-left: 25%;
+    margin-bottom: 100px;
+}
+
+.buttonmargin2{
+    /*margin-left: 5%;
+    margin-bottom: 100px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.alreadySynced{
+    color:red;
+    font-size:12px;
+    background-color:white;
+    text-align:center;
+}

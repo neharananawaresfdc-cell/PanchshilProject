@@ -1,0 +1,40 @@
+<template>
+    <lightning-card variant="Narrow" title="Invoice Sync" icon-name="utility:change_record_type">
+        <div class="slds-p-horizontal_small">
+            <template if:true={isRed}>
+                <div class="slds-text-color_destructive">
+                    {messageDisplay}
+                </div>
+            </template>
+           <template if:true={isGreen}>
+                <div class="successMessage">
+                    {messageDisplay}
+                </div>
+            </template>
+            <!-- <template if:true={isOrange}>
+               <div class="warningMessage">
+                 WARNING: {warningDisplay}
+              </div>
+               </template> -->
+           
+           <template if:true={isLoading}>
+               <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+           </template>
+            
+
+        <template if:true={syncButtonVisibility}>
+            <div class="slds-grid slds-align_absolute-center slds-m-top_medium">
+                <lightning-button 
+                    label="Invoice Sync"
+                    onclick={handleCallInvoiceAPI}
+                    icon-name="utility:sync"
+                    icon-position="right"
+                    variant="brand"
+                    disabled={isSyncDisabled}
+                    class="slds-m-right_small">
+                </lightning-button>
+            </div> 
+        </template>
+    </div>  
+    </lightning-card>
+</template>

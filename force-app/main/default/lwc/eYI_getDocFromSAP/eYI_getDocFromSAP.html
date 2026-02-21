@@ -1,0 +1,46 @@
+<template>
+    <template if:true={isReceipt}>
+        <lightning-button variant="brand" label="Receipt" title="Receipt" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+
+    <template if:true={isDemand}>
+        <lightning-button variant="brand" label="Demand" title="Demand" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+
+    <template if:true={isDebitNote}>
+        <lightning-button variant="brand" label="Debit Note" title="Debit Note" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+        
+    <template if:true={isCreditNote}>
+        <lightning-button variant="brand" label="Credit Note" title="Credit Note" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+
+    <template if:true={isSOA}>
+        <lightning-button variant="brand" label="Get SOA PDF" title="Get SOA PDF" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+
+    <template if:true={isInterestLetter}>
+        <lightning-button variant="brand" label="Get Interest Letter" title="Get Interest Letter" onclick={handleClick} class="slds-align_absolute-center"></lightning-button>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+    </template>
+
+    
+
+</template>

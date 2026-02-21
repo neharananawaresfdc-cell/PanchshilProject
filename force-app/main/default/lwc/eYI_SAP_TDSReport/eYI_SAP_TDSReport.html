@@ -1,0 +1,221 @@
+<template>
+    <lightning-card title='TDS Report'>
+        <div class="slds-p-horizontal_small">
+
+            <!-- <div class="selected-box" onclick={toggleDropdown}>
+                <span>{selectedLabels}</span>
+                <lightning-icon icon-name="utility:down" size="x-small"></lightning-icon>
+            </div>
+             -->
+            <!-- First Row: Project & Tower Selection -->
+            <div class="slds-grid slds-wrap slds-gutters slds-var-m-bottom_medium">
+                <!-- <template if:false={fromTab}>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-combobox 
+                        name="project" 
+                        label="Select Project" 
+                        value={selectedProject} 
+                        options={filteredProjectOptions} 
+                        disabled={disableProject}
+                        onchange={handleChange} 
+                        required>
+                    </lightning-combobox>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-combobox 
+                        name="tower" 
+                        label="Select Tower" 
+                        value={selectedTower}
+                        options={filteredTowerOptions} 
+                        onchange={handleChange}
+                        required>
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input 
+                        name="SAP_Customer_Number" 
+                        label="SAP Customer Number" 
+                        value={customerNumber}
+                        placeholder="Enter Customer Number"
+                        onchange={handleChange}
+                        disabled={isDisabled}
+                        required>
+                    </lightning-input>
+                </div>
+                </template> -->
+
+                <!--Input fields for Outstanding Report-->
+
+                <!-- <template if:true={fromAction}> -->
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning-input 
+                        type="text" 
+                        name="input1" 
+                        value={cmpCode}
+                        label="Company Code"
+                        data-id="companyCode"
+                        onclick={toggleDropdown}
+                        disabled={isDisabled}>
+                    </lightning-input>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning-input 
+                        type="text" 
+                        name="input1" 
+                        value={sOrg}
+                        label="Sales Org"
+                        data-id="salesOrg"
+                        onclick={toggleDropdown}
+                        disabled={isDisabled}>
+                    </lightning-input>
+                </div>
+                
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning-input 
+                        type="text" 
+                        name="input1" 
+                        value={mNumber}
+                        onblur={handleChange}
+                        label="Material Code / Unit"
+                        data-id="matCode"
+                        disabled={isDisabledBooking}>
+                    </lightning-input>
+                </div>
+                
+                <template if:true={isDropdownOpen}>
+                    <div class="dropdown-container">
+                        <div class={computedStyle}>
+                            <ul class="slds-listbox slds-listbox_vertical" role="listbox">
+                                <template for:each={options} for:item="option">
+                                    <li key={option.value} role="presentation" class="slds-listbox__item">
+                                        <div class="slds-listbox__option">
+                                            <lightning-input
+                                                type="checkbox"
+                                                label={option.label}
+                                                value={option.value}
+                                                checked={option.isSelected}
+                                                onchange={handleCheckboxChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </li>
+                                </template>
+                            </ul>
+                            <lightning-button 
+                                variant="brand" 
+                                label="Done"
+                                onclick={toggleDropdown}>
+                            </lightning-button>
+                        </div>
+                    </div>
+                </template>
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning-input 
+                        type="text" 
+                        name="input1" 
+                        value={sOrder}
+                        label="Sales Order/Booking"
+                        data-id="salesOrder"
+                        onblur={handleChange}
+                        disabled={isDisabledBooking}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-5">
+                    <lightning-input 
+                        type="text" 
+                        name="input1" 
+                        value={customerNumber}
+                        label="Customer No."
+                        data-id="customerNo"
+                        onblur={handleChange}
+                        disabled={isDisabledBooking}>
+                    </lightning-input>
+                </div>
+            
+                <!-- </template> -->
+
+            </div>
+
+            <!-- Third Row: Search Button -->
+            <div class="slds-grid slds-wrap slds-gutters slds-align_absolute-center slds-var-m-bottom_medium">
+                <lightning-button 
+                    variant="brand" 
+                    icon-name="utility:search" 
+                    label="Search"
+                    onclick={handleClick}>
+                </lightning-button>
+                <template if:false={showClearFilter}>
+                <lightning-button 
+                class="slds-m-left_small"
+                    variant="brand" 
+                    label="Clear Filters"
+                    onclick={handleClear}>
+                </lightning-button>
+                </template>
+            </div>
+
+            <!-- Data Table -->
+            <template if:true={isData}>
+                <div class="datatable-container">
+                
+                <lightning-datatable 
+                    key-field="id" 
+                    data={data} 
+                    columns={columns} 
+                    hide-checkbox-column="true"
+                    min-column-width="150" 
+                    max-column-width="300">
+                </lightning-datatable>
+            </div>
+        
+
+            <!-- Pagination & Export Buttons -->
+            <div slot="footer" class="slds-grid slds-grid_align-spread slds-var-m-top_medium slds-m-left_xx-small footerButtons">
+                <!-- Pagination Controls -->
+                <div>
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisablePrev}
+                        label="First"
+                        onclick={firstPage}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisablePrev}
+                        label="Previous"
+                        onclick={previous}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisableNext}
+                        label="Next"
+                        onclick={next}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <lightning-button 
+                        variant="brand" 
+                        disabled={isDisableNext}
+                        label="Last"
+                        onclick={lastPage}
+                        class="slds-m-left_xx-small">
+                    </lightning-button>
+
+                    <c-test-export-to-excel parent-table-data={exportData}></c-test-export-to-excelparent-table-data></c-test-export-to-excel>
+                </div>
+
+                <!-- Export Button -
+                <div>
+                    
+                </div> -->
+            </div>
+        </template>
+
+        </div>
+    </lightning-card>
+</template>

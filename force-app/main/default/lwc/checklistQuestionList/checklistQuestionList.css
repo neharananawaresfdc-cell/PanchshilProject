@@ -1,0 +1,66 @@
+/********************************************************************************/
+.fixed-width-table {
+    border-left: 2px solid #d8dde6; /* Left border */
+    border-right: 2px solid #d8dde6; /* Right border */
+    border-collapse: collapse;
+}
+
+.fixed-width-table th, .fixed-width-table td {
+    border-top: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+    padding: 10px;
+    text-align: left;
+}
+
+.fixed-width-table th {
+    background-color: #f3f6f9;
+}
+
+/* .fixed-width-table th:nth-child(1),
+.fixed-width-table td:nth-child(1) {
+    width: 25%; 
+}
+
+.fixed-width-table th:nth-child(2),
+.fixed-width-table td:nth-child(2) {
+    width: 20%; 
+}
+
+.fixed-width-table th:nth-child(3),
+.fixed-width-table td:nth-child(3) {
+    width: 25%; 
+}
+
+.fixed-width-table th:nth-child(4),
+.fixed-width-table td:nth-child(4) {
+    width: 30%; 
+} */
+
+/************************************************/
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust height if needed */
+}
+
+.small-button {
+    padding: 0.5rem 1rem;
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+} 
+
+.slds-table {
+    width: 100%; /* Allow table to take full available width */
+    table-layout: auto; /* Auto table layout to allow responsive behavior */
+}
+
+.wrap-text {
+    white-space: normal;  /* Allow text to wrap */
+    word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+    word-break: break-word; /* For additional word-breaking support */
+    max-width: 300px; /* Optional: set a max width for the cell if needed */
+}

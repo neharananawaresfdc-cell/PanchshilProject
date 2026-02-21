@@ -1,0 +1,81 @@
+.input2{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.footerButtons{
+    margin-left: 35%;
+
+}
+.slds-dropdown {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.slds-listbox__option {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.datatable-container {
+    overflow-x: auto; /* Horizontal scrolling */
+    overflow-y: auto; /* Vertical scrolling */
+    max-height: 500px; /* Set a fixed height for vertical scroll */
+    border: 1px solid #d3d3d3; /* Optional border for cleaner look */
+    white-space: nowrap; /* Prevent header text wrapping */
+}
+
+/* Ensure header and cell text are fully visible */
+.datatable-container lightning-datatable {
+    min-width: 1800px; /* Ensure the table stretches for scrolling */
+}
+
+/* Ensure headers are not truncated */
+.datatable-container lightning-datatable thead th {
+    white-space: normal; /* Allow header text to wrap */
+    text-overflow: clip;
+    overflow: hidden;
+    padding: 8px;
+}
+
+/* Ensure table body text wraps properly */
+.datatable-container lightning-datatable tbody td {
+    white-space: normal;
+    padding: 8px;
+}
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownCompanyCode {
+    position: absolute;
+    top: 100%; /* Position below the trigger */
+    left: -336px;
+    width: 212px; /* Adjust width as needed */
+    max-height: 300px; /* Limit height */
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    z-index: 9999; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 8px;
+}
+.dropdownSalesOrg {
+    position: absolute;
+    top: 100%; /* Position below the trigger */
+    left: 11px;
+    width: 212px; /* Adjust width as needed */
+    max-height: 300px; /* Limit height */
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #d3d3d3;
+    z-index: 9999; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 8px;
+}

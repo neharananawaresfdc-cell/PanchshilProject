@@ -1,0 +1,259 @@
+<template>
+    <template if:true={isLoading}>
+        <div class="spinner-container">
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </div>
+    </template>
+    <lightning-card>
+        <div class="form-container">
+            <template if:false={isCHIFSubmit}>
+                <template if:false={isValidOTP}>
+                    <lightning-input 
+                        label="Enter Token Number" 
+                        type="text" 
+                        value={enteredOTP} 
+                        onchange={handleOTPChange} 
+                        maxlength="4" 
+                        message-when-too-long="OTP should be 4 digits"
+                    ></lightning-input>
+                    <lightning-layout horizontal-align="center">
+                        <lightning-layout-item padding="around-small">
+                            <lightning-button label="Verify OTP" onclick={handleVerifyOTP} variant="brand"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>   
+                <template if:true={isValidOTP}>
+                    <lightning-layout vertical-align="start" multiple-rows="true">
+                        <lightning-layout-item padding="around-small" size="12">
+                            <b>Customer Name:</b> {opportunityName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="12">
+                            <b>Project:</b> {projectName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="12">
+                            <b>Tower Name:</b> {towerName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="12">
+                            <b>Type:</b> {villaType}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="12">
+                            <div class="slds-grid slds-gutters slds-align-start">
+                                <div class="slds-col slds-size_1-of-4 slds-p-top_x-small">
+                                    <b>Visiting On Behalf Of:</b>
+                                </div>
+                                <div class="slds-col slds-size_3-of-4">
+                                    <lightning-combobox
+                                    style="margin-top: -10px;  margin-left: -10px;"
+                                        name="onBehalf"
+                                        value={onbehalf}
+                                        options={behalfOptions}
+                                        onchange={handleBehalfChange}
+                                        placeholder="Select an option"
+                                    ></lightning-combobox>
+                                </div>
+                            </div>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <!-- Submit Button -->
+                    <lightning-layout horizontal-align="center">
+                        <lightning-layout-item padding="around-small">
+                            <lightning-button label="Submit" onclick={handleCHIFSubmit} variant="brand"></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>
+            </template>
+            <template if:true={isCHIFSubmit}>
+                <div class="form-title"><b>Possession Checklist </b></div>
+                <form>
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small" size="4">
+                            <b>Project:</b> {projectName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="4">
+                            <b>Tower Name:</b> {towerName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="4">
+                            <b>Type:</b> {villaType}
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small" size="6">
+                            <b>Date of Inspection: </b>{dateOfInspection}
+                        </lightning-layout-item>
+                        <template if:false={formSubmitted}>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div class="slds-grid slds-align-center">
+                                    <label class="slds-m-right_small slds-align-middle" style="font-weight: bold;">Token Number:</label>
+                                    <lightning-input
+                                        type="text"
+                                        value={chifOTP}
+                                        required
+                                        onchange={handleNumberChange}
+                                        variant="label-hidden" 
+                                        max-length="4"
+                                        class="slds-m-left_x-small"
+                                    ></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                        <template if:true={isUpdate}>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div class="slds-grid slds-align-center">
+                                    <label class="slds-m-right_small slds-align-middle" style="font-weight: bold;">Token Number:</label>
+                                    <lightning-input
+                                        type="text"
+                                        value={chifOTP}
+                                        required
+                                        onchange={handleNumberChange}
+                                        variant="label-hidden" 
+                                        max-length="4"
+                                        class="slds-m-left_x-small"
+                                    ></lightning-input>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </lightning-layout>
+                    <!-- Welcome Call Checklist -->
+                    <template if:true ={formSubmitted}>
+                        <template if:true={checklistItems.length}>
+                            <table class="slds-table slds-table_bordered fixed-width-table">
+                                <thead>
+                                    <tr>
+                                        <th>AREA</th>
+                                        <th>Description</th>
+                                        <th style="padding-left:10px">Verified</th>
+                                        <th style="padding-left:10px">Unverified</th>
+                                        <th>Remark</th>
+                                        <!-- <th>Status</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={checklistItems} for:item="question">
+                                        <tr key={question.Id}>
+                                            <td class="wrap-text" ><b>{question.EYI_Area__c}</b></td>
+                                            <td class="wrap-text">{question.Question__c}</td>
+                                        
+                                                <td>
+                                                    <lightning-input type="checkbox" data-id={question.Id} name="valid"
+                                                        checked={question.Valid__c} onchange={handleInputChange}
+                                                        disabled={disableFields} style="padding-left: 15px;" readonly></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-input type="checkbox" data-id={question.Id} name="invalid"
+                                                        checked={question.Invalid__c} onchange={handleInputChange}
+                                                        disabled={disableFields} style="padding-left: 20px;" readonly></lightning-input>
+                                                </td>
+                                                <td class="wrap-text"><lightning-textarea
+                                                        name="remark"
+                                                        data-id={question.Id}
+                                                        value={question.Remarks__c}
+                                                        onchange={handleInputChange}
+                                                        disabled={disableFields}
+                                                    ></lightning-textarea></td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>          
+                        <lightning-layout>
+                           
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div style="text-align: center; padding-left: 50px;padding-top:25px">
+                                    {salesManager}<br>
+                                    <b>Sales Coordinator :</b>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div style="text-align: center; padding-right: 40px;padding-top:25px">
+                                    {opportunityName}<br>
+                                    <b>Client:</b>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>     
+                        <lightning-layout horizontal-align="center">
+                            <lightning-layout-item padding="around-small">
+                                <lightning-button label="Update" onclick={handleUpdate} variant="brand"></lightning-button>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item padding="around-small">
+                                <lightning-button label="Submit" onclick={handleSave} variant="brand"></lightning-button>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item padding="around-small">
+                                <lightning-button label="Print CHIF" onclick={handlePrint} variant="brand"></lightning-button>
+                            </lightning-layout-item>
+
+                            <!-- <template if:true={ispossessionletter}> -->
+                            <lightning-layout-item padding="around-small">
+                                <lightning-button label="Print With Possession Letter" onclick={handleMerge} variant="brand"></lightning-button>
+                            </lightning-layout-item>
+                            <!-- </template> -->
+                        </lightning-layout>
+                    </template>
+        
+                    <template if:false={formSubmitted}>
+                        <template if:true={chifQuestions.length}>
+                            <table class="slds-table slds-table_bordered fixed-width-table">
+                                <thead>
+                                    <tr>
+                                        <th>AREA</th>
+                                        <th>Description</th>
+                                        <th style="padding-left:10px">Verified</th>
+                                        <th style="padding-left:10px">Unverified</th>
+                                        <th>Remark</th>
+                                        <!-- <th>Status</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={chifQuestions} for:item="question">
+                                        <tr key={question.Id}>
+                                            <td class="wrap-text"><b>{question.Area__c}</b></td>
+                                            <td class="wrap-text">{question.Question__c}</td>
+                                                <td>
+                                                    <lightning-input type="checkbox" data-id={question.Id} name="valid"
+                                                        checked={question.Valid__c} onchange={handleInputChange}
+                                                        disabled={disableFields} style="padding-left: 15px;"></lightning-input>
+                                                </td>
+                                                <td>
+                                                    <lightning-input type="checkbox" data-id={question.Id} name="invalid"
+                                                        checked={question.Invalid__c} onchange={handleInputChange}
+                                                        disabled={disableFields} style="padding-left: 20px;"></lightning-input>
+                                                </td> 
+                                                <td class="wrap-text"><lightning-textarea
+                                                        name="remark"
+                                                        data-id={question.Id}
+                                                        value={question.Remarks__c}
+                                                        onchange={handleInputChange}
+                                                    ></lightning-textarea></td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </template>          
+                        <lightning-layout>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div style="text-align: center; padding-left: 50px;padding-top:25px">
+                                    {salesManager}<br>
+                                    <b>Sales Coordinator :</b>
+                                </div>
+                            </lightning-layout-item>
+                            <lightning-layout-item padding="around-small" size="6">
+                                <div style="text-align: center; padding-right: 40px;padding-top:25px">
+                                    {opportunityName}<br>
+                                    <b>Client:</b>
+                                </div>
+                            </lightning-layout-item>
+                        </lightning-layout>      
+                        <!-- Save Button -->
+                        <div class="button-container">
+                                <lightning-button label="Submit" onclick={handleSave}
+                                    variant="brand"></lightning-button>
+                                <lightning-button label="Cancel" onclick={handleCancel}
+                                    style="margin-left: 20px;"></lightning-button>
+                        </div>
+                    </template>
+                </form>
+            </template>
+        </div>
+    </lightning-card>
+</template>

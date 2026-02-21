@@ -1,0 +1,40 @@
+.logoDesign{
+    width : 70px;
+    height: 70px;
+    max-width: 100%;
+    max-height:100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: auto; /* Full viewport height */
+    text-align: center; /* Align text in the center */
+}
+
+/* Style for the image */
+.image {
+    width: 200px; /* Set width of image */
+    height: 200px; /* Set height of image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+    margin-bottom: 10px; /* Add space between the image and text */
+}
+
+.text {
+    font-size: 20px; /* Font size for text */
+    font-weight: bold; /* Optional: make text bold */
+}
+
+.exampleHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.custom-spinner .slds-spinner__dot-a,
+.custom-spinner .slds-spinner__dot-b {
+    background-color: blue !important; /* Apply blue color to all dots */
+}

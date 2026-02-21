@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <template if:true={showErrorScreen}>
+            <div class="slds-p-horizontal_small">
+                <div class="errorMessage">
+                    <div class="errorMessage">
+                        Please approve all payment receipt before initiate cancellation process.
+                    </div>
+                </div>
+            </div>
+        </template>
+        <template if:true={showCaseErrScreen}>
+            <div class="slds-p-horizontal_small">
+                <div class="errorMessage">
+                    {errorMessage}
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <template if:true={jsonInit}>
+        <c-display-json title={title}
+                         json-value={jsonValue}
+                         show-line-numbers={showLineNumbers}
+                         max-string-length={maxStringLength}
+                         sort-objects={sortObjects}
+                         set-icons={setIcons}
+                         syntax-color={syntaxColor}
+                         string-color={stringColor}
+                         number-color={numberColor}
+                         boolean-color={booleanColor}
+                         key-color={keyColor}
+                         keyword-color={keywordColor}
+                        >
+        </c-display-json>
+    </template>
+</template>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <submitter>CRM_Head</submitter>
+        <type>role</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>CaseNumber</field>
+        <field>Owner</field>
+        <field>EYI_Opportunity__c</field>
+        <field>EYI_Case_Assigned_to_RM__c</field>
+        <field>EYI_Cancellation_Reason__c</field>
+        <field>EYI_Additional_Reason_for_Cancellation__c</field>
+        <field>EYI_Cancellation_Request_Date__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <name>EYI_CRM_Head__c</name>
+                <type>relatedUserField</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Case.EYI_RM_Cancellation_Approval_Status__c</field>
+                <operation>equals</operation>
+                <value>Submitted</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Case.EYI_Retention_Request_Sent_By__c</field>
+                <operation>equals</operation>
+                <value>CRM Head</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>RejectRecord</ifCriteriaNotMet>
+        <label>Cancellation Approval to CRM Head</label>
+        <name>Approved_by_Function_Head</name>
+    </approvalStep>
+    <description>Deactivate for new Approval</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <booleanFilter>1 AND (2 OR 3)</booleanFilter>
+        <criteriaItems>
+            <field>Case.EYI_RM_Cancellation_Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved by S&amp;C Head</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.EYI_Retention_Request_Sent_By__c</field>
+            <operation>equals</operation>
+            <value>RM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.EYI_Retention_Request_Sent_By__c</field>
+            <operation>equals</operation>
+            <value>CRM Head</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Update_Stage_for_Cancellation</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Cancellation Deviation Approval for RM2</label>
+    <processOrder>1</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

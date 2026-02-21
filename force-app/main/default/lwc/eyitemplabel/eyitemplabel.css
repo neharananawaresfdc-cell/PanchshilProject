@@ -1,0 +1,10 @@
+.label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+.custom-label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}

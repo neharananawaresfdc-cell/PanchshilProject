@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Lead Conversion</label>
+    <protected>false</protected>
+    <values>
+        <field>EYI_LeadEnquiryVsOppField__c</field>
+        <value xsi:type="xsd:string">EYI_Secondary_Mobile_Number__c:EYI_Alternate_Mobile_No__c,EYI_Mobile_number__c:EYI_Mobile_Number__c,EYI_Lead_Source__c:LeadSource,EYI_Country_code__c: EYI_Country_Code__c,EYI_Lead_Sub_Source__c:EYI_Lead_Sub_Source__c, EYI_Purpose_of_Purchase__c:EYI_Purpose_of_Purchase__c, EYI_Project_Enquired__c:EYI_Project_Enquired__c,EYI_Closing_Manager__c:EYI_Primary_Closing_Manager__c,EYI_REC_Account__c:EYI_REC__c,EYI_Walk_in_Source__c:EYI_Walk_in_Source__c,EYI_Walk_in_Sub_source__c:EYI_Walk_in_Sub_source__c,EYI_Remarks__c:Description,EYI_Nature_of_Lead__c:EYI_Nature_of_Lead__c,EYI_Salutation__c:EYI_Salutation__c,EYI_Budget__c:EYI_Budget_by_CM__c,EYI_Leasing_Manager__c:EYI_Primary_Closing_Manager__c</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>09:30 AM - 10:30 AM</fullName>
+        <default>false</default>
+        <label>09:30 AM - 10:30 AM</label>
+    </customValue>
+    <customValue>
+        <fullName>10:30 AM - 11:30 AM</fullName>
+        <default>false</default>
+        <label>10:30 AM - 11:30 AM</label>
+    </customValue>
+    <customValue>
+        <fullName>11:30 AM - 12:30 PM</fullName>
+        <default>false</default>
+        <label>11:30 AM - 12:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>12:30 PM - 01:30 PM</fullName>
+        <default>false</default>
+        <label>12:30 PM - 01:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>01:30 PM - 02:30 PM</fullName>
+        <default>false</default>
+        <label>01:30 PM - 02:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>02:30 PM - 03:30 PM</fullName>
+        <default>false</default>
+        <label>02:30 PM - 03:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>03:30 PM - 04:30 PM</fullName>
+        <default>false</default>
+        <label>03:30 PM - 04:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>04:30 PM - 05:30 PM</fullName>
+        <default>false</default>
+        <label>04:30 PM - 05:30 PM</label>
+    </customValue>
+    <customValue>
+        <fullName>05:30 PM - 06:30 PM</fullName>
+        <default>false</default>
+        <label>05:30 PM - 06:30 PM</label>
+    </customValue>
+    <description>This is use to specify the time slots during the business hours</description>
+    <masterLabel>Time Slots</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

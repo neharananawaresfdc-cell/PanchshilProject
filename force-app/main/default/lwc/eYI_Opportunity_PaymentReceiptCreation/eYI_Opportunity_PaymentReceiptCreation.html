@@ -1,0 +1,381 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-01-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    
+    <!-- Payment Receipt Details Card -->
+    <!--<lightning-card title={cardTitle} icon-name="standard:account" class="slds-p-around_large"> -->
+    <lightning-card title={cardTitle} icon-name="standard:opportunity" class="slds-p-around_large">
+
+        
+        <div class="slds-grid slds-wrap slds-p-around_large">
+
+            <!-- Instrument Number -->
+             <template if:false={showInputInstead}>
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-combobox
+                        name="applicant"
+                        label="Received From"
+                        value={formData.ReceivedFrom}
+                        disabled={disableFields}
+                        options={applicantOptions}
+                        onchange={handleInputChange}>
+                    </lightning-combobox>
+             </div>
+             </template>
+             <template if:true={showInputInstead}>
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-input 
+                        class="validate"
+                        label="Received From" 
+                        name="CustName" 
+                        type="text" 
+                        value={opportunityName}
+                        disabled="true">
+                    </lightning-input>
+                </div>
+             </template>
+            
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-combobox 
+                        class="validate"
+                        name="EYI_Transaction_Type__c" 
+                        label="Transaction Type" 
+                        value={formData.TransactionType} 
+                        options={picklistOptions.EYI_Transaction_Type__c} 
+                        onchange={handleInputChange}
+                        required
+                        field-level-help="Kindly clear O/S before selecting Advance(if any)."
+                        message-when-value-missing="Transaction Type is required.">
+                    </lightning-combobox>
+                </div>
+
+                <template if:true={showChannelFields}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-input 
+                        class="validate"
+                        label="Challan Number" 
+                        name="ChannelNumber"
+                        type="text" 
+                        onchange={handleInputChange} 
+                        value={formData.ChannelNumber}
+                        required
+                        disabled={disableFields}
+                        >
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-input 
+                        class="validate"
+                        label="Challan Date" 
+                        name="ChannelDate" 
+                        type="Date" 
+                        onchange={handleInputChange} 
+                        value={formData.ChannelDate}
+                        required
+                        disabled={disableFields}
+                        >
+                    </lightning-input>
+                </div>
+                </template>
+
+                <template if:false={showChannelFields}>
+                  <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-combobox 
+                        class="validate"
+                        name="EYI_Category_of_Funding__c" 
+                        label="Category Of Funding" 
+                        value={formData.CategoryofFunnding} 
+                        options={picklistOptions.EYI_Category_of_Funding__c} 
+                        onchange={handleInputChange}
+                        required
+                        disabled={disableFields}
+                        message-when-value-missing="Category Of Funding is required.">
+                    </lightning-combobox>
+                </div>  
+                </template>
+                
+
+                <!-- Instrument Date -->
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-input 
+                        class="validate"
+                        label="Payment Amount" 
+                        name="PaymentAmount" 
+                        type="currency" 
+                        onchange={handleInputChange} 
+                        value={formData.PaymentAmount}
+                        required
+                        disabled={disableFields}
+                        message-when-value-missing="Payment Amount is required."
+                        message-when-bad-input="Please enter a valid amount greater than 0.">
+                    </lightning-input>
+                </div>
+
+                <!-- Bank Name -->
+                 <template if:false={showChannelFields}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-combobox  
+                        class="validate"
+                        name="EYI_Bank_Name__c" 
+                        label="Bank Name" 
+                        value={formData.BankName} 
+                        options={picklistOptions.EYI_Bank_Name__c} 
+                        onchange={handleInputChange}
+                        required
+                        disabled={disableFields}
+                        field-level-help="Bank Name should not exceed 20 characters."
+                        message-when-value-missing="Bank Name is required.">
+                    </lightning-combobox>
+                </div>
+                 </template>
+
+                <!-- Mode of Payment -->
+                 <template if:false={showChannelFields}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-combobox 
+                        class="validate"
+                        name="EYI_Mode_of_Payment__c" 
+                        label="Mode Of Payment" 
+                        value={formData.paymentMode} 
+                        options={picklistOptions.EYI_Mode_of_Payment__c} 
+                        onchange={handleInputChange}
+                        required
+                        message-when-value-missing="Mode of Payment is required.">
+                    </lightning-combobox>
+                </div>
+                 </template>
+                
+                <!-- Cheque/DD Number (Visible only if Mode is Cheque or DD) -->
+                 <template if:false={showChannelFields}>
+                    <template if:true={showChequeDdNumber}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                        <lightning-input 
+                            class="validate"
+                            label="Cheque/DD Number" 
+                            name="ChequeDdNumber" 
+                            type="text" 
+                            onchange={handleInputChange} 
+                            value={formData.ChequeDdNumber}
+                            required={showChequeDdNumber}
+                            disabled={disableFields}
+                            message-when-value-missing="Cheque/DD Number is required."
+                            pattern="\d{6,9}"
+                            message-when-pattern-mismatch="Cheque/DD Number must be 6 to 9 digits.">                            
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <!-- Transaction Type -->
+                <template if:false={showChequeDdNumber}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                        <lightning-input 
+                        class="validate"
+                        label="Instrument Number" 
+                        name="InstrumentNumber" 
+                        onchange={handleInputChange} 
+                        type="text" 
+                        value={formData.InstrumentNumber}
+                        required
+                        disabled={disableFields}
+                        message-when-value-missing="Instrument Number is required.">
+                    </lightning-input>
+                    </div>
+                </template>
+
+                <!-- Payment Amount -->
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-input 
+                        class="validate"
+                        label="Instrument Date" 
+                        name="InstrumentDate" 
+                        type="date" 
+                        onchange={handleInputChange} 
+                        value={formData.InstrumentDate}
+                        required
+                        disabled={disableFields}
+                        message-when-value-missing="Instrument Date is required.">
+                    </lightning-input>
+                </div>
+
+                </template>
+                <template if:true={showRealizationDate}>
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                        <lightning-input 
+                            class="validate"
+                            label="Cheque Realization Date" 
+                            name="RealizationDate" 
+                            type="date" 
+                            onchange={handleInputChange} 
+                            value={formData.RealizationDate}
+                            required
+                            disabled={disableFields}
+                            message-when-value-missing="RealizationDate Date is required.">
+                        </lightning-input>
+                    </div>
+                </template>
+                
+                <!-- Remarks (Long Text) -->
+                <div class="slds-col slds-size_1-of-2 slds-p-right_large slds-p-left_large slds-p-bottom_small">
+                    <lightning-textarea 
+                        class="validate"
+                        name="Remarks"
+                        label="Remarks"
+                        value={formData.Remarks}
+                        onchange={handleInputChange}
+                        required
+                        disabled={disableFields}
+                        message-when-value-missing="Remarks is required.">
+                    </lightning-textarea>
+                </div>
+
+                <!-- Non Bankable Payment (Checkbox) -->
+                <template if:true={showNonBankableCheque}>   
+                    <div class="slds-col slds-size_1-of-2 slds-p-right_small slds-p-left_large slds-p-top_large">
+                        <lightning-input
+                            type="checkbox"
+                            name="NonBankablePayment"
+                            label="Non Bankable Payment"
+                            checked={formData.NonBankablePayment}
+                            onchange={handleInputChange}
+                            disabled="true">
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <!-- File Upload -->
+                <div class="slds-col slds-size_1-of-1 slds-p-around_medium">
+                    <lightning-file-upload
+                        label="Payment Proof"
+                        name="fileUploader"
+                        accept=".pdf,.jpg,.png,.docx"
+                        record-id={recordId} 
+                        onuploadfinished={handleUploadFinished}
+                        multiple="false"
+                        disabled={disableFields}>
+                    </lightning-file-upload>
+                </div>
+                <template if:true={uploadedFiles}>
+                    <template for:each={uploadedFiles} for:item="file">
+                        <div key={file.documentId} class="slds-box slds-box_xx-small slds-m-top_small slds-grid  slds-grid_align-spread">
+                            <span class="slds-truncate slds-p-right_small" title={file.name}>{file.name}</span>
+
+                                <div class="slds-button-group" role="group">
+                                    <lightning-button-icon
+                                        icon-name="utility:preview"
+                                        alternative-text="Preview"
+                                        title="Preview"
+                                        onclick={previewFile}
+                                        data-id={file.documentId}
+                                        class="slds-m-right_xx-small">
+                                    </lightning-button-icon>
+
+                                    <lightning-button-icon
+                                        icon-name="utility:close"
+                                        alternative-text="Remove"
+                                        title="Remove"
+                                        onclick={removeFile}
+                                        data-id={file.documentId}>
+                                    </lightning-button-icon>
+                                </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+
+        <!-- Fetch Line Items Button (for Demand) -->
+        <template if:true={showFetchButton}>
+            <div class="slds-m-top_medium slds-text-align_center slds-p-horizontal_medium">
+                <lightning-button 
+                    label="Fetch Line Items" 
+                    variant="brand" 
+                    onclick={handleFetchLineItems}
+                    icon-name="utility:download">
+                </lightning-button>
+            </div>
+        </template>
+        <template if:true={showSaveButton}>
+            <div class="slds-m-top_medium slds-text-align_center slds-p-horizontal_medium">
+                <lightning-button 
+                    label="Save" 
+                    variant="brand" 
+                    onclick={handleSave}
+                    icon-name="utility:save">
+                </lightning-button>
+            </div>
+            <!-- <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+            </template> -->
+            <template if:true={isSaving}>
+                    <div class="spinner-overlay">
+                        <lightning-spinner alternative-text="Saving..." size="medium"></lightning-spinner>
+                    </div>
+                </template>
+        </template>
+    </lightning-card>
+
+    <!-- Save Button (for Advance with no line items) -->
+    
+    <!-- Line Items Section -->
+    <template if:true={showLineItems}>
+        <lightning-card title="Line Items" icon-name="utility:moneybag">
+            <template if:true={isLoading}>
+                <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+            </template>
+            <!-- Toggle and Amounts -->
+            <div class="slds-grid slds-m-around_small slds-align-top">
+                <!-- <div class="slds-col slds-size_1-of-2">
+                    <lightning-input type="toggle" label="Create Advance?" checked={createAdvance}
+                        onchange={handleAdvanceToggle}>
+                    </lightning-input>
+                </div> -->
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-2 slds-text-heading_small slds-text-color_default slds-text-title_bold slds-text-color_success">
+                            Payment Amount: &nbsp;
+                            <lightning-formatted-number value={paymentAmount} format-style="currency" currency-code="INR">
+                            </lightning-formatted-number>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-text-heading_small slds-text-color_default slds-text-title_bold slds-text-color_weak">
+                            Demanded Amount: &nbsp;
+                            <lightning-formatted-number value={demandedAmount} format-style="currency" currency-code="INR">
+                            </lightning-formatted-number>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+
+                    <div class="slds-text-heading_small slds-text-color_default slds-text-title_bold slds-text-color_brand"
+                        style="color:#0176D3">
+                        Settled Amount: &nbsp;
+                        <lightning-formatted-number value={calculatedAmount} format-style="currency" currency-code="INR">
+                        </lightning-formatted-number>
+                    </div>
+    
+                    <div class="slds-text-heading_small slds-text-color_default slds-text-title_bold slds-text-color_error">
+                        Balance Amount: &nbsp;
+                        <lightning-formatted-number value={advanceAmount} format-style="currency" currency-code="INR">
+                        </lightning-formatted-number>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Spinner -->
+            <!-- Data Table -->
+             <div class="datatable-container">
+                <template if:true={isSaving}>
+                    <div class="spinner-overlay">
+                        <lightning-spinner alternative-text="Saving..." size="medium"></lightning-spinner>
+                    </div>
+                </template>
+                <lightning-datatable key-field="id" data={data} columns={columns} draft-values={draftValues} onsave={handleSave}
+                onrowselection={handleRowSelection} oncellchange={handleCellChange} wrap-text-max-lines=3>
+            </lightning-datatable>
+             </div>
+            
+        </lightning-card>
+    </template>
+    </template>

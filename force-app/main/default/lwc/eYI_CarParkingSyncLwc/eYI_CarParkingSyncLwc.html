@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Car Parking Sync">
+        <div >
+        <template if:true={isRed}>
+         <div class="errorMessage">
+           {messageDisplay}
+        </div>
+        </template>
+        <template if:true={isGreen}>
+         <div class="successMessage">
+            {messageDisplay}
+        </div>
+         </template>
+         <template if:true={isOrange}>
+            <div class="warningMessage">
+              WARNING: {warningDisplay}
+           </div>
+            </template>
+        </div>
+        <template if:true={isSync}>
+            <div class="alreadySynced">
+              {syncedMessage}
+           </div>
+         </template>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+        </br>
+        </br>
+        <!--<lightning-button 
+        label="Broker Validate Data"
+        onclick={validateBrokerData}
+        disabled={isValidateButtonDisabled}
+        class="slds-m-top_medium buttonmargin1">
+        </lightning-button>-->
+
+        <lightning-button 
+        label="Car Parking Sync Data"
+        onclick={validateBrokerData}
+        disabled={isSyncButtonDisabled}
+        class="slds-m-top_medium buttonmargin2">
+        </lightning-button>
+     
+    </lightning-card>
+    
+</template>

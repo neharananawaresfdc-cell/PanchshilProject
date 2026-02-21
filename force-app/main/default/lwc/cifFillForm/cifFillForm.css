@@ -1,0 +1,19 @@
+.slds-card {
+    background-color: rgb(255, 252, 252);
+    color: rgb(0, 0, 0);
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+    border-radius: 10px;
+}
+.slds-modal__container{
+    width:200% !important;
+}
+
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

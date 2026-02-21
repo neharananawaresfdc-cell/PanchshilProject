@@ -1,0 +1,214 @@
+<!--
+  @description       : 
+  @author            : Tushar Mathur
+  @group             : 
+  @last modified on  : 11-12-2024
+  @last modified by  : Tushar Mathur
+-->
+<template>
+    <lightning-card title="Customer Information Form" icon-name="standard:employee_contact" >
+        <img src={panchshillogo} alt="logo" class="logo">
+        <!-- <div class="background-image">
+
+        
+            <img src={panchshillogo} alt="logo" class="logo">
+        </div> -->
+        
+        <div class="slds-p-horizontal_small" >
+            <div class="slds-grid slds-wrap slds-grid_vertical-stretch">
+                <div class="slds-col slds-box slds-form" style="margin: 2px;">
+                        <lightning-card title="Search Customer" icon-name="utility:record_lookup">
+                            <div class="slds-p-horizontal_small">
+                                <lightning-combobox required="true" name="proj" label="Project" value={value}
+                                    placeholder="Select Project" options={projOptions}
+                                    onchange={handleChange}></lightning-combobox>
+
+                                <lightning-combobox required="true" name="conCode" label="Country Code" value={selectedCountryCode} placeholder="Select Country Code"
+                                    options={ccOptions} onchange={handleChange} ></lightning-combobox>
+
+                                <lightning-input type="tel" required="true" label="Mobile Number" name="phone1"
+                                    value={mobileNo} onchange={getMobNum} pattern={selectedCountryCode} message-when-pattern-mismatch="Invalid mobile number for the provided country code."></lightning-input>
+                                <!-- <c-l-w-c-flag-mobile onfinalnumber={getMobNum}></c-l-w-c-flag-mobile> -->
+                                <lightning-input required="true" type="email" label="Email address" value={email}
+                                    onchange={handleChange}></lightning-input>
+                            </div>
+                            <div slot="footer">
+                                <lightning-button variant="brand" icon-name="utility:search" label="Search"
+                                    onclick={handleSearch}></lightning-button> &nbsp;
+                                <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}
+                                    icon-name="utility:close"></lightning-button>
+                            </div>
+                        </lightning-card>
+                </div>
+                <template if:true={isCifExist}>
+                    <div class="slds-col slds-box slds-form" style="margin: 2px;">
+                        <lightning-card title="Customer Information" icon-name="utility:identity">
+                            <div class="slds-p-horizontal_small">
+                                <lightning-input required="true" type="text" label="Customer Name" value={cname}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Project Name" value={proName}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Closing Manager" value={cMname}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Walk-in Source" value={walksrc}
+                                    disabled="true"></lightning-input>
+                            </div>
+                            <div slot="footer">
+                                <div class="slds-text-align_center">
+                                    <template if:true={clonedcif}>
+                                        <div>
+                                            <lightning-button variant="brand"
+                                                label="Click here to Create CIF"
+                                                title="Create cloned CIF record" onclick={generateOTP}
+                                                class="slds-col slds-m-left_x-small slds-text-color_success"></lightning-button>
+                                        </div>
+                                    </template>
+
+                                    <div if:false={clonedcif}>
+                                       <template if:true={oppNotAccepted}>
+                                            <div class="slds-text-color_destructive">
+                                                Please accept opportunity status before creating revisit.
+                                                <a href={oppDetailURL} target="_blank" rel="noopener noreferrer" style="margin-left: 5px;">
+                                                    Click here
+                                                </a>
+                                            </div>
+                                        </template>
+                                        <lightning-button variant="base" icon-name="utility:insert_template"
+                                            label="Click here to create revisit"
+                                            title="Click here to Create New Visit" onclick={newRevisit}
+                                            class=" slds-col slds-m-left_x-small" disabled={oppNotAccepted}></lightning-button>
+                                    </div>
+                                </div>
+                                <!-- <div class="slds-text-align_center"> <span class="slds-text-color_success"></span><a href="#" onclick={newRevisit}> Click here to
+                                        Create New Visit &nbsp;<span><lightning-icon icon-name="utility:insert_template"
+                                                alternative-text="Title" title="Title" variant="Brand"
+                                                size="x-small"></lightning-icon></span></a>
+
+                                </div> -->
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+                <template if:true={isCifNotExist}>
+                    <div class="slds-col slds-box slds-form" style="margin: 2px;">
+                        <lightning-card title="Customer Information" icon-name="utility:identity">
+                            <div class="slds-p-horizontal_small">
+                                <lightning-input required="true" type="text" label="Lead Name" value={lname}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Project Name" value={lproName}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Lead Source" value={ledsource}
+                                    disabled="true"></lightning-input>
+                                <lightning-input required="true" type="text" label="Lead Owner" value={currleadowner}
+                                    disabled="true"></lightning-input>
+                            </div>
+                            <div slot="footer">
+                                <div>
+                                    <div class="slds-text-color_destructive"> Customer Info. does not exists.</div>
+                                    <lightning-button variant="base" icon-name="utility:live_message"
+                                            label="Click here to generate an OTP"
+                                            title="Click here to generate an OTP" onclick={generateOTP}
+                                            class="slds-col slds-m-left_x-small"></lightning-button>
+                                </div>
+
+                                <div>
+                                    <template if:true={isOTPVerfied}>
+                                        <div if:false={clonedcif} class="slds-text-color_destructive"> Customer Info. does not exists. </div>
+                                        <lightning-button variant="brand" icon-name="utility:live_message"
+                                            label="Click here to Create CIF Form"
+                                            title="Click here to Create CIF Form" onclick={handleCreateCIF}
+                                            class="slds-col slds-m-left_x-small"></lightning-button>
+                                    </template>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+    </lightning-card>
+
+
+    <!-- this should be incapsulated in its own component, see https://developer.salesforce.com/docs/component-library/bundle/lightning-modal/documentation -->
+    <template if:true={showModal}>
+        <div class="custom-modal " >
+            <section role="dialog" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <span class="slds-modal__close">
+                            <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="close"
+                                onclick={onHideModal}></lightning-icon>
+                        </span>
+                        <h2 class="slds-text-heading_medium slds-hyphenate"><span> <lightning-icon
+                                    icon-name="utility:edit_form" alternative-text="Title" title="Title"
+                                    size="small"></lightning-icon></span> Fill the form</h2>
+                    </header>
+                    <div class="slds-modal__content">
+                        <template if:true={showCIF}>
+                            <div  >
+                                <c-cif-fill-form record-id={leadId} email-id={email} cust-details={newLead}
+                                    result-callback={handleSubmitReturn} record-type={cifRecordTypeId}
+                                    cif-record-id={cifId} cif-record={clonedcif} onchildevent={handleChildEvent}
+                                     hide-buttons="true" property={projectName}
+                                     onsaveaction={handleSaveAction}></c-cif-fill-form>
+                            </div>
+                        </template>
+                        <template if:true={showRevisitForm}>
+                            <c-cif-revisit-form cif-id={cifId}></c-cif-revisit-form>
+                        </template>
+                        <template if:true={isOTPGenerated}>
+                            <div class=" slds-grid slds-p-around_small slds-align_absolute-center">
+                                <div class="slds-col">
+                                    <lightning-input type="text" name="otp" label="Enter OTP" placeholder="Enter an OTP"
+                                        onchange={handleChange} value={enteredOTP}
+                                        disabled={showErrorMessage}></lightning-input>
+                                </div>
+                            </div>
+                            <div class="slds-text-align_center slds-p-around_small slds-text-color_error"
+                                if:true={showErrorMessage}>
+                                OTP timed out.Please Generate the new OTP</div>
+                            <div class=" slds-grid slds-p-around_xx-small slds-align_absolute-center">
+                                <!-- <a onclick={verifyOTP}>Verify an OTP</a>   -->
+                            </div>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <template if:true={showCIF}>
+                            <div class="slds-align_absolute-center">
+                                <lightning-button label="Cancel" onclick={onHideModal} title="Cancel"
+                                    class="slds-m-right_small" icon-name="utility:close"></lightning-button>
+                                <template if:true={isSave}>
+                                    <lightning-button variant="brand" icon-name="utility:save" label="Save"
+                                    name="cifFillformSave" title="Save" onclick={childCaller}></lightning-button>
+                                </template>
+                            </div>
+                        </template>
+                        <!--   <template if:true={footer1}>
+                            <lightning-button label="Cancel" onclick={onHideModal} title="Cancel"
+                                class="slds-m-right_small" icon-name="utility:close"></lightning-button>
+                            <lightning-button variant="brand" icon-name="utility:save" label="Save"
+                                title="Save"></lightning-button>
+                        </template> -->
+                        <!-- <template if:true={showCustomerVisitForm}>
+                            <lightning-button label="Cancel" onclick={onHideModal} title="Cancel"
+                                class="slds-m-right_small" icon-name="utility:close"></lightning-button>
+                            <lightning-button variant="brand" icon-name="utility:save" label="Save"
+                                title="Save"></lightning-button>
+                        </template> -->
+                        <template if:true={isOTPGenerated}>
+                            <lightning-button icon-name="utility:success" variant="brand" label="Verify OTP"
+                                onclick={verifyOTP} class="slds-m-left_x-small"></lightning-button>
+                            <lightning-button variant="brand-outline" icon-name="utility:contact_request"
+                                label="Resend OTP" onclick={generateOTP} class="slds-m-left_x-small"></lightning-button>
+                        </template>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+
+    </template>
+    
+
+</template>

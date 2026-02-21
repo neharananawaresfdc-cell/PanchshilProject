@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Salaried</fullName>
+        <default>false</default>
+        <label>Salaried</label>
+    </customValue>
+    <customValue>
+        <fullName>Business</fullName>
+        <default>false</default>
+        <label>Business</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional</fullName>
+        <default>false</default>
+        <label>Professional</label>
+    </customValue>
+    <customValue>
+        <fullName>Retired</fullName>
+        <default>false</default>
+        <label>Retired</label>
+    </customValue>
+    <customValue>
+        <fullName>Self Employed</fullName>
+        <default>false</default>
+        <label>Self Employed</label>
+    </customValue>
+    <customValue>
+        <fullName>Homemaker</fullName>
+        <default>false</default>
+        <label>Homemaker</label>
+    </customValue>
+    <customValue>
+        <fullName>Served  in Indian defence</fullName>
+        <default>false</default>
+        <label>Served  in Indian defence</label>
+    </customValue>
+    <masterLabel>Employment Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

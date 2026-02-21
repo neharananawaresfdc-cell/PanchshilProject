@@ -1,0 +1,24 @@
+<template>
+    <template if:true={editable} for:each={stars} for:item="star">
+        <lightning-icon
+            key={star.Index}
+            icon-name="utility:favorite" 
+            variant={star.State}
+            onmouseover={handleRatingHover}
+            onmouseout={handleRatingHoverOut}
+            onclick={handleRatingClick}
+            data-id={star.Index}
+            size={size}
+            src={star.CustomUrl}>
+        </lightning-icon>
+    </template>
+    <template if:false={editable} for:each={stars} for:item="star">
+        <lightning-icon
+            key={star.Index}
+            icon-name="utility:favorite"
+            variant={star.State}
+            size={size}
+            src={star.CustomUrl}>
+        </lightning-icon>
+    </template>
+</template>

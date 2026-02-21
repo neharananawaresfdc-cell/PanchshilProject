@@ -1,0 +1,54 @@
+.footerButtons {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 1rem;
+    z-index: 1;
+    padding-bottom: 45px;
+}
+
+.datatable-wrapper {
+    max-height: 400px; /* Or any height based on your UI */
+    overflow-y: scroll;
+}
+
+/* Attempt to make header sticky */
+.datatable-wrapper lightning-datatable::part(base) {
+    height: 100%;
+    overflow: auto;
+}
+
+.datatable-wrapper lightning-datatable::part(column-header-row) {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: #f3f3f3;
+}
+.table-container {
+    max-height: 250px; /* Vertical scroll */
+    max-width: 100%;   /* Horizontal scroll */
+    overflow: auto;
+    border: 1px solid #d8dde6;
+}
+
+/* Make the datatable header sticky */
+.custom-datatable thead th {
+    position: sticky;
+    top: 0;
+    background: #f3f2f2;
+    z-index: 1;
+}
+
+/* Optional: fix column widths for better horizontal scroll behavior */
+.custom-datatable th,
+.custom-datatable td {
+    min-width: 150px;
+    white-space: nowrap;
+}
+
+.table-container lightning-datatable table thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: white; /* To prevent transparent background */
+}

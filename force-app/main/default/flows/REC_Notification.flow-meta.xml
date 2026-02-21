@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Raise_Invoice_SMS</name>
+        <label>Raise Invoice SMS</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SendSMSRaiseInvoice</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>SendSMSRaiseInvoice</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;+{!$Record.EYI_REC_Account__r.EYI_Mobile__c}+&apos;&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Notification_Before_one_Hour_REC
+ + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>REC Notification {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>REC Notification</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Raise_Invoice_SMS</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Stages__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Stages__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Eligible To Raise Invoice</stringValue>
+            </value>
+        </filters>
+        <object>EYI_Brokerage__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

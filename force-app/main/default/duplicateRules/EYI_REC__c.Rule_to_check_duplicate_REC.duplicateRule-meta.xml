@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Allow</actionOnUpdate>
+    <alertText>Use one of these records?</alertText>
+    <description>If REC Account is present with same REC Primary Mobile number, Secondary mobile number, Primary email id, Secondary email id, PAN No, RERA number, GST, Aadhar</description>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>EYI_REC__c</matchRuleSObjectType>
+        <matchingRule>Rule_to_check_duplicate_REC_Account_matching_rule</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>Rule to check duplicate REC Account</masterLabel>
+    <operationsOnUpdate>Alert</operationsOnUpdate>
+    <operationsOnUpdate>Report</operationsOnUpdate>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>1</sortOrder>
+</DuplicateRule>

@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title={componentLabel}>
+        <div class="slds-p-horizontal_medium">
+            <template if:true={isSpinner}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+            <template if:false={isSpinner}>
+                <template if:true={leadStatusData.length}>
+                    <lightning-datatable
+                        key-field="userName"
+                        data={leadStatusData}
+                        columns={columns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={leadStatusData.length}>
+                    <div class="slds-grid slds-align-middle slds-box">
+                        <lightning-icon icon-name="utility:table" alternative-text="Table Icon" size="small"></lightning-icon>
+                        <span class="slds-m-left_small">{statusHistoryMsg}</span>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

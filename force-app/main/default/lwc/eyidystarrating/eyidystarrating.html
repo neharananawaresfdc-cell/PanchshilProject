@@ -1,0 +1,16 @@
+<template>
+    <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId} onsuccess={handleSuccess}
+            onerror={handleError}>
+        <lightning-messages></lightning-messages>
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-small">
+                <div>
+                <label class="custom-label">{fieldlabel}</label>
+                </div>
+                <c-eyi-star-rating-interactive default-rating={rating} value={rating} size={compsize} total-stars={maxStars} editable={isEditable} onratingclick={handleRatingChange}></c-eyi-star-rating-interactive>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-input-field field-name={fieldApiName} value={rating} class="slds-hide"></lightning-input-field>
+        <!--<lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update"></lightning-button> -->
+    </lightning-record-edit-form>
+</template>

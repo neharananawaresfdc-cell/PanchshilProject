@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Project sync to app</label>
+    <protected>false</protected>
+    <values>
+        <field>API_end_point__c</field>
+        <value xsi:type="xsd:string">https://panchshil-super.lockated.com/projects</value>
+    </values>
+    <values>
+        <field>Auth_API_endpoint__c</field>
+        <value xsi:type="xsd:string">https://panchshil-super.lockated.com/oauth/token</value>
+    </values>
+    <values>
+        <field>Client_Id__c</field>
+        <value xsi:type="xsd:string">bbAArUg42mEfv4Yxzzl66l3fCHIInJL5Hw_kLzDUhT0</value>
+    </values>
+    <values>
+        <field>Client_secret__c</field>
+        <value xsi:type="xsd:string">0mG9uR4ZBsj1EyHtsrw5kGECcaVaUdFWvZ6jOir1ov8</value>
+    </values>
+    <values>
+        <field>Grant_type__c</field>
+        <value xsi:type="xsd:string">password</value>
+    </values>
+    <values>
+        <field>Password__c</field>
+        <value xsi:type="xsd:string">Panchshilsfdc@567</value>
+    </values>
+    <values>
+        <field>Username__c</field>
+        <value xsi:type="xsd:string">usersfdc@panchshil.com</value>
+    </values>
+</CustomMetadata>

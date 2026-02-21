@@ -1,0 +1,52 @@
+<!--
+  @description       : 
+  @author            : Tushar Mathur
+-->
+<template>
+    <lightning-card variant="Narrow" title={title} icon-name="standard:lead">
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+        <template if:false={isLoading}>
+        <div class="slds-p-horizontal_small">
+            <template if:true={useStandardLRF}>
+            <lightning-record-form
+                record-id={recordIdx}
+                object-api-name={objectName}
+                fields={leadFields}
+                columns ={noOfSections}
+                mode="readonly"
+                density="comfy">
+            </lightning-record-form>
+            </template>
+            <template if:false={useStandardLRF}>
+            <template if:true={parentRecord}>
+                <!-- <lightning-record-view-form object-api-name={objectApiName}>
+                    <template for:each={leadFields} for:item="field">
+                        <lightning-output-field key={field} field-name={field.fieldApiName} value={fieldVal}></lightning-output-field>
+                    </template>
+                </lightning-record-view-form> -->
+
+                
+                <div class="slds-grid slds-wrap">                    
+                        <template for:each={leadFields} for:item="field">
+
+                            <div key={field} class="slds-col slds-size_1-of-2 slds-p-around_small">
+                    <div  class="slds-form-element slds-form-element_readonly">
+                        <span class="slds-form-element__label">{field.fieldLabel}</span>
+                        <div class="slds-form-element__control">
+                          <div class="slds-form-element__static">{field.fieldVal}</div>
+                        </div>
+                    </div>
+                </div>
+
+                </template>
+                    
+                    </div>
+
+            </template>
+        </template>
+        </div>
+    </template>
+    </lightning-card>
+</template>

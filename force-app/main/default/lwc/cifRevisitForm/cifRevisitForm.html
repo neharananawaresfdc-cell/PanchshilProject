@@ -1,0 +1,34 @@
+<template>
+    <template if:true={isSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+    </template>
+    
+    <div class="slds-p-around_medium"> 
+    <lightning-record-edit-form object-api-name={ojectApiName} onsuccess={handleSuccess} onsubmit={handleSubmit} onerror={handleError}>
+        <lightning-messages> </lightning-messages>
+        <lightning-input-field field-name='EYI_Visit_Date_Time__c' value={defaultDateValue} disabled> </lightning-input-field>
+        <lightning-input-field field-name='EYI_Opportunity__c' value={OpportunityId} disabled> </lightning-input-field>
+        <lightning-input-field field-name='EYI_Revisiting_OTP__c' required> </lightning-input-field>
+        <div>
+            <lightning-button variant="base" icon-name="utility:live_message"
+            label="Click here to generate OTP"
+            title="Click here to generate OTP" onclick={sendOTPEmail}
+            class="slds-col slds-m-left_x-small"></lightning-button>
+        </div>
+        <lightning-input-field field-name='EYI_Visiting_With__c'> </lightning-input-field>
+        <lightning-input-field field-name='EYI_Number_of_Person__c'> </lightning-input-field>
+        <lightning-input-field field-name='EYI_Secondary_Closing_Manager__c' value={closingManager}> </lightning-input-field>
+        <lightning-input-field field-name='EYI_Remark__c'> </lightning-input-field>
+        <!-- <lightning-combobox
+                name="Visiting With"
+                label="Visiting With"
+                value={visitingWith}
+                options={visitingWithOptions}
+                onchange={handleChange} ></lightning-combobox> -->
+        <div class="slds-align_absolute-center slds-var-m-top_medium">
+            <lightning-button variant="brand" type="submit" label="Save">
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form>
+    </div>
+</template>

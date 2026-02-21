@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item flexibility="auto">
+            <lightning-card title={title} >
+                <div class = "custom-box slds-box">
+                    <c-copy-to-clipboard text-to-copy={jsonString}></c-copy-to-clipboard>
+                    <div class={showLineNumbers}>
+                    <div class = "jsonContainer"  lwc:dom="manual"></div>
+                    </div>
+                    <div if:true={errorMessage} class="error">
+                        {errorMessage}<br><br>{jsonValue}
+                    </div>
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Alert_for_rera_expiration</name>
+        <label>Alert for rera expiration</label>
+        <locationX>204</locationX>
+        <locationY>2160</locationY>
+        <actionName>EYI_REC__c.Alert_for_rera_expiration_date</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_REC__c.Alert_for_rera_expiration_date</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Anniversary_email_to_REC</name>
+        <label>Send Anniversary email to REC</label>
+        <locationX>50</locationX>
+        <locationY>1368</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Verify_Number_is_present1111</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>$Record.Owner:User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Happy Anniversary from the Panchshil Family!</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Dear {!$Record.EYI_REC_Full_Name__c},&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;On behalf of the Panchshil family, we would like to wish you a very Happy Anniversary!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;May your special day be filled with love, warmth, and cherished memories. Your partnership with us is truly valued, and we look forward to continuing this incredible journey together.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Best regards,&lt;/p&gt;&lt;p&gt;Team Panchshil&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Birth_Day_Notification_to_REC_Account</name>
+        <label>Send Birth Day Notification to REC Account</label>
+        <locationX>50</locationX>
+        <locationY>768</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_to_REC_For_Birth_Day</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>BirthDay_Notification_to_REC</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Birthday_Email_to_REC</name>
+        <label>Send Birthday Email to REC</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Verify_Number_is_present</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>$Record.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>$Record.Owner:User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Warm Birthday Wishes to You from the Panchshil Family</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <stringValue>&lt;p&gt;Dear {!$Record.EYI_REC_Full_Name__c},&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;On behalf of the Panchshil family, we would like to wish you a very Happy Birthday!&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;May this year bring you immense joy and the inspiration to achieve all that you aspire for in the year ahead. We appreciate&amp;nbsp;your association with us and look forward to celebrating many milestones together.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Best regards,&lt;/p&gt;&lt;p&gt;Team Panchshil&lt;/p&gt;</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>sendRichBody</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_Notification_For_Anniversary</name>
+        <label>Send SMS Notification For Anniversary</label>
+        <locationX>50</locationX>
+        <locationY>1776</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Check_30_days_before_expiration</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SMS_For_Anniversary</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_to_REC_For_Birth_Day</name>
+        <label>Send SMS to REC For Birth Day</label>
+        <locationX>50</locationX>
+        <locationY>876</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Check_Anniversary_of_REC_Account</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SMS_For_Birthday</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification_to_REC_for_anniversary</name>
+        <label>Send WhatsApp Notification to REC for anniversary</label>
+        <locationX>50</locationX>
+        <locationY>1668</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_Notification_For_Anniversary</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Check_Anniversary</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_30_days_before_expiration</name>
+        <label>Check 30 days before expiration</label>
+        <locationX>336</locationX>
+        <locationY>2052</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_30_days_before</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>RERA_Expiry</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <numberValue>30.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Alert_for_rera_expiration</targetReference>
+            </connector>
+            <label>If 30 days before</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Account_REC_Birth_Day</name>
+        <label>Check Account REC Birth Day</label>
+        <locationX>336</locationX>
+        <locationY>252</locationY>
+        <defaultConnector>
+            <targetReference>Check_Anniversary_of_REC_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Account_REC_Birth_Day_is_Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>check_BirthDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Verify_REC_Email_is_present</targetReference>
+            </connector>
+            <label>If Account REC Birth Day is Today</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Anniversary_of_REC_Account</name>
+        <label>Check Anniversary of REC Account</label>
+        <locationX>336</locationX>
+        <locationY>1152</locationY>
+        <defaultConnector>
+            <targetReference>Check_30_days_before_expiration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_REC_Account_Anniversary_date_matches_today_s_date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Check_Anniversary_Date</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Verify_Email_is_present</targetReference>
+            </connector>
+            <label>If REC Account Anniversary date matches today&apos;s date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_Email_is_present</name>
+        <label>Verify Email is present</label>
+        <locationX>182</locationX>
+        <locationY>1260</locationY>
+        <defaultConnector>
+            <targetReference>Verify_Number_is_present1111</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_is_Present11</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Anniversary_email_to_REC</targetReference>
+            </connector>
+            <label>Email is Present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_Number_is_present</name>
+        <label>Verify Number is present</label>
+        <locationX>182</locationX>
+        <locationY>660</locationY>
+        <defaultConnector>
+            <targetReference>Check_Anniversary_of_REC_Account</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Number_is_present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Primary_Mob_No_with_Country_Code__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Birth_Day_Notification_to_REC_Account</targetReference>
+            </connector>
+            <label>Number is present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_Number_is_present1111</name>
+        <label>Verify Number is present</label>
+        <locationX>182</locationX>
+        <locationY>1560</locationY>
+        <defaultConnector>
+            <targetReference>Check_30_days_before_expiration</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Number_is_present1111</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Primary_Mob_No_with_Country_Code__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_WhatsApp_Notification_to_REC_for_anniversary</targetReference>
+            </connector>
+            <label>Number is present</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_REC_Email_is_present</name>
+        <label>Verify REC Email is present</label>
+        <locationX>182</locationX>
+        <locationY>360</locationY>
+        <defaultConnector>
+            <targetReference>Verify_Number_is_present</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Email_is_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Birthday_Email_to_REC</targetReference>
+            </connector>
+            <label>Email is Present</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>BirthDay_Notification_to_REC</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Template_for_BirthDay + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Check_Anniversary</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.Whatsapp_Template_for_Anniversary + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Check_Anniversary_Date</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    MONTH({!$Record.EYI_Anniversary_Date__c}) = MONTH(TODAY()),
+    DAY({!$Record.EYI_Anniversary_Date__c}) = DAY(TODAY())
+)</expression>
+    </formulas>
+    <formulas>
+        <name>check_BirthDate</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    MONTH({!$Record.EYI_Birth_Date__c}) = MONTH(TODAY()),
+    DAY({!$Record.EYI_Birth_Date__c}) = DAY(TODAY())
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CheckExpiry</name>
+        <dataType>Boolean</dataType>
+        <expression>TODAY() - {!$Record.EYI_RERA_Expiry_Date__c} = 30</expression>
+    </formulas>
+    <formulas>
+        <name>RERA_Expiry</name>
+        <dataType>Number</dataType>
+        <expression>ABS(TODAY() - {!$Record.EYI_RERA_Expiry_Date__c})</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>Send_SMS_Notification_for_ClosedDate_Expiration</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.SMS_when_oppo_closed_date_passed + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Send_Whatsapp_Notification_for_ClosedDate_Expiration</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.Whatsapp_Notification_when_Oppo_TAT_Expire + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>sendSMSBefore10Days</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.SMS_before_10_days + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_For_Anniversary</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.SMS_Template_for_Anniversary + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_For_Birthday</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.SMS_to_send_Birth_day + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_Notification_for_birthday</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Template_for_BirthDay + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <formulas>
+        <name>Today_Date</name>
+        <dataType>Date</dataType>
+        <expression>Today()</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsappForTAT</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot; {!$Record.EYI_Mobile__c}&quot;,&quot;templateId&quot;:&quot;a12C4000000hFAHIA2&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>whatsAppNotificationClosedDate</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Notification_Closed_Date
+ + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>Send BirthDay and Anniversary Notification to REC Account {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EYI Send Birth Day and Anniversary Notification to REC Account</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>210</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Account_REC_Birth_Day</targetReference>
+        </connector>
+        <object>EYI_REC__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-02-01</startDate>
+            <startTime>14:22:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

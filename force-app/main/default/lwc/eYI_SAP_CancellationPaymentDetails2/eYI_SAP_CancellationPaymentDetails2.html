@@ -1,0 +1,1007 @@
+<!--
+  @description       : 
+  @author            : Abhishek Verma
+  @group             : 
+  @last modified on  : 05-29-2025
+  @last modified by  : Abhishek Verma
+-->
+<template>
+    <div class="input-container">
+         <!-- Cancellation Details Section -->
+        <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Cancellation Details</div>
+<div class="slds-grid slds-wrap">
+    <!-- Row 1 -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Cancellation Type" value={cancellationType}
+                           options={cancellationTypeOptions} 
+                           onchange={handleCancellationTypeChange}
+                           disabled={isDataLoaded}></lightning-combobox>
+    </div>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Cancellation Subtype" value={cancellationSubtype}
+                           options={cancellationSubtypeOptions}
+                           onchange={handleCancellationSubtypeChange}
+                           disabled={isDataLoaded}></lightning-combobox>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Cancellation Reason" value={cancellationReason}
+                           options={cancellationReasonOptions}
+                           onchange={handleCancellationReasonChange}
+                           ></lightning-combobox>
+    </div>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Cancellation Status" value={cancellationStatus}
+                           options={cancellationStatusOptions}
+                           onchange={handleCancellationStatusChange}
+                          ></lightning-combobox>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Cancellation Commencement" value={cancellationCommencement}
+                           options={cancellationCommencementOptions}
+                           onchange={handleCancellationCommencementChange}
+                           ></lightning-combobox>
+    </div>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox label="Registration Status" value={registrationStatus}
+                           options={registrationStatusOptions}
+                           onchange={handleRegistrationStatusChange}
+                           ></lightning-combobox>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-textarea label="Cancellation Remarks" value={cancellationRemarks}
+                           onchange={handleCancellationRemarksChange}
+                           disabled={isDataLoaded}></lightning-textarea>
+    </div>
+
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="date" label="Date of Cancellation Initiated" 
+                        value={dateOfCancellationInitiated}
+                        onchange={handleDateOfCancellationInitiatedChange}
+                        disabled={isDataLoaded}></lightning-input>
+    </div>
+</div>
+        <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade headerStyle slds-m-top_small">Payment Information</h3> -->
+        <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Payment Information</div>
+        
+        <div class="slds-grid slds-wrap">
+         <!-- Row 5 -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="number" label="Agreement Value" 
+                            value={agreementValue}
+                            onchange={handleAgreementValue} disabled="true"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="number" label="Total Cost" 
+                            value={totalCost}
+                            onchange={handleTotalCost} disabled="true"></lightning-input>
+        </div>
+
+         <!-- Row 6 -->
+         <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="text" label="Sales Order Number" 
+                            value={salesOrderNumber}
+                            onchange={handleSalesOrderNumber} disabled="true"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="number" label="Stamp Duty" 
+                            value={stampDuty}
+                            onchange={handlestampDuty} disabled="true"></lightning-input>
+        </div>
+</div>
+<br>
+        <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">Brokrage Details</h3> -->
+        <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Brokerage Details</div>
+
+         <div class="slds-grid slds-wrap">
+
+         <!-- Row 7 -->
+         <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="text" label="REC Name" 
+                            value={recName}
+                            onchange={handleRecName} disabled="true"></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="text" label="RERA Number" 
+                            value={reraNumber}
+                            onchange={handleReraNumber} disabled="true"></lightning-input>
+
+        </div> 
+        
+        <!-- Row 8 -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="text" label="REC Code (SAP)" 
+                           value={recCode}
+                           onchange={handleRecCode} disabled="true"></lightning-input>
+       </div>
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="number" label="Brokrage Total Amount" 
+                           value={brokrageTotalAmount}
+                           onchange={handleBrokrageTotalAmount} disabled="true"></lightning-input>
+       </div>
+    </div>
+<br>
+       <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">Retention Information</h3> -->
+       <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Retention Information</div>
+       
+        <div class="slds-grid slds-wrap">
+        <!-- Row 9 -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-combobox options={retentionEnablersOptions} label="Retention Enablers" 
+                           value={retentionEnablers}
+                           onchange={handleRetentionEnablers}></lightning-combobox>
+       </div>
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="text" label="Retention Remarks" 
+                           value={retentionRemarks}
+                           onchange={handleRetentionRemarks}></lightning-input>
+       </div>
+        
+        <!-- Row 10 -->
+                <!-- <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-combobox
+                name="retainedByUser"
+                label="Retained By User"
+                value={retainedByUser}
+                options={userOptions}
+                onchange={handleRetainedByUser}>
+            </lightning-combobox>
+        </div> -->
+         <!-- <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+    <lightning-record-edit-form
+        object-api-name="Opportunity"
+        record-id={recordId}>
+        <lightning-input-field field-name="EYI_Sourcing_Manager__c" value={retainedUser} onchange={handleRecordChange}></lightning-input-field>
+    </lightning-record-edit-form>
+    <lightning-record-picker object-api-name="Account" value={retainedByUser} onchange={handleRecordChange}>
+    </lightning-record-picker>
+</div> -->
+<div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <!-- <lightning-record-edit-form object-api-name="Case" record-id={cancellationId}>
+            <lightning-input-field 
+                field-name="EYI_Retained_by_User__c"
+                onchange={handleRetainedByUserMethod}>
+            </lightning-input-field>
+        </lightning-record-edit-form> -->
+        <lightning-record-picker
+    label="Select Retained By User"
+    object-api-name="User"
+    value={retainedByUser}
+    onchange={handleRetainedByUser}>
+</lightning-record-picker>
+    </div>
+
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="date" label="Retention Date" 
+                           value={retentionDate}
+                           onchange={handleRetentionDate}></lightning-input>
+       </div>
+       
+        <!-- Row 11 -->
+        <!--<div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="" label="Approval Retention Hierarchy" 
+                           value={approvalRetentionHierarchy}
+                           onchange={handleApprovalRetentionHierarchy} disabled="true"></lightning-input> 
+       </div>
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="" label="Approval Cancellation Hierarchy" 
+                           value={approvalCancellationHierarchy}
+                           onchange={handleApprovalCancellationHierarchy} disabled="true"></lightning-input>
+
+       </div>-->
+        </div>
+<br>
+       <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">Source Details</h3> -->
+       <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Source Details</div>
+        
+       <div class="slds-grid slds-wrap">
+        <!-- Row 12 -->
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="text" label="Sourcing Manager" 
+                        value={sourcingManager}
+                        onchange={handleSourcingManager} disabled="true"></lightning-input>
+     </div>
+     <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="text" label="Closing Manager" 
+                        value={closingManager}
+                        onchange={handleClosingManager} disabled="true"></lightning-input>
+     </div>
+
+      <!-- Row 13 -->
+      <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="text" label="Relationship Manager" 
+                        value={relationshipManager}
+                        onchange={handleRelationshipManager} disabled="true"></lightning-input>
+     </div>
+     <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="text" label="Booking Source" 
+                        value={bookingSource}
+                        onchange={handleBookingSource} disabled="true"></lightning-input>
+    </div>
+</div>
+<br>
+    <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">Refund Bank Details</h3> -->
+    <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Refund Bank Details</div>
+  <div class="slds-grid slds-wrap">
+      <!-- Row 14 -->
+      <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <!-- <lightning-input type="text" label="Bank Name" 
+                        value={bankName}
+                        onchange={handleBankName} ></lightning-input> -->
+                        <lightning-combobox options={bankNameOption} label="Bank Name" 
+                           value={bankName}
+                           onchange={handleBankName}></lightning-combobox>
+    </div>
+    <template if:true={showOtherBank}>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input type="text" label="Bank Name" 
+                            value={otherBankName}
+                            onchange={handleOtherBankName} required></lightning-input>
+                            
+        </div>
+    </template>
+    
+    
+
+        <!-- Row 15 -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="text" label="IFSC Code" 
+                           value={ifscCode}
+                           onchange={handleIfscDetails} ></lightning-input>
+       </div>
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="text" label="Applicant" 
+                           value={applicant}
+                           onchange={handleapplicant} disabled="true"></lightning-input>
+       </div>
+       
+        <!-- Row 16 -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+           <lightning-input type="text" label="Account Number" 
+                           value={accountNumber}
+                           onchange={handleaccountNumber}></lightning-input>
+       </div>
+       <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input type="text" label="Check Number" 
+                        value={checkNumber}
+                        onchange={handleCheque}></lightning-input>
+    </div>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-large">
+        <lightning-input type="Checkbox" label="Submit Form" 
+        checked={isCancellationSubmit}
+                        onchange={handleCancellationSubmit}></lightning-input>
+    </div>
+  </div>
+
+      <!--Abhilasha Code End -->
+
+        
+        <!-- <lightning-layout>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-input label="Customer Number" value={customerNumber} disabled></lightning-input>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small">
+                <lightning-input label="Company Code" value={companyCode} disabled></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout> -->
+        <lightning-layout horizontal-align="center">
+            <template if:true={showSearchBtn}>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-button label="Fetch Cancellation Details" variant="brand" icon-name="utility:search" onclick={handleSearch}></lightning-button>
+                </lightning-layout-item>
+            </template>
+            
+        </lightning-layout>
+
+   
+        <div class="slds-text-heading_medium slds-text-align_center slds-p-around_x-small  sapHeader">SAP Details</div>
+    <!--</div>-->
+    <template if:true={showData}>
+        <!-- <div class="main-div" > -->
+        <lightning-layout class="header-row slds-p-around_small slds-text-align_center">
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: #D9D9D9;">
+                <b class="fontSize">Total Received Amount</b><br/>
+                <P style="font-size: 12PX;">(As per Receipt approved header)</P>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: rgb(237 238 238);">
+                <b class="fontSize">{totalReceivedAmount}</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: #D9D9D9;">
+                <b class="fontSize">Total Amount charged to the customer</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: rgb(237 238 238);">
+                <b class="fontSize" style="text-align: center;">{totalAmountCharged}</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: #D9D9D9;">
+                <b class="fontSize">Amount given to customer as part of other adjustments</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: rgb(237 238 238);">
+                <b class="fontSize">{amountToCustofAdjustment}</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: #D9D9D9;">
+                <b class="fontSize">Total Refund to be given to customer</b>
+            </lightning-layout-item>
+            <lightning-layout-item class="table-cell-first" flexibility="1" style="background-color: rgb(237 238 238);">
+                <b>{totalRefundtoCustomer}</b>
+            </lightning-layout-item>
+        </lightning-layout><br/>
+
+        <!-- Receipts Approved Start-->
+         <!-- Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Receipts Approved
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Receipts Approved</div>
+
+<!-- Content Row -->
+<div class="slds-grid slds-wrap">
+    <!-- Column 1: Payment Done -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Payment done" 
+            value={PAID_P} 
+            disabled>
+        </lightning-input>
+    </div>
+
+    <!-- Column 2: Reversal to Customer -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Reversal to customer" 
+            value={REFUND_P} 
+            disabled>
+        </lightning-input>
+    </div>
+</div>
+
+        <!--<div class="">
+            
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    <b>Receipts Approved</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        
+  
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Payment done</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>10001</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Reversal to customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{reversalToCustomer}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>-->
+        <!-- Receipts Approved End-->
+
+        <!-- Demanded Amount Start-->
+         <!-- Section Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Demanded Amount
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Demanded Amount</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Principal -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Principal" value={DEMAND_P} disabled></lightning-input>
+    </div>
+
+    <!-- Tax -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Tax" value={DEMAND_T} disabled></lightning-input>
+    </div>
+
+    <!-- Principal Reversed -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Principal Reversed" value={DEMAND_P_R} disabled></lightning-input>
+    </div>
+
+    <!-- Tax Reversed -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Tax Reversed" value={DEMAND_T_R} disabled></lightning-input>
+    </div>
+
+    <!-- Charged to Customer -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Charged to customer" value={Demand_CTC} disabled></lightning-input>
+    </div>
+
+</div>
+<!-- Down Payment Amount-->
+ <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Down Payment Amount</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Principal -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Down Payment Amount - Principal" value={DOWNPAYMENT_P} disabled></lightning-input>
+    </div>
+
+    <!-- Tax -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Down Payment Amount - Tax" value={DOWNPAYMENT_T} disabled></lightning-input>
+    </div>
+
+    <!-- Principal Reversed -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Reversal Down Payment Amount - Principal" value={DOWNPAYMENT_P_R} disabled></lightning-input>
+    </div>
+
+    <!-- Tax Reversed -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Reversal Down Payment Amount - Tax" value={DOWNPAYMENT_T_R} disabled></lightning-input>
+    </div>
+
+    <!-- Charged to Customer -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Charged To Customer" value={DOWNPAYMENT_CTC} disabled></lightning-input>
+    </div>
+
+</div>
+        <!--<div class="table-wrapper">
+            
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    Demanded Amount
+                </lightning-layout-item>
+            </lightning-layout>
+        
+            
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEMAND_P}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEMAND_T}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal Reversed</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEMAND_P_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax Reversed</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEMAND_T_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Charged to customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{demandAmountCustCharge}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div><br/>-->
+        <!-- Demanded Amount Start-->
+        <!-- Type & Other Debit Notes and Credit Notes Start-->
+         <!--Other Debit Note Start-->
+         <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+            Other Debit Notes
+        </h3> -->
+        <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Other Debit Notes</div>
+        
+        <!-- Grid Layout -->
+        <div class="slds-grid slds-wrap">
+        
+            <!-- Principal -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Principal" value={DEBIT_P} disabled></lightning-input>
+            </div>
+        
+            <!-- Tax -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Tax" value={DEBIT_T} disabled></lightning-input>
+            </div>
+        
+            <!-- Principal Reversed -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Principal Reserved" value={DEBIT_P_R} disabled></lightning-input>
+            </div>
+        
+            <!-- Tax Reversed -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Tax Reversed" value={DEBIT_T_R} disabled></lightning-input>
+            </div>
+        
+            <!-- Charged to Customer -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Charged to customer" value={DEBIT_CTC} disabled></lightning-input>
+            </div>
+        
+        </div>
+        
+         <!--Other Debit Note End-->
+         <!--Other Credit Note Start-->
+         <!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+            Other Credit Notes
+        </h3> -->
+        <div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Other Credit Notes</div>
+        
+        <!-- Grid Layout -->
+        <div class="slds-grid slds-wrap">
+        
+            <!-- Principal -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Principal" value={CREDIT_P} disabled></lightning-input>
+            </div>
+        
+            <!-- Tax -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Tax" value={CREDIT_T} disabled></lightning-input>
+            </div>
+        
+            <!-- Principal Reversed -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Principal Reserved" value={CREDIT_P_R} disabled></lightning-input>
+            </div>
+        
+            <!-- Tax Reversed -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Tax Reversed" value={CREDIT_T_R} disabled></lightning-input>
+            </div>
+        
+            <!-- Charged to Customer -->
+            <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+                <lightning-input label="Charged to customer" value={CREDIT_CTC} disabled></lightning-input>
+            </div>
+        
+        </div>
+        
+         <!--Other Credit Note End-->
+        <!--<div class="table-wrapper">
+           
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-4 header-Layout" flexibility="auto">
+                    <b>Type</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell-custom slds-text-align_center header-Layout" flexibility="auto">
+                    <b>Other Debit Notes and Credit Notes</b>
+                </lightning-layout-item>
+            </lightning-layout>
+    
+            
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-4" flexibility="auto">
+                    <b>Debit Note</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEBIT_P}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEBIT_T}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal Reserved</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEBIT_P_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax Reserved</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{DEBIT_T_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Charged to customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{creditChargeCust}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+    
+            
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-4" flexibility="auto">
+                    Credit Note
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{CREDIT_P}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{CREDIT_T}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Principal Reserved</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{CREDIT_P_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Tax Reserved</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{CREDIT_T_R}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Charged to customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{creditChargeCust}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div><br/>-->
+        <!-- Type & Other Debit Notes and Credit Notes Start-->
+
+        <!-- Interest charged to customer Start-->
+        <!--<div class="">
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    <b>Interest charged to customer</b>
+                </lightning-layout-item>
+            </lightning-layout>
+
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Total Interest Accrued</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{INTEREST_C}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Interest waiver given to the customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell-input" flexibility="auto">
+                    <lightning-input name="Interest Waiver to Customer" type="number" value={interestWaiver} onchange={handleInterestWaiverChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Total Interest to be charged to the customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{totalInterestCharged}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div><br/>-->
+        <!-- Section Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Interest charged to customer
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Interest charged to customer</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Total Interest Accrued (read-only) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input label="Total Interest Accrued" value={INTEREST_C} disabled></lightning-input>
+    </div>
+
+    <!-- Interest Waiver given to the customer (editable) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Interest waiver given to the customer"
+            type="number"
+            value={interestWaiver}
+            onchange={handleInterestWaiverChange}>
+        </lightning-input>
+    </div>
+
+    <!-- Total Interest to be charged to the customer (read-only) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Total Interest to be charged to the customer"
+            value={totalInterestCharged}
+            disabled>
+        </lightning-input>
+    </div>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Remarks"
+            type="text"
+            value={interestChargedRemark}
+            onchange={handleInterestChargedRemark}
+            >
+        </lightning-input>
+    </div>
+
+</div>
+
+        <!-- Interest charged to customer End-->
+
+        <!-- Brokerage Amount Start-->
+        <!--<div class="">
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    <b>Brokerage Amount</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_2-of-3" style="padding-top: 0px">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Total Brokerage paid</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{BROKERAGE}</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Brokerage waiver given to the customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell-input" flexibility="auto">
+                    <lightning-input name="Brokerage Waiver to Customer" type="number" value={brokerageWaiver} onchange={handleBrokerageWaiverChange}></lightning-input>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Total Brokerage amount to be charged to the customer</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>{totaBrokerageCharged}</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div><br/>-->
+        <!-- Section Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Brokerage Amount
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Brokerage Amount</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Total Brokerage paid (read-only) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Total Brokerage paid" 
+            value={BROKERAGE} 
+            disabled>
+        </lightning-input>
+    </div>
+
+    <!-- Brokerage waiver given to the customer (editable) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Brokerage waiver given to the customer" 
+            type="number" 
+            value={brokerageWaiver} 
+            onchange={handleBrokerageWaiverChange}>
+        </lightning-input>
+    </div>
+
+    <!-- Total Brokerage amount to be charged to the customer (read-only) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Total Brokerage amount to be charged to the customer" 
+            value={totaBrokerageCharged} 
+            disabled>
+        </lightning-input>
+    </div>
+
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Remarks"
+            type="text"
+            value={brokerageChargedRemarks}
+            onchange={handleBrokerageChargedRemarks}
+            >
+        </lightning-input>
+    </div>
+
+</div>
+
+        <!-- Brokerage Amount End-->
+
+        <!-- Other Adjustments (if required) Start-->
+        <!--<div class="">
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_1-of-2">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    <b>Other Adjustments (if required)</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_1-of-2" style="padding-top: 0px;">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Other adjustments to be included?</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell-input" flexibility="auto">
+                    <lightning-combobox
+                        name="yesNo"
+                        value={otherAdjustment}
+                        placeholder="Select an option"
+                        options={picklistOptions}
+                        onchange={handleOtherAdjustment}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <template if:true={showOtherAdjustmentValue}>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Other adjustments to be given as part of refund to the customer</b>
+                </lightning-layout-item>
+                
+                    <lightning-layout-item class="table-cell-input" flexibility="auto">
+                        <lightning-input name="OtherAdjustment" type="number" value={otherAdjustmentRefund} onchange={handleOtherAdjustmentRefund}></lightning-input>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div><br/>-->
+        <!-- Section Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Other Adjustments (if required)
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Other Adjustments (if required)</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Combobox: Other adjustments to be included? -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox
+            label="Other adjustments to be included?"
+            name="yesNo"
+            value={otherAdjustment}
+            placeholder="Select an option"
+            options={picklistOptions}
+            onchange={handleOtherAdjustment}>
+        </lightning-combobox>
+    </div>
+
+    <!-- Conditionally shown input -->
+    <template if:true={showOtherAdjustmentValue}>
+        <!-- Other adjustment refund input -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input
+                label="Other adjustments to be given as part of refund to the customer"
+                name="OtherAdjustment"
+                type="number"
+                value={otherAdjustmentRefund}
+                onchange={handleOtherAdjustmentRefund}>
+            </lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Remarks"
+            type="text"
+            value={otherAdjustmentRemark}
+            onchange={handleotherAdjustmentRemark}
+            >
+        </lightning-input>
+    </div>
+    </template>
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input
+                label="TDS Amount"
+                name="tdsAmount"
+                type="number"
+                value={tdsAmount}
+                onchange={handleTDSAmount}>
+            </lightning-input>
+        </div>
+
+</div>
+
+        <!-- Other Adjustments (if required) End-->
+
+         <!-- Forfeiture Amount -->
+         <!--<div class="">
+            <lightning-layout class="header-row slds-p-around_small slds-text-align_center slds-size_1-of-2">
+                <lightning-layout-item class="table-cell-custom slds-size_1-of-1 header-Layout" flexibility="auto">
+                    <b>Forfeiture Amount</b>
+                </lightning-layout-item>
+            </lightning-layout>
+        
+            <lightning-layout  class="header-row slds-p-around_small slds-text-align_center slds-size_1-of-2" style="padding-top: 0px;">
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Should an amount be forfeited?</b>
+                </lightning-layout-item>
+                <lightning-layout-item class="table-cell-input" flexibility="auto">
+                    <lightning-combobox
+                        name="yesNo"
+                        value={forfeitedAmount}
+                        placeholder="Select an option"
+                        options={picklistOptions}
+                        onchange={handleForfeitedAmountChange}>
+                    </lightning-combobox>
+                </lightning-layout-item>
+                <template if:true={showForfeitedAmount}>
+                <lightning-layout-item class="table-cell" flexibility="auto">
+                    <b>Amount forfeited from the refund to the customer</b>
+                </lightning-layout-item>
+                    <lightning-layout-item class="table-cell-input" flexibility="auto">
+                        <lightning-input name="Amount forfeited" type="number" value={amountForfeitedRefund} onchange={handleAmountForfeitedRefund}></lightning-input>
+                    </lightning-layout-item>
+                </template>
+                
+            </lightning-layout>
+        </div>
+        <br/>-->
+        <!-- Section Header -->
+<!-- <h3 class="slds-text-heading_medium slds-text-align_center slds-theme_shade slds-m-bottom_small headerStyle">
+    Forfeiture Amount
+</h3> -->
+<div class="slds-text-heading_medium slds-text-align_left slds-p-around_x-small  headerStyle">Forfeiture Amount</div>
+
+<!-- Grid Layout -->
+<div class="slds-grid slds-wrap">
+
+    <!-- Combobox: Should an amount be forfeited? -->
+    <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-combobox
+            label="Should an amount be forfeited?"
+            name="yesNo"
+            value={forfeitedAmount}
+            placeholder="Select an option"
+            options={picklistOptions}
+            onchange={handleForfeitedAmountChange}>
+        </lightning-combobox>
+    </div>
+
+    <!-- Conditionally shown input -->
+    <template if:true={showForfeitedAmount}>
+        <!-- Amount forfeited input -->
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+            <lightning-input
+                label="Amount forfeited from the refund to the customer"
+                name="Amount forfeited"
+                type="number"
+                value={amountForfeitedRefund}
+                onchange={handleAmountForfeitedRefund}>
+            </lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-p-around_x-small">
+        <lightning-input 
+            label="Remarks"
+            type="text"
+            value={forfeitedRemark}
+            onchange={handleotherForfeitedRemark}
+            >
+        </lightning-input>
+    </div>
+    </template>
+
+</div>
+
+        <!-- Save Button (conditionally rendered) -->
+        <template if:true={showSaveButton}>
+            <lightning-layout horizontal-align="center">
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-button label="Save" variant="brand" icon-name="utility:save" onclick={handleSave}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <lightning-button label="Cancel" variant="brand" icon-name="utility:close" onclick={handleCancel}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </template>
+    <!--</div>-->
+    
+    </template>
+    <template if:true={showError}>
+        <div class="error-box">
+            <p>Received error while fetching data from SAP</p>
+        </div>
+    </template>
+    <template if:true={isShowSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </template>
+</div>
+</template>

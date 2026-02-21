@@ -1,0 +1,41 @@
+<template>
+    <template if:true={hasCustomPermission}>
+    <lightning-card title="Welcome and Important Information" icon-name="standard:call">
+        <div class="scroll-container">
+            
+            <p><strong>Good morning/ Afternoon/Evening, Mr./Mrs. {oppDetail.Name}, </strong> this is <strong> {userName} </strong> calling on behalf of <strong>Panchshil Realty</strong>, Pune. Is now a good time for a brief conversation?
+            </p>
+            
+            <p>First, I would like to extend a warm welcome to you as a valued member of the Panchshil Family. This is a courtesy welcome call, which may be recorded for quality and training purposes, and should take approximately five minutes of your time.</p>
+            <p>To begin, I’d like to confirm a few key details regarding your booking at <strong> {oppDetail.ProjectName} </strong>, for Unit No. <strong> {oppDetail.InventoryName} </strong>.</p>
+            <p> <strong>First Applicant’s Name:</strong> {oppDetail.PrimaryName} </p>
+            <p> <strong>Second Applicant’s Name (if applicable):</strong> {oppDetail.SecondayName}</p>
+            <p> <strong>Company Name: {oppDetail.Company} </strong></p>
+            <p> <strong> Designation:{oppDetail.Designation} </strong> </p>
+            <p> <strong> PAN / Aadhar No: {oppDetail.AadharCard}  </strong></p>
+            <p> <strong> Mobile No / Email ID: {oppDetail.Designation}  </strong> </p>
+            <p> <strong> DOB & Anniversary: {oppDetail.DOB} </strong> </p>
+            <p> <strong> Nationality: {oppDetail.Nationality} </strong> </p>
+            <p> <strong> Address for Correspondence:{oppDetail.Address} </strong> </p>
+            <p> <strong> Apartment Details:{oppDetail.InventoryName} </strong></p>
+            <p> <strong> Payment Details: </strong></p>
+            <p>Additionally, the final agreement value for your purchase <strong>is {oppDetail.AgreementValue} </strong>. We are also pleased to inform you that the <strong>Real Estate Consultant</strong> who assisted you with this transaction was {oppDetail.ConsultantName} from Panchshil (if applicable).</p>
+            <p>Thank you for verifying these details. I also have a few additional pieces of important information regarding your purchase. May I continue?</p>
+            <p>We are delighted to offer you the exclusive <strong>Panchshil Privilege Membership Card</strong>, which provides you with access to special benefits, including rewards at top-rated hotels and retail outlets. To learn more, <strong>please download the Panchshil App.</strong></p>
+            <p>We would also like to inform you that, as per the regulations, for each payment made towards your apartment/unit, a <strong>1% TDS deduction is required</strong>. Please ensure that the challan copy is sent to us for processing.</p>
+            <p><strong>In addition, could you please confirm the source of funding for your purchase?</strong> If you require assistance with securing a home loan, our dedicated team is ready to guide you and connect you with our trusted banking partners to simplify the process.</p>
+            <p>Once we conclude this call, you will receive an email from Team Care with the proposal for your reference and acknowledgment.</p>
+            <p>Lastly, I will share the contact details of your personal Post-Sales Representative or Relationship Manager, who will be your primary point of contact for all future interactions related to your purchase.</p>
+            <p>Thank you once again for choosing Panchshil Realty. We look forward to continuing to serve you.</p>
+        </div>
+
+        <!-- Close Button Section -->
+        <lightning-button 
+            label="Close" 
+            variant="destructive" 
+            onclick={closeScript} 
+            class="slds-m-top_medium">
+        </lightning-button>
+    </lightning-card>
+    </template>
+</template>

@@ -1,0 +1,325 @@
+.quotation-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    padding: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    color: #333;
+}
+
+.base-rate-section {
+    display: flex;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.base-rate {
+    color: red;
+    font-weight: bold;
+}
+
+.prepared-for-section {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.approval-status-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.save-button {
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.discount-button {
+    background-color: orange;
+    color: black;
+    border: none;
+    margin-left: 10%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: grey;
+    color: white;
+    border: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.main-button {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 1%;
+}
+
+.details-table,
+.car-parks-table,
+.amount-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.details-table th,
+.details-table td,
+.car-parks-table th,
+.car-parks-table td,
+.amount-table th,
+.amount-table td {
+    border: 1px solid #dcdcdc;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.details-table th,
+.car-parks-table th,
+.amount-table th {
+    background-color: cornflowerblue;
+}
+
+.apply-button {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Container for both sections */
+.flat-details-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f1f6f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section titles */
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Styling for rows in the details sections */
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+/* Styling for labels */
+.label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+    flex: 1;
+}
+
+/* Styling for values */
+.value {
+    font-size: 14px;
+    color: #666;
+    flex: 2;
+}
+
+/* Styling for button */
+.apply-selection {
+    background-color: #f2a900;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.apply-selection:hover {
+    background-color: #e09300;
+}
+
+.steps-font {
+    font-weight: bold;
+    padding-left: 50px;
+    color: Black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 100px;
+}
+
+.mainsection {
+    font-weight: bold;
+    background-color: rgb(173, 173, 173);
+}
+
+/* Mobile Responsive Styles - Tablets and smaller */
+@media only screen and (max-width: 768px) {
+    .quotation-container {
+        padding: 15px;
+        overflow-x: hidden;
+    }
+
+    .base-rate-section,
+    .prepared-for-section {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .approval-status-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .main-button {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .save-button,
+    .discount-button,
+    .back-button {
+        width: 100%;
+        margin: 5px 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .details-table,
+    .car-parks-table,
+    .amount-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 0.8rem;
+    }
+
+    .details-table th,
+    .details-table td,
+    .car-parks-table th,
+    .car-parks-table td,
+    .amount-table th,
+    .amount-table td {
+        padding: 6px 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .flat-details-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .label,
+    .value {
+        flex: none;
+        width: 100%;
+    }
+
+    .steps-font {
+        padding-left: 20px;
+        margin-bottom: 40px;
+        font-size: 14px;
+    }
+
+    .apply-button,
+    .apply-selection {
+        width: 100%;
+        padding: 12px 15px;
+    }
+}
+
+/* Small mobile devices - iPhone SE, older Android phones */
+@media only screen and (max-width: 480px) {
+    .quotation-container {
+        padding: 10px;
+    }
+
+    .base-rate-section,
+    .prepared-for-section,
+    .approval-status-section {
+        font-size: 0.85rem;
+    }
+
+    .details-table,
+    .car-parks-table,
+    .amount-table {
+        font-size: 0.75rem;
+    }
+
+    .details-table th,
+    .details-table td,
+    .car-parks-table th,
+    .car-parks-table td,
+    .amount-table th,
+    .amount-table td {
+        padding: 5px 3px;
+        font-size: 0.75rem;
+    }
+
+    .save-button,
+    .discount-button,
+    .back-button,
+    .apply-button,
+    .apply-selection {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    .steps-font {
+        padding-left: 10px;
+        font-size: 13px;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .flat-details-container {
+        padding: 10px;
+    }
+}
+
+/* Landscape orientation for mobile devices */
+@media only screen and (max-width: 896px) and (orientation: landscape) {
+    .steps-font {
+        margin-bottom: 30px;
+    }
+
+    .quotation-container {
+        padding: 15px 20px;
+    }
+}

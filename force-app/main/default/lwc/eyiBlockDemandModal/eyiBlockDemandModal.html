@@ -1,0 +1,87 @@
+<template>
+    <lightning-card >
+        <div class="overlay-container">
+            <!-- SPINNER OVERLAY -->
+            <template if:true={isSpinner}>
+                <div class="spinner-backdrop">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </template>
+            <div class="slds-grid slds-gutters">
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                        <tr>
+                            <th>Sr. No.</th>
+                            <th>Usage Description</th>
+                            <th>Customer Name</th>
+                            <th>Actual Date</th>
+                            <th>New Actual Date</th>
+                            <th>Remark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={demanddata} for:item="demand">
+                            <tr key={demand.Id}>
+                                <td>{demand.sno}</td>
+                                <td>
+                                    <output 
+                                        data-id={demand.Id} 
+                                        data-field="EYI_Usage_Description__c">
+                                        {demand.EYI_Usage_Description__c}
+                                    </output>
+                                </td>
+                                <td>
+                                    <output 
+                                        data-id={demand.Id} 
+                                        data-field="CustName">
+                                        {demand.CustName}
+                                    </output>
+                                </td>
+                                <td>
+                                    <output 
+                                        data-id={demand.Id} 
+                                        data-field="actualDate">
+                                        {demand.actualDate}
+                                    </output>
+                                </td>
+                                <td>
+                                    <!--<input type="date" value={demand.EYI_Billing_Date__c} data-id={demand.Id} data-field="EYI_Billing_Date__c" onchange={handleInputChange} />-->
+                                    <lightning-input
+                                        name="fromDate"
+                                        type="date"
+                                        min={todaysDate}
+                                        value={demand.EYI_Actual_Date__c}
+                                        date-style="short"                                
+                                        data-id={demand.Id}
+                                        data-field="EYI_Actual_Date__c"
+                                        onchange={handleInputChange}
+                                        message-when-range-underflow="Please select a date from today onwards.">
+                                </lightning-input>
+                                
+                                
+                                
+                                </td>
+                                <td>
+                                    <lightning-input
+                                    name="Remark"
+                                    type="text"
+                                    value={demand.EYI_Remark__c}
+                                    data-id={demand.Id}
+                                    data-field="EYI_Remark__c"
+                                    onchange={handleInputChange}
+                                    label="Remark">
+                                </lightning-input>
+                            </td>
+                            </tr>
+                        </template>
+                        
+                    </tbody>
+                </table>
+            </div>&nbsp;&nbsp;
+        </div>
+        <div slot="footer">
+            <lightning-button variant="neutral" label="Cancel" onclick={handleCancel}></lightning-button>&nbsp;&nbsp;
+            <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

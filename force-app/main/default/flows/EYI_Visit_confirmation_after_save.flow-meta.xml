@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Copy_1_of_Send_Visit_Reminder_Email_to_REC</name>
+        <label>Send Visit Reminder Email to REC</label>
+        <locationX>1106</locationX>
+        <locationY>492</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_WhatsApp_Notification_for_No_Show_Status</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>PrimaryandSecondaryEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>$Record.Owner:User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Reminder: Client No-Show</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>NoShowAlertBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_for_No_Show</name>
+        <label>Send SMS for No Show</label>
+        <locationX>1106</locationX>
+        <locationY>708</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>NoShowAlertBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_for_Visit_Done</name>
+        <label>Send SMS for Visit Done</label>
+        <locationX>50</locationX>
+        <locationY>1008</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Sms_for_Visit_Done</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_to_REC_for_prior_one_hour</name>
+        <label>Send SMS to REC for prior one hour</label>
+        <locationX>578</locationX>
+        <locationY>816</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_to_SM_for_prior_one_hour</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Send_sms_one_hr_prior_to_REC</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_to_SM_for_prior_one_hour</name>
+        <label>Send SMS to SM for prior one hour</label>
+        <locationX>578</locationX>
+        <locationY>924</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>sendSMStoSMprioronehr</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Visit_Done_Email_with_Opp_30_TAT_Email</name>
+        <label>Send Visit Done Email with Opp 30 TAT Email</label>
+        <locationX>50</locationX>
+        <locationY>792</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_WhatsApp_for_Visit_Done</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>PrimaryandSecondaryEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>$Record.Owner:User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Reminder: Site visit is done</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>VisitDoneOpp30daysTatEmail</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Visit_Reminder_Email_to_REC</name>
+        <label>Send Visit Reminder Email to REC</label>
+        <locationX>578</locationX>
+        <locationY>492</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>send_whatsapp_notification_1_hour_before_visit_confirmed_date</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>PrimaryandSecondaryEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ccRecipientAddressList</name>
+            <value>
+                <elementReference>$Record.Owner:User.Email</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Reminder: Visit Confirmed for Today</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>VisitConfirmationEmailBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatApp_Notification_to_SM_prior_to_1_hour</name>
+        <label>Send WhatApp Notification to SM prior to 1 hour</label>
+        <locationX>578</locationX>
+        <locationY>708</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_to_REC_for_prior_one_hour</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>WhatsApp_Before_1_hour_to_SM</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_for_Visit_Done</name>
+        <label>Send WhatsApp for Visit Done</label>
+        <locationX>50</locationX>
+        <locationY>900</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_for_Visit_Done</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>WhatsApp_for_Visit_Done</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>send_whatsapp_notification_1_hour_before_visit_confirmed_date</name>
+        <label>send whatsapp notification to REC 1 hour before visiting confirmed date</label>
+        <locationX>578</locationX>
+        <locationY>600</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_WhatApp_Notification_to_SM_prior_to_1_hour</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>WhatsApp_Notification_Prior_one_hr_REC</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification_for_No_Show_Status</name>
+        <label>Send WhatsApp Notification for No Show Status</label>
+        <locationX>1106</locationX>
+        <locationY>600</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_for_No_Show</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Send_Notification_No_Show</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Copy_1_of_Visit_Confirmation_Recipient_Email</name>
+        <label>Visit Confirmation Recipient Email</label>
+        <locationX>1106</locationX>
+        <locationY>384</locationY>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Alternate_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_1_of_Send_Visit_Reminder_Email_to_REC</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>REC_Recipient_Email</name>
+        <label>REC Recipient Email</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Alternate_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Check_if_Status_is_no_show</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Visit_Confirmation_Recipient_Email</name>
+        <label>Visit Confirmation Recipient Email</label>
+        <locationX>578</locationX>
+        <locationY>384</locationY>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Alternate_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Visit_Reminder_Email_to_REC</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_if_Status_is_no_show</name>
+        <label>Check if Status is no show</label>
+        <locationX>182</locationX>
+        <locationY>384</locationY>
+        <defaultConnector>
+            <targetReference>Check_Visit_Done</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Status_Is_no_show</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_no_status_field</targetReference>
+            </connector>
+            <label>If Status Is no show</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_status</name>
+        <label>Check status</label>
+        <locationX>710</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_status_is_visit_confirm</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Visit Confirmed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Visit_Confirmation_Recipient_Email</targetReference>
+            </connector>
+            <label>If status is visit confirm</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Visit_Done</name>
+        <label>Check Visit Done</label>
+        <locationX>182</locationX>
+        <locationY>684</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Visit_Done</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Visit Done</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Visit_Done_Email_with_Opp_30_TAT_Email</targetReference>
+            </connector>
+            <label>Visit Done</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Verify_Status_is_No_Show</name>
+        <label>Verify Status is No Show</label>
+        <locationX>1238</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Status_is_no_Show</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No Show</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Visit_Confirmation_Recipient_Email</targetReference>
+            </connector>
+            <label>Status is no Show</label>
+        </rules>
+    </decisions>
+    <description>Notification v2</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Send_Notification_No_Show</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp; {!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c} &amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.EYI_VpVc_NoShowWhatsApp} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Send_sms_one_hr_prior_to_REC</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp;{!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c}&amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.SMS_Before_One_Hour_Site_Visit_REC} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>sendSMStoSMprioronehr</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp; {!$Record.Owner:User.MobilePhone} &amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.SMS_to_SM_1_Hour_Before_Visit } &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>Update_Date_Time</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE(TEXT(TODAY()+1) &amp; &quot;09:30:00&quot;)</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Before_1_hour_to_SM</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp;{!$Record.Owner:User.MobilePhone}&amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.WhatsApp_Notification_Before_one_hour_SM} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_for_Visit_Done</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp;{!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c}&amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.WhatsApp_Site_Visit_Done_REC} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification_Prior_one_hr_REC</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;&apos;&amp; {!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c}&amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.WhatsApp_Notification_Before_one_Hour_REC} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>EYI Visit confirmation - after save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EYI Visit confirmation - after save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_no_status_field</name>
+        <label>Update no status field</label>
+        <locationX>50</locationX>
+        <locationY>492</locationY>
+        <connector>
+            <targetReference>Check_Visit_Done</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>EYI_No_Show_Status_Time__c</field>
+            <value>
+                <elementReference>Update_Date_Time</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>584</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>REC_Recipient_Email</targetReference>
+        </connector>
+        <object>EYI_VP_VC__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <scheduledPaths>
+            <name>Time_one_hour_before</name>
+            <connector>
+                <targetReference>Check_status</targetReference>
+            </connector>
+            <label>Time one hour before</label>
+            <offsetNumber>-1</offsetNumber>
+            <offsetUnit>Hours</offsetUnit>
+            <recordField>EYI_Visit_Confirmed_Date__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <scheduledPaths>
+            <name>Check_No_Show_Status_Date</name>
+            <connector>
+                <targetReference>Verify_Status_is_No_Show</targetReference>
+            </connector>
+            <label>Check No Show Status Date</label>
+            <offsetNumber>1</offsetNumber>
+            <offsetUnit>Minutes</offsetUnit>
+            <recordField>No_Show_Date_Time__c</recordField>
+            <timeSource>RecordField</timeSource>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>NoShowAlertBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.EYI_REC_Account__r.EYI_REC_Full_Name__c},
+This is a gentle reminder that the site visit for {!$Record.EYI_Client_Name__c} to {!$Record.EYI_Project__r.Name} scheduled on {!$Record.EYI_Visit_Confirmed_Date__c} could not be completed. We are happy to connect &amp; reschedule the appointment for you, or you may reach out to us directly at your discretion.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Sms_for_Visit_Done</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>&apos;{&quot;recipient&quot;:&quot;&apos;&amp;{!$Record.EYI_REC_Account__r.EYI_Primary_Mob_No_with_Country_Code__c}&amp; &apos;&quot;,&quot;templateId&quot;:&quot;&apos; &amp; {!$Label.SMS_Site_Visit_Done_REC} &amp; &apos;&quot;,&quot;recordId&quot;:&quot;&apos; &amp; {!$Record.Id} &amp; &apos;&quot;}&apos;</text>
+    </textTemplates>
+    <textTemplates>
+        <name>VisitConfirmationEmailBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.EYI_REC_Account__r.EYI_REC_Full_Name__c},
+This is a gentle reminder that the site visit for {!$Record.EYI_Client_Name__c} to {!$Record.EYI_Project__r.Name} is confirmed for today.
+Details:
+•	Visit Time: {!$Record.EYI_Visit_Confirmed_Date__c}
+•	Unit Details: {!$Record.EYI_Project__r.Name} 
+Please ensure all preparations are in place for the visit.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>VisitDoneOpp30daysTatEmail</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.EYI_REC_Account__r.EYI_REC_Full_Name__c},
+
+Thank you for facilitating the site visit {!$Record.EYI_Client_Name__c} to {!$Record.EYI_Project__r.Name} today. Please note that your TAT for this visit is 30 days from the date of the visit. Please don’t hesitate to reach out to us should you have any questions or need further assistance.
+
+Best regards,
+Team Panchshil</text>
+    </textTemplates>
+    <variables>
+        <name>PrimaryandSecondaryEmail</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

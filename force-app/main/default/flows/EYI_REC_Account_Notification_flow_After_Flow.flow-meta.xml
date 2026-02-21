@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_email_Id_from_REC</name>
+        <label>Check email Id from REC</label>
+        <locationX>182</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_secondary_email_Id</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Alternate_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Contacts_for_REC_sec_email</targetReference>
+            </connector>
+            <label>Check secondary email Id</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_email_Id_on_Rec</name>
+        <label>Check email Id on Rec</label>
+        <locationX>380</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Primary_email_Id_not_equal_to_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Email__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Contacts_for_REC</targetReference>
+            </connector>
+            <label>Primary email Id not equal to null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_for_new_REC_Account</name>
+        <label>Check for new REC Account</label>
+        <locationX>611</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_New_REC_Account</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>isNew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Account_Id</targetReference>
+            </connector>
+            <label>If New REC Account</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>BirthDate</name>
+        <dataType>Boolean</dataType>
+        <expression>DATE(YEAR({!$Record.EYI_Birth_Date__c}), MONTH({!$Record.EYI_Birth_Date__c}), DAY({!$Record.EYI_Birth_Date__c})) = TODAY()</expression>
+    </formulas>
+    <formulas>
+        <name>isNew</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
+    <formulas>
+        <name>notificationBeforeOppoClose</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot; {!$Record.EYI_Mobile__c}&quot;,&quot;templateId&quot;:&quot;a12C4000000hFAHIA2&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_When_REC_Created</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;a12C4000000hF5RIAU&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_When_REC_Owner_Change</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;a12C4000000hF8fIAE&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_When_REC_Registered</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Template_For_REC_Registration + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification_for_new_rec</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;a12C4000000hF5RIAU&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification_for_REC_Registration</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;a12C4000000hF73IAE&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>WhatsApp_Notification_If_REC_Owner_Change</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile__c&quot;,&quot;templateId&quot;:&quot;a12C4000000hF8fIAE&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <interviewLabel>EYI REC Account Notification flow for 360 SMS {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>EYI REC Account Notification flow - After Flow_New</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Contacts_for_REC</name>
+        <label>Create Contacts for REC</label>
+        <locationX>182</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Check_email_Id_from_REC</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>Get_Account_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>$Record.EYI_Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>$Record.EYI_First_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>$Record.EYI_Last_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Contacts_for_REC_sec_email</name>
+        <label>Create Contacts for REC sec email</label>
+        <locationX>50</locationX>
+        <locationY>863</locationY>
+        <inputAssignments>
+            <field>AccountId</field>
+            <value>
+                <elementReference>Get_Account_Id.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Email</field>
+            <value>
+                <elementReference>$Record.EYI_Alternate_Email__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>FirstName</field>
+            <value>
+                <elementReference>$Record.EYI_First_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>LastName</field>
+            <value>
+                <elementReference>$Record.EYI_Last_Name__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Account_Id</name>
+        <label>Get Account Id</label>
+        <locationX>380</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_email_Id_on_Rec</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Panchshil</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_for_new_REC_Account</targetReference>
+        </connector>
+        <object>EYI_REC__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Draft</status>
+    <textTemplates>
+        <name>EmailToSourcing_Manager_And_Head</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi, 
+Your CP account registration request for &quot;{!$Record.EYI_RERA_Number__c}&quot; has been rejected by the Sourcing Head with the listed remarks. Kindly correct the details and resend for approval.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailToSourcingHead</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi, 
+Sourcing TL has sent a CP empanelment request for your approval. Please click on the link below to approve or reject:
+{!$Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>EmailToSourcingTL</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi,
+Sourcing Manager has sent a CP empanelment request for your approval. Please click on the link below to approve or reject: 
+{!$Record.Id}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Notify_owner_previous</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi,
+We would like to inform you that the REC Account previously assigned to you has been reassigned to another team member. Please find the details of the reassignment below: 
+{!Owner_Name}
+Thank You!</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Notify_Previous_Owner</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Hi,
+We would like to inform you that the REC Account previously assigned to you has been reassigned to another team member. Please find the details of the reassignment below:
+REC No. - {!$Record.EYI_RERA_Number__c}</text>
+    </textTemplates>
+    <variables>
+        <name>OppoRec</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Opportunity</objectType>
+    </variables>
+    <variables>
+        <name>Owner_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>REC_Account</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>EYI_REC__c</objectType>
+    </variables>
+</Flow>

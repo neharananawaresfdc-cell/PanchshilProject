@@ -1,0 +1,44 @@
+<template>
+    <div>
+        <lightning-card style="margin-left: 5px" title='Documents Upload'>
+            <div class="slds-grid slds-align_absolute-center slds-m-around_medium" >
+                <div>
+                    <span>
+                        <lightning-input type="file" label="PAN Card" accept=".pdf"
+                            onchange={handleFileChange}></lightning-input>
+                    </span>
+                    <template if:true={isFileUploaded}>
+                        <div class="slds-text-color_success">File Uploaded: {fileName}</div>
+                    </template>
+                </div>
+            </div>
+            <div class="slds-grid slds-align_absolute-center slds-m-around_medium" >
+                <div>
+                    <span>
+                        <lightning-input type="file" label="Index 2"
+                            onchange={handleindex2Change}></lightning-input>
+                    </span>
+                    <template if:true={isindex2Uploaded}>
+                        <div class="slds-text-color_success">File Uploaded: {indexFileName}</div>
+                    </template>
+                </div>
+            </div>
+            <div class="slds-grid slds-align_absolute-center slds-m-around_medium">
+                <div>
+                    <span>
+                        <lightning-input type="file" label="Registration Document"
+                            onchange={handleRegiFileChange}></lightning-input>
+                    </span>
+                    <template if:true={isRegiFileUploaded}>
+                        <div class="slds-text-color_success">File Uploaded: {regFileName}</div>
+                    </template>
+                </div>
+            </div>
+            <div class="slds-grid slds-align_absolute-center slds-m-around_medium">
+                <span>
+                    <lightning-button variant="brand" label="Save" onclick={handleSave}></lightning-button>
+                </span>
+            </div>
+        </lightning-card>
+    </div>
+</template>

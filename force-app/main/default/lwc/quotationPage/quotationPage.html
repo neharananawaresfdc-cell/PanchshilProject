@@ -1,0 +1,116 @@
+<template>
+    <template if:true={showuqotation}>
+        <template if:true={inevntorydefaultvalues}>
+
+            <!-- New Section -->
+            <lightning-card>
+                <h3 slot="title">
+                    <lightning-icon icon-name="standard:drafts" size="medium"></lightning-icon>
+                    Unit and Opportunity Details
+                </h3>
+
+                <div class="slds-p-horizontal_small">
+                    <div class="parentDiv">
+                        <!-- Grid container with responsive behavior -->
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <!-- Opportunity -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="labeldesign">Opportunity:</p>
+                                <template lwc:if={recordId}>
+                                    <lightning-record-picker 
+                                        label="Opportunity"
+                                        placeholder="Search Opportunities..."
+                                        object-api-name="Opportunity"
+                                        variant="label-hidden"
+                                        value={recordId}
+                                        disabled>
+                                    </lightning-record-picker>
+                                </template>
+                                <template lwc:else>
+                                    <lightning-record-picker 
+                                        label="Opportunity"
+                                        placeholder="Search Opportunities..."
+                                        object-api-name="Opportunity"
+                                        variant="label-hidden"
+                                        value={dummyOppId}
+                                        disabled>
+                                    </lightning-record-picker>
+                                </template>
+                            </div>
+
+                            <!-- Project Unit -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="labeldesign">Project Unit:</p>
+                                <lightning-input 
+                                    type="text"
+                                    value={inventoryNumber}
+                                    readonly
+                                    variant="label-hidden">
+                                </lightning-input>
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="slds-grid slds-wrap slds-gutters">
+                            <!-- Project -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="labeldesign">Project:</p>
+                                <lightning-record-picker 
+                                    label="Project"
+                                    placeholder="Search Projects..."
+                                    object-api-name="EYI_Project__c"
+                                    variant="label-hidden"
+                                    value={projectId}
+                                    disabled>
+                                </lightning-record-picker>
+                            </div>
+
+                            <!-- Plan Type -->
+                            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                                <p class="labeldesign">Plan Type:</p>
+                                <lightning-combobox 
+                                    name="PlanType"
+                                    variant="label-hidden"
+                                    placeholder="Select Plan Type"
+                                    options={planTypeData}
+                                    onchange={selectPlanType}>
+                                </lightning-combobox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions slds-p-around_medium slds-align_absolute-center slds-wrap">
+                    <lightning-button 
+                        class="slds-m-around_x-small"
+                        variant="brand"
+                        label="Generate Quote"
+                        onclick={openquotefullpage}>
+                    </lightning-button>
+                    <lightning-button 
+                        class="slds-m-around_x-small"
+                        variant="neutral"
+                        label="Cancel"
+                        onclick={cancelQuoationHandler}>
+                    </lightning-button>
+                </div>
+            </lightning-card>
+
+        </template>
+    </template>
+
+    <!-- Quotation Page -->
+    <template if:true={quoteflag}>
+        <!-- Example: Uncomment when needed -->
+        <!--
+        <c-quotefullpage
+            tower={tower}
+            floor={floor}
+            onpreviouspage={hidefullPageHandler}
+            inventory-values={inventoryDataValues}
+            inventoryid={inventoryid}>
+        </c-quotefullpage>
+        -->
+    </template>
+</template>

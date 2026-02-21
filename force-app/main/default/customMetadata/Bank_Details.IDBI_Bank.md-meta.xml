@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>IDBI Bank</label>
+    <protected>false</protected>
+    <values>
+        <field>A_C_Name__c</field>
+        <value xsi:type="xsd:string">GBG - Parking A/c for Over -The-Counter Statutory Payment</value>
+    </values>
+    <values>
+        <field>A_C_No__c</field>
+        <value xsi:type="xsd:double">6.68370000107E13</value>
+    </values>
+    <values>
+        <field>Bank_Name__c</field>
+        <value xsi:type="xsd:string">IDBI Bank</value>
+    </values>
+    <values>
+        <field>Branch_Name__c</field>
+        <value xsi:type="xsd:string">PUNE - Vishrantwadi (668)</value>
+    </values>
+    <values>
+        <field>IFSC_Code__c</field>
+        <value xsi:type="xsd:string">IBKL0000668</value>
+    </values>
+</CustomMetadata>

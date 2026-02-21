@@ -1,0 +1,139 @@
+/********************************************************************************/
+.fixed-width-table {
+    border-left: 2px solid #d8dde6; /* Left border */
+    border-right: 2px solid #d8dde6; /* Right border */
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+}
+
+.fixed-width-table thead,
+.fixed-width-table tbody,
+.fixed-width-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.fixed-width-table thead {
+    width: calc(100% - 1em);
+}
+
+.fixed-width-table th, .fixed-width-table td {
+    border-top: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+    padding: 10px;
+    text-align: left;
+}
+
+.fixed-width-table th {
+    background-color: #f3f6f9;
+}
+
+/* .fixed-width-table th:nth-child(1),
+.fixed-width-table td:nth-child(1) {
+    width: 25%; 
+}
+
+.fixed-width-table th:nth-child(2),
+.fixed-width-table td:nth-child(2) {
+    width: 20%; 
+}
+
+.fixed-width-table th:nth-child(3),
+.fixed-width-table td:nth-child(3) {
+    width: 25%; 
+}
+
+.fixed-width-table th:nth-child(4),
+.fixed-width-table td:nth-child(4) {
+    width: 30%; 
+} */
+
+/************************************************/
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Adjust height if needed */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.small-button {
+    padding: 0.5rem 1rem;
+    background-color: #0070d2;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+} 
+
+.slds-table {
+    width: 100%; /* Allow table to take full available width */
+    table-layout: auto; /* Auto table layout to allow responsive behavior */
+}
+
+.wrap-text {
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    max-width: 200px;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+    .fixed-width-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .fixed-width-table th,
+    .fixed-width-table td {
+        min-width: 120px;
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .button-container lightning-button {
+        margin: 5px 0;
+        width: 100%;
+    }
+}
+
+/* Very small screens */
+@media screen and (max-width: 480px) {
+    .table-responsive {
+        display: none;
+    }
+    
+    .card-view {
+        display: block;
+    }
+}
+
+.card-view {
+    display: none;
+}
+
+.question-card {
+    border: 1px solid #d8dde6;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: white;
+}
+
+.question-card .slds-form-element {
+    margin-bottom: 12px;
+}

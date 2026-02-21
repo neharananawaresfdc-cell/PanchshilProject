@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-01-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Upload Invoice">
+        <div class="slds-p-horizontal_medium">
+            <lightning-file-upload
+                label="Upload Invoice File"
+                name="fileUploader"
+                accept=".pdf,.doc,.docx,.jpg,.png"
+                record-id={recordId}
+                onuploadfinished={handleUploadFinished}
+                multiple=false>
+            </lightning-file-upload>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Custom_Notification</name>
+        <label>Send Custom Notification</label>
+        <locationX>50</locationX>
+        <locationY>576</locationY>
+        <actionName>customNotificationAction</actionName>
+        <actionType>customNotificationAction</actionType>
+        <connector>
+            <targetReference>Send_Email_Action_1</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>customNotifTypeId</name>
+            <value>
+                <elementReference>Get_Custom_Notification.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientIds</name>
+            <value>
+                <elementReference>Bellrecipients</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>title</name>
+            <value>
+                <stringValue>Visit Alert!!</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>body</name>
+            <value>
+                <elementReference>Notificationbody</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>targetId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>customNotificationAction</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Email_Action_1</name>
+        <label>Send Email Action 1</label>
+        <locationX>50</locationX>
+        <locationY>684</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Send_WhatsApp_Notification_for_Today_to_SM</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddressesArray</name>
+            <value>
+                <elementReference>PrimaryandSecondaryEmail</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>OrgWideEmailAddress</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <stringValue>sales@panchshil.com</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <stringValue>Visit Confirmation Alert</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>EmailforTodaysVisit</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_to_REC_About_Today_s_Visit</name>
+        <label>Send SMS to REC About Today&apos;s Visit</label>
+        <locationX>50</locationX>
+        <locationY>1116</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SMS_To_REC_About_Visit_Today</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_SMS_to_SM_for_site_Visit_Today</name>
+        <label>Send SMS to SM for site Visit Today</label>
+        <locationX>50</locationX>
+        <locationY>1008</locationY>
+        <actionName>EYI_SMSService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_to_REC_About_Today_s_Visit</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Send_SMS_To_SM_for_Visit_Today</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_SMSService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification_for_Today_to_REC</name>
+        <label>Send WhatsApp Notification for Today to REC</label>
+        <locationX>50</locationX>
+        <locationY>900</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_SMS_to_SM_for_site_Visit_Today</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>Send_whatsapp_notification_for_visit_to_REC</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_WhatsApp_Notification_for_Today_to_SM</name>
+        <label>Send WhatsApp Notification for Today to SM</label>
+        <locationX>50</locationX>
+        <locationY>792</locationY>
+        <actionName>EYI_WhatsAppService</actionName>
+        <actionType>apex</actionType>
+        <connector>
+            <targetReference>Send_WhatsApp_Notification_for_Today_to_REC</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>recepientBodyList</name>
+            <value>
+                <elementReference>SendNotificationat_today_SM</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>EYI_WhatsAppService</nameSegment>
+        <offset>0</offset>
+    </actionCalls>
+    <apiVersion>63.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Add_Primary_and_Secondary_Email</name>
+        <label>Add Primary and Secondary Email</label>
+        <locationX>50</locationX>
+        <locationY>468</locationY>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>PrimaryandSecondaryEmail</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.EYI_REC_Account__r.EYI_Alternate_Email__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>Bellrecipients</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Send_Custom_Notification</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Check_Visit_Confirmed_Date</name>
+        <label>Check Visit Confirmed Date</label>
+        <locationX>182</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Visit_confirmed_Date_is_Today</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Extract_Date_from_VisitConfirmedDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Today</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.EYI_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Visit Confirmed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Custom_Notification</targetReference>
+            </connector>
+            <label>If Visit confirmed Date is Today</label>
+        </rules>
+    </decisions>
+    <description>Notification v1</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Extract_Date_from_VisitConfirmedDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!$Record.EYI_Visit_Confirmed_Date__c})</expression>
+    </formulas>
+    <formulas>
+        <name>Now</name>
+        <dataType>DateTime</dataType>
+        <expression>NOW()</expression>
+    </formulas>
+    <formulas>
+        <name>Send_SMS_To_SM_for_Visit_Today</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;MobilePhone&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.SMS_SM_for_Visit_Today + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Send_whatsapp_notification_for_visit_to_REC</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile_Number__c&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Site_Visit_Todat_REC
+ + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SendNotificationat_today_SM</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;MobilePhone&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.WhatsApp_Site_Visit_Today_SM
+ + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.OwnerId} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_Reminder_Today</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile_Number__c&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.Whatsapp_Site_Reminder_Today + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>SMS_To_REC_About_Visit_Today</name>
+        <dataType>String</dataType>
+        <expression>&apos;{&quot;recipient&quot;:&quot;EYI_Mobile_Number__c&quot; , &quot;templateId&quot;:&quot;&apos; + $Label.SMS_To_REC_For_Visit_Today + &apos;&quot;,&quot;recordId&quot;:&quot;&apos; + {!$Record.Id} + &apos;&quot;}&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>EYI Send notification at 9:30 for visit confirmation - After Save {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>VP/VC EYI Send notification at 9:30 for visit confirmation - After Save</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Custom_Notification</name>
+        <label>Get Custom Notification</label>
+        <locationX>50</locationX>
+        <locationY>360</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Add_Primary_and_Secondary_Email</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>EYI_Csutom_Notification</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>CustomNotificationType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_Visit_Confirmed_Date</targetReference>
+        </connector>
+        <object>EYI_VP_VC__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2025-06-18</startDate>
+            <startTime>14:00:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>EmailforTodaysVisit</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!$Record.EYI_REC_Account__r.EYI_REC_Full_Name__c},
+This is a gentle reminder that the site visit for {!$Record.EYI_Client_Name__c} to {!$Record.EYI_Project__r.Name} is confirmed for today.
+
+Details:
+•	Visit Time: {!$Record.EYI_Visit_Confirmed_Date__c}
+•	Unit Details: {!$Record.EYI_Project__r.Name} 
+
+Please ensure all preparations are in place for the visit.</text>
+    </textTemplates>
+    <textTemplates>
+        <name>Notificationbody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Visit Is confirmed with REC: {!$Record.EYI_REC_Account__r.EYI_REC_Full_Name__c} at {!$Record.EYI_Visit_Confirmed_Date__c}.</text>
+    </textTemplates>
+    <variables>
+        <name>Bellrecipients</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>PrimaryandSecondaryEmail</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>

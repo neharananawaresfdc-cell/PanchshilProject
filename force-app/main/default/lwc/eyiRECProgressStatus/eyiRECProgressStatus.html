@@ -1,0 +1,13 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="EYI_REC__c" field-api-name="is_PAN_E_KYC_Completed__c" fieldlabel="PAN" fieldtype="Boolean" variant="base-autocomplete" direction="drain" compsize="medium" hidevalue="true" record-id={recordId}></c-eyidyprogressring>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c-eyidyprogressring object-api-name="EYI_REC__c" field-api-name="is_Aadhar_E_KYC_Completed__c" fieldlabel="Aadhaar" fieldtype="Boolean" variant="base-autocomplete" direction="drain" compsize="medium" hidevalue="true" record-id={recordId}></c-eyidyprogressring>
+        </div>
+        <!-- <div class="slds-col slds-size_1-of-3">
+            <c-eyidyprogressring object-api-name="EYI_REC__c" field-api-name="is_Aadhar_E_Sign_Completed__c" fieldlabel="E-Sign" fieldtype="Boolean" variant="base-autocomplete" direction="drain" compsize="medium" hidevalue="true" record-id={recordId}></c-eyidyprogressring>
+        </div> -->
+    </div>
+</template>

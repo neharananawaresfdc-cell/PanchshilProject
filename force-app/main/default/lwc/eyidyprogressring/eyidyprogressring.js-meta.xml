@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="objectApiName" type="String" label="Object API Name" required="true"/>
+            <property name="fieldApiName" type="String" label="Field API Name" required="true"/>
+            <property name="fieldlabel" type="String" label="Field label Name" required="true" default="Enter label"/>
+            <property name="fieldtype" type="String" label="Field type" required="true" default="Percent"/>
+            <property name="variant" type="String" label="Ring Variant" required="true" default="base-autocomplete"/>
+            <property name="direction" type="String" label="Ring Direction" required="true" default="drain"/>
+            <property name="compsize" type="String" label="Size of component" required="false" default="medium"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

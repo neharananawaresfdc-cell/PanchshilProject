@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="displayJsonRecordField">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="title" type="String" label="Card Title"/>
+            <property name="fieldName" type="String" required="true" label="Field API Name (Case Sensitive)"/>
+            <property name="showLineNumbers" type="Boolean" default="true" label="Show Line Numbers"/>
+            <property name="sortObjects" type="Boolean" default="false" label="Sort Objects by Key"/>
+            <property name="setIcons" type="String" datasource="Up/Down Arrows, Plus/Minus Buttons" default="Up/Down Arrows" label="Icons for Expansion"/>
+            <property name="maxStringLength" type="Integer" min="0" description="If no integer is provided then there will be no truncation of strings." label="Max String Length"/>
+            <property name="syntaxColor" type="String" label="Syntax Color"/>
+            <property name="stringColor" type="String" label="String Color"/>
+            <property name="numberColor" type="String" label="Number Color"/>
+            <property name="booleanColor" type="String" label="Boolean Color"/>
+            <property name="keyColor" type="String" label="Key Color"/>
+            <property name="keywordColor" type="String" label="Keyword Color"/>      
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

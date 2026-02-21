@@ -1,0 +1,128 @@
+<template>
+<lightning-card title="Create Registration Slot">
+
+    <template if:true={isOpportunityLinked}>
+        <!-- Centered Container Div -->
+        <div class="center-container">
+            <!-- Div with Border to hold event details -->
+            <div class={statusClass}>
+                <strong>Opportunity Name:</strong> {opportunityName} <br/>
+               
+                <!-- Event Details Section -->
+                <!--<div class="event-details">-->
+                    <!--<div class="event-date">-->
+                        <strong>Event Date:</strong> {eventDate} <br/>
+                    <!--</div>-->
+                    <!--<div class="event-time">-->
+                        <strong>Event Time:</strong> {eventStartTime} - {eventEndTime}
+                        <!--<strong>End Time:</strong> -->
+                    <!--</div>-->
+                <!--</div>-->
+                
+                <!-- Reschedule Button -->
+                <div class="center-button">
+                    <lightning-button 
+                        label="Reschedule" 
+                        onclick={handleReschedule} 
+                        class="slds-m-top_medium">
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    
+    <template if:false={isOpportunityLinked}>
+    <!--<div class="slds-p-around_medium">
+        <lightning-input 
+            type="date" 
+            label="Select Date" 
+            value={selectedDate} 
+            onchange={handleDateChange}>
+        </lightning-input>
+
+        <div class="center-button">
+            <lightning-button 
+                label="Search Available Slots" 
+                onclick={handleSearch} 
+                class="slds-m-top_medium">
+            </lightning-button>
+        </div>
+        <template if:true={displaySlot}>
+            <template if:true={showSlot}>
+                <div class="slds-m-top_medium">
+                    <p><strong>Available Time Slots:</strong></p>
+                    <div class="available-time">
+                        <template for:each={availableTimeSlots} for:item="slot">
+                            <button key={slot.Id} class={slot.buttonColor}
+                                onclick={handleSlotClick} data-id={slot.Id} data-start={slot.StartDateTime} data-end={slot.EndDateTime}>
+                                {slot.StartDateTime} - {slot.EndDateTime}
+                            </button>
+                        </template>
+                    </div>
+                </div>
+            </template>
+            <template if:false={showSlot}>
+                <div class="center">
+                    <p>No available time slots found for the selected date.</p>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={isModalOpen}>
+            <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium">Book Time Slot</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <p><strong>Selected Time Slot:</strong> {selectedStartTime} - {selectedEndTime}</p>
+                        <p><strong>Do you want to book slot please click on the Book button</strong></p>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                        <button class="slds-button slds-button_brand" onclick={bookTimeSlot}>Book</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </div>-->
+        <!-- <lightning-input label="Date" type="date" value={inputDate}  onchange={handleDateChange}></lightning-input>
+        <lightning-input label="Start Time" type="time" value={startTime}  onchange={handleStartTimeChange}></lightning-input>
+        <lightning-input label="End Time" type="time" value={endTime}  onchange={handleEndTimeChange}></lightning-input>
+        <lightning-button label="Create Event" onclick={handleCreateEvent} class="slds-m-top_medium"></lightning-button> -->
+
+        <div class="event-container slds-box slds-p-around_medium slds-m-around_medium">
+            <div class="slds-grid slds-gutters slds-m-bottom_small">
+                <div class="slds-col">
+                    <label class="slds-form-element__label">Date</label>
+                    <lightning-input type="date" value={inputDate} onchange={handleDateChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <label class="slds-form-element__label">Start Time</label>
+                    <lightning-input type="time" min="09:30:00.000Z" max="18:30:00.000Z" value={startTime} onchange={handleStartTimeChange}></lightning-input>
+                </div>
+                <div class="slds-col">
+                    <label class="slds-form-element__label">End Time</label>
+                    <lightning-input type="time" min="09:30:00.000Z" max="18:30:00.000Z" value={endTime} onchange={handleEndTimeChange}></lightning-input>
+                </div>
+            </div>
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button label="Create Event" variant="brand" onclick={handleCreateEvent}></lightning-button>
+            </div>
+            <template if:true={isLoading}>
+                <div class="slds-align_absolute-center slds-m-top_medium">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </template>
+        </div>
+
+</template>
+</lightning-card>
+</template>

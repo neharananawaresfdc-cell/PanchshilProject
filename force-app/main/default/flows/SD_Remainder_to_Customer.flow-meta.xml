@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>SD_Remainder_2_email</name>
+        <label>SD Remainder 2 email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_the_SD_Reminder_2</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Opp_Id.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>remainder2Sub</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>remainder2Body</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>recipientId</name>
+            <value>
+                <elementReference>Get_Opp_Id.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>SD_Remainder_3_email</name>
+        <label>SD Remainder 3 email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_the_SD_Remainder_3</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Opp_Id.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>remainder3Sub</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>remainder3Body</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>SD_Reminder_1_Email</name>
+        <label>SD Reminder 1 Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_the_SD_Remainder_1</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Opp_Id.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>remainder1Sub</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>remainder1Body</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <actionCalls>
+        <name>SD_Termination_Email</name>
+        <label>SD Termination Email</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <connector>
+            <targetReference>Update_the_SD_Termination</targetReference>
+        </connector>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Get_Opp_Id.EYI_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderType</name>
+            <value>
+                <stringValue>CurrentUser</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>composeEmailContent</name>
+            <value>
+                <stringValue>True</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>terminationSub</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>terminationBody</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>emailSimple</nameSegment>
+        <offset>0</offset>
+        <versionString>1.0.1</versionString>
+    </actionCalls>
+    <apiVersion>64.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <name>Status_for_SD_Reminder_1</name>
+        <label>Status for SD Reminder 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Reminder_Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SD Reminder 1</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remainder_screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Status_for_SD_Reminder_2</name>
+        <label>Status for SD Reminder 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Reminder_Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SD Reminder 2</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remainder_screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Status_for_SD_Reminder_3</name>
+        <label>Status for SD Reminder 3</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Reminder_Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SD Reminder 3</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remainder_screen</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Status_for_SD_Termination_Notice</name>
+        <label>Status for SD Termination Notice</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Reminder_Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>SD Termination Notice</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Remainder_screen</targetReference>
+        </connector>
+    </assignments>
+    <choices>
+        <name>SDRemainder</name>
+        <choiceText>{!Get_Opp_Id.EYI_SD_Reminder__c}</choiceText>
+        <dataType>String</dataType>
+    </choices>
+    <customProperties>
+        <name>ScreenProgressIndicator</name>
+        <value>
+            <stringValue>{&quot;location&quot;:&quot;top&quot;,&quot;type&quot;:&quot;simple&quot;}</stringValue>
+        </value>
+    </customProperties>
+    <decisions>
+        <name>Check_the_remainders_to_Customer</name>
+        <label>Check the remainders to Customer</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnector>
+            <targetReference>Fault</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>SD_Termination</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Id.EYI_SD_Reminder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send SD Reminder -3</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SD_Termination_Email</targetReference>
+            </connector>
+            <label>SD Termination</label>
+        </rules>
+        <rules>
+            <name>SD_Remainder_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Id.EYI_SD_Reminder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send SD Reminder -2</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SD_Remainder_3_email</targetReference>
+            </connector>
+            <label>SD Remainder 3</label>
+        </rules>
+        <rules>
+            <name>SD_Remainder_2</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Id.EYI_SD_Reminder__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Send SD Reminder -1</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SD_Remainder_2_email</targetReference>
+            </connector>
+            <label>SD Remainder 2</label>
+        </rules>
+        <rules>
+            <name>SD_Remainder_1</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Opp_Id.EYI_SD_Reminder__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Send SD Reminder -1</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Opp_Id.EYI_SD_Reminder__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SD_Reminder_1_Email</targetReference>
+            </connector>
+            <label>SD Remainder 1</label>
+        </rules>
+    </decisions>
+    <description>Notification v1</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>SD Remainder to Customer {!$Flow.CurrentDateTime}</interviewLabel>
+    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
+    <label>SD Remainder to Customer</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Opp_Id</name>
+        <label>Get Opp Id</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_the_remainders_to_Customer</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_the_SD_Remainder_1</name>
+        <label>Update the SD Remainder 1</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Status_for_SD_Reminder_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EYI_SD_Reminder__c</field>
+            <value>
+                <stringValue>Send SD Reminder -1</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_SD_Remainder_3</name>
+        <label>Update the SD Remainder 3</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Status_for_SD_Reminder_3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EYI_SD_Reminder__c</field>
+            <value>
+                <stringValue>Send SD Reminder -3</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_SD_Reminder_2</name>
+        <label>Update the SD Reminder 2</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Status_for_SD_Reminder_2</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EYI_SD_Reminder__c</field>
+            <value>
+                <stringValue>Send SD Reminder -2</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_the_SD_Termination</name>
+        <label>Update the SD Termination</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Status_for_SD_Termination_Notice</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>EYI_SD_Reminder__c</field>
+            <value>
+                <stringValue>SD Termination Notice</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Opportunity</object>
+    </recordUpdates>
+    <screens>
+        <name>Fault</name>
+        <label>Fault</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Fault_Message</name>
+            <fieldText>&lt;p&gt;{!$Flow.FaultMessage}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Remainder_screen</name>
+        <label>Remainder screen</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Success_message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;{!Reminder_Status} sent successfully!&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opp_Id</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <textTemplates>
+        <name>remainder1Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_Opp_Id.EYI_Opportunity_Name__c},
+This email serves as a follow-up regarding the stamp duty payment, referencing our previous communication
+sent on {!today} , in which we outlined the stamp duty amount due for the registration process. Our records indicate that the deadline for payment has now passed, and as of today, we have not yet received the required payment.
+As emphasized earlier, timely payment of the stamp duty is crucial for the smooth progression of the registration process. Any delay in completing this payment may result in an unfortunate delay in the registration or could potentially impact the progression of your {!Get_Opp_Id.EYI_Project_Enquired__r.Name} as planned.
+We kindly request that you settle the payment at your earliest convenience. For your reference, the stamp
+duty amount due is {!Get_Opp_Id.EYI_SD_Balance_Amount__c}. Please ensure that the payment is made promptly to avoid any further complications. If you require assistance with payment instructions or clarification, please do not hesitate to reach out to us. Failure to complete the payment may result in a delay of the registration process, so we encourage you to act swiftly in order to proceed smoothly. Should you have any questions or need further assistance, please feel free to contact us at {!Get_Opp_Id.EYI_Relationship_Manager__r.MobilePhone}. We are here to help facilitate the process and ensure a smooth resolution.
+
+Thank you for your immediate attention to this matter.
+Best regards,
+{!Get_Opp_Id.EYI_Relationship_Manager__r.Name}
+Relationship Manager
+Panchshil Realty</text>
+    </textTemplates>
+    <textTemplates>
+        <name>remainder1Sub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Reminder 1: Pending Stamp Duty Payment for Registration Process</text>
+    </textTemplates>
+    <textTemplates>
+        <name>remainder2Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_Opp_Id.EYI_Opportunity_Name__c},
+This email serves as a follow-up regarding the stamp duty payment, referencing our previous communication
+sent on {!today} , in which we outlined the stamp duty amount due for the registration process. Our records indicate that the deadline for payment has now passed, and as of today, we have not yet received the required payment.
+As emphasized earlier, timely payment of the stamp duty is crucial for the smooth progression of the registration process. Any delay in completing this payment may result in an unfortunate delay in the registration or could potentially impact the progression of your {!Get_Opp_Id.EYI_Project_Enquired__r.Name} as planned.
+We kindly request that you settle the payment at your earliest convenience. For your reference, the stamp
+duty amount due is {!Get_Opp_Id.EYI_SD_Balance_Amount__c}. Please ensure that the payment is made promptly to avoid any further complications. If you require assistance with payment instructions or clarification, please do not hesitate to reach out to us. Failure to complete the payment may result in a delay of the registration process, so we encourage you to act swiftly in order to proceed smoothly. Should you have any questions or need further assistance, please feel free to contact us at {!Get_Opp_Id.EYI_Relationship_Manager__r.MobilePhone}. We are here to help facilitate the process and ensure a smooth resolution.
+
+Thank you for your immediate attention to this matter.
+Best regards,
+{!Get_Opp_Id.EYI_Relationship_Manager__r.Name}
+Relationship Manager
+Panchshil Realty</text>
+    </textTemplates>
+    <textTemplates>
+        <name>remainder2Sub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Reminder 2: Pending Stamp Duty Payment for Registration Process</text>
+    </textTemplates>
+    <textTemplates>
+        <name>remainder3Body</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_Opp_Id.EYI_Opportunity_Name__c},
+This email serves as a follow-up regarding the stamp duty payment, referencing our previous communication
+sent on {!today} , in which we outlined the stamp duty amount due for the registration process. Our records indicate that the deadline for payment has now passed, and as of today, we have not yet received the required payment.
+As emphasized earlier, timely payment of the stamp duty is crucial for the smooth progression of the registration process. Any delay in completing this payment may result in an unfortunate delay in the registration or could potentially impact the progression of your {!Get_Opp_Id.EYI_Project_Enquired__r.Name} as planned.
+We kindly request that you settle the payment at your earliest convenience. For your reference, the stamp
+duty amount due is {!Get_Opp_Id.EYI_SD_Balance_Amount__c}. Please ensure that the payment is made promptly to avoid any further complications. If you require assistance with payment instructions or clarification, please do not hesitate to reach out to us. Failure to complete the payment may result in a delay of the registration process, so we encourage you to act swiftly in order to proceed smoothly. Should you have any questions or need further assistance, please feel free to contact us at {!Get_Opp_Id.EYI_Relationship_Manager__r.MobilePhone}. We are here to help facilitate the process and ensure a smooth resolution.
+
+Thank you for your immediate attention to this matter.
+Best regards,
+{!Get_Opp_Id.EYI_Relationship_Manager__r.Name}
+Relationship Manager
+Panchshil Realty</text>
+    </textTemplates>
+    <textTemplates>
+        <name>remainder3Sub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Reminder 3: Pending Stamp Duty Payment for Registration Process</text>
+    </textTemplates>
+    <textTemplates>
+        <name>terminationBody</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Dear {!Get_Opp_Id.Name},
+
+I hope this message finds you well.
+
+This letter serves as a formal Termination Notice concerning the non-payment of the stamp duty amount due for the registration process, despite having received three prior reminders from our office. As of today, the required stamp duty amount of {!Get_Opp_Id.EYI_SD_Balance_Amount__c} remains unpaid, and we have not received any response from your side.
+
+As stated in our previous communications, payment of the stamp duty was necessary for the progression of your booking. Unfortunately, due to the continued non-payment and lack of response, we hereby inform you that your booking for {!Get_Opp_Id.EYI_Inventory__r.Name} is being terminated, effective as of {!today}. Consequently, the unit will be released and made available for other interested parties.
+
+Please be aware that, as per the terms of the agreement, failure to pay the stamp duty will result in the forfeiture of any advance payments made and the cancellation of all associated services. Should the payment not be received by the effective termination date, we will consider the matter concluded, and no further action will be taken.
+
+While we regret the necessity of this decision, we are providing a final opportunity for you to settle the payment before the termination becomes final. Kindly remit the outstanding stamp duty by [insert final payment date]. After this date, no further arrangements will be made, and the booking will be permanently canceled.
+
+We sincerely hope to resolve this matter promptly. If you have any questions or require assistance, please do not hesitate to contact us.
+
+Thank you for your attention to this matter.
+
+Best regards,
+{!Get_Opp_Id.EYI_Relationship_Manager__r.Name}
+Relationship Manager
+Panchshil Realty
+{!Get_Opp_Id.EYI_Relationship_Manager__r.MobilePhone}</text>
+    </textTemplates>
+    <textTemplates>
+        <name>terminationSub</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Termination Notice: Non-Payment of Stamp Duty</text>
+    </textTemplates>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Reminder_Status</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Reminder</stringValue>
+        </value>
+    </variables>
+</Flow>

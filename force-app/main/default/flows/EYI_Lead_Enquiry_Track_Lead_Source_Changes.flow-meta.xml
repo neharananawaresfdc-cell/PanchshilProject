@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>62.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Check_if_Lead_Source_Changed</name>
+        <label>Check if Lead Source Changed</label>
+        <locationX>182</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Lead Source Not Changed</defaultConnectorLabel>
+        <rules>
+            <name>Lead_Source_Changed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EYI_Lead_Source__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.EYI_Lead_Source__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Lead_Enquiry_Record</targetReference>
+            </connector>
+            <label>Lead Source Changed</label>
+        </rules>
+    </decisions>
+    <description>To update and track Lead Source changes in field.</description>
+    <environments>Default</environments>
+    <interviewLabel>Lead Enquiry - Track Lead Source Changes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Enquiry - Track Lead Source Changes</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Update_Lead_Enquiry_Record</name>
+        <label>Update Lead Enquiry Record</label>
+        <locationX>50</locationX>
+        <locationY>395</locationY>
+        <inputAssignments>
+            <field>EYI_Is_Lead_Source_Change__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Check_if_Lead_Source_Changed</targetReference>
+        </connector>
+        <object>EYI_Lead_Enquiry__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Draft</status>
+</Flow>

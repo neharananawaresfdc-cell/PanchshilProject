@@ -1,0 +1,52 @@
+:host {
+    display: block;
+}
+
+.section-spacing {
+    margin-bottom: 1rem;
+}
+
+.header-spacing {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.datatable-section {
+    margin-top: 1rem;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.header-spacing {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+.custom-card {
+ min-height: 800px; /* Increased from 600px */
+ min-width: 100%;
+ max-width: 100%;
+}
+.slds-modal__container {
+ max-width: 70vw; /* Slightly wider */
+ width: 70vw;
+ max-height: 95vh; /* Increased height */
+ height: 95vh; /* Explicit height */
+}
+
+.datatable-wrapper {
+    height: 200px;
+    overflow-y: auto;
+}
+.normal-text{
+    margin-left: -10px;
+}

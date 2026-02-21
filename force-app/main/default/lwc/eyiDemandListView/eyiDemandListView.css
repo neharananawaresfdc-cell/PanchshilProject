@@ -1,0 +1,81 @@
+.slds-modal__container {
+    max-width: 80%;
+    max-height: 80%;
+   
+}
+
+.slds-modal__header, .slds-modal__footer {
+    z-index: 1001;
+}
+
+.slds-modal__content {
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.component-spinner-container {
+    /*position: relative;*/
+    margin-top: 200px;
+    margin-left: 200px;
+    min-height: 100px;
+}
+
+.component-spinner-container lightning-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure it's above content but not over other tabs */
+}
+.exampleHolder{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+
+.wrap-text-datatable .slds-cell-wrap {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+.wrap-text {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+.hoverable-cell:hover {
+    background-color: #0aec55; /* or any color you prefer */
+    cursor: pointer; /* Optional, shows pointer on hover */
+    transition: background-color 0.2s ease;
+}
+.datatable-container {
+    overflow-x: auto; /* Horizontal scrolling */
+    overflow-y: auto; /* Vertical scrolling */
+    max-height: 500px; /* Set a fixed height for vertical scroll */
+    border: 1px solid #d3d3d3; /* Optional border for cleaner look */
+    white-space: nowrap; /* Prevent header text wrapping */
+}
+
+/* Ensure header and cell text are fully visible */
+.datatable-container lightning-datatable {
+    min-width: 1800px; /* Ensure the table stretches for scrolling */
+}
+
+/* Ensure headers are not truncated */
+.datatable-container lightning-datatable thead th {
+    white-space: normal; /* Allow header text to wrap */
+    text-overflow: clip;
+    overflow: hidden;
+    padding: 8px;
+}
+
+/* Ensure table body text wraps properly */
+.datatable-container lightning-datatable tbody td {
+    white-space: normal;
+    padding: 8px;
+}
+.footerButtons{
+    margin-left: 35%;
+
+}

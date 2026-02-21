@@ -1,0 +1,41 @@
+<template>
+    <template if:true={recordId}>
+        <lightning-quick-action-panel header="Create Applicant">
+            <div class="modal-wrapper">
+                <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess} onsubmit={handleSubmit}>
+                    <lightning-messages></lightning-messages>
+                        <template if:true={isLoading}>
+                            <div class="spinner-overlay">
+                            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+                            </div>
+                        </template>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input-field field-name="EYI_Salutation__c" onchange={handleSalutationChange} required></lightning-input-field>
+                                <lightning-input-field field-name="Name" required></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Email__c" required></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Pancard_Number__c" required={isIndividual}></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Gender__c"></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Company_Name__c"></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Designation__c"></lightning-input-field>
+                                
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning-input-field field-name="EYI_Applicant_Type__c" required></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Mobile_Number__c" required></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Aadhar_Number__c" required={isIndividual}></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Date_of_Birth__c" required={isIndividual}></lightning-input-field>
+                                <lightning-input-field field-name="Customer_residential_status__c" onchange={handleCustomerResStatusChange} required></lightning-input-field>
+                                <lightning-input-field field-name="Nationality__c"></lightning-input-field>
+                                <lightning-input-field field-name="EYI_Mailing_Pincode__c"></lightning-input-field>
+                            </div>
+                        </div>
+                    <div class="slds-m-top_medium">
+                        <lightning-button variant="brand" type="submit" disabled={showButton} label="Save"></lightning-button>
+                        <lightning-button variant="neutral" label="Cancel"  onclick={closeQuickAction}></lightning-button>
+                    </div>
+                </lightning-record-edit-form>
+            </div>
+        </lightning-quick-action-panel>
+    </template>
+</template>

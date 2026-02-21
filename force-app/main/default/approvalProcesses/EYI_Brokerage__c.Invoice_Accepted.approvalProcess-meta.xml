@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>EYI_Approved_Hold_On__c</field>
+        <field>EYI_Booking__c</field>
+        <field>EYI_Brokerage_percentage__c</field>
+        <field>EYI_Brokerage_Amount__c</field>
+        <field>EYI_Brokerage_Type__c</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Stage_Update</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>crmadmin@in.ey.com.uatorg</name>
+                <type>user</type>
+            </approver>
+            <approver>
+                <name>salescrm@panchshil@in.com.uatorg</name>
+                <type>user</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <label>Step 1</label>
+        <name>Step_1</name>
+        <rejectionActions>
+            <action>
+                <name>Invoice_Rejected_Email_alert</name>
+                <type>Alert</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>EYI_Brokerage__c.Stages__c</field>
+            <operation>equals</operation>
+            <value>Invoice Received</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Invoice Accepted</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <processOrder>2</processOrder>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

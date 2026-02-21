@@ -1,0 +1,104 @@
+<template>
+    <template if:true={uploadDocByCustomerSelected}>
+    <div style="border: 1px solid rgb(112, 110, 110); border-radius:10px;">
+    <lightning-card 
+    style="margin-left: 5px" 
+    >
+    <h1 style="margin-left: 16px;font-size:20px">Document List</h1>
+        <div class="slds-m-around_medium">
+            <div class="slds-scrollable_x">
+                <table class="slds-table slds-table_bordered slds-table_striped">
+                    <thead>
+                        <tr>
+                            <template for:each={columns} for:item="column">
+                                <th key={column.label} class={column.className}>{column.label}</th>
+                            </template>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={documents} for:item="doc">
+                            <tr key={doc.ContentDocumentId}>
+                                <td>
+                                    <div class="slds-truncate" title={doc.Name}>{doc.Name}</div>
+                                </td>
+                                <!-- <td>
+                                    <div class="slds-truncate" title={doc.DOCNumber}>
+                                        {doc.maskedDOCNumber}
+                                    </div>
+                                </td> -->
+                                <td>
+                                    <lightning-button-icon class="slds-truncate" icon-name="utility:preview" alternative-text="Preview" onclick={handlePreview} data-id={doc.ContentDocumentId}></lightning-button-icon>
+                                </td>
+                                <!-- <td style="text-align: center;">
+                                    <template if:true={doc.verificationStatus}>
+                                        <lightning-icon class="slds-truncate" icon-name="action:following" size="x-small" alternative-text="Verified" title="Verified"></lightning-icon>
+                                    </template>
+                                    <template if:false={doc.verificationStatus}>
+                                        <lightning-icon class="slds-truncate" icon-name="action:defer" size="x-small" alternative-text="Not Verified" title="Not Verified"></lightning-icon>
+                                    </template>
+                                </td> -->
+                                <!-- <td>
+                                    <lightning-formatted-date-time class="slds-truncate slds-align_absolute-center" value={doc.VerificationDateTime} year="numeric" month="numeric" day="numeric" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+                                </td> -->
+                                <td>
+                                    <div class="slds-truncate" title={doc.createdDate}>{doc.createdDate}</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <lightning-button-icon class="slds-truncate" icon-name="action:delete" alternative-text="Delete" onclick={deleteHandler} data-id={doc.ContentDocumentId}></lightning-button-icon>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Preview Document-->
+            <template if:true={isModalOpen}>
+                <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- Modal Header -->
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                <lightning-icon icon-name="utility:close" alternative-text="close" size="small"></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 class="slds-text-heading_medium">Document Preview</h2>
+                        </header>
+
+                        <!-- Modal Content -->
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <!-- If it's a PDF, show in iframe -->
+                            <template if:true={isPdf}>
+                                <iframe src={fileUrl} width="100%" height="600px" frameborder="0"></iframe>
+                            </template>
+
+                            <!-- If it's an image, show image -->
+                            <template if:false={isPdf}>
+                                <template if:true={isImage}>
+                                    <img src={fileUrl} alt="Preview Image" width="100%" height="auto" />
+                                </template>
+
+                                <!-- If it's a Word/Excel file or unsupported, show message or icon -->
+                                <template if:false={isImage}>
+                                    <div class="slds-text-align_center">
+                                        <lightning-icon icon-name="doctype:file" size="large" alternative-text="File" class="slds-icon slds-icon_large"></lightning-icon>
+                                        <p>No preview available for this file type.</p>
+                                    </div>
+                                </template>
+                            </template>
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <footer class="slds-modal__footer">
+                            <!-- <lightning-button icon-name="utility:check" icon-position="right" variant="brand" label="Verify" class="slds-p-right_xxx-small" data-id={currentDocumentTrackerId} onclick={verifyDocumentHandler}></lightning-button> -->
+                            <lightning-button icon-name="utility:close" icon-position="right" variant="neutral" label="Close" onclick={closeModal}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+        </div>
+    </lightning-card>
+</div>
+</template>
+</template>

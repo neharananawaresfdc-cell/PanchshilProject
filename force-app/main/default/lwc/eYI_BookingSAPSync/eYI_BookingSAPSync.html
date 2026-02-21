@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : Viksit Rana
+  @group             : 
+  @last modified on  : 02-04-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card variant="Narrow" title="Booking Sync" icon-name="utility:change_record_type">
+      <div class="slds-p-horizontal_small">
+        <template if:true={isRed}>
+          <div class="slds-text-color_destructive messageStyle">
+        <!-- <div class="errorMessage">-->
+           {messageDisplay}
+        </div>
+        </template>
+        <template if:true={isGreen}>
+         <div class="successMessage messageStyle">
+            {messageDisplay}
+        </div>
+         </template>
+         <template if:true={isOrange}>
+            <div class="warningMessage messageStyle">
+              WARNING: {warningDisplay}
+           </div>
+            </template>
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading..." size="medium"></lightning-spinner>
+        </template>
+        <br/>
+        <br/>
+         <!-- <template if:true={isSync}>
+            <div class="alreadySynced">
+              {syncedMessage}
+           </div>
+         </template> -->
+         <div class="slds-grid slds-align_absolute-center slds-m-top_medium">
+              <lightning-button 
+              label="Bookings Data Sync"
+              icon-name="utility:refresh"
+              onclick={validateBrokerData}
+              disabled={isSyncButtonDisabled}
+              class="slds-m-right_small">
+              </lightning-button>
+         </div>
+        </div>
+    </lightning-card>
+    
+</template>

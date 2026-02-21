@@ -1,0 +1,98 @@
+.slds-text-color_error {
+    color: red;
+}
+
+.slds-text-color_success {
+    color: green;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for available time slots */
+.available-time, .booked-time {
+    display: flex;
+    flex-wrap: wrap; /* This will allow wrapping if there are too many items */
+    gap: 10px; /* Adds space between the time slots */
+}
+
+/* Individual time slot styling */
+.time-slot {
+    margin: 5px;
+    text-align: center;
+}
+
+/**************************************************************************/
+/* Container for centering everything */
+/* Container for centering everything */
+.center-container {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: flex-start;      /* Vertically center */
+    height: 50vh;            /* Full viewport height */
+    margin: 0;                /* Remove any default margins */
+    padding-top: 80px               /* Remove any default padding */
+}
+
+/* Style the div that holds the event details */
+.event-details-container {
+    border: 2px solid #ccc;   /* Add a border */
+    padding: 20px;             /* Add padding inside the border */
+    width: 100%;               /* Make it responsive */
+    max-width: 500px;          /* Maximum width for large screens */
+    text-align: center;        /* Center the text inside */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px;        /* Optional: rounded corners */
+}
+
+/* Additional styling for event details */
+.event-date, .event-time {
+    margin-bottom: 10px; /* Add space between each item */
+}
+
+.center-button {
+    margin-top: 20px;  /* Space for the button */
+}
+
+.green-status {
+    background-color: #90EE90; /* Green background */
+    border: 2px solid #ccc;   /* Add a border */
+    padding: 20px;             /* Add padding inside the border */
+    width: 100%;               /* Make it responsive */
+    max-width: 500px;          /* Maximum width for large screens */
+    text-align: center;        /* Center the text inside */
+  
+    border-radius: 8px; 
+}
+
+.yellow-status {
+    background-color: #FFFF8F; /* Yellow background */
+    border: 2px solid #ccc;   /* Add a border */
+    padding: 20px;             /* Add padding inside the border */
+    width: 100%;               /* Make it responsive */
+    max-width: 500px;          /* Maximum width for large screens */
+    text-align: center;        /* Center the text inside */
+    border-radius: 8px; 
+}
+
+.green {
+    background-color: #28a745; /* Green color */
+    color: white;
+}
+
+.yellow {
+    background-color: #ffc107; /* Yellow color */
+    color: black;
+}
+.amber {
+    background-color: #ffc107; /* Amber */
+    color: black;
+}
+
+.red {
+    background-color: #dc3545; /* Red */
+    color: white;
+}

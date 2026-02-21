@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Booked</label>
+    <protected>false</protected>
+    <values>
+        <field>EYI_ClassName__c</field>
+        <value xsi:type="xsd:string">#ff4f00</value>
+    </values>
+    <values>
+        <field>EYI_IconName__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>EYI_Label__c</field>
+        <value xsi:type="xsd:string">Booked</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,71 @@
+.verified-icon {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.pending-icon {
+    color: orange;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.header-style {
+    background-color: #EDE0D4; /* Light Mocha (Faint Brown) */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5C4033; /* Dark Brown for Contrast */
+}
+
+.verified-icon {
+    color: green;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+/* PAN Section Styling */
+.pan-style {
+    /* background-color: #DFF6FF;
+    border: 2px solid #007BFF; */
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.logoDesign{
+    width : 70px;
+    height: 70px;
+    max-width: 100%;
+    max-height:100%;
+}
+
+.pan-style lightning-input input {
+    /* background-color: #DFF6FF !important;
+    border: 2px solid #007BFF !important; */
+    border-radius: 6px;
+    padding: 8px;
+}
+
+/* AADHAR Section Styling */
+.aadhar-style {
+    /* background-color: #DFF6FF;
+    border: 2px solid #007BFF; */
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.aadhar-style lightning-input input {
+    /* background-color: #DFF6FF !important;
+    border: 2px solid #007BFF !important; */
+    border-radius: 6px;
+    padding: 8px;
+}

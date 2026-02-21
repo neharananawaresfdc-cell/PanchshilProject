@@ -1,0 +1,378 @@
+<template>
+    <!-- Card Container -->
+    <lightning-card variant="Narrow" title={brochureTitle} icon-name="utility:sender_email">
+        <div class="slds-p-horizontal_small">
+            <template if:true={isSpinner}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large"></lightning-spinner>
+            </template>
+            <div class="slds-grid slds-grid_align-center">
+                <!-- Send Email Button with Icon -->
+                <div class="slds-col ">
+                    <lightning-button variant="brand" label="Send Email" onclick={handleEmailClick}
+                        disabled={disableEmailBtn} icon-name="utility:email" icon-position="left" class="buttonStyle">
+                    </lightning-button>
+                </div>
+                <template if:false={isOpportunity}>
+                    <!-- Send SMS Button with Icon -->
+                    <div class="slds-col buttonPadding">
+                        <!-- <lightning-button variant="brand" label="Send SMS" onclick={handleSmsClick}
+                            disabled={disableSMSBtn} icon-name="utility:chat" icon-position="left" class="buttonStyle">
+                        </lightning-button> -->
+                        <lightning-button variant="brand" label="Send SMS" onclick={handleSmsClick}
+                            disabled icon-name="utility:chat" icon-position="left" class="buttonStyle">
+                        </lightning-button>
+                    </div>
+
+                    <!-- Send WhatsApp Button with Icon -->
+                    <div class="slds-col buttonPadding">
+                        <!-- <lightning-button variant="brand" label="Send Whatsapp" onclick={handleWhatsappClick}
+                            disabled={disableWappBtn} icon-name="utility:chat" icon-position="left" class="buttonStyle">
+                        </lightning-button> -->
+                        <lightning-button variant="brand" label="Send Whatsapp" onclick={handleWhatsappClick}
+                            disabled icon-name="utility:chat" icon-position="left" class="buttonStyle">
+                        </lightning-button>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <template if:true={dndEnabled}>
+            <div
+                class="slds-grid slds-align-middle dndMessage slds-box slds-p-top_small slds-p-right_small slds-p-bottom_small slds-p-left_small">
+                <lightning-icon icon-name="utility:end_call" alternative-text="DND" size="xx-small"></lightning-icon>
+                <span class="slds-m-left_xx-small">{dndMessage}</span>
+            </div>
+        </template>
+    </lightning-card>
+
+    <!-- Email Modal -->
+    <template if:true={isEmailModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium label-bold">{sendEmail}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_small">
+
+                    <template if:true={isFirstScreen}>
+                        <template if:false={isOpportunity}>
+                            <lightning-layout class="slds-grid slds-grid_vertical">
+                                <lightning-layout-item>
+                                    <span class="label-bold">Email</span>
+                                    <lightning-input value={maskedEmail} onchange={handleEmailChange} readonly
+                                        class="normal-text">
+                                    </lightning-input>
+                                </lightning-layout-item>
+                                <!-- <lightning-layout-item>
+                                    <span class="label-bold">Select Email Folder</span>
+                                    <lightning-combobox name="emailTemplateFolders" value={selectedTemplateFolder}
+                                        placeholder="Select a template Folder" options={folderOptions}
+                                        onchange={handleEmailFolderChange} class="normal-text" required>
+                                    </lightning-combobox>
+                                </lightning-layout-item> -->
+                                <lightning-layout-item>
+                                    <span class="label-bold">Select Email Template</span>
+                                    <lightning-combobox name="emailTemplates" value={selectedTemplateId}
+                                        placeholder="Select a template" options={emailTemplateOptions}
+                                        onchange={handleEmailTemplateChange} class="normal-text" required>
+                                    </lightning-combobox>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item>
+                                    <span class="label-bold">Subject</span>
+                                    <lightning-input value={emailSubject} onchange={handleSubjectChange}
+                                        class="normal-text">
+                                    </lightning-input>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item>
+                                    <span class="label-bold">Message</span>
+                                    <lightning-textarea value={messageBody} onchange={handleMessageChange}
+                                        class="normal-text textAreaBody">
+                                    </lightning-textarea>
+                                </lightning-layout-item>
+
+                                <lightning-layout-item>
+                                    <lightning-button variant="Brand" icon-name="utility:forward" icon-position="right"
+                                        label="Next" class="slds-float_right custom-margin-top" onclick={handleNext}>
+                                    </lightning-button>
+                                </lightning-layout-item>
+                            </lightning-layout>
+                        </template>
+                        <template if:true={isOpportunity}>
+                            <lightning-layout class="slds-grid slds-grid_vertical">
+                                <lightning-layout-item>
+                                    <span class="label-bold">Email</span>
+                                    <lightning-input value={maskedEmail} onchange={handleEmailChange}
+                                        class="normal-text" readonly>
+                                    </lightning-input>
+                                </lightning-layout-item>
+                                <lightning-layout vertical-align="end">
+                                    <template if:false={isNewEmail}>
+                                        <lightning-layout-item size="9" padding="around-small">
+                                            <span class="label-bold">Select Email Folder<span style="color: red;">*</span></span>
+                                            <lightning-combobox name="emailTemplateFolders" value={selectedTemplateFolder}
+                                                placeholder="Select a template Folder" options={folderOptions}
+                                                onchange={handleEmailFolderChange} class="normal-text" required>
+                                            </lightning-combobox>
+                                        </lightning-layout-item>
+                                    </template>
+                                    <template if:false={istemplate}>
+                                        <lightning-layout-item size="3" padding="around-small">
+                                                <lightning-button 
+                                                    variant="brand" 
+                                                    label="New Email" 
+                                                    class="custom-margin-top" 
+                                                    onclick={handlenew}>
+                                                </lightning-button>
+                                        </lightning-layout-item>
+                                    </template>
+                                </lightning-layout>
+                                <template if:true={selectedTemplateFolder}>
+                                    <lightning-layout-item>
+                                        <span class="label-bold">Select Email Template<span style="color: red;">*</span></span>
+                                        <lightning-combobox name="emailTemplates" value={selectedTemplateId}
+                                            placeholder="Select a template" options={emailTemplateOptions}
+                                            onchange={handleEmailTemplateChange} class="normal-text" required>
+                                        </lightning-combobox>
+                                    </lightning-layout-item>
+                                </template>
+                                <template if:true={showTemplateSection}>
+                                    <lightning-layout-item>
+                                        <span class="label-bold">CC Emails (Optional)
+                                            <lightning-helptext class="slds-p-around_small"
+                                                content="Enter the email addresses to be CC'd, separated by commas. For example: test@gmail.com, test1@gmail.com"></lightning-helptext>
+                                        </span>
+                                        <lightning-input value={ccEmails} onchange={handleCCEmailChange}
+                                            class="normal-text">
+                                        </lightning-input>
+                                    </lightning-layout-item>
+                                    <lightning-layout-item>
+                                        <span class="label-bold">Subject</span>
+                                        <lightning-input value={emailSubject} onchange={handleSubjectChange}
+                                            class="normal-text">
+                                        </lightning-input>
+                                    </lightning-layout-item>
+
+                                    <lightning-layout-item>
+                                        <span class="label-bold">Message</span>
+                                        <lightning-textarea value={messageBody} onchange={handleMessageChange}
+                                            class="normal-text textAreaBody">
+                                        </lightning-textarea>
+                                    </lightning-layout-item>
+                                </template>
+                                <lightning-layout-item>
+                                    <template if:true={messageBody}>
+                                        <lightning-button variant="Brand" icon-name="utility:forward" icon-position="right"
+                                            label="Next" class="slds-float_right custom-margin-top" onclick={handleNext}>
+                                        </lightning-button>
+                                    </template>
+                                </lightning-layout-item>
+
+                            </lightning-layout>
+                        </template>
+                    </template>
+
+                    <template if:false={isFirstScreen}>
+                        <!-- <lightning-card icon-name="standard:file" variant="base"> -->
+                        <template if:true={isProjectFiles}>
+                            <!-- <div slot="title">
+                                    {selectfiles}
+                                </div> -->
+                            <!-- <div>
+                                <lightning-datatable data={filesData} columns={columns} key-field="fileid"
+                                    onsave={handleCheckboxChange} onrowaction={handleRowAction}
+                                    onrowselection={handleRowSelection}>
+                                </lightning-datatable>
+                            </div> -->
+                             <div>
+                                <lightning-datatable
+                                    key-field="Id"
+                                    data={dmsLinks}
+                                    columns={dmsCOLUMNS}
+                                    onrowselection={handleDMSRowSelection}
+                                    max-row-selection="10">
+                                </lightning-datatable>
+                            </div>
+                            
+
+                        </template>
+                        <template if:false={isProjectFiles}>
+                            <div slot="footer">
+                                <div class="slds-grid slds-align-middle slds-box">
+                                    <lightning-icon icon-name="utility:table" alternative-text="Table Icon"
+                                        size="small"></lightning-icon>
+                                    <span class="slds-m-left_small">{noProjFilesMessage}</span>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- </lightning-card> -->
+                        <div class="slds-grid slds-grid_align-end custom-margin-top">
+                            <lightning-button icon-name="utility:back" icon-position="left"
+                                class="slds-m-right_small custom-blue-icon" label="Previous" onclick={handlePrevious}>
+                            </lightning-button>
+                            <lightning-button variant="Brand" icon-name="utility:send" icon-position="right"
+                                class="slds-m-right_small" label="Send" onclick={handleSendEmail}>
+                            </lightning-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- SMS Modal -->
+    <template if:true={isSmsModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium label-bold">{sendSMS}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_small">
+                    <template if:true={isFirstScreen}>
+                        <lightning-layout class="slds-grid slds-grid_vertical">
+                            <lightning-layout-item>
+                                <span class="label-bold">Select Number Type</span>
+                                <lightning-combobox value={selectedNumberType} options={numberOptions}
+                                    placeholder="Select a number type" class="normal-text"
+                                    onchange={handleNumberChange}>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Phone Number</span>
+                                <lightning-input value={maskedNumber} onchange={handlePhoneNumberChange} readonly
+                                    class="normal-text">
+                                </lightning-input>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Select Template</span>
+                                <lightning-combobox value={selectedSMSTemplate} options={smsTemplateOptions}
+                                    placeholder="Select a template" class="normal-text"
+                                    onchange={handleSMSTemplateChange}>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Message</span>
+                                <lightning-textarea value={messageBody} onchange={handleMessageChange}
+                                    class="normal-text textAreaBody">
+                                </lightning-textarea>
+                            </lightning-layout-item>
+                            <div class="slds-grid slds-grid_align-end custom-margin-top">
+
+                                <lightning-button variant="Brand" icon-name="utility:send" icon-position="right"
+                                    class="slds-m-right_small" label="Send" onclick={handleSendSMS}>
+                                </lightning-button>
+                            </div>
+                        </lightning-layout>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+    <!-- Whatsup Modal -->
+    <template if:true={isWhatsappModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                            size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium label-bold">{sendWapp}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_small">
+                    <template if:true={isFirstScreen}>
+                        <lightning-layout class="slds-grid slds-grid_vertical">
+                            <lightning-layout-item>
+                                <span class="label-bold">Select Number Type</span>
+                                <lightning-combobox value={selectedNumberType} options={numberOptions}
+                                    placeholder="Select a number type" class="normal-text"
+                                    onchange={handleNumberChange}>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Phone Number</span>
+                                <lightning-input value={maskedNumber} onchange={handlePhoneNumberChange} readonly
+                                    class="normal-text">
+                                </lightning-input>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Select Template</span>
+                                <lightning-combobox value={selectedSMSTemplate} placeholder="Select a template"
+                                    options={smsTemplateOptions} class="normal-text" onchange={handleSMSTemplateChange}>
+                                </lightning-combobox>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <span class="label-bold">Message</span>
+                                <lightning-textarea read-only value={messageBody} onchange={handleMessageChange}
+                                    class="normal-text textAreaBody">
+
+                                </lightning-textarea>
+                            </lightning-layout-item>
+
+                            <lightning-layout-item>
+                                <lightning-button variant="Brand" icon-name="utility:forward" icon-position="right"
+                                    label="Next" class="slds-float_right custom-margin-top" onclick={handleNext}>
+                                </lightning-button>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </template>
+                    <template if:false={isFirstScreen}>
+                        <!-- <lightning-card icon-name="standard:file" variant="base"> -->
+                        <template if:true={isProjectFiles}>
+                            <!-- <div slot="title">
+                                    {selectfiles}
+                                </div> -->
+
+                            <div>
+                                <lightning-datatable data={filesData} columns={columns} key-field="fileid"
+                                    onsave={handleCheckboxChange} onrowselection={handleRowSelection}>
+                                </lightning-datatable>
+                            </div>
+                        </template>
+                        <template if:false={isProjectFiles}>
+                            <div slot="footer">
+                                <div class="slds-grid slds-align-middle slds-box">
+                                    <lightning-icon icon-name="utility:table" alternative-text="Table Icon"
+                                        size="small"></lightning-icon>
+                                    <span class="slds-m-left_small">{noProjFilesMessage}</span>
+                                </div>
+                            </div>
+                        </template>
+                        <!-- </lightning-card> -->
+                        <div class="slds-grid slds-grid_align-end custom-margin-top">
+                            <lightning-button icon-name="utility:back" icon-position="left"
+                                class="slds-m-right_small custom-blue-icon" label="Previous" onclick={handlePrevious}>
+                            </lightning-button>
+                            <lightning-button variant="Brand" icon-name="utility:send" icon-position="right"
+                                class="slds-m-right_small" label="Send" onclick={handleSendSMS}>
+                            </lightning-button>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

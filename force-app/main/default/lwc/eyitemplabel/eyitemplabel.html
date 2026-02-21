@@ -1,0 +1,35 @@
+<template>
+    
+    <lightning-record-edit-form object-api-name={objectApiName} record-id={recordId} onsuccess={handleSuccess}
+            onerror={handleError}>
+        <lightning-messages></lightning-messages>
+        <lightning-layout>
+            <lightning-layout-item size="12" padding="around-small">
+            <div class="slds-grid slds-wrap label" >
+                <template if:true={labelTDSOutStanding} >
+                <div class="slds-col slds-size_1-of-1 custom-label" style=" font-size: 24px;" >
+                    {fieldlabel}
+                </div>
+                </template>
+                <template if:false={labelTDSOutStanding}>
+                <div class="slds-col slds-size_1-of-1 custom-label" >
+                    {fieldlabel}
+                </div>
+                </template>
+                <template if:true={labelTDSOutStanding}>
+                    <div class="slds-col slds-size_1-of-1" style="color:red; font-size: 35px;">
+                    {fvalue}
+                </div>
+                </template>
+                <template if:false={labelTDSOutStanding}>
+                    <div class="slds-col slds-size_1-of-1" style={dynamicStyle}>
+                    {fvalue}
+                </div>
+                </template>
+            </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-input-field field-name={fieldApiName} value={fvalue} class="slds-hide"></lightning-input-field>
+        <!--<lightning-button class="slds-m-top_small" variant="brand" type="submit" name="update" label="Update"></lightning-button> -->
+    </lightning-record-edit-form>
+</template>

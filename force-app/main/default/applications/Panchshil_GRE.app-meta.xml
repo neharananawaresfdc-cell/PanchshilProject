@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>GRE_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#EBA139</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>This app is for managing GRE for Panchshil Elevate.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>GRE</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>GRE_Home_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>GRE</profile>
+    </profileActionOverrides>
+    <tabs>Customer_Information_Form</tabs>
+    <tabs>EYI_Customer_Information_Form__c</tabs>
+    <tabs>EYI_Customer_Visit_Information__c</tabs>
+    <tabs>EYI_Demand_Receipt_Mapping__c</tabs>
+    <tabs>EYI_SAP_Report__c</tabs>
+    <tabs>EYI_Target_Management__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Panchshil_GRE_UtilityBar</utilityBar>
+</CustomApplication>

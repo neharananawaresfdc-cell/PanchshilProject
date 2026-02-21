@@ -1,0 +1,52 @@
+/* .verticalAlign {
+	cursor: pointer;
+    padding: 0px 5px !important;
+}
+.slds-dropdown {
+    padding:0px !important;
+}
+.recordListBox {
+	margin-top:0px !important;
+	overflow-y: scroll;
+}
+.slds-listbox li {
+    padding: .45rem 0.7rem !important;
+    display: flex;
+}
+.inputBox input {
+	padding-left: 10px;
+}
+.eachItem:hover {
+    background-color: #F1F1F1;
+    cursor: pointer;
+}
+.w100{
+    display:block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+}
+
+/* For Scrolling */
+/*
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+   display: none !important;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.4);
+}
+
+.slds-input-has-icon .mc-autoinput input{
+    height: 32px;
+    line-height: 32px;
+}
+@media screen and (max-width: 480px) {
+    .slds-input-has-icon .mc-autoinput input{
+        height: 42px;
+        line-height: 42px;
+    }
+} */

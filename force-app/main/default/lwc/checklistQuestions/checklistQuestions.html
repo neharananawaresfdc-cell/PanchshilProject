@@ -1,0 +1,363 @@
+<template>
+    <lightning-card>
+    <div class="form-container">
+        <div class="form-title"><b>Onboarding Checklist</b></div>
+        <form>
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="4">
+                        <b>Project:</b> {bookingDetails.projectName}
+                    </lightning-layout-item>
+                    
+                    <lightning-layout-item padding="around-small" size="4">
+                        <b>Unit No:</b> {bookingDetails.unitNo}
+                    </lightning-layout-item>
+            
+                    <lightning-layout-item padding="around-small" size="4">
+                        <b>Date of Booking:</b> {bookingDetails.createdDate}
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="8">
+                        <b>Client Name:</b> {bookingDetails.oppName}
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="4">
+                        <lightning-button style="height: 17px !important;" label="Booking Form" onclick={handleButtonClick} variant="brand"></lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <b>Sourcing SM:</b> {bookingDetails.sourcingSM}
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="6">
+                        <b>Closing CM:</b> {bookingDetails.closingCM}
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="2">
+                        <span><b>Source of Booking:</b></span>
+                    </lightning-layout-item>
+                    
+                    <lightning-layout-item padding="around-small" size="2">
+                        <lightning-input type="checkbox" name="direct" label="Direct" checked={isDirectChecked} disabled="true"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="2">
+                        <lightning-input type="checkbox" name="rec" label="REC" checked={isRECChecked} disabled="true"></lightning-input>
+                    </lightning-layout-item>
+                    <template if:true={isRECChecked}>
+                        <lightning-layout-item padding="around-small" size="3">
+                            <b>Company Name:</b> {bookingDetails.recName}
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="3">
+                            <b>REC Code:</b> {bookingDetails.recCode}
+                        </lightning-layout-item>
+                    </template>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="12">
+                        <b>Checklist:</b>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <!-- Welcome Call Checklist -->
+                <template if:true={welcomeCallQuestions.length}>
+                        <lightning-layout>
+                            <lightning-layout-item padding="around-small" size="12">
+                                <b style="padding-left: 5px;">A) Are the below details matching of Duly Filled Booking Form</b>
+                            </lightning-layout-item>
+                        </lightning-layout>
+  
+                    <table class="slds-table slds-table_bordered fixed-width-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Category</th>
+                                <th style="padding-left:10px">Verified</th>
+                                <th style="padding-left:10px">Unverified</th>
+                                <th>Remark</th>
+                                <th>Checked By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={welcomeCallQuestions} for:item="question">
+                                <tr key={question.Id}>
+                                    <td class="wrap-text">{question.Question__c}</td>
+                                    <td>
+                                        <lightning-combobox
+                                            name="category"
+                                            data-id={question.Id}
+                                            value={question.Category__c} 
+                                            options={categoryOptions}
+                                            onchange={handleInputChange}
+                                            disabled="true"
+                                        ></lightning-combobox>
+                                    </td>
+                                    <td>
+                                        <!-- <lightning-combobox
+                                            name="status"
+                                            value={question.Status__c}
+                                            data-id={question.Id}
+                                            options={statusOptions}
+                                            onchange={handleInputChange}
+                                            disabled={disableFields}
+                                        ></lightning-combobox> -->
+                                        <lightning-input
+                                        type="checkbox"
+                                        data-id={question.Id}
+                                        name="valid"
+                                        checked={question.Valid__c}
+                                        onchange={handleInputChange}
+                                        disabled={disableFields}
+                                        style="padding-left: 15px;"
+                                    ></lightning-input>
+                                </td>
+                                <td>
+                                    <lightning-input
+                                    type="checkbox"
+                                    data-id={question.Id}
+                                    name="invalid"
+                                    checked={question.Invalid__c}
+                                    onchange={handleInputChange}
+                                    disabled={disableFields}
+                                    style="padding-left: 20px;"
+                                ></lightning-input>
+                                </td>
+                                    <td>
+                                        <lightning-textarea
+                                            name="remark"
+                                            data-id={question.Id}
+                                            value={question.Remarks__c}
+                                            onchange={handleInputChange}
+                                            disabled={disableRemarkFields}
+                                        ></lightning-textarea>
+                                    </td>
+                                    <td>{checkedBy}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <!-- Sales Checklist -->
+                <template if:true={salesChecklistQuestions.length}>
+                    
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small" size="12">
+                            <b style="padding-left: 5px;">B) Are the below details matching of Duly Signed Booking Form & Proposal</b>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                    <table class="slds-table slds-table_bordered fixed-width-table">
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Category</th>
+                                <th style="padding-left:10px">Verified</th>
+                                <th style="padding-left:10px">Unverified</th>
+                                <th>Remark</th>
+                                <th>Checked By</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={salesChecklistQuestions} for:item="question">
+                                <tr key={question.Id}>
+                                    <td class="wrap-text">{question.Question__c}</td>
+                                    <td>
+                                        <lightning-combobox
+                                            name="category"
+                                            data-id={question.Id}
+                                            value={question.Category__c}
+                                            options={categoryOptions}
+                                            onchange={handleInputChange}
+                                            disabled="true"
+                                        ></lightning-combobox>
+                                    </td>
+                                    <td >
+                                        <!-- <lightning-combobox
+                                            name="status"
+                                            value={question.Status__c}
+                                            data-id={question.Id}
+                                            options={statusOptions}
+                                            onchange={handleInputChange}
+                                            disabled={disableFields}
+                                        ></lightning-combobox> -->
+                                        <lightning-input
+                                            type="checkbox"
+                                            data-id={question.Id}
+                                            name="valid"
+                                            checked={question.Valid__c}
+                                            onchange={handleInputChange}
+                                            disabled={disableFields}
+                                            style="padding-left: 15px;"
+                                        ></lightning-input>
+                                    </td>
+                                    <td>
+                                        <lightning-input
+                                        type="checkbox"
+                                        data-id={question.Id}
+                                        name="invalid"
+                                        checked={question.Invalid__c}
+                                        onchange={handleInputChange}
+                                        disabled={disableFields}
+                                        style="padding-left: 20px;"
+                                    ></lightning-input>
+                                    </td>
+                                    
+                                    <td>
+                                        <lightning-textarea
+                                            name="remark"
+                                            data-id={question.Id}
+                                            value={question.Remarks__c}
+                                            onchange={handleInputChange}
+                                            disabled={disableRemarkFields}
+                                        ></lightning-textarea>
+                                    </td>
+                                    <td>{checkedBy}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+                <lightning-layout>
+                    <lightning-layout-item  style="padding-left: 5px;padding-top:25px" size="12">
+                        
+                        <lightning-layout>
+                            <lightning-layout-item padding="around-small" size="12">
+                                <b style="padding-left: 5px;">c) Booking Instrument</b>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                        
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <lightning-layout>
+                    <lightning-layout-item  size="12">
+                        <lightning-input type="checkbox" style="padding-left:30px;" name="direct" label="Cheque" checked={isCheque} disabled="true"></lightning-input>
+                    </lightning-layout-item>
+                </lightning-layout>
+               
+                <lightning-layout>
+                    <lightning-layout-item  size="4">
+                        <lightning-input type="checkbox" style="padding-left:30px;" name="rec" label="Online Transfer/ Others" checked={isNotCheque} disabled="true"></lightning-input>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="8">
+                        <template if:true={isNotCheque}>
+                            <p style=" padding-right: 300px"><b>Payment Amount:</b> {bookingDetails.paymentAmount}</p>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+                
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="4">
+                        <div style="text-align: center; padding-left: 40px;padding-top:25px">
+                            {bookingDetails.closingCM}<br>
+                            <b>Closing SM</b>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="4">
+                        <div style="text-align: center; padding-left: 50px;padding-top:25px">
+                            {bookingDetails.closingTL}<br>
+                            <b>Closing TL</b>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item padding="around-small" size="4">
+                        <div style="text-align: center; padding-right: 40px;padding-top:25px">
+                            {bookingDetails.closingCRM}<br>
+                            <b>Closing Head</b>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <!-- <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="12">
+                        <p style="padding-left:20px;"><b>Remarks for CRM: </b>Client will make 100% payment upfront within 30 days from the date of 
+                            Registration to be completed as soon as current covid situation eases out.</p>
+                    </lightning-layout-item>
+                </lightning-layout> -->
+
+                <lightning-layout>
+                    <lightning-layout-item padding="around-small" size="12">
+                        <p style="padding-left:20px;"><b>Payment Terms/ Schedule: </b>{bookingDetails.paymentTerm}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small" size="4">
+                            <lightning-combobox
+                            style="padding-left:20px"
+                            label="Booking Form Status"
+                            name="Booking Form Status"
+                            value={bookingFormStatus}
+                            options={picklistValues}
+                            onchange={handleBookingFormChange}
+                            disabled={disabledBookingFormStatus}
+                        ></lightning-combobox>
+                        </lightning-layout-item>
+                        <lightning-layout-item padding="around-small" size="4">
+                            <template if:true={showReason}>
+                                <lightning-combobox
+                                        label="Booking Form Rejection Reason"
+                                        name="Booking Form Rejection Reason"
+                                        value={bookingFormRejection}
+                                        options={rejectionPicklistValues}
+                                        onchange={handleBookingRejection}
+                                        disabled={disabledBookingFormStatus}
+                                    ></lightning-combobox>
+                            </template>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                
+            <!-- Save Button -->
+            <div class="button-container">
+                
+                <template if:true={showSaveDraftBtn}>
+                    <lightning-button label="Save Draft" onclick={handleSave} ></lightning-button>
+                </template> 
+                <template if:true={showSubmitBtn}>
+                    <lightning-button label="Submit" onclick={handleSave} variant="brand" style="margin-left: 20px;"></lightning-button>
+                </template>
+                <template if:true={showSubmitButton}>
+                    <lightning-button label="Submit" onclick={handleSubmitStatus} variant="brand"></lightning-button>
+                </template>
+                
+                <template if:true={showCancelBtn}>
+                    <lightning-button label="Cancel" onclick={handleCancel} style="margin-left: 20px;"></lightning-button>
+                </template>
+                
+                <template if:true={showPrintBtn}>
+                    <button type="button" style="margin-left:20px" onclick={handlePrint} class="small-button">Print</button>
+                </template>
+                <template if:true={showUpdateButton}>
+                    <button type="button" style="margin-left:20px" onclick={handleupdateChecklist} class="small-button">Update Checklist</button>
+                </template>
+            </div>
+        </form>
+    </div>
+    <template if:true={showRemarkModal}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" size="small" alternative-text="close" class="slds-button__icon slds-button__icon_large"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Enter Remark</h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-textarea label="Remark" value={closingManagerRemark} onchange={handleRemarkChange}></lightning-textarea>
+                </div>
+
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                    <lightning-button style="padding-left:5px;" variant="brand" label="Save" onclick={saveRemark}></lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</lightning-card>
+</template>
